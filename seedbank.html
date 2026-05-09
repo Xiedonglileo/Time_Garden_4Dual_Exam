@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>种子库｜时间花园真题查词</title>
+<meta name="description" content="时间花园种子库：输入或点击英文单词，查看中文释义、词源小提示、词形还原，以及按释义整理的真题原句、释义总览与年份筛选。" />
+<link href="seedbank.css" rel="stylesheet" />
+</head>
+<body>
+<header class="seed-hero">
+  <nav class="seed-nav" aria-label="种子库导航">
+    <a class="brand" href="index.html">Time Garden</a>
+    <div class="seed-nav-actions"><button class="reader-return" id="seedReturn" type="button" hidden>返回阅读位置</button><a class="home-link" href="index.html">返回花园首页</a></div>
+  </nav>
+  <section class="seed-hero-card" aria-labelledby="seed-title">
+    <p class="eyebrow">Seed Bank · 真题原句阅读</p>
+    <h1 id="seed-title">种子库</h1>
+    <p class="lead">每个英文单词都是一粒种子。输入任意原文单词，查看词形还原、中文释义与词源小提示，并沿着不同释义阅读它在英语一 / 英语二真题里出现过的原句。</p>
+    <form class="seed-search" id="seedSearch" autocomplete="off">
+      <label class="sr-only" for="seedInput">输入英文单词</label>
+      <input id="seedInput" name="q" type="search" inputmode="latin" spellcheck="false" placeholder="输入一粒种子，例如 decline / studies / children" />
+      <button type="submit">查找种子</button>
+    </form>
+    <div class="seed-meta" id="seedMeta">正在唤醒种子库……</div>
+  </section>
+</header>
+<main class="seed-main">
+  <section class="seed-empty" id="seedEmpty">
+    <h2>从这里开始，慢慢读懂一粒种子</h2>
+    <p>试试 <button class="sample-seed" data-seed="decline">decline</button>、<button class="sample-seed" data-seed="business">business</button>、<button class="sample-seed" data-seed="children">children</button>、<button class="sample-seed" data-seed="studies">studies</button>。</p>
+    <p class="hint">在年份页点击右下角「拾取种子」后，可以直接点击原文里的英文单词打开种子库；你会看到它的释义、词源小提示，以及按年份整理的真题语境；点「返回阅读位置」会回到刚才看的地方。</p>
+  </section>
+  <section class="seed-result" id="seedResult" hidden>
+    <div class="definition-card" id="definitionCard"></div>
+    <div class="result-toolbar" id="resultToolbar"></div>
+    <div class="result-list" id="resultList"></div>
+  </section>
+</main>
+<footer class="seed-footer">Time Garden Seed Bank · 让每一粒单词种子都在真题语境里慢慢生长</footer>
+<script src="data/seed-corpus.js"></script>
+<script src="data/seed-index.js"></script>
+<script src="data/seed-forms.js"></script>
+<script src="data/seed-lemma-forms.js"></script>
+<script src="data/seed-dict.js"></script>
+<script src="data/seed-stats.js"></script>
+<script src="seedbank.js"></script>
+</body>
+</html>

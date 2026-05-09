@@ -145,7 +145,7 @@ body.is-leaving::after{animation:fadeOut .76s ease forwards;background:rgba(247,
 @media print{.year-masthead{display:none!important}.chapter-quicknav{display:none!important}}
 
 
-/* v5 keyword-locator refinements: paragraph and stem-keyword anchors */
+/* keyword-locator refinements */
 .para-target{
   display:inline-flex;align-items:center;vertical-align:middle;margin:0 .38em 0 .12em;
   padding:2px 7px;border-radius:999px;background:var(--c,#8a6fd6);
