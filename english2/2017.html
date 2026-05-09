@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>2017 年考研英语二阅读路径图</title>
+<style>
+  :root{
+    --bg:#f7efe4; --paper:#fffdfa; --ink:#211c17; --muted:#74675c;
+    --line:#ded0c0; --soft:#f0e5d7;
+    --q1:#2563eb; --q2:#07845f; --q3:#7c4dcc; --q4:#d43b32; --q5:#ce7a12;
+    --shadow:0 20px 48px rgba(47,34,19,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{margin:0;background:linear-gradient(180deg,#fcf8f1 0%,var(--bg) 100%);color:var(--ink);font-family:Georgia,"Times New Roman","Noto Serif CJK SC","Source Han Serif SC","Songti SC",serif;line-height:1.58}
+  .topbar{position:sticky;top:0;z-index:80;background:rgba(255,253,250,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+  .topbar-inner{max-width:1440px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-size:18px;font-weight:950;letter-spacing:.02em;white-space:nowrap}
+  .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  button,.jump-btn{font:800 13px/1 Georgia,"Times New Roman","Noto Serif CJK SC",serif;color:var(--ink);background:#fff9f0;border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;text-decoration:none}
+  button:hover,.jump-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(47,34,19,.10)}
+  .page{max-width:1440px;margin:0 auto;padding:24px 22px 64px}
+  .year-header{margin:0 0 18px;padding:22px 24px;border:1px solid var(--line);border-radius:28px;background:rgba(255,253,250,.72);box-shadow:var(--shadow)}
+  .year-header h1{margin:0;font-size:42px;line-height:1.08;letter-spacing:-.035em;font-weight:950}
+  .year-header p{margin:8px 0 0;color:var(--muted);font-size:15px}
+  .text-index{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .text-unit{margin:28px 0 42px;scroll-margin-top:90px;break-before:page}.text-unit:first-of-type{break-before:auto}
+  .unit-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end;margin-bottom:16px;padding:20px 22px;border:1px solid var(--line);border-radius:26px;background:var(--paper);box-shadow:var(--shadow)}
+  .unit-head h2{margin:0;font-size:32px;line-height:1.12;letter-spacing:-.02em}
+  .unit-head p{margin:8px 0 0;color:var(--muted);font-size:14px}
+  .text-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .route{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:18px 18px 16px;box-shadow:var(--shadow);margin-bottom:22px}
+  .route h3{margin:0 0 12px;font-size:18px;letter-spacing:.02em;color:#51463d}
+  .route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+  .route-card{--c:#444;position:relative;overflow:hidden;min-height:92px;cursor:pointer;background:#fffaf3;border:1px solid var(--line);border-radius:18px;padding:14px 14px 12px 17px}
+  .route-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
+  .route-card b{display:block;color:var(--c)!important;font-size:17px;margin-bottom:6px}.route-card p{margin:0;font-size:14px;line-height:1.42;color:#5a4f45}
+  .layout{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(440px,.96fr);gap:22px;align-items:start}
+  .article-panel,.analysis-panel{background:var(--paper);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}
+  .panel-head{padding:22px 24px 12px;border-bottom:1px solid var(--line)}
+  .panel-head h3{margin:0;font-size:28px;letter-spacing:-.02em}.panel-head p{margin:6px 0 0;color:var(--muted);font-size:14px}
+  .article-body{padding:22px 26px 24px}.article-text{font-size:19px;line-height:1.86;color:#1f1b16;text-align:left}
+  .para{position:relative;margin:0 0 20px;padding-left:66px}.para:last-child{margin-bottom:0}
+  .pnum{position:absolute;left:0;top:2px;display:inline-flex;align-items:center;justify-content:center;width:38px;height:28px;border-radius:999px;background:var(--soft);color:#5a4f45;font-size:13px;font-weight:950}
+  .snum{font-size:11px;color:#9b8d7f;font-weight:950;margin-right:2px;vertical-align:super}
+  .scope-anchor{--c:#444;display:inline-flex;align-items:center;margin:0 6px 0 0;padding:4px 8px;border-radius:999px;background:var(--c);color:white;font-size:12px;font-weight:950;vertical-align:middle;cursor:pointer;white-space:nowrap}
+  .kw{--c:#444;position:relative;display:inline;color:var(--c)!important;font-weight:950;padding:0 .12em .02em;border-radius:5px;text-decoration-line:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--c)!important;background:linear-gradient(to top,color-mix(in srgb,var(--c) 22%,transparent) 0%,color-mix(in srgb,var(--c) 22%,transparent) 48%,transparent 48%,transparent 100%);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 16%,transparent);cursor:pointer}
+  .ev{--c:#444;color:var(--ink);font-weight:650;border-radius:3px;padding:0 1px 1px;text-decoration-line:underline;text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-color:var(--c)!important;background:color-mix(in srgb,var(--c) 8%,transparent);cursor:pointer;transition:background .18s ease,box-shadow .18s ease}
+  .ev:after{content:attr(data-label);font-size:10px;font-weight:950;line-height:1;border-radius:999px;padding:2px 5px;margin-left:4px;color:white;vertical-align:middle;white-space:nowrap;background:var(--c)!important}
+  .analysis-panel{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow:auto}.analysis-body{padding:16px;display:grid;gap:14px}
+  .qcard{--c:#444;background:linear-gradient(180deg,#fffdfa,#fff8ed);border:1px solid var(--line);border-radius:20px;padding:16px 17px;position:relative;overflow:hidden;scroll-margin-top:90px}
+  .qcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
+  .qtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;border-bottom:1px dashed var(--line);padding-bottom:9px}.qtitle{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:950}.badge{background:var(--c)!important;color:white;border-radius:999px;padding:4px 10px;font-size:14px}.atype{color:var(--muted);font-size:14px;font-weight:900}.rightans{font-size:14px;color:var(--muted);font-weight:900}.rightans strong{font-size:25px;color:var(--ink);line-height:1}
+  .stem{margin:0 0 10px;font-size:16.8px;line-height:1.42;font-weight:950;color:#211c17}.stem-hit{border-radius:5px;padding:0 .08em;transition:background .15s ease,box-shadow .15s ease,color .15s ease}.stem-hit.map-active{background:#fff1a8;box-shadow:0 0 0 2px #f3c94d;color:#1f1b16}.stem-hit:hover{background:#fff4bf;cursor:pointer}
+  .options{list-style:none;margin:0 0 11px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:13.6px;line-height:1.32}.options li{border:1px solid #eadfd2;background:#fffefb;border-radius:12px;padding:7px 8px}.options span{font-weight:950;margin-right:4px}.options .ok{background:#f3fbf2;border-color:#a9cfab;box-shadow:inset 0 0 0 1px rgba(92,148,91,.13)}
+  .chain{display:grid;gap:7px;font-size:14px;line-height:1.47}.chain-row{display:grid;grid-template-columns:74px 1fr;gap:8px;border-top:1px solid #f0e6da;padding-top:7px}.chain-row:first-child{border-top:0;padding-top:0}.chain-row b{color:#584b41}
+  .counter{margin-top:10px;border:1px solid #eadfd2;border-radius:15px;overflow:hidden;background:#fffdfa}.counter h4{margin:0;padding:7px 10px;font-size:13.5px;background:#f0e6da;color:#55483e}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid #efe3d7;font-size:13px;line-height:1.36}.counter-row:first-of-type{border-top:0}.counter-row b{padding:7px 9px;background:#fbf6ef}.counter-row span{padding:7px 9px;color:#342d26}
+  .qcard.active,.route-card.active,.ev.active,.kw.active,.scope-anchor.active{box-shadow:0 0 0 3px var(--c),0 14px 32px rgba(47,34,19,.10);background:#fff4d4}.map-source-active{box-shadow:0 0 0 2px #f3c94d,0 6px 18px rgba(47,34,19,.12)!important;background:#fff1a8!important;color:#1f1b16!important}
+  .note-box{margin-top:14px;background:#fff8ed;border:1px solid var(--line);border-radius:18px;padding:14px 16px;color:#4f453c;font-size:14px;line-height:1.55}
+  @media (max-width:1120px){.unit-head,.layout{grid-template-columns:1fr}.text-nav{justify-content:flex-start}.analysis-panel{position:static;max-height:none}.options{grid-template-columns:1fr}}
+  @media print{@page{size:A4;margin:12mm}body{background:#fff}.topbar{display:none}.page{max-width:none;padding:0}.route,.article-panel,.analysis-panel,.qcard{box-shadow:none}.layout{grid-template-columns:1fr}.analysis-panel{position:static;max-height:none;overflow:visible}.qcard{break-inside:avoid}.ev,.kw,.badge,.route-card,.scope-anchor{print-color-adjust:exact;-webkit-print-color-adjust:exact}.article-text{font-size:14.7px;line-height:1.72}.panel-head h3{font-size:22px}.kw{box-shadow:none;background:transparent;color:var(--c)!important;text-decoration-thickness:2px}.text-unit{break-before:page}.text-unit:first-of-type{break-before:auto}}
+</style>
+<style>
+/* repair-v1: final closed-loop compatibility layer */
+.article-panel .source-supplement,.article .source-supplement{margin-top:18px;padding:12px 14px;border:1px dashed rgba(180,154,130,.45);border-radius:16px;background:rgba(255,248,237,.62);font-size:15px;line-height:1.8;color:#4f443e}.source-supplement h4{margin:0 0 8px;font-size:15px;color:#6c5b52}.source-fix{display:inline-block;margin:2px 5px 2px 0}.stem-sync-bank{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}.map-active,.kw.map-active,.ev.map-active,.stem-hit.map-active{outline:2px solid currentColor;outline-offset:2px;border-radius:5px;background:rgba(255,248,184,.42)!important}.qcard{border-color:var(--c)!important}.qcard .badge{background:var(--c)!important}.options .ok{border-color:#9dccaa!important;background:#effaf0!important}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid rgba(120,100,80,.18);padding:7px 10px}.counter-row b{font-weight:800}.chain-row{display:grid;grid-template-columns:82px 1fr;gap:12px;border-top:1px solid rgba(120,100,80,.14);padding:9px 0}.chain-row b{color:#6b5a50}.repair-note{font-size:12px;color:#8a776d;margin-top:8px}.text-unit{scroll-margin-top:90px}.qcard{scroll-margin-top:90px}
+</style><link href="year.css" rel="stylesheet"/>
+</head>
+<body class="is-entering exam-two-page">
+<div class="page-pass"><b>2017</b><span>进入英语二</span></div>
+<div class="site-shell">
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" data-exam-target="two" data-transition-year="2017" href="../index.html?exam=two">Time Garden</a>
+<nav aria-label="年份页导航" class="nav"><a class="primary" data-exam-target="two" data-transition-year="2017" href="../index.html?exam=two">返回花园首页</a><a data-exam-target="two" data-transition-year="2016" href="2016.html">← 2016</a><a data-exam-target="two" data-transition-year="2017" href="../index.html?exam=two">花园首页</a><a data-exam-target="two" data-transition-year="2018" href="2018.html">2018 →</a><button onclick="window.print()" type="button">打印 / 导出 PDF</button></nav>
+</div>
+</header>
+<main class="page">
+<section aria-labelledby="year-title-2017" class="year-masthead english2-masthead">
+<div>
+<p class="kicker">年度阅读路径 · 2017 · 英语二</p>
+<h1 id="year-title-2017">2017 年阅读路径图</h1>
+<p>英语二 Part A · Text 1—4 · 20 题 · 关键词定位与原文证据链</p>
+</div>
+<div aria-label="年份概览" class="masthead-meta"><span>4 篇阅读</span><span>20 道题卡</span></div>
+</section>
+<section class="chapter-shell">
+<div class="chapter-quicknav">
+<div class="chapter-quicknav-title">阅读章节</div>
+<div aria-label="2017 年 Text 快速跳转" class="year-text-nav"><a class="text-chip" href="#text-1">Text 1</a><a class="text-chip" href="#text-2">Text 2</a><a class="text-chip" href="#text-3">Text 3</a><a class="text-chip" href="#text-4">Text 4</a></div>
+</div>
+<div class="year-content">
+<section class="text-unit" id="text-1">
+<header class="unit-head">
+<div>
+<h2>Text 1｜高分阅读路径图解析</h2>
+<p>Q21—Q25。Parkrun 与伦敦奥运 legacy 的对比：大众参与、政府角色与作者态度。</p>
+</div>
+<nav class="text-nav"><button data-target="t1-q21" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q21</button><button data-target="t1-q22" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q22</button><button data-target="t1-q23" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q23</button><button data-target="t1-q24" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q24</button><button data-target="t1-q25" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q25</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t1-q21" data-target="t1-q21" style="--c:var(--q1)">
+<b>Q21｜细节题</b>
+<p>P1：数字规模与扩散范围显示 Parkrun 已广受欢迎。</p>
+</article>
+<article class="route-card" data-key="t1-q22" data-target="t1-q22" style="--c:var(--q2)">
+<b>Q22｜细节题</b>
+<p>P2：Olympic legacy 本想让全民运动，但实际参与率未成功增长。</p>
+</article>
+<article class="route-card" data-key="t1-q23" data-target="t1-q23" style="--c:var(--q3)">
+<b>Q23｜对比细节题</b>
+<p>P3：Parkrun 欢迎任何人，强调参与；奥运叙事强调 elite athletes。</p>
+</article>
+<article class="route-card" data-key="t1-q24" data-target="t1-q24" style="--c:var(--q4)">
+<b>Q24｜细节题</b>
+<p>P4：政府应提供 common goods，如场地和球场经费。</p>
+</article>
+<article class="route-card" data-key="t1-q25" data-target="t1-q25" style="--c:var(--q5)">
+<b>Q25｜态度题</b>
+<p>P4：作者用 selling / squeezing / declining attention 批评历届政府。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t1-q21" data-map="t1-q21-m0" style="--c:var(--q1)">Q21 段落定位</span>Every Saturday morning, at 9 am, <span class="ev" data-key="t1-q21" data-label="Q21" style="--c:var(--q1)">more than 50,000 runners set off to run 5km around their local park</span>. The <mark class="kw" data-key="t1-q21" data-map="t1-q21-m1" style="--c:var(--q1)">Parkrun</mark> phenomenon began with a dozen friends and <span class="ev" data-key="t1-q21" data-label="Q21" style="--c:var(--q1)">has inspired 400 events in the UK and more abroad</span>. Events are free, staffed by thousands of volunteers. Runners range from four years old to grandparents; their times range from Andrew Baddeley’s world record 13 minutes 48 seconds up to an hour.</p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t1-q22" data-map="t1-q22-m0" style="--c:var(--q2)">Q22 legacy 定位</span><mark class="kw" data-key="t1-q22" data-map="t1-q22-m1" style="--c:var(--q2)">Parkrun is succeeding where London’s Olympic “legacy” is failing</mark>. Ten years ago on Monday, it was announced that the Games of the 30th Olympiad would be in London. Planning documents pledged that the great legacy of the Games would be to <mark class="kw" data-key="t1-q22" data-map="t1-q22-m2" style="--c:var(--q2)">lever a nation of sport lovers away from their couches</mark>. The population would be fitter, healthier and produce more winners. <span class="ev" data-key="t1-q22" data-label="Q22" style="--c:var(--q2)">It has not happened. The number of adults doing weekly sport did rise, by nearly 2 million in the run-up to 2012 — but the general population was growing faster. Worse, the numbers are now falling at an accelerating rate</span>. The opposition claims primary school pupils doing at least two hours of sport a week have nearly halved. Obesity has risen among adults and children. Official retrospections continue as to why London 2012 failed to “inspire a generation.” The success of Parkrun offers answers.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t1-q23" data-map="t1-q23-m0" style="--c:var(--q3)">Q23 差异定位</span><mark class="kw" data-key="t1-q23" data-map="t1-q23-m1" style="--c:var(--q3)">Parkrun is not a race but a time trial</mark>: Your only competitor is the clock. The ethos welcomes anybody. There is as much joy over a puffed-out first-timer being clapped over the line as there is about top talent shining. The Olympic bidders, by contrast, wanted to get more people doing sport and to produce more elite athletes. <span class="ev" data-key="t1-q23" data-label="Q23" style="--c:var(--q3)">The dual aim was mixed up: The stress on success over taking part was intimidating for newcomers</span>.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t1-q24" data-map="t1-q24-m0" style="--c:var(--q4)">Q24 政府职责定位</span><span class="scope-anchor" data-key="t1-q25" data-map="t1-q25-m0" style="--c:var(--q5)">Q25 态度定位</span>Indeed, there is something a little absurd in the state getting involved in the planning of such a fundamentally “grassroots” concept as community sports associations. If there is a role for government, it should really be getting involved in <span class="ev" data-key="t1-q24" data-label="Q24" style="--c:var(--q4)">providing common goods — making sure there is space for playing fields and the money to pave tennis and netball courts, and encouraging the provision of all these activities in schools</span>. But <span class="ev" data-key="t1-q25" data-label="Q25" style="--c:var(--q5)">successive governments have presided over selling green spaces, squeezing money from local authorities and declining attention on sport in education</span>. Instead of wordy, worthy strategies, future governments need to do more to provide the conditions for sport to thrive. Or at least not make them worse.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t1-q24" data-map="t1-q24-m0">governments should</span> <span class="kw source-fix" data-key="t1-q25" data-map="t1-q25-m0">governments</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t1-q21" id="t1-q21" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q21</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">According to <span class="stem-hit" data-map="t1-q21-m0">Paragraph 1</span>, <span class="stem-hit" data-map="t1-q21-m1">Parkrun</span> has ______.</p>
+<ul class="options"><li class="ok"><span>[A]</span> gained great popularity</li><li class=""><span>[B]</span> created many jobs</li><li class=""><span>[C]</span> strengthened community ties</li><li class=""><span>[D]</span> become an official festival</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 1 → P1 段首锚点；Parkrun 原词复现；has 对应现状描述。</span></div><div class="chain-row"><b>定位</b><span>题干指定 P1，先看 Parkrun 的规模、参与人数和活动数量；这些是 popularity 的证据。</span></div><div class="chain-row"><b>证据</b><span>P1 说每周有 more than 50,000 runners，且从 a dozen friends 发展到 400 events in the UK and more abroad。</span></div><div class="chain-row"><b>替换</b><span>more than 50,000 runners / 400 events = gained great popularity。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>staffed by volunteers，反而说明不是创造许多 jobs。</span></div><div class="counter-row"><b>C</b><span>community ties 可能有联想，但 P1 未直接说增强社区关系。</span></div><div class="counter-row"><b>D</b><span>official festival 没有依据，Parkrun 是免费跑步活动。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q22" id="t1-q22" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q22</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">The author believes that London’s Olympic <span class="stem-hit" data-map="t1-q22-m1">“legacy”</span> has failed to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q22-m0">Q22 legacy 定位</span><span class="stem-hit" data-map="t1-q22-m2">lever a nation of sport lovers away from their couches</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> boost population growth</li><li class="ok"><span>[B]</span> promote sport participation</li><li class=""><span>[C]</span> improve the city’s image</li><li class=""><span>[D]</span> increase sport hours in schools</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>London’s Olympic legacy 原词复现；failed 对应 P2 “is failing / It has not happened”。</span></div><div class="chain-row"><b>定位</b><span>定位到 P2 先找 legacy 的目标，再看 “It has not happened” 后的失败表现。</span></div><div class="chain-row"><b>证据</b><span>P2 说 legacy 目标是 lever a nation of sport lovers away from their couches，但 It has not happened，成年人每周运动人数增幅不及人口，且后来加速下降。</span></div><div class="chain-row"><b>替换</b><span>lever ... away from their couches / doing weekly sport = promote sport participation。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>人口增长只是比较背景，不是 legacy 目标。</span></div><div class="counter-row"><b>C</b><span>城市形象无证据。</span></div><div class="counter-row"><b>D</b><span>学校运动时间只是反对派补充现象，不是 legacy 核心目标。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q23" id="t1-q23" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q23</span><span class="atype">对比细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem"><span class="stem-hit" data-map="t1-q23-m1">Parkrun</span> is different from Olympic games in that it ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q23-m0">Q23 差异定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> aims at discovering talents</li><li class=""><span>[B]</span> focuses on mass competition</li><li class="ok"><span>[C]</span> does not emphasize elitism</li><li class=""><span>[D]</span> does not attract first-timers</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Parkrun 原词复现；different from Olympic games 对应 by contrast。</span></div><div class="chain-row"><b>定位</b><span>定位 P3 对比结构：Parkrun not a race / welcomes anybody；Olympic bidders wanted elite athletes。</span></div><div class="chain-row"><b>证据</b><span>P3 说 Parkrun is not a race；welcomes anybody；first-timer 与 top talent 同样被鼓掌。相反，Olympic bidders wanted ... more elite athletes。</span></div><div class="chain-row"><b>替换</b><span>welcomes anybody / first-timer 与 top talent 同等被认可 = does not emphasize elitism。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>discovering talents 是 Olympic bidders 的倾向，不是 Parkrun。</span></div><div class="counter-row"><b>B</b><span>Parkrun is not a race，因此不是 mass competition。</span></div><div class="counter-row"><b>D</b><span>原文恰恰说 first-timer 也被欢迎，D 反向。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q24" id="t1-q24" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q24</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">With regard to mass sports, the author holds that <span class="stem-hit" data-map="t1-q24-m0">governments should</span> ______.</p>
+<ul class="options"><li class=""><span>[A]</span> organize “grassroots” sports events</li><li class=""><span>[B]</span> supervise local sports associations</li><li class=""><span>[C]</span> increase funds for sports clubs</li><li class="ok"><span>[D]</span> invest in public sports facilities</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>governments should 对应 If there is a role for government, it should；mass sports 对应 community sports associations。</span></div><div class="chain-row"><b>定位</b><span>P4 明确提出政府角色；破折号后列举 playing fields 与 courts。</span></div><div class="chain-row"><b>证据</b><span>P4 说政府应 providing common goods：确保 playing fields 有空间，并有 money to pave tennis and netball courts。</span></div><div class="chain-row"><b>替换</b><span>space for playing fields / money to pave courts = public sports facilities；providing = invest in。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>作者认为政府规划 grassroots 概念有些荒唐，不是组织活动。</span></div><div class="counter-row"><b>B</b><span>supervise associations 未出现。</span></div><div class="counter-row"><b>C</b><span>sports clubs 资金不是原文范围；原文是公共场地设施。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q25" id="t1-q25" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q25</span><span class="atype">态度题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">The author’s attitude to what UK <span class="stem-hit" data-map="t1-q25-m0">governments</span> have done for sports is ______.</p>
+<ul class="options"><li class=""><span>[A]</span> tolerant</li><li class="ok"><span>[B]</span> critical</li><li class=""><span>[C]</span> uncertain</li><li class=""><span>[D]</span> sympathetic</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>governments 原词复现；attitude 看评价词和结论句。</span></div><div class="chain-row"><b>定位</b><span>定位 P4 “But successive governments...” 后的负面动词群和末句 “not make them worse”。</span></div><div class="chain-row"><b>证据</b><span>P4 批评政府 presided over selling green spaces, squeezing money, declining attention，并说未来至少不要 make them worse。</span></div><div class="chain-row"><b>替换</b><span>selling / squeezing / declining / not make worse = critical。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>tolerant 不符合连续负面评价。</span></div><div class="counter-row"><b>C</b><span>作者态度明确，不是不确定。</span></div><div class="counter-row"><b>D</b><span>sympathetic 与批评语气相反。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-2">
+<header class="unit-head">
+<div>
+<h2>Text 2｜高分阅读路径图解析</h2>
+<p>Q26—Q30。父母屏幕使用、亲子互动与 Tronick 对“过度互动意识形态”的反驳。</p>
+</div>
+<nav class="text-nav"><button data-target="t2-q26" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q26</button><button data-target="t2-q27" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q27</button><button data-target="t2-q28" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q28</button><button data-target="t2-q29" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q29</button><button data-target="t2-q30" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q30</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t2-q26" data-target="t2-q26" style="--c:var(--q1)">
+<b>Q26｜细节题</b>
+<p>P1：Radesky 说 tech 设计目的是 suck you in / promote maximal engagement。</p>
+</article>
+<article class="route-card" data-key="t2-q27" data-target="t2-q27" style="--c:var(--q2)">
+<b>Q27｜细节题</b>
+<p>P2：food-testing 中母亲用设备导致语言和非语言互动都减少。</p>
+</article>
+<article class="route-card" data-key="t2-q28" data-target="t2-q28" style="--c:var(--q3)">
+<b>Q28｜例证题</b>
+<p>P3：still face experiment 用来说明父母回应儿童情感需求的重要性。</p>
+</article>
+<article class="route-card" data-key="t2-q29" data-target="t2-q29" style="--c:var(--q4)">
+<b>Q29｜细节题</b>
+<p>P4：oppressive ideology demands parents should always be interacting。</p>
+</article>
+<article class="route-card" data-key="t2-q30" data-target="t2-q30" style="--c:var(--q5)">
+<b>Q30｜细节题</b>
+<p>P4：Tronick 认为儿童用屏幕也可能让父母获得休息/处理事务时间。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t2-q26" data-map="t2-q26-m0" style="--c:var(--q1)">Q26 Radesky 定位</span>With so much focus on children’s use of screens, it’s easy for parents to forget about their own screen use. “Tech is designed to really <mark class="kw" data-key="t2-q26" data-map="t2-q26-m1" style="--c:var(--q1)">suck you in</mark>,” says <mark class="kw" data-key="t2-q26" data-map="t2-q26-m2" style="--c:var(--q1)">Jenny Radesky</mark> in her study of digital play, “and digital products are there to <span class="ev" data-key="t2-q26" data-label="Q26" style="--c:var(--q1)">promote maximal engagement</span>. It makes it hard to disengage, and leads to a lot of bleed-over into the family routine.”</p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t2-q27" data-map="t2-q27-m0" style="--c:var(--q2)">Q27 food-testing 定位</span><mark class="kw" data-key="t2-q27" data-map="t2-q27-m1" style="--c:var(--q2)">Radesky’s food-testing exercise</mark> studied the use of mobile phones and tablets at mealtimes by giving mother-child pairs a food-testing exercise. She found that mothers who used devices during the exercise <span class="ev" data-key="t2-q27" data-label="Q27" style="--c:var(--q2)">started 20 per cent fewer verbal and 39 per cent fewer nonverbal interactions with their children</span>. During a separate observation, she saw that phones became a source of tension in the family. Parents would be looking at their emails while the children would be making excited bids for their attention.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t2-q28" data-map="t2-q28-m0" style="--c:var(--q3)">Q28 still face 定位</span>Infants are wired to look at parents’ faces to try to understand their world, and if those faces are blank and unresponsive — as they often are when absorbed in a device — it can be extremely disconcerting for the children. Radesky cites the <mark class="kw" data-key="t2-q28" data-map="t2-q28-m1" style="--c:var(--q3)">“still face experiment”</mark> devised by developmental psychologist Ed Tronick in the 1970s. In it, a mother is asked to interact with her child in a normal way before putting on a blank expression and not giving them any visual social feedback: The child becomes increasingly distressed as she tries to capture her mother’s attention. “Parents don’t have to be exquisitely present at all times, but there needs to be a balance and parents need to be <span class="ev" data-key="t2-q28" data-label="Q28" style="--c:var(--q3)">responsive and sensitive to a child’s verbal or nonverbal expressions of an emotional need</span>,” says Radesky.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t2-q29" data-map="t2-q29-m0" style="--c:var(--q4)">Q29 Tronick ideology</span><span class="scope-anchor" data-key="t2-q30" data-map="t2-q30-m0" style="--c:var(--q5)">Q30 Tronick 观点</span>On the other hand, <mark class="kw" data-key="t2-q29" data-map="t2-q29-m1" style="--c:var(--q4)">Tronick</mark> himself is concerned that the worries about kids’ use of screens are born out of an <mark class="kw" data-key="t2-q29" data-map="t2-q29-m2" style="--c:var(--q4)">“oppressive ideology</mark> that demands that parents should always be interacting” with their children: <span class="ev" data-key="t2-q29" data-label="Q29" style="--c:var(--q4)">“It’s based on a somewhat fantasised, very white, very upper-middle-class ideology that says if you’re failing to expose your child to 30,000 words you are neglecting them.”</span> Tronick believes that just because a child isn’t learning from the screen doesn’t mean there’s no value to it — particularly if it gives parents time to have a shower, do housework or simply have a break from their child. Parents, he says, <span class="ev" data-key="t2-q30" data-label="Q30" style="--c:var(--q5)">can get a lot out of using their devices to speak to a friend or get some work out of the way. This can make them feel happier, which lets them be more available to their child the rest of the time</span>.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t2-q30" data-map="t2-q30-m0">Tronick</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t2-q26" id="t2-q26" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q26</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">According to <span class="stem-hit" data-map="t2-q26-m2">Jenny Radesky</span>, digital products are designed to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q26-m0">Q26 Radesky 定位</span><span class="stem-hit" data-map="t2-q26-m1">suck you in</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> simplify routine matters</li><li class="ok"><span>[B]</span> absorb user attention</li><li class=""><span>[C]</span> better interpersonal relations</li><li class=""><span>[D]</span> increase work efficiency</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Jenny Radesky 原词复现；designed to 对应 Tech is designed to / products are there to。</span></div><div class="chain-row"><b>定位</b><span>定位 P1 引号内容；“suck you in” 与 “maximal engagement” 是同义证据。</span></div><div class="chain-row"><b>证据</b><span>P1 说 Tech is designed to really suck you in，digital products are there to promote maximal engagement。</span></div><div class="chain-row"><b>替换</b><span>suck you in / maximal engagement = absorb user attention。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>routine 是家庭日程被影响，不是产品设计目的。</span></div><div class="counter-row"><b>C</b><span>文中说会 bleed-over into family routine，不是改善关系。</span></div><div class="counter-row"><b>D</b><span>work efficiency 无证据。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q27" id="t2-q27" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q27</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem"><span class="stem-hit" data-map="t2-q27-m1">Radesky’s food-testing exercise</span> shows that mothers’ use of devices ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q27-m0">Q27 food-testing 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> takes away babies’ appetite</li><li class=""><span>[B]</span> distracts children’s attention</li><li class=""><span>[C]</span> slows down babies’ verbal development</li><li class="ok"><span>[D]</span> reduces mother-child communication</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>food-testing exercise 原词复现；mothers’ use of devices 对应 mothers who used devices。</span></div><div class="chain-row"><b>定位</b><span>定位 P2 研究结果数字句；fewer verbal / nonverbal interactions 是核心。</span></div><div class="chain-row"><b>证据</b><span>P2 说使用设备的母亲与孩子的 verbal interactions 少 20%，nonverbal interactions 少 39%。</span></div><div class="chain-row"><b>替换</b><span>fewer verbal and nonverbal interactions = reduces mother-child communication。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>food-testing 不是说影响食欲。</span></div><div class="counter-row"><b>B</b><span>孩子争取注意力，但结果重点是亲子互动减少，不是分散孩子注意力。</span></div><div class="counter-row"><b>C</b><span>没有追踪语言发展变慢。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q28" id="t2-q28" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q28</span><span class="atype">例证题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">Radesky cites the <span class="stem-hit" data-map="t2-q28-m1">“still face experiment”</span> to show that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q28-m0">Q28 still face 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> it is easy for children to get used to blank expressions</li><li class=""><span>[B]</span> verbal expressions are unnecessary for emotional exchange</li><li class=""><span>[C]</span> children are insensitive to changes in their parents’ mood</li><li class="ok"><span>[D]</span> parents need to respond to children’s emotional needs</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>still face experiment 原词复现；show that 要看例子后的结论句。</span></div><div class="chain-row"><b>定位</b><span>P3 先描述儿童 distressed，再用 Radesky 结论句点明 parents need responsive and sensitive。</span></div><div class="chain-row"><b>证据</b><span>P3 说父母需要 responsive and sensitive to a child’s verbal or nonverbal expressions of an emotional need。</span></div><div class="chain-row"><b>替换</b><span>responsive and sensitive to emotional need = respond to children’s emotional needs。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>孩子是 distressed，不是容易适应。</span></div><div class="counter-row"><b>B</b><span>原文强调 verbal or nonverbal expressions，两者都重要。</span></div><div class="counter-row"><b>C</b><span>孩子对 blank/unresponsive 很敏感，C 反向。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q29" id="t2-q29" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q29</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">The <span class="stem-hit" data-map="t2-q29-m2">oppressive ideology</span> mentioned by <span class="stem-hit" data-map="t2-q29-m1">Tronick</span> requires parents to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q29-m0">Q29 Tronick ideology</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> protect kids from exposure to wild fantasies</li><li class=""><span>[B]</span> teach their kids at least 30,000 words a year</li><li class="ok"><span>[C]</span> ensure constant interaction with their children</li><li class=""><span>[D]</span> remain concerned about kids’ use of screens</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Tronick / oppressive ideology 原词复现；requires 对应 demands。</span></div><div class="chain-row"><b>定位</b><span>定位 P4 “oppressive ideology that demands...” 这一句。</span></div><div class="chain-row"><b>证据</b><span>P4 明说这种 ideology demands that parents should always be interacting with their children。</span></div><div class="chain-row"><b>替换</b><span>always be interacting = ensure constant interaction。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>wild fantasies 未出现。</span></div><div class="counter-row"><b>B</b><span>30,000 words 是该意识形态的例子，不是“每年教词”的具体要求。</span></div><div class="counter-row"><b>D</b><span>worries 是出发点，不是 ideology 要求。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q30" id="t2-q30" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q30</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">According to <span class="stem-hit" data-map="t2-q30-m0">Tronick</span>, kids’ use of screens may ______.</p>
+<ul class="options"><li class="ok"><span>[A]</span> give their parents some free time</li><li class=""><span>[B]</span> make their parents more creative</li><li class=""><span>[C]</span> help them with their homework</li><li class=""><span>[D]</span> help them become more attentive</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Tronick 原词复现；kids’ use of screens 对应 child isn’t learning from the screen。</span></div><div class="chain-row"><b>定位</b><span>P4 后半段 “doesn’t mean there’s no value” 后列出价值。</span></div><div class="chain-row"><b>证据</b><span>P4 说如果屏幕给父母时间 shower、housework、break、speak to a friend 或 get work out of the way，就有价值。</span></div><div class="chain-row"><b>替换</b><span>time to have a shower / have a break / get work out of the way = give parents some free time。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>creative 未出现。</span></div><div class="counter-row"><b>C</b><span>homework 未出现。</span></div><div class="counter-row"><b>D</b><span>attentive 与孩子无关，原文说父母之后更 available。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-3">
+<header class="unit-head">
+<div>
+<h2>Text 3｜高分阅读路径图解析</h2>
+<p>Q31—Q35。Gap year 的社会压力、大学适应价值与经济价值。</p>
+</div>
+<nav class="text-nav"><button data-target="t3-q31" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q31</button><button data-target="t3-q32" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q32</button><button data-target="t3-q33" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q33</button><button data-target="t3-q34" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q34</button><button data-target="t3-q35" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q35</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t3-q31" data-target="t3-q31" style="--c:var(--q1)">
+<b>Q31｜细节题</b>
+<p>P1：学生不休 gap year 的原因之一是周围人都上大学，自己停一年显得奇怪。</p>
+</article>
+<article class="route-card" data-key="t3-q32" data-target="t3-q32" style="--c:var(--q2)">
+<b>Q32｜推断题</b>
+<p>P3：美澳研究显示 gap year 帮助新生应对大学适应压力。</p>
+</article>
+<article class="route-card" data-key="t3-q33" data-target="t3-q33" style="--c:var(--q3)">
+<b>Q33｜词义题</b>
+<p>P3：acclimation 与 adjusting to college / new environment 并列呼应。</p>
+</article>
+<article class="route-card" data-key="t3-q34" data-target="t3-q34" style="--c:var(--q4)">
+<b>Q34｜细节题</b>
+<p>P4：gap year 通过让学生先弄清想学什么，减少昂贵的换专业成本。</p>
+</article>
+<article class="route-card" data-key="t3-q35" data-target="t3-q35" style="--c:var(--q5)">
+<b>Q35｜主旨标题题</b>
+<p>全文：作者反驳 gap year 误解，集中论证 gap year 的学业和经济价值。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t3-q31" data-map="t3-q31-m0" style="--c:var(--q1)">Q31 原因定位</span>Today, widespread social pressure to immediately go to college in conjunction with increasingly high expectations in a fast-moving world often causes students to completely overlook the possibility of taking a <mark class="kw" data-key="t3-q31" data-map="t3-q31-m1" style="--c:var(--q1)">gap year</mark>. After all, <span class="ev" data-key="t3-q31" data-label="Q31" style="--c:var(--q1)">if everyone you know is going to college in the fall, it seems silly to stay back a year</span>, doesn’t it? And after going to school for 12 years, it doesn’t feel natural to spend a year doing something that isn’t academic.</p>
+<p class="para"><span class="pnum">P2</span>But while this may be true, it’s not a good enough reason to condemn gap years. There’s always a constant fear of falling behind everyone else on the socially perpetuated “race to the finish line,” whether that be toward graduate school, medical school or a lucrative career. But despite common misconceptions, a gap year does not hinder the success of academic pursuits — in fact, it probably enhances it.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t3-q32" data-map="t3-q32-m0" style="--c:var(--q2)">Q32 研究定位</span><span class="scope-anchor" data-key="t3-q33" data-map="t3-q33-m0" style="--c:var(--q3)">Q33 词义定位</span><mark class="kw" data-key="t3-q32" data-map="t3-q32-m1" style="--c:var(--q2)">Studies from the United States and Australia</mark> show that students who take a gap year are generally better prepared for and perform better in college than those who do not. Rather than pulling students back, a gap year pushes them ahead by preparing them for independence, new responsibilities and environmental changes — all things that first-year students often struggle with the most. <span class="ev" data-key="t3-q32" data-label="Q32" style="--c:var(--q2)">Gap year experiences can lessen the blow when it comes to adjusting to college and being thrown into a brand new environment, making it easier to focus on academics and activities rather than</span> <span class="ev" data-key="t3-q33" data-label="Q33" style="--c:var(--q3)"><mark class="kw" data-key="t3-q33" data-map="t3-q33-m1" style="--c:var(--q3)">acclimation</mark> blunders</span>.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t3-q34" data-map="t3-q34-m0" style="--c:var(--q4)">Q34 省钱定位</span><span class="scope-anchor" data-key="t3-q35" data-map="t3-q35-m0" style="--c:var(--q5)">Q35 主旨定位</span>If you’re not convinced of the inherent value in taking a year off to explore interests, consider its financial impact on future academic choices. According to the National Center for Education Statistics, nearly 80 percent of college students end up changing their majors at least once. This isn’t necessarily a bad thing, but depending on the school, it can be very expensive. <span class="ev" data-key="t3-q34" data-label="Q34" style="--c:var(--q4)">Taking a gap year can help students make a more informed decision about what they want to study before they start paying tuition, reducing the risk of costly major changes later on</span>.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t3-q34" data-map="t3-q34-m0">save money</span> <span class="kw source-fix" data-key="t3-q35" data-map="t3-q35-m0">title</span> <span class="ev source-fix" data-key="t3-q35" data-map="t3-q35-m0">P2 明说不应 condemn gap years，且 gap year probably enhances academic pursuits；P3/P4 分别论证适应大学和节省专业转换成本。</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t3-q31" id="t3-q31" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q31</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">One of the reasons for high-school graduates not taking a <span class="stem-hit" data-map="t3-q31-m1">gap year</span> is that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q31-m0">Q31 原因定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> they think it academically misleading</li><li class=""><span>[B]</span> they have a lot of fun to expect in college</li><li class="ok"><span>[C]</span> it feels strange to do differently from others</li><li class=""><span>[D]</span> it seems worthless to take off-campus courses</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>gap year 原词复现；reasons 对应 P1 social pressure / everyone you know is going。</span></div><div class="chain-row"><b>定位</b><span>定位 P1；题问“不休 gap year 的原因”，看 “After all” 后的解释。</span></div><div class="chain-row"><b>证据</b><span>P1 说如果认识的人秋天都去上大学，stay back a year seems silly；12 年上学后做非学术事情也不自然。</span></div><div class="chain-row"><b>替换</b><span>everyone you know is going to college / seems silly to stay back = feels strange to do differently from others。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>P1 说不 academic 感觉不自然，不是 academically misleading。</span></div><div class="counter-row"><b>B</b><span>fun in college 未出现。</span></div><div class="counter-row"><b>D</b><span>off-campus courses 和 worthless 无依据。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q32" id="t3-q32" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q32</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem"><span class="stem-hit" data-map="t3-q32-m1">Studies from the US and Australia</span> imply that taking a gap year helps ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q32-m0">Q32 研究定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> keep students from being unrealistic</li><li class=""><span>[B]</span> lower risks in choosing careers</li><li class=""><span>[C]</span> ease freshmen’s financial burdens</li><li class="ok"><span>[D]</span> relieve freshmen of pressures</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Studies from the US and Australia 原词复现；helps 对应 better prepared / lessen the blow。</span></div><div class="chain-row"><b>定位</b><span>定位 P3 研究句，顺读到 “lessen the blow” 对新生困难的总结。</span></div><div class="chain-row"><b>证据</b><span>P3 说 gap year 让学生为 independence、new responsibilities、environmental changes 做准备，并 lessen the blow when adjusting to college。</span></div><div class="chain-row"><b>替换</b><span>lessen the blow / struggle with = relieve freshmen of pressures。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>unrealistic 未出现。</span></div><div class="counter-row"><b>B</b><span>career 选择风险属于后文兴趣/专业选择，不是美澳研究直接含义。</span></div><div class="counter-row"><b>C</b><span>financial burdens 是 P4 话题，不是 P3 研究结论。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q33" id="t3-q33" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q33</span><span class="atype">词义题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">The word <span class="stem-hit" data-map="t3-q33-m1">“acclimation”</span> (<span class="stem-hit" data-map="t3-q33-m0">Para. 3</span>) is closest in meaning to ______.</p>
+<ul class="options"><li class="ok"><span>[A]</span> adaptation</li><li class=""><span>[B]</span> application</li><li class=""><span>[C]</span> motivation</li><li class=""><span>[D]</span> competition</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>acclimation 原词复现；Para. 3 定位。</span></div><div class="chain-row"><b>定位</b><span>在 P3 找上下文：adjusting to college and being thrown into a brand new environment。</span></div><div class="chain-row"><b>证据</b><span>P3 中 acclimation blunders 指适应大学和新环境时的失误。</span></div><div class="chain-row"><b>替换</b><span>adjusting to new environment = adaptation。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>application 是申请/应用，与适应无关。</span></div><div class="counter-row"><b>C</b><span>motivation 是动机，不是环境适应。</span></div><div class="counter-row"><b>D</b><span>competition 是竞争，文中在 P2 提到 race，但不是该词义。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q34" id="t3-q34" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q34</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">A gap year may <span class="stem-hit" data-map="t3-q34-m0">save money</span> for students by helping them ______.</p>
+<ul class="options"><li class=""><span>[A]</span> avoid academic failures</li><li class=""><span>[B]</span> establish long-term goals</li><li class=""><span>[C]</span> switch to another college</li><li class="ok"><span>[D]</span> decide on the right major</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>save money 对应 financial impact / expensive；helping them 对应 make informed decision about what to study。</span></div><div class="chain-row"><b>定位</b><span>定位 P4 financial impact 与 changing majors；结论句说明省钱机制。</span></div><div class="chain-row"><b>证据</b><span>P4 说很多学生换专业，可能很贵；gap year 能帮助学生在交学费前更明智地决定想学什么，降低后续昂贵换专业风险。</span></div><div class="chain-row"><b>替换</b><span>what they want to study / avoid costly major changes = decide on the right major。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>academic failures 未出现。</span></div><div class="counter-row"><b>B</b><span>long-term goals 过泛，文中是专业选择。</span></div><div class="counter-row"><b>C</b><span>switch to another college 未出现。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q35" id="t3-q35" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q35</span><span class="atype">主旨标题题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">The most suitable <span class="stem-hit" data-map="t3-q35-m0">title</span> for this text would be ______.</p>
+<ul class="options"><li class="ok"><span>[A]</span> In Favor of the Gap Year</li><li class=""><span>[B]</span> The ABCs of the Gap Year</li><li class=""><span>[C]</span> The Gap Year Comes Back</li><li class=""><span>[D]</span> The Gap Year: A Dilemma</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>title 需综合全文；主轴是为 gap year 辩护。</span></div><div class="chain-row"><b>定位</b><span>全文结构：P1 写不选择 gap year 的社会压力；P2—P4 连续反驳并列举优点。</span></div><div class="chain-row"><b>证据</b><span>P2 明说不应 condemn gap years，且 gap year probably enhances academic pursuits；P3/P4 分别论证适应大学和节省专业转换成本。</span></div><div class="chain-row"><b>替换</b><span>反驳误解 + 论证好处 = In Favor of the Gap Year。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>不是介绍基础知识 ABCs，而是论证立场。</span></div><div class="counter-row"><b>C</b><span>没有“重新流行/回归”的叙述。</span></div><div class="counter-row"><b>D</b><span>文中承认顾虑，但核心不是两难，而是支持。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-4">
+<header class="unit-head">
+<div>
+<h2>Text 4｜高分阅读路径图解析</h2>
+<p>Q36—Q40。野火治理：财政压力、公共资金、气候之外的系统视角。</p>
+</div>
+<nav class="text-nav"><button data-target="t4-q36" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q36</button><button data-target="t4-q37" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q37</button><button data-target="t4-q38" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q38</button><button data-target="t4-q39" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q39</button><button data-target="t4-q40" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q40</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t4-q36" data-target="t4-q36" style="--c:var(--q1)">
+<b>Q36｜细节题</b>
+<p>P1—P2：2015 年林务局灭火支出首次超过年度预算一半。</p>
+</article>
+<article class="route-card" data-key="t4-q37" data-target="t4-q37" style="--c:var(--q2)">
+<b>Q37｜推断题</b>
+<p>P3—P4：magnifying glass 指仔细审视公共资金是否投向高火险地区，并转向低风险地区。</p>
+</article>
+<article class="route-card" data-key="t4-q38" data-target="t4-q38" style="--c:var(--q3)">
+<b>Q38｜细节题</b>
+<p>P6—P7：Moritz 承认 climate 重要，但不能牺牲 equation 的其他部分。</p>
+</article>
+<article class="route-card" data-key="t4-q39" data-target="t4-q39" style="--c:var(--q4)">
+<b>Q39｜原因题</b>
+<p>P8：过度简化源于没有认识人类系统与景观相互联系。</p>
+</article>
+<article class="route-card" data-key="t4-q40" data-target="t4-q40" style="--c:var(--q5)">
+<b>Q40｜细节题</b>
+<p>P9—P10：Balch 认为人类要承认火在人类生活中的不可避免存在。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t4-q36" data-map="t4-q36-m0" style="--c:var(--q1)">Q36 2015 定位</span>Though often viewed as a problem for western states, the growing frequency of wildfires is a national concern because of its impact on federal tax dollars, says Professor Max Moritz, a specialist in fire ecology and management.</p>
+<p class="para"><span class="pnum">P2</span>In 2015, the US Forest Service for the first time <span class="ev" data-key="t4-q36" data-label="Q36" style="--c:var(--q1)">spent more than half of its $5.5 billion annual budget fighting fires — nearly double the percentage it spent on such efforts 20 years ago</span>. In effect, fewer federal funds today are going towards the agency’s other work — such as forest conservation, watershed and cultural resources management, and infrastructure upkeep — that affect the lives of all Americans.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t4-q37" data-map="t4-q37-m0" style="--c:var(--q2)">Q37 magnifying glass</span>Another nationwide concern is whether public funds from other agencies are going into construction in fire-prone districts. As Moritz puts it, how often are federal dollars building homes that are likely to be lost to a wildfire?</p>
+<p class="para"><span class="pnum">P4</span>“It’s already a huge problem from a public expenditure perspective for the whole country,” he says. “We need to <mark class="kw" data-key="t4-q37" data-map="t4-q37-m1" style="--c:var(--q2)">take a magnifying glass</mark> to that. Like, ‘Wait a minute, is this OK?’ Do we want instead to <span class="ev" data-key="t4-q37" data-label="Q37" style="--c:var(--q2)">redirect those funds to concentrate on lower-hazard parts of the landscape</span>?”</p>
+<p class="para"><span class="pnum">P5</span>Such a view would require a corresponding shift in the way US society today views fire, researchers say.</p>
+<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="t4-q38" data-map="t4-q38-m0" style="--c:var(--q3)">Q38 climate 定位</span>For one thing, conversations about wildfires need to be more inclusive. Over the past decade, the focus has been on <mark class="kw" data-key="t4-q38" data-map="t4-q38-m1" style="--c:var(--q3)">climate change</mark> — how the warming of the Earth from greenhouse gases is leading to conditions that worsen fires.</p>
+<p class="para"><span class="pnum">P7</span>While climate is a key element, <mark class="kw" data-key="t4-q38" data-map="t4-q38-m2" style="--c:var(--q3)">Moritz</mark> says, <span class="ev" data-key="t4-q38" data-label="Q38" style="--c:var(--q3)">it shouldn’t come at the expense of the rest of the equation</span>.</p>
+<p class="para"><span class="pnum">P8</span><span class="scope-anchor" data-key="t4-q39" data-map="t4-q39-m0" style="--c:var(--q4)">Q39 simplified view</span>“The <mark class="kw" data-key="t4-q39" data-map="t4-q39-m1" style="--c:var(--q4)">human systems</mark>” and the <mark class="kw" data-key="t4-q39" data-map="t4-q39-m2" style="--c:var(--q4)">landscapes</mark> we live on are linked, and the interactions go both ways,” he says. Failing to recognize that, he notes, leads to <mark class="kw" data-key="t4-q39" data-map="t4-q39-m3" style="--c:var(--q4)">“an overly simplified view”</mark> of what the solutions might be. <span class="ev" data-key="t4-q39" data-label="Q39" style="--c:var(--q4)">Our perception of the problem and of what the solution is becomes very limited</span>.”</p>
+<p class="para"><span class="pnum">P9</span><span class="scope-anchor" data-key="t4-q40" data-map="t4-q40-m0" style="--c:var(--q5)">Q40 Balch 定位</span>At the same time, people continue to treat fire as an event that needs to wholly controlled and unleashed only out of necessity, says Professor <mark class="kw" data-key="t4-q40" data-map="t4-q40-m1" style="--c:var(--q5)">Balch</mark> at the University of Colorado. But <span class="ev" data-key="t4-q40" data-label="Q40" style="--c:var(--q5)">acknowledging fire’s inevitable presence in human life is an attitude crucial to developing the laws, policies, and practices that make it as safe as possible</span>, she says.</p>
+<p class="para"><span class="pnum">P10</span>“We’ve disconnected ourselves from living with fire,” Balch says. “It is really important to understand and try and tease out what is the human connection with fire today.”</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t4-q36" data-map="t4-q36-m0">2015</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t4-q36" id="t4-q36" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q36</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">More frequent wildfires have become a national concern because in <span class="stem-hit" data-map="t4-q36-m0">2015</span> they ______.</p>
+<ul class="options"><li class=""><span>[A]</span> exhausted unprecedented management efforts</li><li class="ok"><span>[B]</span> consumed a record-high percentage of budget</li><li class=""><span>[C]</span> severely damaged the ecology of western states</li><li class=""><span>[D]</span> caused a huge rise of infrastructure expenditure</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>2015 原词复现；national concern 对应 federal tax dollars / annual budget。</span></div><div class="chain-row"><b>定位</b><span>P1 点出 national concern 是税款影响；P2 用 2015 预算数据说明。</span></div><div class="chain-row"><b>证据</b><span>P2 说 US Forest Service 第一次花费 annual budget 的 more than half 来灭火，约为 20 年前比例的两倍。</span></div><div class="chain-row"><b>替换</b><span>spent more than half of annual budget = consumed a record-high percentage of budget。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>不是 effort 耗尽，而是 budget 占比创高。</span></div><div class="counter-row"><b>C</b><span>western states 是传统看法，题问 national concern 的财政原因。</span></div><div class="counter-row"><b>D</b><span>infrastructure upkeep 是被挤占的其他工作，不是支出大增。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q37" id="t4-q37" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q37</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">Moritz calls for the use of <span class="stem-hit" data-map="t4-q37-m1">“a magnifying glass”</span> to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q37-m0">Q37 magnifying glass</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> raise more funds for fire-prone areas</li><li class=""><span>[B]</span> avoid the redirection of federal money</li><li class=""><span>[C]</span> find wildfire-free parts of the landscape</li><li class="ok"><span>[D]</span> guarantee safer spending of public funds</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>magnifying glass 原词复现；calls for 指引号中 “We need to...”。</span></div><div class="chain-row"><b>定位</b><span>定位 P4 引语；看 “is this OK?” 与 redirect funds to lower-hazard parts。</span></div><div class="chain-row"><b>证据</b><span>Moritz 质疑公共资金建在会被野火烧毁的地区，并建议把资金转向 lower-hazard parts of the landscape。</span></div><div class="chain-row"><b>替换</b><span>take a magnifying glass / redirect to lower-hazard parts = guarantee safer spending of public funds。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>不是给高火险区增加资金，而是反思是否应转向低风险区。</span></div><div class="counter-row"><b>B</b><span>原文正是考虑 redirection，不是避免。</span></div><div class="counter-row"><b>C</b><span>lower-hazard 不等于 wildfire-free，C 绝对化。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q38" id="t4-q38" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q38</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">While admitting that <span class="stem-hit" data-map="t4-q38-m1">climate</span> is a key element, <span class="stem-hit" data-map="t4-q38-m2">Moritz</span> notes that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q38-m0">Q38 climate 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> public debates have not settled yet</li><li class=""><span>[B]</span> fire-fighting conditions are improving</li><li class="ok"><span>[C]</span> other factors should not be overlooked</li><li class=""><span>[D]</span> a shift in the view of fire has taken place</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>climate / Moritz 原词复现；while admitting 对应 While climate is a key element。</span></div><div class="chain-row"><b>定位</b><span>定位 P7 转折句；“shouldn’t come at the expense of the rest of the equation” 是答案。</span></div><div class="chain-row"><b>证据</b><span>P7 说 climate 是关键元素，但不应以牺牲 equation 的其他部分为代价。</span></div><div class="chain-row"><b>替换</b><span>rest of the equation = other factors；shouldn’t come at the expense = should not be overlooked。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>debates not settled 未提。</span></div><div class="counter-row"><b>B</b><span>条件改善未提。</span></div><div class="counter-row"><b>D</b><span>P5 说需要 shift，不是已经发生。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q39" id="t4-q39" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q39</span><span class="atype">原因题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">The <span class="stem-hit" data-map="t4-q39-m3">overly simplified view</span> Moritz mentions is a result of failing to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q39-m0">Q39 simplified view</span><span class="stem-hit" data-map="t4-q39-m1">human systems</span><span class="stem-hit" data-map="t4-q39-m2">landscapes</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> discover the fundamental makeup of nature</li><li class=""><span>[B]</span> explore the mechanism of the human systems</li><li class=""><span>[C]</span> maximize the role of landscape in human life</li><li class="ok"><span>[D]</span> understand the interrelations of man and nature</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>overly simplified view 原词复现；failing to 对应 Failing to recognize that。</span></div><div class="chain-row"><b>定位</b><span>定位 P8；that 回指前一句 human systems 与 landscapes are linked, interactions go both ways。</span></div><div class="chain-row"><b>证据</b><span>P8 说 human systems and landscapes are linked and interactions go both ways；不认识这一点会导致 overly simplified view。</span></div><div class="chain-row"><b>替换</b><span>human systems + landscapes linked / interactions go both ways = interrelations of man and nature。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>fundamental makeup of nature 范围过大且未提。</span></div><div class="counter-row"><b>B</b><span>只说 human systems 不够，忽略 landscapes 双向关系。</span></div><div class="counter-row"><b>C</b><span>不是最大化 landscape 作用，而是理解二者关系。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q40" id="t4-q40" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q40</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">Professor <span class="stem-hit" data-map="t4-q40-m1">Balch</span> points out that fire is something man should ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q40-m0">Q40 Balch 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> do away with</li><li class="ok"><span>[B]</span> come to terms with</li><li class=""><span>[C]</span> pay a price for</li><li class=""><span>[D]</span> keep away from</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Balch 原词复现；fire is something man should 对应 acknowledging fire’s inevitable presence。</span></div><div class="chain-row"><b>定位</b><span>定位 P9 “But acknowledging...” 与 P10 “living with fire”。</span></div><div class="chain-row"><b>证据</b><span>P9 说 acknowledging fire’s inevitable presence in human life 是制定安全法律政策的关键态度；P10 说要理解 human connection with fire。</span></div><div class="chain-row"><b>替换</b><span>acknowledging inevitable presence / living with fire = come to terms with。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>作者反对把火完全控制/消除的简单看法。</span></div><div class="counter-row"><b>C</b><span>pay a price for 无依据。</span></div><div class="counter-row"><b>D</b><span>keep away from 与 living with fire 反向。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+</div>
+</section>
+</main>
+</div>
+<script src="transition.js"></script>
+<script>
+const keyed=[...document.querySelectorAll('[data-key]')];
+const mapped=[...document.querySelectorAll('[data-map]')];
+function splitMaps(value){return String(value||'').split(/\s+/).filter(Boolean)}
+function activateKey(key,scroll=true){
+  keyed.forEach(el=>el.classList.toggle('active',el.dataset.key===String(key)));
+  if(scroll){
+    const target=document.getElementById(String(key))||document.querySelector('.kw[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.ev[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.scope-anchor[data-key="'+CSS.escape(String(key))+'"]');
+    if(target)target.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+function activateMaps(maps){
+  const set=new Set(Array.isArray(maps)?maps:splitMaps(maps));
+  mapped.forEach(el=>{
+    const hit=splitMaps(el.dataset.map).some(m=>set.has(m));
+    el.classList.toggle('map-active',hit);
+    el.classList.toggle('map-source-active',hit && !el.classList.contains('stem-hit'));
+  });
+}
+function clearMaps(){mapped.forEach(el=>{el.classList.remove('map-active');el.classList.remove('map-source-active')})}
+document.addEventListener('click',e=>{
+  const jump=e.target.closest('[data-target]');
+  if(jump){e.preventDefault();activateKey(jump.dataset.target);return}
+  const k=e.target.closest('[data-key]');
+  if(k){activateKey(k.dataset.key,!k.classList.contains('qcard'))}
+});
+document.addEventListener('mouseover',e=>{
+  const mapEl=e.target.closest('[data-map]');
+  if(mapEl)activateMaps(splitMaps(mapEl.dataset.map));
+  const keyEl=e.target.closest('[data-key]');
+  if(keyEl)keyed.forEach(x=>x.classList.toggle('active',x.dataset.key===keyEl.dataset.key));
+});
+document.addEventListener('mouseout',e=>{
+  if(e.target.closest('[data-map]'))clearMaps();
+});
+</script>
+</body>
+</html>

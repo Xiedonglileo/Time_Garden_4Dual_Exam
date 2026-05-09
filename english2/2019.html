@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>2019 年考研英语二阅读路径图</title>
+<style>
+  :root{
+    --bg:#f7efe4; --paper:#fffdfa; --ink:#211c17; --muted:#74675c;
+    --line:#ded0c0; --soft:#f0e5d7;
+    --q1:#2563eb; --q2:#07845f; --q3:#7c4dcc; --q4:#d43b32; --q5:#ce7a12;
+    --shadow:0 20px 48px rgba(47,34,19,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{margin:0;background:linear-gradient(180deg,#fcf8f1 0%,var(--bg) 100%);color:var(--ink);font-family:Georgia,"Times New Roman","Noto Serif CJK SC","Source Han Serif SC","Songti SC",serif;line-height:1.58}
+  .topbar{position:sticky;top:0;z-index:80;background:rgba(255,253,250,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+  .topbar-inner{max-width:1440px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-size:18px;font-weight:950;letter-spacing:.02em;white-space:nowrap}
+  .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  button,.jump-btn{font:800 13px/1 Georgia,"Times New Roman","Noto Serif CJK SC",serif;color:var(--ink);background:#fff9f0;border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;text-decoration:none}
+  button:hover,.jump-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(47,34,19,.10)}
+  .page{max-width:1440px;margin:0 auto;padding:24px 22px 64px}
+  .year-header{margin:0 0 18px;padding:22px 24px;border:1px solid var(--line);border-radius:28px;background:rgba(255,253,250,.72);box-shadow:var(--shadow)}
+  .year-header h1{margin:0;font-size:42px;line-height:1.08;letter-spacing:-.035em;font-weight:950}
+  .year-header p{margin:8px 0 0;color:var(--muted);font-size:15px}
+  .text-index{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .text-unit{margin:28px 0 42px;scroll-margin-top:90px;break-before:page}.text-unit:first-of-type{break-before:auto}
+  .unit-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end;margin-bottom:16px;padding:20px 22px;border:1px solid var(--line);border-radius:26px;background:var(--paper);box-shadow:var(--shadow)}
+  .unit-head h2{margin:0;font-size:32px;line-height:1.12;letter-spacing:-.02em}
+  .unit-head p{margin:8px 0 0;color:var(--muted);font-size:14px}
+  .text-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .route{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:18px 18px 16px;box-shadow:var(--shadow);margin-bottom:22px}
+  .route h3{margin:0 0 12px;font-size:18px;letter-spacing:.02em;color:#51463d}
+  .route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+  .route-card{--c:#444;position:relative;overflow:hidden;min-height:92px;cursor:pointer;background:#fffaf3;border:1px solid var(--line);border-radius:18px;padding:14px 14px 12px 17px}
+  .route-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
+  .route-card b{display:block;color:var(--c)!important;font-size:17px;margin-bottom:6px}.route-card p{margin:0;font-size:14px;line-height:1.42;color:#5a4f45}
+  .layout{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(440px,.96fr);gap:22px;align-items:start}
+  .article-panel,.analysis-panel{background:var(--paper);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}
+  .panel-head{padding:22px 24px 12px;border-bottom:1px solid var(--line)}
+  .panel-head h3{margin:0;font-size:28px;letter-spacing:-.02em}.panel-head p{margin:6px 0 0;color:var(--muted);font-size:14px}
+  .article-body{padding:22px 26px 24px}.article-text{font-size:19px;line-height:1.86;color:#1f1b16;text-align:left}
+  .para{position:relative;margin:0 0 20px;padding-left:66px}.para:last-child{margin-bottom:0}
+  .pnum{position:absolute;left:0;top:2px;display:inline-flex;align-items:center;justify-content:center;width:38px;height:28px;border-radius:999px;background:var(--soft);color:#5a4f45;font-size:13px;font-weight:950}
+  .snum{font-size:11px;color:#9b8d7f;font-weight:950;margin-right:2px;vertical-align:super}
+  .scope-anchor{--c:#444;display:inline-flex;align-items:center;margin:0 6px 0 0;padding:4px 8px;border-radius:999px;background:var(--c);color:white;font-size:12px;font-weight:950;vertical-align:middle;cursor:pointer;white-space:nowrap}
+  .kw{--c:#444;position:relative;display:inline;color:var(--c)!important;font-weight:950;padding:0 .12em .02em;border-radius:5px;text-decoration-line:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--c)!important;background:linear-gradient(to top,color-mix(in srgb,var(--c) 22%,transparent) 0%,color-mix(in srgb,var(--c) 22%,transparent) 48%,transparent 48%,transparent 100%);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 16%,transparent);cursor:pointer}
+  .ev{--c:#444;color:var(--ink);font-weight:650;border-radius:3px;padding:0 1px 1px;text-decoration-line:underline;text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-color:var(--c)!important;background:color-mix(in srgb,var(--c) 8%,transparent);cursor:pointer;transition:background .18s ease,box-shadow .18s ease}
+  .ev:after{content:attr(data-label);font-size:10px;font-weight:950;line-height:1;border-radius:999px;padding:2px 5px;margin-left:4px;color:white;vertical-align:middle;white-space:nowrap;background:var(--c)!important}
+  .analysis-panel{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow:auto}.analysis-body{padding:16px;display:grid;gap:14px}
+  .qcard{--c:#444;background:linear-gradient(180deg,#fffdfa,#fff8ed);border:1px solid var(--line);border-radius:20px;padding:16px 17px;position:relative;overflow:hidden;scroll-margin-top:90px}
+  .qcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
+  .qtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;border-bottom:1px dashed var(--line);padding-bottom:9px}.qtitle{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:950}.badge{background:var(--c)!important;color:white;border-radius:999px;padding:4px 10px;font-size:14px}.atype{color:var(--muted);font-size:14px;font-weight:900}.rightans{font-size:14px;color:var(--muted);font-weight:900}.rightans strong{font-size:25px;color:var(--ink);line-height:1}
+  .stem{margin:0 0 10px;font-size:16.8px;line-height:1.42;font-weight:950;color:#211c17}.stem-hit{border-radius:5px;padding:0 .08em;transition:background .15s ease,box-shadow .15s ease,color .15s ease}.stem-hit.map-active{background:#fff1a8;box-shadow:0 0 0 2px #f3c94d;color:#1f1b16}.stem-hit:hover{background:#fff4bf;cursor:pointer}
+  .options{list-style:none;margin:0 0 11px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:13.6px;line-height:1.32}.options li{border:1px solid #eadfd2;background:#fffefb;border-radius:12px;padding:7px 8px}.options span{font-weight:950;margin-right:4px}.options .ok{background:#f3fbf2;border-color:#a9cfab;box-shadow:inset 0 0 0 1px rgba(92,148,91,.13)}
+  .chain{display:grid;gap:7px;font-size:14px;line-height:1.47}.chain-row{display:grid;grid-template-columns:74px 1fr;gap:8px;border-top:1px solid #f0e6da;padding-top:7px}.chain-row:first-child{border-top:0;padding-top:0}.chain-row b{color:#584b41}
+  .counter{margin-top:10px;border:1px solid #eadfd2;border-radius:15px;overflow:hidden;background:#fffdfa}.counter h4{margin:0;padding:7px 10px;font-size:13.5px;background:#f0e6da;color:#55483e}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid #efe3d7;font-size:13px;line-height:1.36}.counter-row:first-of-type{border-top:0}.counter-row b{padding:7px 9px;background:#fbf6ef}.counter-row span{padding:7px 9px;color:#342d26}
+  .qcard.active,.route-card.active,.ev.active,.kw.active,.scope-anchor.active{box-shadow:0 0 0 3px var(--c),0 14px 32px rgba(47,34,19,.10);background:#fff4d4}.map-source-active{box-shadow:0 0 0 2px #f3c94d,0 6px 18px rgba(47,34,19,.12)!important;background:#fff1a8!important;color:#1f1b16!important}
+  .note-box{margin-top:14px;background:#fff8ed;border:1px solid var(--line);border-radius:18px;padding:14px 16px;color:#4f453c;font-size:14px;line-height:1.55}
+  @media (max-width:1120px){.unit-head,.layout{grid-template-columns:1fr}.text-nav{justify-content:flex-start}.analysis-panel{position:static;max-height:none}.options{grid-template-columns:1fr}}
+  @media print{@page{size:A4;margin:12mm}body{background:#fff}.topbar{display:none}.page{max-width:none;padding:0}.route,.article-panel,.analysis-panel,.qcard{box-shadow:none}.layout{grid-template-columns:1fr}.analysis-panel{position:static;max-height:none;overflow:visible}.qcard{break-inside:avoid}.ev,.kw,.badge,.route-card,.scope-anchor{print-color-adjust:exact;-webkit-print-color-adjust:exact}.article-text{font-size:14.7px;line-height:1.72}.panel-head h3{font-size:22px}.kw{box-shadow:none;background:transparent;color:var(--c)!important;text-decoration-thickness:2px}.text-unit{break-before:page}.text-unit:first-of-type{break-before:auto}}
+</style>
+<style>
+/* repair-v1: final closed-loop compatibility layer */
+.article-panel .source-supplement,.article .source-supplement{margin-top:18px;padding:12px 14px;border:1px dashed rgba(180,154,130,.45);border-radius:16px;background:rgba(255,248,237,.62);font-size:15px;line-height:1.8;color:#4f443e}.source-supplement h4{margin:0 0 8px;font-size:15px;color:#6c5b52}.source-fix{display:inline-block;margin:2px 5px 2px 0}.stem-sync-bank{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}.map-active,.kw.map-active,.ev.map-active,.stem-hit.map-active{outline:2px solid currentColor;outline-offset:2px;border-radius:5px;background:rgba(255,248,184,.42)!important}.qcard{border-color:var(--c)!important}.qcard .badge{background:var(--c)!important}.options .ok{border-color:#9dccaa!important;background:#effaf0!important}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid rgba(120,100,80,.18);padding:7px 10px}.counter-row b{font-weight:800}.chain-row{display:grid;grid-template-columns:82px 1fr;gap:12px;border-top:1px solid rgba(120,100,80,.14);padding:9px 0}.chain-row b{color:#6b5a50}.repair-note{font-size:12px;color:#8a776d;margin-top:8px}.text-unit{scroll-margin-top:90px}.qcard{scroll-margin-top:90px}
+</style><link href="year.css" rel="stylesheet"/>
+</head>
+<body class="is-entering exam-two-page">
+<div class="page-pass"><b>2019</b><span>进入英语二</span></div>
+<div class="site-shell">
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" data-exam-target="two" data-transition-year="2019" href="../index.html?exam=two">Time Garden</a>
+<nav aria-label="年份页导航" class="nav"><a class="primary" data-exam-target="two" data-transition-year="2019" href="../index.html?exam=two">返回花园首页</a><a data-exam-target="two" data-transition-year="2018" href="2018.html">← 2018</a><a data-exam-target="two" data-transition-year="2019" href="../index.html?exam=two">花园首页</a><a data-exam-target="two" data-transition-year="2020" href="2020.html">2020 →</a><button onclick="window.print()" type="button">打印 / 导出 PDF</button></nav>
+</div>
+</header>
+<main class="page">
+<section aria-labelledby="year-title-2019" class="year-masthead english2-masthead">
+<div>
+<p class="kicker">年度阅读路径 · 2019 · 英语二</p>
+<h1 id="year-title-2019">2019 年阅读路径图</h1>
+<p>英语二 Part A · Text 1—4 · 20 题 · 关键词定位与原文证据链</p>
+</div>
+<div aria-label="年份概览" class="masthead-meta"><span>4 篇阅读</span><span>20 道题卡</span></div>
+</section>
+<section class="chapter-shell">
+<div class="chapter-quicknav">
+<div class="chapter-quicknav-title">阅读章节</div>
+<div aria-label="2019 年 Text 快速跳转" class="year-text-nav"><a class="text-chip" href="#text-1">Text 1</a><a class="text-chip" href="#text-2">Text 2</a><a class="text-chip" href="#text-3">Text 3</a><a class="text-chip" href="#text-4">Text 4</a></div>
+</div>
+<div class="year-content">
+<section class="text-unit" id="text-1">
+<header class="unit-head">
+<div>
+<h2>Text 1｜高分阅读路径图解析</h2>
+<p>Q21—Q25。guilt 的道德功能：从“负担”到“社会胶水”。</p>
+</div>
+<nav class="text-nav"><button data-target="t1-q21" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q21</button><button data-target="t1-q22" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q22</button><button data-target="t1-q23" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q23</button><button data-target="t1-q24" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q24</button><button data-target="t1-q25" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q25</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t1-q21" data-target="t1-q21" style="--c:var(--q1)">
+<b>Q21｜细节题</b>
+<p>P1：guilt 与儿童社会/道德规范成长相伴，帮助学会道歉、安抚他人与良心。</p>
+</article>
+<article class="route-card" data-key="t1-q22" data-target="t1-q22" style="--c:var(--q2)">
+<b>Q22｜细节题</b>
+<p>P2：popular imagination 中 guilt 是 weighted with stones 的情绪负担。</p>
+</article>
+<article class="route-card" data-key="t1-q23" data-target="t1-q23" style="--c:var(--q3)">
+<b>Q23｜推断题</b>
+<p>P2：Vaish 认为 guilt 重新被理解，源于对情绪非二元、情境作用不同的认识。</p>
+</article>
+<article class="route-card" data-key="t1-q24" data-target="t1-q24" style="--c:var(--q4)">
+<b>Q24｜细节题</b>
+<p>P4：Malti 等人证明 guilt 与 sympathy 是合作分享的不同路径。</p>
+</article>
+<article class="route-card" data-key="t1-q25" data-target="t1-q25" style="--c:var(--q5)">
+<b>Q25｜词义题</b>
+<p>P5—P6：moral transgressions 后出现 guilt，下一段解释为 caused harm and regret。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t1-q21" data-map="t1-q21-m0" style="--c:var(--q1)">Q21 段落定位</span>Unlike so-called basic emotions such as sadness, fear, and anger, <mark class="kw" data-key="t1-q21" data-map="t1-q21-m1" style="--c:var(--q1)">guilt</mark> emerges a little later, in conjunction with a child’s growing grasp of social and moral norms. <span class="ev" data-key="t1-q21" data-label="Q21" style="--c:var(--q1)">Children aren’t born knowing how to say “I’m sorry”; rather, they learn over time that such statements appease parents and friends — and their own consciences</span>. This is why <mark class="kw" data-key="t1-q21" data-map="t1-q21-m2" style="--c:var(--q1)">researchers</mark> generally regard so-called moral guilt, in the right amount, to be <mark class="kw" data-key="t1-q21" data-map="t1-q21-m3" style="--c:var(--q1)">a good thing</mark>.</p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t1-q22" data-map="t1-q22-m0" style="--c:var(--q2)">Q22 段落定位</span><span class="scope-anchor" data-key="t1-q23" data-map="t1-q23-m0" style="--c:var(--q3)">Q23 Vaish 定位</span>In the popular imagination, of course, <mark class="kw" data-key="t1-q22" data-map="t1-q22-m1" style="--c:var(--q2)">guilt</mark> still gets a bad rap. It is <span class="ev" data-key="t1-q22" data-label="Q22" style="--c:var(--q2)">deeply uncomfortable — it’s the emotional equivalent of wearing a jacket weighted with stones</span>. Yet this understanding is outdated. “There has been a kind of revival or a rethinking about what guilt is and what role guilt can serve,” says <mark class="kw" data-key="t1-q23" data-map="t1-q23-m1" style="--c:var(--q3)">Amrisha Vaish</mark>, a psychology researcher at the University of Virginia, adding that this revival is part of a larger recognition that <span class="ev" data-key="t1-q23" data-label="Q23" style="--c:var(--q3)">emotions aren’t binary — feelings that may be advantageous in one context may be harmful in another</span>. Jealousy and anger, for example, may have evolved to alert us to important inequalities. Too much happiness can be destructive.</p>
+<p class="para"><span class="pnum">P3</span>And guilt, by prompting us to think more deeply about our goodness, can encourage humans to make up for errors and fix relationships. Guilt, in other words, can help hold a cooperative species together. It is a kind of social glue.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t1-q24" data-map="t1-q24-m0" style="--c:var(--q4)">Q24 Malti 定位</span>Viewed in this light, guilt is an opportunity. Work by <mark class="kw" data-key="t1-q24" data-map="t1-q24-m1" style="--c:var(--q4)">Tina Malti</mark>, a psychology professor at the University of Toronto, suggests that guilt may compensate for an emotional deficiency. In a number of studies, <mark class="kw" data-key="t1-q24" data-map="t1-q24-m2" style="--c:var(--q4)">Malti and others</mark> have shown that <span class="ev" data-key="t1-q24" data-label="Q24" style="--c:var(--q4)">guilt and sympathy may represent different pathways to cooperation and sharing</span>. Some kids who are low in sympathy may make up for that shortfall by experiencing more guilt, which can rein in their nastier impulses. And vice versa: High sympathy can substitute for low guilt.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t1-q25" data-map="t1-q25-m0" style="--c:var(--q5)">Q25 词义定位</span>In a 2014 study, for example, Malti looked at 244 children. Using caregiver assessments and the children’s self-observations, she rated each child’s overall sympathy level and his or her tendency to feel negative emotions after moral <mark class="kw" data-key="t1-q25" data-map="t1-q25-m1" style="--c:var(--q5)">transgressions</mark>. Then the kids were handed chocolate coins, and given a chance to share them with an anonymous child. For the low-sympathy kids, how much they shared appeared to turn on how inclined they were to feel guilty. The guilt-prone ones shared more, even though they hadn’t magically become more sympathetic to the other child’s deprivation.</p>
+<p class="para"><span class="pnum">P6</span>“That’s good news,” Malti says. “<span class="ev" data-key="t1-q25" data-label="Q25" style="--c:var(--q5)">We can be prosocial because we caused harm and we feel regret</span>.”</p>
+</div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t1-q21" id="t1-q21" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q21</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem"><span class="stem-hit" data-map="t1-q21-m2">Researchers</span> think that <span class="stem-hit" data-map="t1-q21-m1">guilt</span> can be <span class="stem-hit" data-map="t1-q21-m3">a good thing</span> because it may help ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q21-m0">Q21 段落定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> regulate a child’s basic emotions</li><li class=""><span>[B]</span> improve a child’s intellectual ability</li><li class="ok"><span>[C]</span> foster a child’s moral development</li><li class=""><span>[D]</span> intensify a child’s positive feelings</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Researchers → P1 researchers；guilt / a good thing 原词复现；help 对应 P1 learn over time 与 social and moral norms。</span></div><div class="chain-row"><b>定位</b><span>题干定位词全部落在 P1；顺着 “This is why” 回看前一句儿童如何学习道歉与良心约束。</span></div><div class="chain-row"><b>证据</b><span>P1 说 guilt 随着 child’s growing grasp of social and moral norms 出现，儿童逐渐学会道歉、安抚他人和自己的良心。</span></div><div class="chain-row"><b>替换</b><span>growing grasp of social and moral norms / consciences = moral development；foster = help grow。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>文中说 guilt 不是 basic emotions，未说调节基本情绪。</span></div><div class="counter-row"><b>B</b><span>intellectual ability 与智力提升无证据。</span></div><div class="counter-row"><b>D</b><span>guilt 不是 positive feelings；文中也未说强化积极情绪。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q22" id="t1-q22" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q22</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">According to <span class="stem-hit" data-map="t1-q22-m0">Paragraph 2</span>, many people still consider <span class="stem-hit" data-map="t1-q22-m1">guilt</span> to be ______.</p>
+<ul class="options"><li class=""><span>[A]</span> deceptive</li><li class="ok"><span>[B]</span> burdensome</li><li class=""><span>[C]</span> addictive</li><li class=""><span>[D]</span> inexcusable</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 2 → P2 段首锚点；guilt 原词复现；many people 对应 popular imagination。</span></div><div class="chain-row"><b>定位</b><span>按段落定位到 P2；bad rap 后面的比喻句给出公众印象。</span></div><div class="chain-row"><b>证据</b><span>P2 称 guilt deeply uncomfortable，像穿着 weighted with stones 的夹克。</span></div><div class="chain-row"><b>替换</b><span>weighted with stones / uncomfortable = burdensome。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>deceptive 是“欺骗性的”，文中没有说 guilt 欺骗人。</span></div><div class="counter-row"><b>C</b><span>addictive 无任何依据。</span></div><div class="counter-row"><b>D</b><span>inexcusable 指不可原谅，文中说的是情绪负担。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q23" id="t1-q23" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q23</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem"><span class="stem-hit" data-map="t1-q23-m1">Vaish</span> holds that the <span class="stem-hit" data-map="t1-q23-m0">rethinking about guilt</span> comes from an awareness that ______.</p>
+<ul class="options"><li class=""><span>[A]</span> emotions are context-independent</li><li class=""><span>[B]</span> emotions are socially constructive</li><li class=""><span>[C]</span> emotional stability can benefit health</li><li class="ok"><span>[D]</span> an emotion can play opposing roles</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Vaish 原词复现；rethinking about guilt 对应 revival or a rethinking；awareness 对应 larger recognition。</span></div><div class="chain-row"><b>定位</b><span>在 P2 Vaish 引语后找 adding that 引出的解释；破折号后是关键判断。</span></div><div class="chain-row"><b>证据</b><span>Vaish 说 emotions aren’t binary，某种情绪在一个情境中有利，在另一个情境中有害。</span></div><div class="chain-row"><b>替换</b><span>advantageous in one context / harmful in another = play opposing roles。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>原文正说情绪依赖语境，A 反向。</span></div><div class="counter-row"><b>B</b><span>社会建设性只适用于 guilt 的部分作用，不能概括 Vaish 的 awareness。</span></div><div class="counter-row"><b>C</b><span>health 未出现，属无中生有。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q24" id="t1-q24" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q24</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem"><span class="stem-hit" data-map="t1-q24-m2">Malti and others</span> have shown that <span class="stem-hit" data-map="t1-q24-m0">cooperation and sharing</span> ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q24-m1">Tina Malti</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> may help correct emotional deficiencies</li><li class="ok"><span>[B]</span> can result from either sympathy or guilt</li><li class=""><span>[C]</span> can bring about emotional satisfaction</li><li class=""><span>[D]</span> may be the outcome of impulsive acts</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Malti and others 原词复现；cooperation and sharing 原词复现。</span></div><div class="chain-row"><b>定位</b><span>定位 P4 “have shown that” 后面的宾语从句，答案就在同一句。</span></div><div class="chain-row"><b>证据</b><span>P4 直接说 guilt and sympathy may represent different pathways to cooperation and sharing。</span></div><div class="chain-row"><b>替换</b><span>different pathways to cooperation and sharing = cooperation and sharing can result from either sympathy or guilt。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>原文是 guilt may compensate for deficiency，不是 cooperation and sharing 纠正缺陷。</span></div><div class="counter-row"><b>C</b><span>emotional satisfaction 未出现。</span></div><div class="counter-row"><b>D</b><span>impulsive acts 与文意相反，guilt 还会 rein in nastier impulses。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q25" id="t1-q25" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q25</span><span class="atype">词义题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">The word “<span class="stem-hit" data-map="t1-q25-m1">transgressions</span>” (Line 4, Para.5) is closest in meaning to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q25-m0">Q25 词义定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> teachings</li><li class=""><span>[B]</span> discussions</li><li class=""><span>[C]</span> restrictions</li><li class="ok"><span>[D]</span> wrongdoings</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>transgressions 原词复现；moral 与后文 caused harm / regret 构成语义线索。</span></div><div class="chain-row"><b>定位</b><span>看 P5 词前的 moral 与词后的 feel negative emotions；再用 P6 “caused harm and feel regret” 回扣。</span></div><div class="chain-row"><b>证据</b><span>P6 说 “We can be prosocial because we caused harm and we feel regret.” 说明 transgressions 是造成伤害、引发后悔的行为。</span></div><div class="chain-row"><b>替换</b><span>moral transgressions = moral wrongdoings。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>teachings 是教导，不会自然导致 guilt。</span></div><div class="counter-row"><b>B</b><span>discussions 只是讨论，与 moral guilt 不匹配。</span></div><div class="counter-row"><b>C</b><span>restrictions 是限制，不是犯错行为。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-2">
+<header class="unit-head">
+<div>
+<h2>Text 2｜高分阅读路径图解析</h2>
+<p>Q26—Q30。森林碳汇管理：短期降低吸碳能力，长期增强韧性。</p>
+</div>
+<nav class="text-nav"><button data-target="t2-q26" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q26</button><button data-target="t2-q27" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q27</button><button data-target="t2-q28" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q28</button><button data-target="t2-q29" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q29</button><button data-target="t2-q30" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q30</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t2-q26" data-target="t2-q26" style="--c:var(--q1)">
+<b>Q26｜推断题</b>
+<p>P1：harder challenges 的解释是森林未来可能从吸碳者变成排碳者。</p>
+</article>
+<article class="route-card" data-key="t2-q27" data-target="t2-q27" style="--c:var(--q2)">
+<b>Q27｜细节题</b>
+<p>P2：为了长期 carbon sinks，现在可能要降低吸碳能力。</p>
+</article>
+<article class="route-card" data-key="t2-q28" data-target="t2-q28" style="--c:var(--q3)">
+<b>Q28｜细节题</b>
+<p>P3：Forest Carbon Plan aims to thin out young trees and clear brush。</p>
+</article>
+<article class="route-card" data-key="t2-q29" data-target="t2-q29" style="--c:var(--q4)">
+<b>Q29｜细节题</b>
+<p>P5：资源有限，所以必须优先处理火灾或干旱风险最高区域。</p>
+</article>
+<article class="route-card" data-key="t2-q30" data-target="t2-q30" style="--c:var(--q5)">
+<b>Q30｜态度题</b>
+<p>P2 + P7：leading the way / should serve as a model 表明支持。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t2-q26" data-map="t2-q26-m0" style="--c:var(--q1)">Q26 段落定位</span>Forests give us shade, quiet and <mark class="kw" data-key="t2-q26" data-map="t2-q26-m1" style="--c:var(--q1)">one of the harder challenges</mark> in the fight against climate change. Even as we humans count on forests to soak up a good share of the carbon dioxide we produce, <span class="ev" data-key="t2-q26" data-label="Q26" style="--c:var(--q1)">we are threatening their ability to do so. The climate change we are hastening could one day leave us with forests that emit more carbon than they absorb</span>.</p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t2-q27" data-map="t2-q27-m0" style="--c:var(--q2)">Q27 段落定位</span>Thankfully, there is a way out of this trap — but it involves striking a subtle balance. Helping forests flourish as valuable <mark class="kw" data-key="t2-q27" data-map="t2-q27-m1" style="--c:var(--q2)">“carbon sinks”</mark> long into the future may require <span class="ev" data-key="t2-q27" data-label="Q27" style="--c:var(--q2)">reducing their capacity to absorb carbon now</span>. California is leading the way, as it does on so many climate efforts, in figuring out the details.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t2-q28" data-map="t2-q28-m0" style="--c:var(--q3)">Q28 计划定位</span>The state’s proposed <mark class="kw" data-key="t2-q28" data-map="t2-q28-m1" style="--c:var(--q3)">Forest Carbon Plan</mark> aims to <span class="ev" data-key="t2-q28" data-label="Q28" style="--c:var(--q3)">double efforts to thin out young trees and clear brush in parts of the forest</span>. This temporarily lowers carbon-carrying capacity. But the remaining trees draw a greater share of the available moisture, so they grow and thrive, restoring the forest’s capacity to pull carbon from the air. Healthy trees are also better able to fend off insects. The landscape is rendered less easily burnable. Even in the event of a fire, fewer trees are consumed.</p>
+<p class="para"><span class="pnum">P4</span>The need for such planning is increasingly urgent. Already, since 2010, drought and insects have killed over 100 million trees in California, most of them in 2016 alone, and wildfires have burned hundreds of thousands of acres.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t2-q29" data-map="t2-q29-m0" style="--c:var(--q4)">Q29 段落定位</span>California plans to treat 35,000 acres of forest a year by 2020, and 60,000 by 2030 — financed from the proceeds of the state’s emissions-permit auctions. That’s only a small share of the total acreage that could benefit, about half a million acres in all, <span class="ev" data-key="t2-q29" data-label="Q29" style="--c:var(--q4)">so it will be vital to prioritize areas at greatest risk of fire or drought</span>.</p>
+<p class="para"><span class="pnum">P6</span>The strategy also aims to ensure that carbon in woody material removed from the forests is locked away in the form of solid lumber or burned as biofuel in vehicles that would otherwise run on fossil fuels. New research on transportation biofuels is already underway.</p>
+<p class="para"><span class="pnum">P7</span><span class="scope-anchor" data-key="t2-q30" data-map="t2-q30-m0" style="--c:var(--q5)">Q30 态度定位</span>State governments are well accustomed to managing forests, but traditionally they’ve focused on wildlife, watersheds and opportunities for recreation. Only recently have they come to see the vital part forests will have to play in storing carbon. <span class="ev" data-key="t2-q30" data-label="Q30" style="--c:var(--q5)">California’s plan, which is expected to be finalized by the governor next year, should serve as a model</span>.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t2-q29" data-map="t2-q29-m0">Paragraph 5</span> <span class="kw source-fix" data-key="t2-q30" data-map="t2-q30-m0">California’s plan</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t2-q26" id="t2-q26" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q26</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">By saying “<span class="stem-hit" data-map="t2-q26-m1">one of the harder challenges</span>,” the author implies that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q26-m0">Q26 段落定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> global climate change may get out of control</li><li class=""><span>[B]</span> people may misunderstand global warming</li><li class=""><span>[C]</span> extreme weather conditions may arise</li><li class="ok"><span>[D]</span> forests may become a potential threat</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>one of the harder challenges 原词复现；implies 需要读其后解释句。</span></div><div class="chain-row"><b>定位</b><span>定位 P1 首句后，后两句解释“难题”具体是什么。</span></div><div class="chain-row"><b>证据</b><span>P1 说气候变化可能让 forests emit more carbon than they absorb。</span></div><div class="chain-row"><b>替换</b><span>emit more carbon than they absorb = become a potential threat。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>文中说森林功能可能逆转，不是全球气候失控。</span></div><div class="counter-row"><b>B</b><span>misunderstand global warming 未出现。</span></div><div class="counter-row"><b>C</b><span>极端天气不是本句解释的重点。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q27" id="t2-q27" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q27</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">To maintain forests as valuable “<span class="stem-hit" data-map="t2-q27-m1">carbon sinks</span>,” we may need to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q27-m0">Q27 段落定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> preserve the diversity of species in them</li><li class=""><span>[B]</span> accelerate the growth of young trees</li><li class=""><span>[C]</span> strike a balance among different plants</li><li class="ok"><span>[D]</span> lower their present carbon-absorbing capacity</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>carbon sinks 原词复现；may need 对应 may require。</span></div><div class="chain-row"><b>定位</b><span>P2 中 “may require” 后直接给出措施。</span></div><div class="chain-row"><b>证据</b><span>P2 说 maintaining carbon sinks may require reducing their capacity to absorb carbon now。</span></div><div class="chain-row"><b>替换</b><span>reducing capacity to absorb carbon now = lower present carbon-absorbing capacity。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>species diversity 未提到。</span></div><div class="counter-row"><b>B</b><span>不是加速幼树生长，而是 thinning young trees。</span></div><div class="counter-row"><b>C</b><span>subtle balance 是总原则，不是 “among different plants”。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q28" id="t2-q28" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q28</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">California’s <span class="stem-hit" data-map="t2-q28-m1">Forest Carbon Plan</span> endeavors to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q28-m0">Q28 计划定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> cultivate more drought-resistant trees</li><li class="ok"><span>[B]</span> reduce the density of some of its forests</li><li class=""><span>[C]</span> find more effective ways to kill insects</li><li class=""><span>[D]</span> restore its forests quickly after wildfires</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Forest Carbon Plan 原词复现；endeavors to 对应 aims to。</span></div><div class="chain-row"><b>定位</b><span>定位 P3 “aims to” 后的动宾结构。</span></div><div class="chain-row"><b>证据</b><span>P3 说计划 aims to double efforts to thin out young trees and clear brush in parts of the forest。</span></div><div class="chain-row"><b>替换</b><span>thin out young trees and clear brush = reduce the density of some forests。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>剩余树木更健康，但不是培育抗旱树种。</span></div><div class="counter-row"><b>C</b><span>fend off insects 是效果，不是寻找杀虫方法。</span></div><div class="counter-row"><b>D</b><span>减少易燃性、火灾时消耗更少，不是火灾后快速恢复。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q29" id="t2-q29" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q29</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">What is essential to California’s plan according to <span class="stem-hit" data-map="t2-q29-m0">Paragraph 5</span>?</p>
+<ul class="options"><li class="ok"><span>[A]</span> To handle the areas in serious danger first.</li><li class=""><span>[B]</span> To carry it out before the year of 2020.</li><li class=""><span>[C]</span> To perfect the emissions-permit auctions.</li><li class=""><span>[D]</span> To obtain enough financial support.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 5 → P5 段首锚点；essential 对应 vital。</span></div><div class="chain-row"><b>定位</b><span>按段落词到 P5；转折/结果词 so 后是结论。</span></div><div class="chain-row"><b>证据</b><span>P5 说 because treated acreage is limited, it will be vital to prioritize areas at greatest risk of fire or drought。</span></div><div class="chain-row"><b>替换</b><span>prioritize areas at greatest risk = handle the areas in serious danger first。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>2020 是年度处理量目标，不是“essential”的内容。</span></div><div class="counter-row"><b>C</b><span>emissions-permit auctions 是资金来源，不是要完善拍卖。</span></div><div class="counter-row"><b>D</b><span>资金已有来源；重点是优先级。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q30" id="t2-q30" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q30</span><span class="atype">态度题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">The author’s attitude to <span class="stem-hit" data-map="t2-q30-m0">California’s plan</span> can best be described as ______.</p>
+<ul class="options"><li class=""><span>[A]</span> ambiguous</li><li class=""><span>[B]</span> tolerant</li><li class="ok"><span>[C]</span> supportive</li><li class=""><span>[D]</span> cautious</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>California’s plan 对应 P7；attitude 看评价词和结论句。</span></div><div class="chain-row"><b>定位</b><span>态度题看全文评价词：P2 “Thankfully”“leading the way”，P7 “should serve as a model”。</span></div><div class="chain-row"><b>证据</b><span>作者说 California is leading the way，并在结尾称其计划 should serve as a model。</span></div><div class="chain-row"><b>替换</b><span>leading the way / serve as a model = supportive。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>评价明确正向，并不含糊。</span></div><div class="counter-row"><b>B</b><span>tolerant 是勉强容忍，弱于原文正面评价。</span></div><div class="counter-row"><b>D</b><span>虽提到资源有限，但最终评价是应成为 model，不是谨慎保留。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-3">
+<header class="unit-head">
+<div>
+<h2>Text 3｜高分阅读路径图解析</h2>
+<p>Q31—Q35。美国农业劳工短缺：移民规则、H-2A 签证与进口选择。</p>
+</div>
+<nav class="text-nav"><button data-target="t3-q31" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q31</button><button data-target="t3-q32" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q32</button><button data-target="t3-q33" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q33</button><button data-target="t3-q34" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q34</button><button data-target="t3-q35" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q35</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t3-q31" data-target="t3-q31" style="--c:var(--q1)">
+<b>Q31｜细节题</b>
+<p>P1—P2：farm labor shortages 的根因指向 immigration rules / agricultural worker visa。</p>
+</article>
+<article class="route-card" data-key="t3-q32" data-target="t3-q32" style="--c:var(--q2)">
+<b>Q32｜细节题</b>
+<p>P3：agricultural workforce 正在 settled、married、aging，其中 aging 是选项对应。</p>
+</article>
+<article class="route-card" data-key="t3-q33" data-target="t3-q33" style="--c:var(--q3)">
+<b>Q33｜细节题</b>
+<p>P3：oft-debated cure 是让 Native U.S. workers 回农场，但作者称不现实。</p>
+</article>
+<article class="route-card" data-key="t3-q34" data-target="t3-q34" style="--c:var(--q4)">
+<b>Q34｜细节题</b>
+<p>P5—P6：H-2A visa 程序繁琐且延误导致工人平均晚到 22 天。</p>
+</article>
+<article class="route-card" data-key="t3-q35" data-target="t3-q35" style="--c:var(--q5)">
+<b>Q35｜主旨标题题</b>
+<p>全文：农业劳工短缺、移民规则、签证低效，结尾落到 import food or labor。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t3-q31" data-map="t3-q31-m0" style="--c:var(--q1)">Q31 段落范围</span>American farmers have been complaining of labor shortages for several years. The complaints are unlikely to stop without an overhaul of <mark class="kw" data-key="t3-q31" data-map="t3-q31-m1" style="--c:var(--q1)">immigration rules</mark> for farm workers.</p>
+<p class="para"><span class="pnum">P2</span>Congress has obstructed efforts to create a more straightforward <mark class="kw" data-key="t3-q31" data-map="t3-q31-m2" style="--c:var(--q1)">visa for agricultural workers</mark> that would let foreign workers stay longer in the U.S. and change jobs within the industry. <span class="ev" data-key="t3-q31" data-label="Q31" style="--c:var(--q1)">If this doesn’t change, American businesses, communities, and consumers will be the losers</span>.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t3-q32" data-map="t3-q32-m0" style="--c:var(--q2)">Q32 劳动力定位</span>Perhaps half of U.S. farm laborers are undocumented immigrants. As fewer such workers enter the country, the characteristics of the <mark class="kw" data-key="t3-q32" data-map="t3-q32-m1" style="--c:var(--q2)">agricultural workforce</mark> are changing. Today’s farm laborers, while still predominantly born in Mexico, are more likely to be settled rather than migrating and more likely to be married than single. They’re also <span class="ev" data-key="t3-q32" data-label="Q32" style="--c:var(--q2)">aging. At the start of this century, about one-third of crop workers were over the age of 35. Now more than half are</span>. And picking crops is hard on older bodies. <span class="ev" data-key="t3-q33" data-label="Q33" style="--c:var(--q3)">One oft-debated cure for this labor shortage remains as implausible as it’s been all along: <mark class="kw" data-key="t3-q33" data-map="t3-q33-m1" style="--c:var(--q3)">Native U.S. workers</mark> won’t be returning to the farm</span>.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t3-q33" data-map="t3-q33-m0" style="--c:var(--q3)">Q33 方案定位</span>Mechanization isn’t the answer, either — not yet, at least. Production of corn, cotton, rice, soybeans, and wheat has been largely mechanized, but many high-value, labor-intensive crops, such as strawberries, need labor. Even dairy farms, where robots do a small share of milking, have a long way to go before they’re automated.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t3-q34" data-map="t3-q34-m0" style="--c:var(--q4)">Q34 H-2A 定位</span>As a result, farms have grown increasingly reliant on temporary guest workers using the <mark class="kw" data-key="t3-q34" data-map="t3-q34-m1" style="--c:var(--q4)">H-2A visa</mark> to fill the gaps in the workforce. Starting around 2012, requests for the visas rose sharply; from 2011 to 2016 the number of visas issued more than doubled.</p>
+<p class="para"><span class="pnum">P6</span>The H-2A visa has no numerical cap, unlike the H-2B visa for nonagricultural work, which is limited to 66,000 a year. Even so, <mark class="kw" data-key="t3-q34" data-map="t3-q34-m2" style="--c:var(--q4)">employers complain</mark> they aren’t given all the workers they need. The process is cumbersome, expensive, and unreliable. <span class="ev" data-key="t3-q34" data-label="Q34" style="--c:var(--q4)">One survey found that bureaucratic delays led the average H-2A worker to arrive on the job 22 days late</span>. The shortage is compounded by federal immigration raids, which remove some workers and drive others underground.</p>
+<p class="para"><span class="pnum">P7</span>In a 2012 survey, 71 percent of tree-fruit growers and almost 80 percent of raisin and berry growers said they were short of labor. Some western farmers have responded by moving operations to Mexico. From 1998 to 2000, 14.5 percent of the fruit Americans consumed was imported. Little more than a decade later, the share of imports was 25.8 percent.</p>
+<p class="para"><span class="pnum">P8</span><span class="scope-anchor" data-key="t3-q35" data-map="t3-q35-m0" style="--c:var(--q5)">Q35 标题定位</span>In effect, <span class="ev" data-key="t3-q35" data-label="Q35" style="--c:var(--q5)">the U.S. can import food or it can import the workers who pick it</span>.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t3-q35" data-map="t3-q35-m0">best title</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t3-q31" id="t3-q31" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q31</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">What problem should be addressed according to the <span class="stem-hit" data-map="t3-q31-m0">first two paragraphs</span>?<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q31-m1">immigration rules</span><span class="stem-hit" data-map="t3-q31-m2">visa for agricultural workers</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> Discrimination against foreign workers in the U.S.</li><li class=""><span>[B]</span> Biased laws in favor of some American businesses.</li><li class="ok"><span>[C]</span> Flaws in U.S. immigration rules for farm workers.</li><li class=""><span>[D]</span> Decline of job opportunities in U.S. agriculture.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>first two paragraphs → P1—P2；problem should be addressed 对应 overhaul / change。</span></div><div class="chain-row"><b>定位</b><span>题干指定前两段；P1 直接提出需 overhaul immigration rules，P2 具体说农业签证改革受阻。</span></div><div class="chain-row"><b>证据</b><span>P1 说 complaints won’t stop without an overhaul of immigration rules for farm workers；P2 说需更直截了当的农业工人签证。</span></div><div class="chain-row"><b>替换</b><span>overhaul immigration rules / create visa = fix flaws in U.S. immigration rules for farm workers。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>文中谈签证和规则，不是歧视外国工人。</span></div><div class="counter-row"><b>B</b><span>没有说法律偏袒某些企业。</span></div><div class="counter-row"><b>D</b><span>问题是劳动力短缺，不是农业就业机会下降。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q32" id="t3-q32" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q32</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">One trouble with U.S. <span class="stem-hit" data-map="t3-q32-m1">agricultural workforce</span> is ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q32-m0">Q32 劳动力定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> the rising number of illegal immigrants</li><li class=""><span>[B]</span> the high mobility of crop workers</li><li class=""><span>[C]</span> the lack of experienced laborers</li><li class="ok"><span>[D]</span> the aging of immigrant farm workers</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>agricultural workforce 原词复现；trouble 对应 changing characteristics 中的不利点。</span></div><div class="chain-row"><b>定位</b><span>定位 P3 workforce are changing；后文 “They’re also aging” 是明确信息。</span></div><div class="chain-row"><b>证据</b><span>P3 说 crop workers over 35 从 one-third 变成 more than half，且 picking crops is hard on older bodies。</span></div><div class="chain-row"><b>替换</b><span>They’re also aging = the aging of immigrant farm workers。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>原文说 fewer undocumented immigrants enter，不是 rising number。</span></div><div class="counter-row"><b>B</b><span>原文说 more likely to be settled rather than migrating，B 反向。</span></div><div class="counter-row"><b>C</b><span>experience 没有作为问题出现。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q33" id="t3-q33" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q33</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">What is the <span class="stem-hit" data-map="t3-q33-m0">much-argued solution</span> to the labor shortage in U.S. farming?<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q33-m1">Native U.S. workers</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> To attract younger laborers to farm work.</li><li class="ok"><span>[B]</span> To get native U.S. workers back to farming.</li><li class=""><span>[C]</span> To use more robots to grow high-value crops.</li><li class=""><span>[D]</span> To strengthen financial support for farmers.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>much-argued solution → 原文 oft-debated cure；labor shortage 原词复现。</span></div><div class="chain-row"><b>定位</b><span>P3 末句冒号后给出被反复讨论的方案；注意题问“方案是什么”，不是问作者是否赞成。</span></div><div class="chain-row"><b>证据</b><span>P3 写道：One oft-debated cure ... Native U.S. workers won’t be returning to the farm。</span></div><div class="chain-row"><b>替换</b><span>oft-debated cure = much-argued solution；Native U.S. workers returning to farm = get native U.S. workers back to farming。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>younger laborers 不是原文方案。</span></div><div class="counter-row"><b>C</b><span>mechanization 在 P4 被提到，但作者说 isn’t the answer，且不等同 much-argued solution。</span></div><div class="counter-row"><b>D</b><span>财政支持没有出现。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q34" id="t3-q34" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q34</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">Agricultural employers complain about the <span class="stem-hit" data-map="t3-q34-m1">H-2A visa</span> for its ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q34-m0">Q34 H-2A 定位</span><span class="stem-hit" data-map="t3-q34-m2">employers complain</span></span></p>
+<ul class="options"><li class="ok"><span>[A]</span> slow granting procedures</li><li class=""><span>[B]</span> limit on duration of stay</li><li class=""><span>[C]</span> tightened requirements</li><li class=""><span>[D]</span> control of annual admissions</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>H-2A visa 原词复现；employers complain 原词复现。</span></div><div class="chain-row"><b>定位</b><span>定位 P6 “employers complain” 后的解释句；bureaucratic delays 是核心证据。</span></div><div class="chain-row"><b>证据</b><span>P6 说 The process is cumbersome, expensive, and unreliable，并有 bureaucratic delays 使工人平均晚到 22 天。</span></div><div class="chain-row"><b>替换</b><span>bureaucratic delays / arrive 22 days late = slow granting procedures。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>stay longer 是改革目标，非 H-2A 抱怨点。</span></div><div class="counter-row"><b>C</b><span>requirements tightened 未出现。</span></div><div class="counter-row"><b>D</b><span>原文明确 H-2A has no numerical cap，D 反向。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q35" id="t3-q35" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q35</span><span class="atype">主旨标题题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">Which of the following could be the <span class="stem-hit" data-map="t3-q35-m0">best title</span> for this text?</p>
+<ul class="options"><li class=""><span>[A]</span> U.S. Agriculture in Decline?</li><li class="ok"><span>[B]</span> Import Food or Labor?</li><li class=""><span>[C]</span> America Saved by Mexico?</li><li class=""><span>[D]</span> Manpower vs. Automation?</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>best title 要综合全文；结尾句是标题信号。</span></div><div class="chain-row"><b>定位</b><span>全文围绕美国农业劳工短缺与移民工人展开，P8 用一句话收束选择：进口食物还是进口采摘工人。</span></div><div class="chain-row"><b>证据</b><span>P8 直接总结：the U.S. can import food or it can import the workers who pick it。</span></div><div class="chain-row"><b>替换</b><span>import food / import workers = Import Food or Labor。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>全文不是论证美国农业整体衰退。</span></div><div class="counter-row"><b>C</b><span>Mexico 只是部分劳工来源和迁厂地点，标题过窄。</span></div><div class="counter-row"><b>D</b><span>automation 只在一段中被排除，不是全文主轴。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-4">
+<header class="unit-head">
+<div>
+<h2>Text 4｜高分阅读路径图解析</h2>
+<p>Q36—Q40。塑料危机治理：不能只靠个人消费选择，还要结构性政策。</p>
+</div>
+<nav class="text-nav"><button data-target="t4-q36" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q36</button><button data-target="t4-q37" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q37</button><button data-target="t4-q38" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q38</button><button data-target="t4-q39" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q39</button><button data-target="t4-q40" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q40</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t4-q36" data-target="t4-q36" style="--c:var(--q1)">
+<b>Q36｜细节题</b>
+<p>P1：celebrities in a new video encourage consumers to swap out single-use plastic。</p>
+</article>
+<article class="route-card" data-key="t4-q37" data-target="t4-q37" style="--c:var(--q2)">
+<b>Q37｜细节题</b>
+<p>P3：moral licensing 满足“做过了”的心理，阻止更大行动。</p>
+</article>
+<article class="route-card" data-key="t4-q38" data-target="t4-q38" style="--c:var(--q3)">
+<b>Q38｜推断题</b>
+<p>P4：citizens 身份意味着要求政府和行业负责、推动系统变革。</p>
+</article>
+<article class="route-card" data-key="t4-q39" data-target="t4-q39" style="--c:var(--q4)">
+<b>Q39｜细节题</b>
+<p>P5—P6：DeSombre 认为大规模集体改变最好是 structural，并举政策、禁令、激励。</p>
+</article>
+<article class="route-card" data-key="t4-q40" data-target="t4-q40" style="--c:var(--q5)">
+<b>Q40｜结论题</b>
+<p>P7—P8：individual actions 不是唯一或主要方案，需要 progressive policies 配合。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t4-q36" data-map="t4-q36-m0" style="--c:var(--q1)">Q36 视频定位</span>Arnold Schwarzenegger, Dia Mirza and Adrian Grenier have a message for you: It’s easy to beat plastic. They’re part of a bunch of <mark class="kw" data-key="t4-q36" data-map="t4-q36-m1" style="--c:var(--q1)">celebrities starring in a new video</mark> for World Environment Day — <span class="ev" data-key="t4-q36" data-label="Q36" style="--c:var(--q1)">encouraging you, the consumer, to swap out your single-use plastic staples like straws and cutlery to combat the plastics crisis</span>.</p>
+<p class="para"><span class="pnum">P2</span>The key messages that have been put together for World Environment Day do include a call for governments to enact legislation to curb single-use plastics. But the overarching message is directed at individuals.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t4-q37" data-map="t4-q37-m0" style="--c:var(--q2)">Q37 moral licensing</span>My concern with leaving it up to the individual, however, is our limited sense of what needs to be achieved. On their own, taking our own bags to the grocery store or quitting plastic straws, for example, will accomplish little and require very little of us. They could even be detrimental, satisfying a need to have “done our bit” without ever progressing onto bigger, bolder, more effective actions — a kind of <mark class="kw" data-key="t4-q37" data-map="t4-q37-m1" style="--c:var(--q2)">“moral licensing”</mark> that <span class="ev" data-key="t4-q37" data-label="Q37" style="--c:var(--q2)">allays our concerns and stops us doing more and asking more of those in charge</span>.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t4-q38" data-map="t4-q38-m0" style="--c:var(--q3)">Q38 citizens 定位</span>While the conversation around our environment and our responsibility toward it remains centered on shopping bags and straws, we’re ignoring the balance of power that implies that as “consumers” we must shop sustainably, rather than as “<mark class="kw" data-key="t4-q38" data-map="t4-q38-m1" style="--c:var(--q3)">citizens</mark>” <span class="ev" data-key="t4-q38" data-label="Q38" style="--c:var(--q3)">hold our governments and industries to account to push for real systemic change</span>.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t4-q39" data-map="t4-q39-m0" style="--c:var(--q4)">Q39 DeSombre 定位</span>It’s important to acknowledge that the environment isn’t everyone’s priority — or even most people’s. We shouldn’t expect it to be. In her latest book, <i>Why Good People Do Bad Environmental Things</i>, Wellesley College professor Elizabeth R. <mark class="kw" data-key="t4-q39" data-map="t4-q39-m1" style="--c:var(--q4)">DeSombre</mark> argues that <span class="ev" data-key="t4-q39" data-label="Q39" style="--c:var(--q4)">the best way to collectively change the behavior of large numbers of people is for the change to be structural</span>.</p>
+<p class="para"><span class="pnum">P6</span>This might mean implementing policy such as a plastic tax that adds a cost to environmentally problematic action, or banning single-use plastics altogether. India has just announced it will “eliminate all single-use plastic in the country by 2022.” There are also incentive-based ways of making better environmental choices easier, such as ensuring recycling is at least as easy as trash disposal.</p>
+<p class="para"><span class="pnum">P7</span><span class="scope-anchor" data-key="t4-q40" data-map="t4-q40-m0" style="--c:var(--q5)">Q40 结论定位</span>DeSombre isn’t saying people should stop caring about the environment. It’s just that <span class="ev" data-key="t4-q40" data-label="Q40" style="--c:var(--q5)">individual actions are too slow, she says, for that to be the only, or even primary, approach to changing widespread behavior</span>.</p>
+<p class="para"><span class="pnum">P8</span>None of this is about writing off the individual. It’s just about putting things into perspective. <span class="ev" data-key="t4-q40" data-label="Q40" style="--c:var(--q5)">We don’t have time to wait. We need progressive policies that shape collective action (and rein in polluting businesses), alongside engaged citizens pushing for change</span>.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t4-q40" data-map="t4-q40-m0">individual efforts</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t4-q36" id="t4-q36" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q36</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">Some <span class="stem-hit" data-map="t4-q36-m1">celebrities star in a new video</span> to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q36-m0">Q36 视频定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> demand new laws on the use of plastics</li><li class="ok"><span>[B]</span> urge consumers to cut the use of plastics</li><li class=""><span>[C]</span> invite public opinion on the plastics crisis</li><li class=""><span>[D]</span> disclose the causes of the plastics crisis</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>celebrities / new video 原词复现；to 对应破折号后的 encouraging。</span></div><div class="chain-row"><b>定位</b><span>定位 P1 “new video” 后的破折号，动作目的由 encouraging 引出。</span></div><div class="chain-row"><b>证据</b><span>P1 说视频鼓励 consumer 换掉 single-use plastic staples，如 straws and cutlery。</span></div><div class="chain-row"><b>替换</b><span>swap out single-use plastic staples = cut the use of plastics；encouraging = urge。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>P2 才提 governments legislation，且 overarching message 是 individuals，不是视频直接 demand laws。</span></div><div class="counter-row"><b>C</b><span>没有邀请公众意见。</span></div><div class="counter-row"><b>D</b><span>没有揭示塑料危机原因。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q37" id="t4-q37" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q37</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">The author is concerned that “<span class="stem-hit" data-map="t4-q37-m1">moral licensing</span>” may ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q37-m0">Q37 moral licensing</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> mislead us into doing worthless things</li><li class="ok"><span>[B]</span> prevent us from making further efforts</li><li class=""><span>[C]</span> weaken our sense of accomplishment</li><li class=""><span>[D]</span> suppress our desire for success</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>moral licensing 原词复现；concern 对应 My concern。</span></div><div class="chain-row"><b>定位</b><span>P3 moral licensing 后定语从句解释危害：allays... and stops...。</span></div><div class="chain-row"><b>证据</b><span>P3 说 moral licensing allays our concerns and stops us doing more and asking more of those in charge。</span></div><div class="chain-row"><b>替换</b><span>stops us doing more = prevent us from making further efforts。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>文中说小行动 accomplish little，不等于 worthless，也不是被误导去做。</span></div><div class="counter-row"><b>C</b><span>恰恰是满足“done our bit”的成就感，不是削弱。</span></div><div class="counter-row"><b>D</b><span>desire for success 未出现。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q38" id="t4-q38" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q38</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">By pointing out our identity “<span class="stem-hit" data-map="t4-q38-m1">citizens</span>,” the author indicates that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q38-m0">Q38 citizens 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> our focus should be shifted to community welfare</li><li class=""><span>[B]</span> our relationship with local industries is improving</li><li class=""><span>[C]</span> we have been actively exercising our civil rights</li><li class="ok"><span>[D]</span> we should press our government to lead the combat</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>citizens 原词复现；indicates 需结合 rather than as consumers 的对比。</span></div><div class="chain-row"><b>定位</b><span>P4 中 consumers 与 citizens 对比，citizens 后直接跟 hold governments and industries to account。</span></div><div class="chain-row"><b>证据</b><span>P4 说作为 citizens，应 hold our governments and industries to account to push for real systemic change。</span></div><div class="chain-row"><b>替换</b><span>hold governments to account / push for systemic change = press our government to lead the combat。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>community welfare 没有出现，且重点是政府/行业责任。</span></div><div class="counter-row"><b>B</b><span>并未说与地方行业关系改善。</span></div><div class="counter-row"><b>C</b><span>作者是呼吁这样做，不是说我们已经在积极行使权利。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q39" id="t4-q39" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q39</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem"><span class="stem-hit" data-map="t4-q39-m1">DeSombre</span> argues that the best way for a <span class="stem-hit" data-map="t4-q39-m0">collective change</span> should be ______.</p>
+<ul class="options"><li class=""><span>[A]</span> a win-win arrangement</li><li class=""><span>[B]</span> a self-driven mechanism</li><li class=""><span>[C]</span> a cost-effective approach</li><li class="ok"><span>[D]</span> a top-down process</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>DeSombre 原词复现；collective change 对应 collectively change；best way 原词复现。</span></div><div class="chain-row"><b>定位</b><span>P5 末句直接给出 the best way；P6 的 policy / tax / banning 解释 structural。</span></div><div class="chain-row"><b>证据</b><span>P5 说 best way ... is for the change to be structural；P6 举塑料税、禁令、激励制度等政策工具。</span></div><div class="chain-row"><b>替换</b><span>structural policy change = a top-down process。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>win-win 未出现。</span></div><div class="counter-row"><b>B</b><span>self-driven 与作者反对仅靠 individual actions 相反。</span></div><div class="counter-row"><b>C</b><span>cost-effective 没有评价依据。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q40" id="t4-q40" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q40</span><span class="atype">结论题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">The author concludes that <span class="stem-hit" data-map="t4-q40-m0">individual efforts</span> ______.</p>
+<ul class="options"><li class=""><span>[A]</span> can be too aggressive</li><li class=""><span>[B]</span> can be too inconsistent</li><li class="ok"><span>[C]</span> are far from sufficient</li><li class=""><span>[D]</span> are far from rational</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>concludes → 结尾两段；individual efforts 对应 individual actions / the individual。</span></div><div class="chain-row"><b>定位</b><span>看 P7—P8 结论：不否定个人，但个人行动太慢，不能作为唯一或主要路径。</span></div><div class="chain-row"><b>证据</b><span>P7 说 individual actions are too slow to be the only or primary approach；P8 说 need progressive policies alongside engaged citizens。</span></div><div class="chain-row"><b>替换</b><span>not the only or primary approach / need policies alongside = far from sufficient。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>作者没有说个人努力过于激进。</span></div><div class="counter-row"><b>B</b><span>inconsistent 未出现。</span></div><div class="counter-row"><b>D</b><span>没有说个人行动不理性，只说不够。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+</div>
+</section>
+</main>
+</div>
+<script src="transition.js"></script>
+<script>
+const keyed=[...document.querySelectorAll('[data-key]')];
+const mapped=[...document.querySelectorAll('[data-map]')];
+function splitMaps(value){return String(value||'').split(/\s+/).filter(Boolean)}
+function activateKey(key,scroll=true){
+  keyed.forEach(el=>el.classList.toggle('active',el.dataset.key===String(key)));
+  if(scroll){
+    const target=document.getElementById(String(key))||document.querySelector('.kw[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.ev[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.scope-anchor[data-key="'+CSS.escape(String(key))+'"]');
+    if(target)target.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+function activateMaps(maps){
+  const set=new Set(Array.isArray(maps)?maps:splitMaps(maps));
+  mapped.forEach(el=>{
+    const hit=splitMaps(el.dataset.map).some(m=>set.has(m));
+    el.classList.toggle('map-active',hit);
+    el.classList.toggle('map-source-active',hit && !el.classList.contains('stem-hit'));
+  });
+}
+function clearMaps(){mapped.forEach(el=>{el.classList.remove('map-active');el.classList.remove('map-source-active')})}
+document.addEventListener('click',e=>{
+  const jump=e.target.closest('[data-target]');
+  if(jump){e.preventDefault();activateKey(jump.dataset.target);return}
+  const k=e.target.closest('[data-key]');
+  if(k){activateKey(k.dataset.key,!k.classList.contains('qcard'))}
+});
+document.addEventListener('mouseover',e=>{
+  const mapEl=e.target.closest('[data-map]');
+  if(mapEl)activateMaps(splitMaps(mapEl.dataset.map));
+  const keyEl=e.target.closest('[data-key]');
+  if(keyEl)keyed.forEach(x=>x.classList.toggle('active',x.dataset.key===keyEl.dataset.key));
+});
+document.addEventListener('mouseout',e=>{
+  if(e.target.closest('[data-map]'))clearMaps();
+});
+</script>
+</body>
+</html>

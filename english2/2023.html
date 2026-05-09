@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>2023 年考研英语二阅读路径图</title>
+<style>
+  :root{
+    --bg:#f7efe4; --paper:#fffdfa; --ink:#211c17; --muted:#74675c;
+    --line:#ded0c0; --soft:#f0e5d7;
+    --q1:#2563eb; --q2:#07845f; --q3:#7c4dcc; --q4:#d43b32; --q5:#ce7a12;
+    --shadow:0 20px 48px rgba(47,34,19,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{margin:0;background:linear-gradient(180deg,#fcf8f1 0%,var(--bg) 100%);color:var(--ink);font-family:Georgia,"Times New Roman","Noto Serif CJK SC","Source Han Serif SC","Songti SC",serif;line-height:1.58}
+  .topbar{position:sticky;top:0;z-index:80;background:rgba(255,253,250,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+  .topbar-inner{max-width:1440px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-size:18px;font-weight:950;letter-spacing:.02em;white-space:nowrap}
+  .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  button,.jump-btn{font:800 13px/1 Georgia,"Times New Roman","Noto Serif CJK SC",serif;color:var(--ink);background:#fff9f0;border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;text-decoration:none}
+  button:hover,.jump-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(47,34,19,.10)}
+  .page{max-width:1440px;margin:0 auto;padding:24px 22px 64px}
+  .year-header{margin:0 0 18px;padding:22px 24px;border:1px solid var(--line);border-radius:28px;background:rgba(255,253,250,.72);box-shadow:var(--shadow)}
+  .year-header h1{margin:0;font-size:42px;line-height:1.08;letter-spacing:-.035em;font-weight:950}
+  .year-header p{margin:8px 0 0;color:var(--muted);font-size:15px}
+  .text-index{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .text-unit{margin:28px 0 42px;scroll-margin-top:90px;break-before:page}.text-unit:first-of-type{break-before:auto}
+  .unit-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end;margin-bottom:16px;padding:20px 22px;border:1px solid var(--line);border-radius:26px;background:var(--paper);box-shadow:var(--shadow)}
+  .unit-head h2{margin:0;font-size:32px;line-height:1.12;letter-spacing:-.02em}
+  .unit-head p{margin:8px 0 0;color:var(--muted);font-size:14px}
+  .text-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .route{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:18px 18px 16px;box-shadow:var(--shadow);margin-bottom:22px}
+  .route h3{margin:0 0 12px;font-size:18px;letter-spacing:.02em;color:#51463d}
+  .route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+  .route-card{--c:#444;position:relative;overflow:hidden;min-height:92px;cursor:pointer;background:#fffaf3;border:1px solid var(--line);border-radius:18px;padding:14px 14px 12px 17px}
+  .route-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
+  .route-card b{display:block;color:var(--c)!important;font-size:17px;margin-bottom:6px}.route-card p{margin:0;font-size:14px;line-height:1.42;color:#5a4f45}
+  .layout{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(440px,.96fr);gap:22px;align-items:start}
+  .article-panel,.analysis-panel{background:var(--paper);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}
+  .panel-head{padding:22px 24px 12px;border-bottom:1px solid var(--line)}
+  .panel-head h3{margin:0;font-size:28px;letter-spacing:-.02em}.panel-head p{margin:6px 0 0;color:var(--muted);font-size:14px}
+  .article-body{padding:22px 26px 24px}.article-text{font-size:19px;line-height:1.86;color:#1f1b16;text-align:left}
+  .para{position:relative;margin:0 0 20px;padding-left:66px}.para:last-child{margin-bottom:0}
+  .pnum{position:absolute;left:0;top:2px;display:inline-flex;align-items:center;justify-content:center;width:38px;height:28px;border-radius:999px;background:var(--soft);color:#5a4f45;font-size:13px;font-weight:950}
+  .snum{font-size:11px;color:#9b8d7f;font-weight:950;margin-right:2px;vertical-align:super}
+  .scope-anchor{--c:#444;display:inline-flex;align-items:center;margin:0 6px 0 0;padding:4px 8px;border-radius:999px;background:var(--c);color:white;font-size:12px;font-weight:950;vertical-align:middle;cursor:pointer;white-space:nowrap}
+  .kw{--c:#444;position:relative;display:inline;color:var(--c)!important;font-weight:950;padding:0 .12em .02em;border-radius:5px;text-decoration-line:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--c)!important;background:linear-gradient(to top,color-mix(in srgb,var(--c) 22%,transparent) 0%,color-mix(in srgb,var(--c) 22%,transparent) 48%,transparent 48%,transparent 100%);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 16%,transparent);cursor:pointer}
+  .ev{--c:#444;color:var(--ink);font-weight:650;border-radius:3px;padding:0 1px 1px;text-decoration-line:underline;text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-color:var(--c)!important;background:color-mix(in srgb,var(--c) 8%,transparent);cursor:pointer;transition:background .18s ease,box-shadow .18s ease}
+  .ev:after{content:attr(data-label);font-size:10px;font-weight:950;line-height:1;border-radius:999px;padding:2px 5px;margin-left:4px;color:white;vertical-align:middle;white-space:nowrap;background:var(--c)!important}
+  .analysis-panel{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow:auto}.analysis-body{padding:16px;display:grid;gap:14px}
+  .qcard{--c:#444;background:linear-gradient(180deg,#fffdfa,#fff8ed);border:1px solid var(--line);border-radius:20px;padding:16px 17px;position:relative;overflow:hidden;scroll-margin-top:90px}
+  .qcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
+  .qtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;border-bottom:1px dashed var(--line);padding-bottom:9px}.qtitle{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:950}.badge{background:var(--c)!important;color:white;border-radius:999px;padding:4px 10px;font-size:14px}.atype{color:var(--muted);font-size:14px;font-weight:900}.rightans{font-size:14px;color:var(--muted);font-weight:900}.rightans strong{font-size:25px;color:var(--ink);line-height:1}
+  .stem{margin:0 0 10px;font-size:16.8px;line-height:1.42;font-weight:950;color:#211c17}.stem-hit{border-radius:5px;padding:0 .08em;transition:background .15s ease,box-shadow .15s ease,color .15s ease}.stem-hit.map-active{background:#fff1a8;box-shadow:0 0 0 2px #f3c94d;color:#1f1b16}.stem-hit:hover{background:#fff4bf;cursor:pointer}
+  .options{list-style:none;margin:0 0 11px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:13.6px;line-height:1.32}.options li{border:1px solid #eadfd2;background:#fffefb;border-radius:12px;padding:7px 8px}.options span{font-weight:950;margin-right:4px}.options .ok{background:#f3fbf2;border-color:#a9cfab;box-shadow:inset 0 0 0 1px rgba(92,148,91,.13)}
+  .chain{display:grid;gap:7px;font-size:14px;line-height:1.47}.chain-row{display:grid;grid-template-columns:74px 1fr;gap:8px;border-top:1px solid #f0e6da;padding-top:7px}.chain-row:first-child{border-top:0;padding-top:0}.chain-row b{color:#584b41}
+  .counter{margin-top:10px;border:1px solid #eadfd2;border-radius:15px;overflow:hidden;background:#fffdfa}.counter h4{margin:0;padding:7px 10px;font-size:13.5px;background:#f0e6da;color:#55483e}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid #efe3d7;font-size:13px;line-height:1.36}.counter-row:first-of-type{border-top:0}.counter-row b{padding:7px 9px;background:#fbf6ef}.counter-row span{padding:7px 9px;color:#342d26}
+  .qcard.active,.route-card.active,.ev.active,.kw.active,.scope-anchor.active{box-shadow:0 0 0 3px var(--c),0 14px 32px rgba(47,34,19,.10);background:#fff4d4}.map-source-active{box-shadow:0 0 0 2px #f3c94d,0 6px 18px rgba(47,34,19,.12)!important;background:#fff1a8!important;color:#1f1b16!important}
+  .note-box{margin-top:14px;background:#fff8ed;border:1px solid var(--line);border-radius:18px;padding:14px 16px;color:#4f453c;font-size:14px;line-height:1.55}
+  @media (max-width:1120px){.unit-head,.layout{grid-template-columns:1fr}.text-nav{justify-content:flex-start}.analysis-panel{position:static;max-height:none}.options{grid-template-columns:1fr}}
+  @media print{@page{size:A4;margin:12mm}body{background:#fff}.topbar{display:none}.page{max-width:none;padding:0}.route,.article-panel,.analysis-panel,.qcard{box-shadow:none}.layout{grid-template-columns:1fr}.analysis-panel{position:static;max-height:none;overflow:visible}.qcard{break-inside:avoid}.ev,.kw,.badge,.route-card,.scope-anchor{print-color-adjust:exact;-webkit-print-color-adjust:exact}.article-text{font-size:14.7px;line-height:1.72}.panel-head h3{font-size:22px}.kw{box-shadow:none;background:transparent;color:var(--c)!important;text-decoration-thickness:2px}.text-unit{break-before:page}.text-unit:first-of-type{break-before:auto}}
+
+  .text-nav button[style*="--c"], .route-card[style*="--c"]{transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+  .text-nav button[style*="--c"]{background:color-mix(in srgb,var(--c) 9%,#fff9f0);}
+</style>
+<style>
+/* repair-v1: final closed-loop compatibility layer */
+.article-panel .source-supplement,.article .source-supplement{margin-top:18px;padding:12px 14px;border:1px dashed rgba(180,154,130,.45);border-radius:16px;background:rgba(255,248,237,.62);font-size:15px;line-height:1.8;color:#4f443e}.source-supplement h4{margin:0 0 8px;font-size:15px;color:#6c5b52}.source-fix{display:inline-block;margin:2px 5px 2px 0}.stem-sync-bank{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}.map-active,.kw.map-active,.ev.map-active,.stem-hit.map-active{outline:2px solid currentColor;outline-offset:2px;border-radius:5px;background:rgba(255,248,184,.42)!important}.qcard{border-color:var(--c)!important}.qcard .badge{background:var(--c)!important}.options .ok{border-color:#9dccaa!important;background:#effaf0!important}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid rgba(120,100,80,.18);padding:7px 10px}.counter-row b{font-weight:800}.chain-row{display:grid;grid-template-columns:82px 1fr;gap:12px;border-top:1px solid rgba(120,100,80,.14);padding:9px 0}.chain-row b{color:#6b5a50}.repair-note{font-size:12px;color:#8a776d;margin-top:8px}.text-unit{scroll-margin-top:90px}.qcard{scroll-margin-top:90px}
+</style><link href="year.css" rel="stylesheet"/>
+</head>
+<body class="is-entering exam-two-page">
+<div class="page-pass"><b>2023</b><span>进入英语二</span></div>
+<div class="site-shell">
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" data-exam-target="two" data-transition-year="2023" href="../index.html?exam=two">Time Garden</a>
+<nav aria-label="年份页导航" class="nav"><a class="primary" data-exam-target="two" data-transition-year="2023" href="../index.html?exam=two">返回花园首页</a><a data-exam-target="two" data-transition-year="2022" href="2022.html">← 2022</a><a data-exam-target="two" data-transition-year="2023" href="../index.html?exam=two">花园首页</a><a data-exam-target="two" data-transition-year="2024" href="2024.html">2024 →</a><button onclick="window.print()" type="button">打印 / 导出 PDF</button></nav>
+</div>
+</header>
+<main class="page">
+<section aria-labelledby="year-title-2023" class="year-masthead english2-masthead">
+<div>
+<p class="kicker">年度阅读路径 · 2023 · 英语二</p>
+<h1 id="year-title-2023">2023 年阅读路径图</h1>
+<p>英语二 Part A · Text 1—4 · 20 题 · 关键词定位与原文证据链</p>
+</div>
+<div aria-label="年份概览" class="masthead-meta"><span>4 篇阅读</span><span>20 道题卡</span></div>
+</section>
+<section class="chapter-shell">
+<div class="chapter-quicknav">
+<div class="chapter-quicknav-title">阅读章节</div>
+<div aria-label="2023 年 Text 快速跳转" class="year-text-nav"><a class="text-chip" href="#text-1">Text 1</a><a class="text-chip" href="#text-2">Text 2</a><a class="text-chip" href="#text-3">Text 3</a><a class="text-chip" href="#text-4">Text 4</a></div>
+</div>
+<div class="year-content">
+<section class="text-unit" id="text-1">
+<header class="unit-head">
+<div>
+<h2>Text 1｜高分阅读路径图解析</h2>
+<p>Q21—Q25。塑料草坪争议：RHS、campaigners、industry 与 government 的立场对照。</p>
+</div>
+<nav class="text-nav"><button data-target="t1-q21" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q21</button><button data-target="t1-q22" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q22</button><button data-target="t1-q23" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q23</button><button data-target="t1-q24" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q24</button><button data-target="t1-q25" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q25</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t1-q21" data-target="t1-q21" style="--c:var(--q1)">
+<b>Q21｜细节题</b>
+<p>P1—P2：RHS ban 的原因是 damage to environment and biodiversity。</p>
+</article>
+<article class="route-card" data-key="t1-q22" data-target="t1-q22" style="--c:var(--q2)">
+<b>Q22｜细节题</b>
+<p>P3：two petitions 分别要求 ban sale 与 ecological damage tax。</p>
+</article>
+<article class="route-card" data-key="t1-q23" data-target="t1-q23" style="--c:var(--q3)">
+<b>Q23｜细节题</b>
+<p>P4：supporters 反击称 natural lawns 也有环境成本。</p>
+</article>
+<article class="route-card" data-key="t1-q24" data-target="t1-q24" style="--c:var(--q4)">
+<b>Q24｜细节题</b>
+<p>P5—P6：政府不立法禁用，只强调 comply with existing safeguards。</p>
+</article>
+<article class="route-card" data-key="t1-q25" data-target="t1-q25" style="--c:var(--q5)">
+<b>Q25｜主旨/推断题</b>
+<p>全文：RHS、campaigners、industry supporters 与 government 形成争议链。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t1-q21" data-map="t1-q21-m0" style="--c:var(--q1)">Q21 定位</span><span class="scope-anchor" data-key="t1-q25" data-map="t1-q25-m0" style="--c:var(--q5)">Q25 全文起点</span>In the quest for the perfect lawn, homeowners across the country are taking a shortcut—and it is the environment that is paying the price. About eight million square metres of <mark class="kw" data-key="t1-q21" data-map="t1-q21-m2" style="--c:var(--q1)">plastic grass</mark> is sold each year but <span class="ev" data-key="t1-q25" data-label="Q25" style="--c:var(--q5)">opposition has now spread to the highest gardening circles</span>. The Chelsea Flower Show has banned fake grass from this year’s event, declaring it to be not part of its ethos. The <mark class="kw" data-key="t1-q21" data-map="t1-q21-m1" style="--c:var(--q1)">Royal Horticultural Society (RHS)</mark>, which runs the annual show in west London, says it has introduced the ban <span class="ev" data-key="t1-q21" data-label="Q21" style="--c:var(--q1)">because of the damage plastic grass does to the environment and biodiversity</span>.</p>
+<p class="para"><span class="pnum">P2</span>Ed Horne, of the RHS, said: “We launched our sustainability strategy last year and fake grass is just not in line with our ethos and views on plastic. We recommend using real grass because of its environmental benefits, which include supporting wildlife, alleviating flooding and cooling the environment.”</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t1-q22" data-map="t1-q22-m1" style="--c:var(--q2)">Q22 段落定位</span>The RHS’s decision comes as <mark class="kw" data-key="t1-q22" data-map="t1-q22-m2" style="--c:var(--q2)">campaigners</mark> try to raise awareness of the problems fake grass causes. A Twitter account, which claims to “cut through the greenwash” of artificial grass, already has more than 20,000 followers. It is trying to <span class="ev" data-key="t1-q22" data-label="Q22" style="--c:var(--q2)">encourage people to sign two <mark class="kw" data-key="t1-q22" data-map="t1-q22-m3" style="--c:var(--q2)">petitions</mark>, one calling for a ban on the sale of plastic grass and another calling for an “ecological damage” tax on such lawns</span>. They have gathered 7,276 and 11,282 signatures.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t1-q23" data-map="t1-q23-m1" style="--c:var(--q3)">Q23 段落定位</span>However, <mark class="kw" data-key="t1-q23" data-map="t1-q23-m2" style="--c:var(--q3)">supporters of fake grass</mark> point out that <span class="ev" data-key="t1-q23" data-label="Q23" style="--c:var(--q3)">there is also an environmental impact with natural lawns, which need mowing and therefore usually consume electricity or petrol</span>. The industry also points out that <span class="ev" data-key="t1-q23" data-label="Q23" style="--c:var(--q3)">real grass requires considerable amounts of water, weed killer or other treatments</span> and that people who lay fake grass tend to use their garden more. <span class="ev" data-key="t1-q25" data-label="Q25" style="--c:var(--q5)">The industry also claims</span> that people who lay fake grass spend an average of £500 on trees or shrubs for their garden, which provides habitat for insects.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t1-q24" data-map="t1-q24-m1" style="--c:var(--q4)">Q24 政府回应</span>In response to another petition last year about banning fake lawns, which gathered 30,000 signatures, the <mark class="kw" data-key="t1-q24" data-map="t1-q24-m2" style="--c:var(--q4)">government</mark> responded that it has <span class="ev" data-key="t1-q24" data-label="Q24" style="--c:var(--q4)">“no plans to ban the use of <mark class="kw" data-key="t1-q24" data-map="t1-q24-m3" style="--c:var(--q4)">artificial grass</mark>”</span>.</p>
+<p class="para"><span class="pnum">P6</span>It added: “<span class="ev" data-key="t1-q24" data-label="Q24" style="--c:var(--q4)">We prefer to help people and organisations make the right choice rather than legislating on such matters. However, the use of artificial grass must comply with the legal and policy safeguards in place to protect biodiversity and ensure sustainable drainage</span>, while measures such as the strengthened biodiversity duty should serve to encourage public authorities to consider sustainable alternatives.”</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t1-q25" data-map="t1-q25-m0">fake grass</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t1-q21" id="t1-q21" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q21</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">The <span class="stem-hit" data-map="t1-q21-m1">RHS</span> thinks that <span class="stem-hit" data-map="t1-q21-m2">plastic grass</span> ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q21-m0">Q21 定位</span></span></p>
+<ul class="options"><li class="ok"><span>[A]</span> is harmful to the environment</li><li class=""><span>[B]</span> is a hot topic in gardening circles</li><li class=""><span>[C]</span> is overpraised in the annual show</li><li class=""><span>[D]</span> is ruining the view of west London</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span><span class="stem-hit" data-map="t1-q21-m1">RHS</span> → 原文 Royal Horticultural Society；<span class="stem-hit" data-map="t1-q21-m2">plastic grass</span> 原词复现。</span></div><div class="chain-row"><b>定位</b><span>题干机构词 RHS 与对象词 plastic grass 直接落到 P1—P2；看 RHS 为什么 ban fake grass。</span></div><div class="chain-row"><b>证据</b><span>P1 明说 ban 的原因是 “damage plastic grass does to the environment and biodiversity”。</span></div><div class="chain-row"><b>替换</b><span>is harmful to the environment = does damage to the environment and biodiversity。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>文中说反对声音扩散到 gardening circles，不是 RHS 对 plastic grass 的评价核心。</span></div><div class="counter-row"><b>C</b><span>“annual show”只说明被 Chelsea Flower Show 禁止，不是被过度赞扬。</span></div><div class="counter-row"><b>D</b><span>west London 是展会所在地，文中没有说破坏伦敦景观。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q22" id="t1-q22" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q22</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">The <span class="stem-hit" data-map="t1-q22-m3">petitions</span> mentioned in <span class="stem-hit" data-map="t1-q22-m1">Paragraph 3</span> reveal the <span class="stem-hit" data-map="t1-q22-m2">campaigners’</span> ______.</p>
+<ul class="options"><li class=""><span>[A]</span> disappointment with the RHS</li><li class="ok"><span>[B]</span> resistance to fake grass use</li><li class=""><span>[C]</span> anger over the proposed tax</li><li class=""><span>[D]</span> concern about real grass supply</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 3 → P3 段首锚点；campaigners 原词复现；petitions 原词复现。</span></div><div class="chain-row"><b>定位</b><span>先按段落词锁定 P3，再看 petitions 的具体诉求。</span></div><div class="chain-row"><b>证据</b><span>P3 两个 petition：一个要求 ban sale，一个要求 ecological damage tax。</span></div><div class="chain-row"><b>替换</b><span>ban / tax on plastic grass = resistance to fake grass use。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>campaigners 与 RHS 立场一致，P3 没有对 RHS 失望。</span></div><div class="counter-row"><b>C</b><span>tax 是他们提出的诉求，不是他们反对的对象。</span></div><div class="counter-row"><b>D</b><span>P3 完全没有讨论 real grass supply。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q23" id="t1-q23" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q23</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">In <span class="stem-hit" data-map="t1-q23-m1">Paragraph 4</span>, <span class="stem-hit" data-map="t1-q23-m2">supporters of fake grass</span> point out ______.</p>
+<ul class="options"><li class=""><span>[A]</span> the necessity to lower the costs of fake grass</li><li class="ok"><span>[B]</span> the disadvantages of growing real grass</li><li class=""><span>[C]</span> the way to take care of artificial lawns</li><li class=""><span>[D]</span> the challenges of insect habitat protection</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 4 → P4 段首锚点；supporters of fake grass 原词复现。</span></div><div class="chain-row"><b>定位</b><span>转折词 However 引出支持者观点；其后集中比较 natural lawns / real grass 的成本。</span></div><div class="chain-row"><b>证据</b><span>P4 说 natural lawns need mowing and consume electricity or petrol；real grass requires water, weed killer or other treatments。</span></div><div class="chain-row"><b>替换</b><span>environmental impact / mowing / electricity / petrol / water / weed killer = disadvantages of growing real grass。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>£500 是用于 trees or shrubs 的支出，不是降低 fake grass 成本。</span></div><div class="counter-row"><b>C</b><span>P4 没有教如何护理 artificial lawns。</span></div><div class="counter-row"><b>D</b><span>insect habitat 被说成额外好处，不是保护挑战。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q24" id="t1-q24" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q24</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">What would the <span class="stem-hit" data-map="t1-q24-m2">government</span> do with regard to <span class="stem-hit" data-map="t1-q24-m3">artificial grass</span>?<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q24-m1">Q24 政府回应</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> Urge legislation to restrict its use.</li><li class=""><span>[B]</span> Take measures to guarantee its quality.</li><li class="ok"><span>[C]</span> Remind its users to obey existing rules.</li><li class=""><span>[D]</span> Replace it with sustainable alternatives.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>government 原词复现；artificial grass 原词复现；“would do”对应政府回应段 P5—P6。</span></div><div class="chain-row"><b>定位</b><span>P5 government responded 后进入政策态度；P6 用 rather than legislating 与 must comply 给出处理方式。</span></div><div class="chain-row"><b>证据</b><span>P6 说不倾向立法，而是要求 artificial grass must comply with legal and policy safeguards。</span></div><div class="chain-row"><b>替换</b><span>must comply with legal and policy safeguards = obey existing rules。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>原文是 rather than legislating，直接排除推动立法限制。</span></div><div class="counter-row"><b>B</b><span>quality 没有出现；政府关心 biodiversity 与 drainage。</span></div><div class="counter-row"><b>D</b><span>原文是 encourage public authorities to consider alternatives，不是直接替换使用者的 artificial grass。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q25" id="t1-q25" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q25</span><span class="atype">主旨/推断题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">It can be learned from the text that <span class="stem-hit" data-map="t1-q25-m0">fake grass</span> ______.</p>
+<ul class="options"><li class=""><span>[A]</span> is being improved continuously</li><li class=""><span>[B]</span> has seen a market share decline</li><li class=""><span>[C]</span> is becoming increasingly affordable</li><li class="ok"><span>[D]</span> has been a controversial product</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>fake grass 贯穿全文；“can be learned from the text”提示综合全文而非单句。</span></div><div class="chain-row"><b>定位</b><span>从 P1 opposition / ban，到 P3 petitions，再到 P4 supporters 反驳，P5—P6 政府回应，构成多方争议。</span></div><div class="chain-row"><b>证据</b><span>全文同时出现 ban、petitions、supporters、government response，说明 fake grass 引发持续争议。</span></div><div class="chain-row"><b>替换</b><span>opposition + petitions + supporters’ counterargument + government response = controversial product。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>没有技术改进或产品升级信息。</span></div><div class="counter-row"><b>B</b><span>只说每年销量，不说市场份额下降。</span></div><div class="counter-row"><b>C</b><span>价格趋势没有出现；£500 也不是 fake grass 降价。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-2">
+<header class="unit-head">
+<div>
+<h2>Text 2｜高分阅读路径图解析</h2>
+<p>Q26—Q30。美国国家公园资金缺口：商业化方案与真正资金问题的辨析。</p>
+</div>
+<nav class="text-nav"><button data-target="t2-q26" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q26</button><button data-target="t2-q27" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q27</button><button data-target="t2-q28" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q28</button><button data-target="t2-q29" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q29</button><button data-target="t2-q30" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q30</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t2-q26" data-target="t2-q26" style="--c:var(--q1)">
+<b>Q26｜细节题</b>
+<p>P2：in crisis 后直接列出 backlog 与 crumbling infrastructure。</p>
+</article>
+<article class="route-card" data-key="t2-q27" data-target="t2-q27" style="--c:var(--q2)">
+<b>Q27｜细节/推断题</b>
+<p>P3—P4：privatization would not be cure-all；会 undercut visitors’ reason。</p>
+</article>
+<article class="route-card" data-key="t2-q28" data-target="t2-q28" style="--c:var(--q3)">
+<b>Q28｜细节题</b>
+<p>P5：survey respondents would pay additional taxes。</p>
+</article>
+<article class="route-card" data-key="t2-q29" data-target="t2-q29" style="--c:var(--q4)">
+<b>Q29｜细节题</b>
+<p>P6：value 列举中，最后一句强调 protect historical sites。</p>
+</article>
+<article class="route-card" data-key="t2-q30" data-target="t2-q30" style="--c:var(--q5)">
+<b>Q30｜主旨/结论题</b>
+<p>P5+P7：real problem is funding；预算多年持平，游客大增。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span>It’s easy to dismiss as absurd the federal government’s ideas for plugging the chronic funding gap of our national parks. Can anyone really think it’s a good idea to allow Amazon deliveries to your tent in Yosemite or food trucks to line up under the redwood trees at Sequoia National Park?</p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t2-q26" data-map="t2-q26-m0" style="--c:var(--q1)">Q26 定位</span>But the government is right about one thing: <mark class="kw" data-key="t2-q26" data-map="t2-q26-m1" style="--c:var(--q1)">U.S. national parks</mark> are in crisis. Collectively, they have <span class="ev" data-key="t2-q26" data-label="Q26" style="--c:var(--q1)">a maintenance backlog of more than $12 billion. Roads, trails, restrooms, visitor centers and other infrastructure are crumbling</span>.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t2-q27" data-map="t2-q27-m0" style="--c:var(--q2)">Q27 定位起点</span>But <mark class="kw" data-key="t2-q27" data-map="t2-q27-m1" style="--c:var(--q2)">privatizing and commercializing the campgrounds</mark> would not be a cure-all. Campgrounds are a tiny portion of the overall infrastructure backlog, and businesses in the parks hand over, on average, only about 5% of their revenues to the National Park Service.</p>
+<p class="para"><span class="pnum">P4</span>Moreover, increased <mark class="kw" data-key="t2-q27" data-map="t2-q27-m2" style="--c:var(--q2)">privatization</mark> would certainly <span class="ev" data-key="t2-q27" data-label="Q27" style="--c:var(--q2)">undercut one of the major reasons why 300 million visitors come to the parks each year: to enjoy nature and get a break from the commercial drumbeat that overwhelms daily life</span>.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t2-q28" data-map="t2-q28-m1" style="--c:var(--q3)">Q28 段落定位</span>The real problem is that the parks have been chronically starved of funding. An economic survey of 700 U.S. taxpayers found that people would be willing to <span class="ev" data-key="t2-q28" data-label="Q28" style="--c:var(--q3)">pay a significant amount of money to make sure the parks and their programs are kept intact. Some <mark class="kw" data-key="t2-q28" data-map="t2-q28-m2" style="--c:var(--q3)">81% of respondents</mark> said they would be willing to pay additional taxes for the next 10 years to avoid any cuts to the national parks</span>.</p>
+<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="t2-q29" data-map="t2-q29-m0" style="--c:var(--q4)">Q29 定位</span>The <mark class="kw" data-key="t2-q29" data-map="t2-q29-m1" style="--c:var(--q4)">national parks</mark> provide great <mark class="kw" data-key="t2-q29" data-map="t2-q29-m2" style="--c:var(--q4)">value</mark> to U.S. residents both as places to escape and as symbols of nature. On top of this, they produce value from their extensive educational programs, their positive impact on the climate through carbon sequestration, their contribution to our cultural and artistic life, and of course through tourism. The parks also <span class="ev" data-key="t2-q29" data-label="Q29" style="--c:var(--q4)">help keep America’s past alive, working with thousands of local jurisdictions around the country to protect historical sites and to bring the stories of these places to life</span>.</p>
+<p class="para"><span class="pnum">P7</span><span class="scope-anchor" data-key="t2-q30" data-map="t2-q30-m0" style="--c:var(--q5)">Q30 结论定位</span>The parks do all this on a shoestring. Congress allocates only $3 billion a year to the <mark class="kw" data-key="t2-q30" data-map="t2-q30-m1" style="--c:var(--q5)">national park system</mark>—<span class="ev" data-key="t2-q30" data-label="Q30" style="--c:var(--q5)">an amount that has been flat since 2001 (in inflation-adjusted dollars) with the exception of a onetime boost in 2009. Meanwhile, the number of annual visitors has increased by more than 50% since 1980, and now stands at 330 million visitors per year</span>.</p>
+</div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t2-q26" id="t2-q26" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q26</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">What problem are <span class="stem-hit" data-map="t2-q26-m1">U.S. national parks</span> faced with?<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q26-m0">Q26 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> Decline of business profits.</li><li class=""><span>[B]</span> Inadequate commercialization.</li><li class=""><span>[C]</span> Lack of transportation services.</li><li class="ok"><span>[D]</span> Poorly maintained infrastructure.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>U.S. national parks 原词复现；problem 对应 in crisis 与 maintenance backlog。</span></div><div class="chain-row"><b>定位</b><span>题干对象直接落到 P2；“problem”看冒号后列举的危机内容。</span></div><div class="chain-row"><b>证据</b><span>P2 说 backlog 超过 120 亿美元，roads, trails, restrooms, visitor centers and other infrastructure are crumbling。</span></div><div class="chain-row"><b>替换</b><span>maintenance backlog / infrastructure are crumbling = poorly maintained infrastructure。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>business profits 是 P3 商业让利比例，非 parks 面临的核心问题。</span></div><div class="counter-row"><b>B</b><span>作者反对商业化不足这一诊断；commercialization 不是问题答案。</span></div><div class="counter-row"><b>C</b><span>roads 属于 infrastructure 示例，不能窄化成交通服务缺乏。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q27" id="t2-q27" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q27</span><span class="atype">细节/推断题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">Increased <span class="stem-hit" data-map="t2-q27-m2">privatization</span> of the <span class="stem-hit" data-map="t2-q27-m1">campgrounds</span> may ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q27-m0">Q27 定位起点</span></span></p>
+<ul class="options"><li class="ok"><span>[A]</span> spoil visitor experience</li><li class=""><span>[B]</span> help preserve nature</li><li class=""><span>[C]</span> bring operational pressure</li><li class=""><span>[D]</span> boost visits to parks</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>privatization / campgrounds 原文复现；increased privatization 在 P4 复现。</span></div><div class="chain-row"><b>定位</b><span>P3 先否定商业化不是 cure-all，P4 moreover 给出更关键后果。</span></div><div class="chain-row"><b>证据</b><span>P4 说 increased privatization would undercut visitors’ major reason: enjoy nature and escape commercial drumbeat。</span></div><div class="chain-row"><b>替换</b><span>undercut reason to enjoy nature / escape commerce = spoil visitor experience。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>原文说会破坏享受自然的理由，不是帮助保护自然。</span></div><div class="counter-row"><b>C</b><span>operation pressure 未出现；P3 只谈 revenue 和 backlog。</span></div><div class="counter-row"><b>D</b><span>文中 visitors 数字用于说明吸引力，不说 privatization 会增加访问量。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q28" id="t2-q28" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q28</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">According to <span class="stem-hit" data-map="t2-q28-m1">Paragraph 5</span>, most <span class="stem-hit" data-map="t2-q28-m2">respondents</span> in the survey would ______.</p>
+<ul class="options"><li class=""><span>[A]</span> go to the national parks on a regular basis</li><li class=""><span>[B]</span> advocate a bigger budget for the national parks</li><li class="ok"><span>[C]</span> agree to pay extra for the national parks</li><li class=""><span>[D]</span> support the national parks’ recent reforms</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 5 → P5 段首锚点；respondents 与 81% of respondents 原词复现。</span></div><div class="chain-row"><b>定位</b><span>段落定位后看 survey 的发现，尤其 81% of respondents 的动作。</span></div><div class="chain-row"><b>证据</b><span>P5 说 81% would be willing to pay additional taxes for the next 10 years。</span></div><div class="chain-row"><b>替换</b><span>pay additional taxes / significant amount = pay extra for the national parks。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>survey 不是关于去公园频率。</span></div><div class="counter-row"><b>B</b><span>愿意交更多税可以支持加钱，但选项说 advocate a bigger budget，原文未说“倡议/主张预算”。</span></div><div class="counter-row"><b>D</b><span>recent reforms 未出现。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q29" id="t2-q29" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q29</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">The <span class="stem-hit" data-map="t2-q29-m1">national parks</span> are <span class="stem-hit" data-map="t2-q29-m2">valuable</span> in that they ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q29-m0">Q29 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> lead the way in tourism</li><li class="ok"><span>[B]</span> have historical significance</li><li class=""><span>[C]</span> sponsor research on climate</li><li class=""><span>[D]</span> provide an income for the locals</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>national parks 原词复现；valuable ↔ provide/produce value。</span></div><div class="chain-row"><b>定位</b><span>P6 开头直接谈 value，后面并列列举价值来源；选项要和其中一项严格对应。</span></div><div class="chain-row"><b>证据</b><span>P6 说 parks help keep America’s past alive and protect historical sites。</span></div><div class="chain-row"><b>替换</b><span>keep America’s past alive / protect historical sites = have historical significance。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>tourism 只是价值之一，未说 lead the way。</span></div><div class="counter-row"><b>C</b><span>positive impact on climate 是 carbon sequestration，不是 sponsor research。</span></div><div class="counter-row"><b>D</b><span>tourism 可能带来经济价值，但原文没说给 locals 提供收入。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q30" id="t2-q30" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q30</span><span class="atype">主旨/结论题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">It can be concluded from the text that the <span class="stem-hit" data-map="t2-q30-m1">national park system</span> ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q30-m0">Q30 结论定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> is able to cope with staff shortages</li><li class=""><span>[B]</span> is able to meet visitors’ demands</li><li class=""><span>[C]</span> is in need of a new pricing policy</li><li class="ok"><span>[D]</span> is in need of a funding increase</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>national park system 原文复现；concluded from the text 要结合 P5 real problem 与 P7 预算事实。</span></div><div class="chain-row"><b>定位</b><span>先抓 P5 “real problem ... starved of funding”，再用 P7 “on a shoestring / flat since 2001 / visitors increased”验证。</span></div><div class="chain-row"><b>证据</b><span>P5 说 parks chronically starved of funding；P7 说 budget flat since 2001 while visitors increased over 50%。</span></div><div class="chain-row"><b>替换</b><span>starved of funding + flat budget + rising visitors = need a funding increase。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>staff shortages 未出现。</span></div><div class="counter-row"><b>B</b><span>infrastructure crumbling 与游客增加表明需求压力，并非已能满足。</span></div><div class="counter-row"><b>C</b><span>文章反对用商业化/价格类办法解决，核心是 funding。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-3">
+<header class="unit-head">
+<div>
+<h2>Text 3｜高分阅读路径图解析</h2>
+<p>Q31—Q35。互联网与记忆：Sparrow 研究、cognitive offloading 与专家谨慎结论。</p>
+</div>
+<nav class="text-nav"><button data-target="t3-q31" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q31</button><button data-target="t3-q32" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q32</button><button data-target="t3-q33" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q33</button><button data-target="t3-q34" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q34</button><button data-target="t3-q35" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q35</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t3-q31" data-target="t3-q31" style="--c:var(--q1)">
+<b>Q31｜细节/推断题</b>
+<p>P1：Sparrow study 显示人们记“在哪里找”而不是记内容。</p>
+</article>
+<article class="route-card" data-key="t3-q32" data-target="t3-q32" style="--c:var(--q2)">
+<b>Q32｜词义/概念题</b>
+<p>P2：cognitive offloading 被定义为 external hard drive for memories。</p>
+</article>
+<article class="route-card" data-key="t3-q33" data-target="t3-q33" style="--c:var(--q3)">
+<b>Q33｜观点题</b>
+<p>P2：Sparrow sees an upside，可能改变学习方式。</p>
+</article>
+<article class="route-card" data-key="t3-q34" data-target="t3-q34" style="--c:var(--q4)">
+<b>Q34｜推断题</b>
+<p>P3：too soon + no experimental evidence → 还需研究。</p>
+</article>
+<article class="route-card" data-key="t3-q35" data-target="t3-q35" style="--c:var(--q5)">
+<b>Q35｜综合观点题</b>
+<p>P1+P4：Sparrow 否认 deterioration；Storm 说 changing 而非 weakening。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t3-q31" data-map="t3-q31-m0" style="--c:var(--q1)">Q31 定位</span>The Internet may be changing merely what we remember, not our capacity to do so, suggests Columbia University psychology professor <mark class="kw" data-key="t3-q31" data-map="t3-q31-m1" style="--c:var(--q1)">Betsy Sparrow</mark>. In 2011, <mark class="kw" data-key="t3-q31" data-map="t3-q31-m2" style="--c:var(--q1)">Sparrow led a study</mark> in which participants were asked to record 40 factoids in a computer (“an ostrich’s eye is bigger than its brain,” for example). Half of the participants were told the information would be erased, while the other half were told it would be saved. Guess what? The latter group made no effort to recall the information when quizzed on it later, because they knew they could find it on their computers. In the same study, a group was asked to remember both the information and the folders it was stored in. <span class="ev" data-key="t3-q31" data-label="Q31" style="--c:var(--q1)">They didn’t remember the information, but they remembered how to find the folders</span>. In other words, <span class="ev" data-key="t3-q31" data-label="Q31" style="--c:var(--q1)">human memory is not deteriorating but “adapting to new communications technology,” Sparrow says</span>.</p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t3-q32" data-map="t3-q32-m0" style="--c:var(--q2)">Q32 定位</span><span class="scope-anchor" data-key="t3-q33" data-map="t3-q33-m0" style="--c:var(--q3)">Q33 Sparrow 观点</span>In a very practical way, the Internet is becoming <span class="ev" data-key="t3-q32" data-label="Q32" style="--c:var(--q2)">an external hard drive for our memories, a process known as “<mark class="kw" data-key="t3-q32" data-map="t3-q32-m1" style="--c:var(--q2)">cognitive offloading</mark>”</span>. Traditionally, this role was fulfilled by data banks, libraries, and other humans. Your father may never remember birthdays because your mother does, for instance. Some worry that this is having a destructive effect on society, but <mark class="kw" data-key="t3-q33" data-map="t3-q33-m1" style="--c:var(--q3)">Sparrow</mark> sees an upside. Perhaps, she suggests, <span class="ev" data-key="t3-q33" data-label="Q33" style="--c:var(--q3)">the trend will change our approach to learning from a focus on individual facts and memorization to an emphasis on more conceptual thinking</span>—something that is not available on the Internet. “I personally have never seen all that much intellectual value in memorizing things,” Sparrow says, adding that we haven’t lost our ability to do it.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t3-q34" data-map="t3-q34-m1" style="--c:var(--q4)">Q34 段落定位</span>Still other experts say it’s too soon to understand how the <mark class="kw" data-key="t3-q34" data-map="t3-q34-m2" style="--c:var(--q4)">Internet affects our brains</mark>. <span class="ev" data-key="t3-q34" data-label="Q34" style="--c:var(--q4)">There is no experimental evidence showing that it interferes with our ability to focus</span>, for instance, wrote psychologists Christopher Chabris and Daniel J. Simons. And surfing the web exercised the brain more than reading did among computer-savvy older adults in a 2008 study involving 24 participants at the Semel Institute for Neuroscience and Human Behavior at the University of California, Los Angeles.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t3-q35" data-map="t3-q35-m0" style="--c:var(--q5)">Q35 综合定位</span>“There may be costs associated with our increased reliance on the Internet, but I’d have to imagine that overall the benefits are going to outweigh those costs,” observes psychology professor <mark class="kw" data-key="t3-q35" data-map="t3-q35-m1" style="--c:var(--q5)">Benjamin Storm</mark>. “<span class="ev" data-key="t3-q35" data-label="Q35" style="--c:var(--q5)">It seems pretty clear that memory is changing, but is it changing for the better? At this point, we don’t know.</span>”</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t3-q35" data-map="t3-q35-m1">Sparrow</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t3-q31" id="t3-q31" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q31</span><span class="atype">细节/推断题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem"><span class="stem-hit" data-map="t3-q31-m2">Sparrow’s study</span> shows that with the <span class="stem-hit" data-map="t3-q31-m0">Internet</span>, the human brain will ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q31-m1">Betsy Sparrow</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> analyze information in detail</li><li class=""><span>[B]</span> collect information efficiently</li><li class="ok"><span>[C]</span> switch its focus of memory</li><li class=""><span>[D]</span> extend its memory duration</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Sparrow’s study ↔ Sparrow led a study；Internet 对应 P1 开头。</span></div><div class="chain-row"><b>定位</b><span>按人名 + study 锁定 P1；看实验结果而非例子 factoids。</span></div><div class="chain-row"><b>证据</b><span>P1 说实验对象不记信息本身，但记得如何找到文件夹；随后概括 memory is adapting。</span></div><div class="chain-row"><b>替换</b><span>remember how to find the folders, not the information = switch its focus of memory。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>实验不是深入分析信息。</span></div><div class="counter-row"><b>B</b><span>重点不是高效收集信息，而是记忆内容变为位置信息。</span></div><div class="counter-row"><b>D</b><span>没有说记忆持续时间变长。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q32" id="t3-q32" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q32</span><span class="atype">词义/概念题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">The process of “<span class="stem-hit" data-map="t3-q32-m1">cognitive offloading</span>” ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q32-m0">Q32 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> helps us identify false information</li><li class=""><span>[B]</span> keeps our memory from failing</li><li class=""><span>[C]</span> enables us to classify trivial facts</li><li class="ok"><span>[D]</span> lessens our memory burdens</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>cognitive offloading 原词复现；定义前后看 external hard drive / role fulfilled by data banks。</span></div><div class="chain-row"><b>定位</b><span>P2 首句用同位语给出定义；下句列举传统外部存储来源。</span></div><div class="chain-row"><b>证据</b><span>Internet becoming an external hard drive for our memories，说明把记忆任务外包。</span></div><div class="chain-row"><b>替换</b><span>external hard drive for memories / offloading = lessens memory burdens。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>false information 辨别不在定义中。</span></div><div class="counter-row"><b>B</b><span>不是防止记忆失败，而是转移部分记忆负担。</span></div><div class="counter-row"><b>C</b><span>trivial facts 出现在 P1 factoids，不是 offloading 的作用。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q33" id="t3-q33" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q33</span><span class="atype">观点题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">Which of the following would <span class="stem-hit" data-map="t3-q33-m1">Sparrow</span> support about the Internet?<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q33-m0">Q33 Sparrow 观点</span></span></p>
+<ul class="options"><li class="ok"><span>[A]</span> It may reform our learning approach.</li><li class=""><span>[B]</span> It may impact our society negatively.</li><li class=""><span>[C]</span> It may enhance our adaptability to technology.</li><li class=""><span>[D]</span> It may interfere with our conceptual thinking.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Sparrow 原词复现；would support 要找她自己的正向评价，而非 some worry。</span></div><div class="chain-row"><b>定位</b><span>P2 “but Sparrow sees an upside”后是她支持的内容。</span></div><div class="chain-row"><b>证据</b><span>Sparrow suggests the trend will change our approach to learning from memorization to conceptual thinking。</span></div><div class="chain-row"><b>替换</b><span>change our approach to learning = reform our learning approach。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>negative impact 是 some worry 的观点，Sparrow sees an upside。</span></div><div class="counter-row"><b>C</b><span>P1 说 memory adapts to technology，但选项变成增强“适应技术”的能力，范围偏离。</span></div><div class="counter-row"><b>D</b><span>原文说转向 conceptual thinking，不是干扰概念思维。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q34" id="t3-q34" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q34</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">It is indicated in <span class="stem-hit" data-map="t3-q34-m1">Paragraph 3</span> that how the <span class="stem-hit" data-map="t3-q34-m2">Internet affects our brains</span> ______.</p>
+<ul class="options"><li class="ok"><span>[A]</span> requires further academic research</li><li class=""><span>[B]</span> is most studied in older adults</li><li class=""><span>[C]</span> is reflected in our reading speed</li><li class=""><span>[D]</span> depends on our web-surfing habits</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 3 → P3 段首锚点；Internet affects our brains 原词复现。</span></div><div class="chain-row"><b>定位</b><span>P3 先说 too soon to understand，再说明 no experimental evidence，并列一个小样本研究。</span></div><div class="chain-row"><b>证据</b><span>“too soon to understand”与“no experimental evidence”共同说明结论尚不充分。</span></div><div class="chain-row"><b>替换</b><span>too soon / no experimental evidence = requires further academic research。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>older adults 是一个 2008 study 的样本，不代表 most studied。</span></div><div class="counter-row"><b>C</b><span>P3 比较 web surfing 与 reading 对脑活动，不是 reading speed。</span></div><div class="counter-row"><b>D</b><span>没有说影响取决于上网习惯。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q35" id="t3-q35" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q35</span><span class="atype">综合观点题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">Neither <span class="stem-hit" data-map="t3-q33-m1">Sparrow</span> nor <span class="stem-hit" data-map="t3-q35-m1">Storm</span> would agree that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q35-m0">Q35 综合定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> our reliance on the Internet will be costly</li><li class="ok"><span>[B]</span> the Internet is weakening our memory</li><li class=""><span>[C]</span> memory exercise is a must for our brains</li><li class=""><span>[D]</span> our ability to focus declines with age</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Neither...nor 要找两人都不会同意的说法；Sparrow 与 Storm 分别定位 P1/P4。</span></div><div class="chain-row"><b>定位</b><span>Sparrow 结论在 P1：not deteriorating but adapting；Storm 在 P4：memory is changing，better or worse unknown。</span></div><div class="chain-row"><b>证据</b><span>Sparrow: memory is not deteriorating but adapting；Storm: memory is changing, whether better unknown。</span></div><div class="chain-row"><b>替换</b><span>weakening our memory = deteriorating；该说法被 Sparrow 明确否定，也超出 Storm 谨慎表述。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>Storm 承认 may be costs，因此不能说两人都不同意。</span></div><div class="counter-row"><b>C</b><span>Sparrow 不看重 memorizing，但 Storm 未表态，不能推出 neither。</span></div><div class="counter-row"><b>D</b><span>focus 与 age 的关系不是两人共同观点；P3 只说没有证据证明影响注意力。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-4">
+<header class="unit-head">
+<div>
+<h2>Text 4｜高分阅读路径图解析</h2>
+<p>Q36—Q40。青少年悖论：亲社会行为与冒险行为如何共同发展。</p>
+</div>
+<nav class="text-nav"><button data-target="t4-q36" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q36</button><button data-target="t4-q37" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q37</button><button data-target="t4-q38" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q38</button><button data-target="t4-q39" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q39</button><button data-target="t4-q40" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q40</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t4-q36" data-target="t4-q36" style="--c:var(--q1)">
+<b>Q36｜细节题</b>
+<p>P1：dependent → independent/helpful，同时 cheerful/compliant → rebellious risk-takers。</p>
+</article>
+<article class="route-card" data-key="t4-q37" data-target="t4-q37" style="--c:var(--q2)">
+<b>Q37｜细节题</b>
+<p>P2：Crone study 属于 new wave，强调 opportunity as well as risk。</p>
+</article>
+<article class="route-card" data-key="t4-q38" data-target="t4-q38" style="--c:var(--q3)">
+<b>Q38｜细节题</b>
+<p>P4：same pattern 指青春期上升、成年后下降。</p>
+</article>
+<article class="route-card" data-key="t4-q39" data-target="t4-q39" style="--c:var(--q4)">
+<b>Q39｜推断题</b>
+<p>P6—P7：reward sensitivity 具体体现为 social rewards。</p>
+</article>
+<article class="route-card" data-key="t4-q40" data-target="t4-q40" style="--c:var(--q5)">
+<b>Q40｜主旨题</b>
+<p>全文：paradox → study → correlation → reward sensitivity 解释矛盾。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t4-q36" data-map="t4-q36-m1" style="--c:var(--q1)">Q36 段落定位</span><span class="scope-anchor" data-key="t4-q40" data-map="t4-q40-m0" style="--c:var(--q5)">Q40 主旨起点</span><mark class="kw" data-key="t4-q40" data-map="t4-q40-m1" style="--c:var(--q5)">Teenagers are paradoxical</mark>. That’s a mild and detached way of saying something that parents often express with considerably stronger language. But the <mark class="kw" data-key="t4-q40" data-map="t4-q40-m2" style="--c:var(--q5)">paradox</mark> is scientific as well as personal. In adolescence, <span class="ev" data-key="t4-q36" data-label="Q36" style="--c:var(--q1)">helpless and dependent children who have relied on grown-ups for just about everything become independent people who can take care of themselves and help each other. At the same time, once cheerful and compliant children become rebellious teenage risk-takers</span>.</p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t4-q37" data-map="t4-q37-m1" style="--c:var(--q2)">Q37 段落定位</span>A new study published in the journal Child Development, by <mark class="kw" data-key="t4-q37" data-map="t4-q37-m2" style="--c:var(--q2)">Eveline Crone</mark> of the University of Leiden and colleagues, suggests that <span class="ev" data-key="t4-q37" data-label="Q37" style="--c:var(--q2)">the positive and negative sides of teenagers go hand in hand</span>. The study is part of a new wave of thinking about adolescence. For a long time, scientists and policy makers concentrated on the idea that teenagers were a problem that needed to be solved. <span class="ev" data-key="t4-q37" data-label="Q37" style="--c:var(--q2)">The new work emphasizes that adolescence is a time of opportunity as well as risk</span>.</p>
+<p class="para"><span class="pnum">P3</span>The researchers studied “prosocial” and rebellious traits in more than 200 children and young adults, ranging from 11 to 28 years old. The participants filled out questionnaires about how often they did things that were altruistic and positive, like sacrificing their own interests to help a friend, or rebellious and negative, like getting drunk or staying out late.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t4-q38" data-map="t4-q38-m0" style="--c:var(--q3)">Q38 定位</span>Other studies have shown that rebellious behavior increases as you become a teenager and then fades away as you grow older. But the new study shows that, interestingly, <span class="ev" data-key="t4-q38" data-label="Q38" style="--c:var(--q3)">the same pattern holds for <mark class="kw" data-key="t4-q38" data-map="t4-q38-m1" style="--c:var(--q3)">prosocial behavior</mark>. Teenagers were more likely than younger children or adults to report that they did things like unselfishly helping a friend</span>.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t4-q39" data-map="t4-q39-m1" style="--c:var(--q4)">Q39 last two paragraphs</span>Most significantly, there was a positive correlation between prosociality and rebelliousness. The teenagers who were more rebellious were also more likely to help others. <span class="ev" data-key="t4-q40" data-label="Q40" style="--c:var(--q5)">The good and bad sides of adolescence seem to develop together</span>.</p>
+<p class="para"><span class="pnum">P6</span>Is there some common factor that underlies these apparently contradictory developments? One idea is that <mark class="kw" data-key="t4-q39" data-map="t4-q39-m2" style="--c:var(--q4)">teenage behavior</mark> is related to what researchers call “<mark class="kw" data-key="t4-q39" data-map="t4-q39-m3" style="--c:var(--q4)">reward sensitivity</mark>.” Decision-making always involves balancing rewards and risks, benefits and costs. “Reward sensitivity” measures how much reward it takes to outweigh risk.</p>
+<p class="para"><span class="pnum">P7</span>Teenagers are particularly sensitive to <span class="ev" data-key="t4-q39" data-label="Q39" style="--c:var(--q4)"><mark class="kw" data-key="t4-q39" data-map="t4-q39-m4" style="--c:var(--q4)">social rewards</mark>—winning the game, impressing a new friend, getting that boy to notice you</span>. Reward sensitivity, like prosocial behavior and risk-taking, seems to go up in adolescence and then go down again as we age. Somehow, when you hit 30, the chance that something exciting and new will happen at that party just doesn’t seem to outweigh the effort of getting up off the couch.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t4-q36" data-map="t4-q36-m1">adolescence</span> <span class="kw source-fix" data-key="t4-q38" data-map="t4-q38-m2">Crone’s study</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t4-q36" id="t4-q36" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q36</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">According to <span class="stem-hit" data-map="t4-q36-m1">Paragraph 1</span>, children growing into <span class="stem-hit" data-map="t4-q40-m1">adolescence</span> tend to ______.</p>
+<ul class="options"><li class="ok"><span>[A]</span> develop opposite personality traits</li><li class=""><span>[B]</span> see the world in an unreasonable way</li><li class=""><span>[C]</span> have fond memories of their past</li><li class=""><span>[D]</span> show affection for their parents</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 1 → P1 锚点；adolescence 与 teenagers/paradox 呼应。</span></div><div class="chain-row"><b>定位</b><span>P1 先提出 paradox，再用 At the same time 并列相反变化。</span></div><div class="chain-row"><b>证据</b><span>P1 同时说孩子变得 independent/help each other，又 become rebellious teenage risk-takers。</span></div><div class="chain-row"><b>替换</b><span>independent/helpful 与 rebellious/risk-taking 并存 = develop opposite personality traits。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>paradoxical 不等于看世界不理性。</span></div><div class="counter-row"><b>C</b><span>past memories 没有出现。</span></div><div class="counter-row"><b>D</b><span>父母只在开头作为感受来源，不是孩子表现。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q37" id="t4-q37" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q37</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">It can be learned from <span class="stem-hit" data-map="t4-q37-m1">Paragraph 2</span> that <span class="stem-hit" data-map="t4-q37-m2">Crone’s study</span> ______.</p>
+<ul class="options"><li class=""><span>[A]</span> explores teenagers’ social responsibilities</li><li class=""><span>[B]</span> examines teenagers’ emotional problems</li><li class="ok"><span>[C]</span> provides a new insight into adolescence</li><li class=""><span>[D]</span> highlights negative adolescent behavior</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 2 → P2 锚点；Crone’s study ↔ study by Eveline Crone。</span></div><div class="chain-row"><b>定位</b><span>P2 说 study 是 new wave of thinking，并纠正过去只把 teenagers 当问题的视角。</span></div><div class="chain-row"><b>证据</b><span>P2 说 positive and negative sides go hand in hand；new work emphasizes opportunity as well as risk。</span></div><div class="chain-row"><b>替换</b><span>new wave / opportunity as well as risk = a new insight into adolescence。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>研究包含 prosocial traits，但不是“社会责任”专题。</span></div><div class="counter-row"><b>B</b><span>emotional problems 未出现。</span></div><div class="counter-row"><b>D</b><span>原文恰恰强调 positive and negative sides，而不是只突出负面。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q38" id="t4-q38" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q38</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">What does <span class="stem-hit" data-map="t4-q37-m2">Crone’s study</span> find about <span class="stem-hit" data-map="t4-q38-m1">prosocial behavior</span>?<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q38-m0">Q38 定位</span><span class="stem-hit" data-map="t4-q38-m2">Crone’s study</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> It results from the wish to cooperate.</li><li class=""><span>[B]</span> It is cultivated through education.</li><li class=""><span>[C]</span> It is subject to family influence.</li><li class="ok"><span>[D]</span> It tends to peak in adolescence.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Crone’s study 仍指该新研究；prosocial behavior 原词复现到 P4。</span></div><div class="chain-row"><b>定位</b><span>P4 先说 rebellious behavior 的年龄曲线，再用 same pattern holds for prosocial behavior。</span></div><div class="chain-row"><b>证据</b><span>P4 说 teenagers more likely than younger children or adults to report unselfishly helping a friend。</span></div><div class="chain-row"><b>替换</b><span>more likely than younger children or adults = tends to peak in adolescence。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>wish to cooperate 未出现。</span></div><div class="counter-row"><b>B</b><span>education 培养未出现。</span></div><div class="counter-row"><b>C</b><span>family influence 未出现。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q39" id="t4-q39" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q39</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">It can be learned from the <span class="stem-hit" data-map="t4-q39-m1">last two paragraphs</span> that <span class="stem-hit" data-map="t4-q39-m2">teenagers</span> ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q39-m3">reward sensitivity</span><span class="stem-hit" data-map="t4-q39-m4">social rewards</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> overstress their influence on others</li><li class="ok"><span>[B]</span> care a lot about social recognition</li><li class=""><span>[C]</span> become anxious about their future</li><li class=""><span>[D]</span> endeavor to live a joyful life</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>last two paragraphs → P6—P7；teenagers/teenage behavior 与 reward sensitivity 定位。</span></div><div class="chain-row"><b>定位</b><span>末两段解释共同因素：reward sensitivity；P7 给出 social rewards 的例子。</span></div><div class="chain-row"><b>证据</b><span>P7 说 teenagers are particularly sensitive to social rewards—winning, impressing a friend, being noticed。</span></div><div class="chain-row"><b>替换</b><span>social rewards / impressing / getting noticed = social recognition。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>强调的是对 reward 的敏感，不是夸大自己影响力。</span></div><div class="counter-row"><b>C</b><span>future anxiety 未出现。</span></div><div class="counter-row"><b>D</b><span>joyful life 过宽泛；原文是具体的社会奖励敏感。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q40" id="t4-q40" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q40</span><span class="atype">主旨题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">What is the text mainly about? <span class="stem-hit" data-map="t4-q40-m0">What is the text mainly about?</span><span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q40-m1">Teenagers are paradoxical</span><span class="stem-hit" data-map="t4-q40-m2">paradox</span></span></p>
+<ul class="options"><li class="ok"><span>[A]</span> Why teenagers are self-contradictory.</li><li class=""><span>[B]</span> Why teenagers are risk-sensitive.</li><li class=""><span>[C]</span> How teenagers develop prosociality.</li><li class=""><span>[D]</span> How teenagers become independent.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>mainly about 需要综合全文；P1 的 Teenagers are paradoxical 是主题句。</span></div><div class="chain-row"><b>定位</b><span>P1 提出 teenagers are paradoxical；P2—P5 说明正负面共同发展；P6—P7 用 reward sensitivity 解释原因。</span></div><div class="chain-row"><b>证据</b><span>全文中心是 adolescence 的好坏两面为何并存，结尾用 reward sensitivity 作解释。</span></div><div class="chain-row"><b>替换</b><span>paradoxical / good and bad sides develop together = self-contradictory。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>risk-sensitive 只是解释机制的一部分，不能覆盖 prosociality。</span></div><div class="counter-row"><b>C</b><span>prosociality 是研究对象之一，不是全文主旨。</span></div><div class="counter-row"><b>D</b><span>independent 只在 P1 出现，用来引出矛盾，不是全文展开重点。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+</div>
+</section>
+</main>
+</div>
+<script src="transition.js"></script>
+<script>
+const keyed=[...document.querySelectorAll('[data-key]')];
+const mapped=[...document.querySelectorAll('[data-map]')];
+function splitMaps(value){return String(value||'').split(/\s+/).filter(Boolean)}
+function activateKey(key,scroll=true){
+  keyed.forEach(el=>el.classList.toggle('active',el.dataset.key===String(key)));
+  if(scroll){
+    const target=document.getElementById(String(key))||document.querySelector('.kw[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.ev[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.scope-anchor[data-key="'+CSS.escape(String(key))+'"]');
+    if(target)target.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+function activateMaps(maps){
+  const set=new Set(Array.isArray(maps)?maps:splitMaps(maps));
+  mapped.forEach(el=>{
+    const hit=splitMaps(el.dataset.map).some(m=>set.has(m));
+    el.classList.toggle('map-active',hit);
+    el.classList.toggle('map-source-active',hit && !el.classList.contains('stem-hit'));
+  });
+}
+function clearMaps(){mapped.forEach(el=>{el.classList.remove('map-active');el.classList.remove('map-source-active')})}
+document.addEventListener('click',e=>{
+  const jump=e.target.closest('[data-target]');
+  if(jump){e.preventDefault();activateKey(jump.dataset.target);return}
+  const k=e.target.closest('[data-key]');
+  if(k){activateKey(k.dataset.key,!k.classList.contains('qcard'))}
+});
+document.addEventListener('mouseover',e=>{
+  const mapEl=e.target.closest('[data-map]');
+  if(mapEl)activateMaps(splitMaps(mapEl.dataset.map));
+  const keyEl=e.target.closest('[data-key]');
+  if(keyEl)keyed.forEach(x=>x.classList.toggle('active',x.dataset.key===keyEl.dataset.key));
+});
+document.addEventListener('mouseout',e=>{
+  if(e.target.closest('[data-map]'))clearMaps();
+});
+</script>
+</body>
+</html>

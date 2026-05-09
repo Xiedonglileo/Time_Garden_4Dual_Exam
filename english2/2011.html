@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>2011 年考研英语二阅读路径图</title>
+<style>
+  :root{
+    --bg:#f7efe4; --paper:#fffdfa; --ink:#211c17; --muted:#74675c;
+    --line:#ded0c0; --soft:#f0e5d7;
+    --q1:#2563eb; --q2:#07845f; --q3:#7c4dcc; --q4:#d43b32; --q5:#ce7a12;
+    --shadow:0 20px 48px rgba(47,34,19,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{margin:0;background:linear-gradient(180deg,#fcf8f1 0%,var(--bg) 100%);color:var(--ink);font-family:Georgia,"Times New Roman","Noto Serif CJK SC","Source Han Serif SC","Songti SC",serif;line-height:1.58}
+  .topbar{position:sticky;top:0;z-index:80;background:rgba(255,253,250,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+  .topbar-inner{max-width:1440px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-size:18px;font-weight:950;letter-spacing:.02em;white-space:nowrap}
+  .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  button,.jump-btn{font:800 13px/1 Georgia,"Times New Roman","Noto Serif CJK SC",serif;color:var(--ink);background:#fff9f0;border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;text-decoration:none}
+  button:hover,.jump-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(47,34,19,.10)}
+  .page{max-width:1440px;margin:0 auto;padding:24px 22px 64px}
+  .year-header{margin:0 0 18px;padding:22px 24px;border:1px solid var(--line);border-radius:28px;background:rgba(255,253,250,.72);box-shadow:var(--shadow)}
+  .year-header h1{margin:0;font-size:42px;line-height:1.08;letter-spacing:-.035em;font-weight:950}
+  .year-header p{margin:8px 0 0;color:var(--muted);font-size:15px}
+  .text-index{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .text-unit{margin:28px 0 42px;scroll-margin-top:90px;break-before:page}.text-unit:first-of-type{break-before:auto}
+  .unit-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end;margin-bottom:16px;padding:20px 22px;border:1px solid var(--line);border-radius:26px;background:var(--paper);box-shadow:var(--shadow)}
+  .unit-head h2{margin:0;font-size:32px;line-height:1.12;letter-spacing:-.02em}
+  .unit-head p{margin:8px 0 0;color:var(--muted);font-size:14px}
+  .text-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .route{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:18px 18px 16px;box-shadow:var(--shadow);margin-bottom:22px}
+  .route h3{margin:0 0 12px;font-size:18px;letter-spacing:.02em;color:#51463d}
+  .route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+  .route-card{--c:#444;position:relative;overflow:hidden;min-height:92px;cursor:pointer;background:#fffaf3;border:1px solid var(--line);border-radius:18px;padding:14px 14px 12px 17px}
+  .route-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
+  .route-card b{display:block;color:var(--c)!important;font-size:17px;margin-bottom:6px}.route-card p{margin:0;font-size:14px;line-height:1.42;color:#5a4f45}
+  .layout{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(440px,.96fr);gap:22px;align-items:start}
+  .article-panel,.analysis-panel{background:var(--paper);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}
+  .panel-head{padding:22px 24px 12px;border-bottom:1px solid var(--line)}
+  .panel-head h3{margin:0;font-size:28px;letter-spacing:-.02em}.panel-head p{margin:6px 0 0;color:var(--muted);font-size:14px}
+  .article-body{padding:22px 26px 24px}.article-text{font-size:19px;line-height:1.86;color:#1f1b16;text-align:left}
+  .para{position:relative;margin:0 0 20px;padding-left:66px}.para:last-child{margin-bottom:0}
+  .pnum{position:absolute;left:0;top:2px;display:inline-flex;align-items:center;justify-content:center;width:38px;height:28px;border-radius:999px;background:var(--soft);color:#5a4f45;font-size:13px;font-weight:950}
+  .snum{font-size:11px;color:#9b8d7f;font-weight:950;margin-right:2px;vertical-align:super}
+  .scope-anchor{--c:#444;display:inline-flex;align-items:center;margin:0 6px 0 0;padding:4px 8px;border-radius:999px;background:var(--c);color:white;font-size:12px;font-weight:950;vertical-align:middle;cursor:pointer;white-space:nowrap}
+  .kw{--c:#444;position:relative;display:inline;color:var(--c)!important;font-weight:950;padding:0 .12em .02em;border-radius:5px;text-decoration-line:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--c)!important;background:linear-gradient(to top,color-mix(in srgb,var(--c) 22%,transparent) 0%,color-mix(in srgb,var(--c) 22%,transparent) 48%,transparent 48%,transparent 100%);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 16%,transparent);cursor:pointer}
+  .ev{--c:#444;color:var(--ink);font-weight:650;border-radius:3px;padding:0 1px 1px;text-decoration-line:underline;text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-color:var(--c)!important;background:color-mix(in srgb,var(--c) 8%,transparent);cursor:pointer;transition:background .18s ease,box-shadow .18s ease}
+  .ev:after{content:attr(data-label);font-size:10px;font-weight:950;line-height:1;border-radius:999px;padding:2px 5px;margin-left:4px;color:white;vertical-align:middle;white-space:nowrap;background:var(--c)!important}
+  .analysis-panel{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow:auto}.analysis-body{padding:16px;display:grid;gap:14px}
+  .qcard{--c:#444;background:linear-gradient(180deg,#fffdfa,#fff8ed);border:1px solid var(--line);border-radius:20px;padding:16px 17px;position:relative;overflow:hidden;scroll-margin-top:90px}
+  .qcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
+  .qtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;border-bottom:1px dashed var(--line);padding-bottom:9px}.qtitle{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:950}.badge{background:var(--c)!important;color:white;border-radius:999px;padding:4px 10px;font-size:14px}.atype{color:var(--muted);font-size:14px;font-weight:900}.rightans{font-size:14px;color:var(--muted);font-weight:900}.rightans strong{font-size:25px;color:var(--ink);line-height:1}
+  .stem{margin:0 0 10px;font-size:16.8px;line-height:1.42;font-weight:950;color:#211c17}.stem-hit{border-radius:5px;padding:0 .08em;transition:background .15s ease,box-shadow .15s ease,color .15s ease}.stem-hit.map-active{background:#fff1a8;box-shadow:0 0 0 2px #f3c94d;color:#1f1b16}.stem-hit:hover{background:#fff4bf;cursor:pointer}
+  .options{list-style:none;margin:0 0 11px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:13.6px;line-height:1.32}.options li{border:1px solid #eadfd2;background:#fffefb;border-radius:12px;padding:7px 8px}.options span{font-weight:950;margin-right:4px}.options .ok{background:#f3fbf2;border-color:#a9cfab;box-shadow:inset 0 0 0 1px rgba(92,148,91,.13)}
+  .chain{display:grid;gap:7px;font-size:14px;line-height:1.47}.chain-row{display:grid;grid-template-columns:74px 1fr;gap:8px;border-top:1px solid #f0e6da;padding-top:7px}.chain-row:first-child{border-top:0;padding-top:0}.chain-row b{color:#584b41}
+  .counter{margin-top:10px;border:1px solid #eadfd2;border-radius:15px;overflow:hidden;background:#fffdfa}.counter h4{margin:0;padding:7px 10px;font-size:13.5px;background:#f0e6da;color:#55483e}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid #efe3d7;font-size:13px;line-height:1.36}.counter-row:first-of-type{border-top:0}.counter-row b{padding:7px 9px;background:#fbf6ef}.counter-row span{padding:7px 9px;color:#342d26}
+  .qcard.active,.route-card.active,.ev.active,.kw.active,.scope-anchor.active{box-shadow:0 0 0 3px var(--c),0 14px 32px rgba(47,34,19,.10);background:#fff4d4}.map-source-active{box-shadow:0 0 0 2px #f3c94d,0 6px 18px rgba(47,34,19,.12)!important;background:#fff1a8!important;color:#1f1b16!important}
+  .note-box{margin-top:14px;background:#fff8ed;border:1px solid var(--line);border-radius:18px;padding:14px 16px;color:#4f453c;font-size:14px;line-height:1.55}
+  @media (max-width:1120px){.unit-head,.layout{grid-template-columns:1fr}.text-nav{justify-content:flex-start}.analysis-panel{position:static;max-height:none}.options{grid-template-columns:1fr}}
+  @media print{@page{size:A4;margin:12mm}body{background:#fff}.topbar{display:none}.page{max-width:none;padding:0}.route,.article-panel,.analysis-panel,.qcard{box-shadow:none}.layout{grid-template-columns:1fr}.analysis-panel{position:static;max-height:none;overflow:visible}.qcard{break-inside:avoid}.ev,.kw,.badge,.route-card,.scope-anchor{print-color-adjust:exact;-webkit-print-color-adjust:exact}.article-text{font-size:14.7px;line-height:1.72}.panel-head h3{font-size:22px}.kw{box-shadow:none;background:transparent;color:var(--c)!important;text-decoration-thickness:2px}.text-unit{break-before:page}.text-unit:first-of-type{break-before:auto}}
+
+  .answer-key{margin:0 0 26px;padding:18px 20px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,#fffdfa,#fff7ec);box-shadow:var(--shadow)}
+  .answer-key h2{margin:0 0 10px;font-size:24px;letter-spacing:-.02em}
+  .answer-key-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+  .answer-key-card{border:1px solid #eadfd2;border-radius:16px;background:#fffefb;padding:10px 12px;font-size:16px;line-height:1.55}
+  .answer-key-card b{display:block;margin-bottom:4px;color:#4d4037}.answer-key-card span{font-weight:950;margin-right:10px;white-space:nowrap}
+</style>
+<style>
+/* repair-v1: final closed-loop compatibility layer */
+.article-panel .source-supplement,.article .source-supplement{margin-top:18px;padding:12px 14px;border:1px dashed rgba(180,154,130,.45);border-radius:16px;background:rgba(255,248,237,.62);font-size:15px;line-height:1.8;color:#4f443e}.source-supplement h4{margin:0 0 8px;font-size:15px;color:#6c5b52}.source-fix{display:inline-block;margin:2px 5px 2px 0}.stem-sync-bank{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}.map-active,.kw.map-active,.ev.map-active,.stem-hit.map-active{outline:2px solid currentColor;outline-offset:2px;border-radius:5px;background:rgba(255,248,184,.42)!important}.qcard{border-color:var(--c)!important}.qcard .badge{background:var(--c)!important}.options .ok{border-color:#9dccaa!important;background:#effaf0!important}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid rgba(120,100,80,.18);padding:7px 10px}.counter-row b{font-weight:800}.chain-row{display:grid;grid-template-columns:82px 1fr;gap:12px;border-top:1px solid rgba(120,100,80,.14);padding:9px 0}.chain-row b{color:#6b5a50}.repair-note{font-size:12px;color:#8a776d;margin-top:8px}.text-unit{scroll-margin-top:90px}.qcard{scroll-margin-top:90px}
+</style><link href="year.css" rel="stylesheet"/>
+</head>
+<body class="is-entering exam-two-page">
+<div class="page-pass"><b>2011</b><span>进入英语二</span></div>
+<div class="site-shell">
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" data-exam-target="two" data-transition-year="2011" href="../index.html?exam=two">Time Garden</a>
+<nav aria-label="年份页导航" class="nav"><a class="primary" data-exam-target="two" data-transition-year="2011" href="../index.html?exam=two">返回花园首页</a><a data-exam-target="two" data-transition-year="2010" href="2010.html">← 2010</a><a data-exam-target="two" data-transition-year="2011" href="../index.html?exam=two">花园首页</a><a data-exam-target="two" data-transition-year="2012" href="2012.html">2012 →</a><button onclick="window.print()" type="button">打印 / 导出 PDF</button></nav>
+</div>
+</header>
+<main class="page">
+<section aria-labelledby="year-title-2011" class="year-masthead english2-masthead">
+<div>
+<p class="kicker">年度阅读路径 · 2011 · 英语二</p>
+<h1 id="year-title-2011">2011 年阅读路径图</h1>
+<p>英语二 Part A · Text 1—4 · 20 题 · 关键词定位与原文证据链</p>
+</div>
+<div aria-label="年份概览" class="masthead-meta"><span>4 篇阅读</span><span>20 道题卡</span></div>
+</section>
+<section class="chapter-shell">
+<div class="chapter-quicknav">
+<div class="chapter-quicknav-title">阅读章节</div>
+<div aria-label="2011 年 Text 快速跳转" class="year-text-nav"><a class="text-chip" href="#text-1">Text 1</a><a class="text-chip" href="#text-2">Text 2</a><a class="text-chip" href="#text-3">Text 3</a><a class="text-chip" href="#text-4">Text 4</a></div>
+</div>
+<div class="year-content">
+<section class="text-unit" id="text-1">
+<header class="unit-head">
+<div>
+<h2>Text 1｜高分阅读路径图解析</h2>
+<p>Q21—Q25。公司治理中的外部董事：名义职责、现实避险与声誉激励。</p>
+</div>
+<nav class="text-nav"><button data-target="t1-q21" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q21</button><button data-target="t1-q22" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q22</button><button data-target="t1-q23" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q23</button><button data-target="t1-q24" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q24</button><button data-target="t1-q25" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q25</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t1-q21" data-target="t1-q21" style="--c:var(--q1)">
+<b>Q21｜细节题</b>
+<p>P1：Simmons 因在薪酬委员会任职却未质疑巨额奖金而受批评。</p>
+</article>
+<article class="route-card" data-key="t1-q22" data-target="t1-q22" style="--c:var(--q2)">
+<b>Q22｜细节题</b>
+<p>P2：outside directors 应是 helpful, less biased advisers，并有 independence。</p>
+</article>
+<article class="route-card" data-key="t1-q23" data-target="t1-q23" style="--c:var(--q3)">
+<b>Q23｜细节题</b>
+<p>P3：surprise departure 后，收益重述、诉讼和股价变差概率上升。</p>
+</article>
+<article class="route-card" data-key="t1-q24" data-target="t1-q24" style="--c:var(--q4)">
+<b>Q24｜推断题</b>
+<p>P4：若想留住外部董事，公司可能要创造激励。</p>
+</article>
+<article class="route-card" data-key="t1-q25" data-target="t1-q25" style="--c:var(--q5)">
+<b>Q25｜态度题</b>
+<p>全文：作者肯定外部董事应有的独立顾问价值，批评现实激励不足而非否定角色。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t1-q21" data-map="t1-q21-m0" style="--c:var(--q1)">Q21 段落定位</span>Ruth Simmons joined Goldman Sachs’s board as an outside director in January 2000; a year later she became president of Brown University. For the rest of the decade she apparently managed both roles without attracting much criticism. But by the end of 2009 Ms. Simmons was <span class="ev" data-key="t1-q21" data-label="Q21" style="--c:var(--q1)">under fire for having sat on Goldman’s compensation committee; how could she have let those enormous bonus payouts pass unremarked?</span> By February the next year Ms. Simmons had left the board. The position was just taking up too much time, she said.</p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t1-q22" data-map="t1-q22-m0" style="--c:var(--q2)">Q22 段落定位</span><span class="scope-anchor" data-key="t1-q25" data-map="t1-q25-m0" style="--c:var(--q5)">Q25 角色态度定位</span><mark class="kw" data-key="t1-q22" data-map="t1-q22-m1" style="--c:var(--q2)">Outside directors</mark> are supposed to serve as <span class="ev" data-key="t1-q22" data-label="Q22" style="--c:var(--q2)">helpful, yet less biased, advisers</span> on a firm’s board. Having made their wealth and their reputations elsewhere, they presumably have enough <span class="ev" data-key="t1-q22" data-label="Q22" style="--c:var(--q2)">independence</span> to disagree with the chief executive’s proposals. If the sky, and the share price is falling, <span class="ev" data-key="t1-q25" data-label="Q25" style="--c:var(--q5)"><mark class="kw" data-key="t1-q25" data-map="t1-q25-m1" style="--c:var(--q5)">outside directors</mark> should be able to give advice based on having weathered their own crises</span>.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t1-q23" data-map="t1-q23-m0" style="--c:var(--q3)">Q23 研究定位</span>The <mark class="kw" data-key="t1-q23" data-map="t1-q23-m1" style="--c:var(--q3)">researchers from Ohio University</mark> used a database that covered more than 10,000 firms and more than 64,000 different directors between 1989 and 2004. Then they simply checked which directors stayed from one proxy statement to the next. The most likely reason for departing a board was age, so the researchers concentrated on those “surprise” disappearances by directors under the age of 70. They found that <mark class="kw" data-key="t1-q23" data-map="t1-q23-m2" style="--c:var(--q3)">after a surprise departure</mark>, <span class="ev" data-key="t1-q23" data-label="Q23" style="--c:var(--q3)">the probability that the company will subsequently have to restate earnings increases by nearly 20%. The likelihood of being named in a federal class-action lawsuit also increases, and the stock is likely to perform worse.</span> The effect tended to be larger for larger firms. Although a correlation between them leaving and subsequent bad performance at the firm is suggestive, it does not mean that such directors are always jumping off a sinking ship. Often they “trade up,” leaving riskier, smaller firms for larger and more stable firms.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t1-q24" data-map="t1-q24-m0" style="--c:var(--q4)">Q24 末段推断</span>But the researchers believe that <mark class="kw" data-key="t1-q24" data-map="t1-q24-m1" style="--c:var(--q4)">outside directors</mark> have an easier time of avoiding a blow to their reputations if they leave a firm before bad news breaks, even if a review of history shows they were on the board at the time any wrongdoing occurred. <span class="ev" data-key="t1-q24" data-label="Q24" style="--c:var(--q4)">Firms who want to keep their outside directors through tough times may have to create incentives.</span> Otherwise outside directors will follow the example of Ms. Simmons, once again very popular on campus.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t1-q21" data-map="t1-q21-m1">Ms. Simmons</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>题干关键词、原文定位、证据、同义替换、干扰项反证闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t1-q21" id="t1-q21" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q21</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">According to <span class="stem-hit" data-map="t1-q21-m0">Paragraph 1</span>, <span class="stem-hit" data-map="t1-q21-m1">Ms. Simmons</span> was criticized for ______.</p>
+<ul class="options"><li class=""><span>[A]</span> gaining excessive profits</li><li class="ok"><span>[B]</span> failing to fulfill her duty</li><li class=""><span>[C]</span> refusing to make compromises</li><li class=""><span>[D]</span> leaving the board in tough times</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span><span class="stem-hit" data-map="t1-q21-m0">Paragraph 1</span> → P1 段首；Ms. Simmons 贯穿 P1。</span></div><div class="chain-row"><b>定位</b><span>段落题直接锁定 P1，转折 But 后的 under fire 是批评原因。</span></div><div class="chain-row"><b>证据</b><span>P1 说她因坐在 Goldman 薪酬委员会，却让巨额奖金支付未受质疑而 under fire。</span></div><div class="chain-row"><b>替换</b><span>let bonus payouts pass unremarked = 没有尽到监督/质询职责 = failing to fulfill her duty。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>她被批评的不是自己获得巨额利润。</span></div><div class="counter-row"><b>C</b><span>文中没有说她拒绝妥协。</span></div><div class="counter-row"><b>D</b><span>离开董事会是后续结果，不是受批评的原因。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q22" id="t1-q22" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q22</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">We learn from <span class="stem-hit" data-map="t1-q22-m0">Paragraph 2</span> that <span class="stem-hit" data-map="t1-q22-m1">outside directors</span> are supposed to be ______.</p>
+<ul class="options"><li class=""><span>[A]</span> generous investors</li><li class=""><span>[B]</span> unbiased executives</li><li class=""><span>[C]</span> share price forecasters</li><li class="ok"><span>[D]</span> independent advisers</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 2 → P2 段首；outside directors 原词复现。</span></div><div class="chain-row"><b>定位</b><span>P2 首句直接给出 outside directors 的角色定义。</span></div><div class="chain-row"><b>证据</b><span>P2 说 outside directors are supposed to serve as helpful, yet less biased, advisers，并且有 independence。</span></div><div class="chain-row"><b>替换</b><span>less biased advisers + independence = independent advisers。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>他们是董事/顾问，不是慷慨投资人。</span></div><div class="counter-row"><b>B</b><span>less biased 不等于 executives；他们是 advisers on a board。</span></div><div class="counter-row"><b>C</b><span>share price falling 是危机背景，不是他们的职责定义。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q23" id="t1-q23" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q23</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">According to the <span class="stem-hit" data-map="t1-q23-m1">researchers from Ohio University</span>, <span class="stem-hit" data-map="t1-q23-m2">after an outside director’s surprise departure</span>, the firm is likely to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q23-m0">Q23 研究定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> become more stable</li><li class=""><span>[B]</span> report increased earnings</li><li class="ok"><span>[C]</span> do less well in the stock market</li><li class=""><span>[D]</span> perform worse in lawsuits</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>researchers from Ohio University 与 surprise departure 在 P3 原词复现。</span></div><div class="chain-row"><b>定位</b><span>题干人名/机构 + 事件词锁定 P3；看 they found that 后面的结果。</span></div><div class="chain-row"><b>证据</b><span>P3 明说 stock is likely to perform worse。</span></div><div class="chain-row"><b>替换</b><span>stock is likely to perform worse = do less well in the stock market。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>trade up 指董事离开更小更风险公司去更稳定公司，不是原公司更稳定。</span></div><div class="counter-row"><b>B</b><span>原文是 restate earnings 的概率上升，不是 earnings 增加。</span></div><div class="counter-row"><b>D</b><span>原文说被列入诉讼的可能性增加，不是“在诉讼中表现更差”。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q24" id="t1-q24" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q24</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">It can be inferred from the <span class="stem-hit" data-map="t1-q24-m0">last paragraph</span> that <span class="stem-hit" data-map="t1-q24-m1">outside directors</span> ______.</p>
+<ul class="options"><li class="ok"><span>[A]</span> may stay for the attractive offers from the firm</li><li class=""><span>[B]</span> have often had records of wrongdoings in the firm</li><li class=""><span>[C]</span> are accustomed to stress-free work in the firm</li><li class=""><span>[D]</span> will decline incentives from the firm</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>last paragraph → P4；outside directors 原词复现。</span></div><div class="chain-row"><b>定位</b><span>末段先解释董事离开的动机，再提出 firms may have to create incentives。</span></div><div class="chain-row"><b>证据</b><span>P4 说公司若想让外部董事熬过困难时期，may have to create incentives。</span></div><div class="chain-row"><b>替换</b><span>create incentives = attractive offers；may have to keep them = may stay for offers。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>原文是董事任职时可能发生 wrongdoing，不等于他们有过违法记录。</span></div><div class="counter-row"><b>C</b><span>stress-free 与 tough times 相反。</span></div><div class="counter-row"><b>D</b><span>原文说 incentives 可能留住他们，不是他们会拒绝。</span></div></section>
+</section>
+<section class="qcard" data-key="t1-q25" id="t1-q25" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q25</span><span class="atype">态度题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">The author’s attitude toward the <span class="stem-hit" data-map="t1-q25-m0">role of outside directors</span> is ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q25-m1">outside directors</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> permissive</li><li class="ok"><span>[B]</span> positive</li><li class=""><span>[C]</span> scornful</li><li class=""><span>[D]</span> critical</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>role of outside directors → P2 对其“应有角色”的定义，而不是只看个别董事的离场行为。</span></div><div class="chain-row"><b>定位</b><span>态度题锁定角色评价：P2 说外部董事应是 helpful、less biased advisers，并有 independence；P4 的激励问题说明公司想留住他们，仍承认其价值。</span></div><div class="chain-row"><b>证据</b><span>P2：outside directors should be able to give advice based on having weathered their own crises。</span></div><div class="chain-row"><b>替换</b><span>helpful / less biased / independent advisers + able to give advice = 作者对“角色功能”持 positive。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>permissive 是“放任/许可”，文中不是在说应放任外部董事。</span></div><div class="counter-row"><b>C</b><span>scornful 语气过重；作者没有嘲讽这一角色。</span></div><div class="counter-row"><b>D</b><span>文中批评的是现实中的避险离场和激励问题，不是否定 outside directors 这一角色本身。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-2">
+<header class="unit-head">
+<div>
+<h2>Text 2｜高分阅读路径图解析</h2>
+<p>Q26—Q30。美国报纸危机：未死，但靠削减成本和重塑收入结构艰难求生。</p>
+</div>
+<nav class="text-nav"><button data-target="t2-q26" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q26</button><button data-target="t2-q27" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q27</button><button data-target="t2-q28" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q28</button><button data-target="t2-q29" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q29</button><button data-target="t2-q30" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q30</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t2-q26" data-target="t2-q26" style="--c:var(--q1)">
+<b>Q26｜句意题</b>
+<p>P1：doom、save newspapers、state subsidize 都显示报纸处境危急。</p>
+</article>
+<article class="route-card" data-key="t2-q27" data-target="t2-q27" style="--c:var(--q2)">
+<b>Q27｜细节题</b>
+<p>P3：拒送远郊是 desperate measures 中的成本削减举措。</p>
+</article>
+<article class="route-card" data-key="t2-q28" data-target="t2-q28" style="--c:var(--q3)">
+<b>Q28｜细节对比题</b>
+<p>P4：美国报纸广告收入占 87%，日本 35%，所以日本更稳定。</p>
+</article>
+<article class="route-card" data-key="t2-q29" data-target="t2-q29" style="--c:var(--q4)">
+<b>Q29｜推断题</b>
+<p>P5：被削减的是 least distinctive areas；completeness 不再是优点。</p>
+</article>
+<article class="route-card" data-key="t2-q30" data-target="t2-q30" style="--c:var(--q5)">
+<b>Q30｜主旨题</b>
+<p>全文：报纸并未死亡，但靠裁员、涨价、削减内容艰难求生。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t2-q26" data-map="t2-q26-m0" style="--c:var(--q1)">Q26 定位</span>Whatever happened to the death of <mark class="kw" data-key="t2-q26" data-map="t2-q26-m1" style="--c:var(--q1)">newspapers</mark>? A year ago the end seemed near. The recession threatened to remove the advertising and readers that had not already fled to the internet. <span class="ev" data-key="t2-q26" data-label="Q26" style="--c:var(--q1)">Newspapers like the San Francisco Chronicle were chronicling their own doom.</span> America’s Federal Trade Commission launched a round of talks about how to save newspapers. Should they become charitable corporations? Should the state subsidize them? It will hold another meeting soon. But the discussions now seem out of date.</p>
+<p class="para"><span class="pnum">P2</span>In much of the world there is little sign of crisis. German and Brazilian papers have shrugged off the recession. Even American newspapers, which inhabit the most troubled corner of the global industry, have not only survived but often returned to profit. Not the 20% profit margins that were routine a few years ago, but profit all the same.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t2-q27" data-map="t2-q27-m0" style="--c:var(--q2)">Q27 定位</span>It has not been much fun. Many papers stayed afloat by pushing journalists overboard. The American Society of News Editors reckons that 13,500 newsroom jobs have gone since 2007. Readers are paying more for slimmer products. Some papers even had the nerve to <mark class="kw" data-key="t2-q27" data-map="t2-q27-m1" style="--c:var(--q2)">refuse delivery to distant suburbs</mark>. Yet <span class="ev" data-key="t2-q27" data-label="Q27" style="--c:var(--q2)">these desperate measures have proved the right ones</span> and, sadly for many journalists, they can be pushed further.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t2-q28" data-map="t2-q28-m0" style="--c:var(--q3)">Q28 定位</span>Newspapers are becoming more balanced businesses, with a healthier mix of revenues from readers and advertisers. <mark class="kw" data-key="t2-q28" data-map="t2-q28-m1" style="--c:var(--q3)">American papers</mark> have long been highly unusual in their reliance on ads. Fully <span class="ev" data-key="t2-q28" data-label="Q28" style="--c:var(--q3)">87% of their revenues came from advertising in 2008</span>, according to the Organization for Economic Co-operation &amp; Development (OECD). In Japan the proportion is <span class="ev" data-key="t2-q28" data-label="Q28" style="--c:var(--q3)">35%</span>. Not surprisingly, <mark class="kw" data-key="t2-q28" data-map="t2-q28-m2" style="--c:var(--q3)">Japanese newspapers</mark> are much more stable.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t2-q29" data-map="t2-q29-m0" style="--c:var(--q4)">Q29 末段定位</span><span class="scope-anchor" data-key="t2-q30" data-map="t2-q30-m0" style="--c:var(--q5)">Q30 主旨定位</span>The whirlwind that swept through newsrooms harmed everybody, but much of the damage has been concentrated in areas where newspapers are <span class="ev" data-key="t2-q29" data-label="Q29" style="--c:var(--q4)">least distinctive</span>. Car and film reviewers have gone. So have science and general business reporters. Foreign bureaus have been savagely cut off. Newspapers are less complete as a result. But <span class="ev" data-key="t2-q29" data-label="Q29" style="--c:var(--q4)">completeness is no longer a virtue in the newspaper business</span>.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t2-q29" data-map="t2-q29-m0">last paragraph</span> <span class="kw source-fix" data-key="t2-q30" data-map="t2-q30-m0">title</span> <span class="ev source-fix" data-key="t2-q30" data-map="t2-q30-m0">美国报纸 survived/returned to profit，但靠裁员、涨价、拒送、缩减内容等 desperate measures。</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>题干关键词、原文定位、证据、同义替换、干扰项反证闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t2-q26" id="t2-q26" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q26</span><span class="atype">句意题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">By saying “<span class="stem-hit" data-map="t2-q26-m1">Newspapers like ... their own doom</span>” (Lines 3-4, Para.1), the author indicates that newspapers ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q26-m0">Q26 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> neglected the sign of crisis</li><li class=""><span>[B]</span> failed to get state subsidies</li><li class=""><span>[C]</span> were not charitable corporations</li><li class="ok"><span>[D]</span> were in a desperate situation</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Newspapers 与 their own doom 定位到 P1 引号句。</span></div><div class="chain-row"><b>定位</b><span>看该句前后：end seemed near、remove advertising and readers、talks about how to save newspapers。</span></div><div class="chain-row"><b>证据</b><span>P1 说报纸的广告和读者流失，FTC 讨论如何拯救报纸，说明处境危急。</span></div><div class="chain-row"><b>替换</b><span>chronicling their own doom = were in a desperate situation。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>它们并非忽视危机，而是在记录/感受危机。</span></div><div class="counter-row"><b>B</b><span>state subsidies 是讨论方案，不是已失败的事实。</span></div><div class="counter-row"><b>C</b><span>charitable corporations 是提议之一，不是句意。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q27" id="t2-q27" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q27</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">Some newspapers <span class="stem-hit" data-map="t2-q27-m1">refused delivery to distant suburbs</span> probably because ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q27-m0">Q27 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> readers threatened to pay less</li><li class="ok"><span>[B]</span> newspapers wanted to reduce costs</li><li class=""><span>[C]</span> journalists reported little about these areas</li><li class=""><span>[D]</span> subscribers complained about slimmer products</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>refused delivery to distant suburbs 原词复现。</span></div><div class="chain-row"><b>定位</b><span>P3 连续列举裁记者、涨价、产品变薄、拒送远郊，统称 desperate measures。</span></div><div class="chain-row"><b>证据</b><span>这些措施使报纸 stayed afloat，并 proved the right ones，说明是为了降低开支、维持生存。</span></div><div class="chain-row"><b>替换</b><span>desperate measures to stay afloat = wanted to reduce costs。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>原文说 readers are paying more，不是威胁少付。</span></div><div class="counter-row"><b>C</b><span>没有说远郊报道少。</span></div><div class="counter-row"><b>D</b><span>产品变薄是事实，抱怨不是拒送原因。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q28" id="t2-q28" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q28</span><span class="atype">细节对比题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">Compared with their <span class="stem-hit" data-map="t2-q28-m1">American counterparts</span>, <span class="stem-hit" data-map="t2-q28-m2">Japanese newspapers</span> are much more stable because they ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q28-m0">Q28 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> have more sources of revenue</li><li class=""><span>[B]</span> have more balanced newsrooms</li><li class="ok"><span>[C]</span> are less dependent on advertising</li><li class=""><span>[D]</span> are less affected by readership</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>American counterparts ↔ American papers；Japanese newspapers 原词复现。</span></div><div class="chain-row"><b>定位</b><span>P4 用 revenue mix 对比美国和日本，数字 87% vs 35% 是关键。</span></div><div class="chain-row"><b>证据</b><span>美国报纸 87% 收入来自广告，日本比例只有 35%，因此 Japanese newspapers are much more stable。</span></div><div class="chain-row"><b>替换</b><span>lower proportion from advertising = less dependent on advertising。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>more sources 太泛，原文重点是广告依赖比例低。</span></div><div class="counter-row"><b>B</b><span>balanced 指 revenue mix，不是 newsrooms。</span></div><div class="counter-row"><b>D</b><span>文中没有比较 readership 影响。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q29" id="t2-q29" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q29</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">What can be inferred from the <span class="stem-hit" data-map="t2-q29-m0">last paragraph</span> about the current newspaper business?</p>
+<ul class="options"><li class="ok"><span>[A]</span> Distinctiveness is an essential feature of newspapers.</li><li class=""><span>[B]</span> Completeness is to blame for the failure of newspaper.</li><li class=""><span>[C]</span> Foreign bureaus play a crucial role in the newspaper business.</li><li class=""><span>[D]</span> Readers have lost their interest in car and film reviews.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>last paragraph 锁定 P5；current newspaper business 关注最后一句 business 判断。</span></div><div class="chain-row"><b>定位</b><span>末段先说削减集中在 least distinctive areas，再说 completeness no longer a virtue。</span></div><div class="chain-row"><b>证据</b><span>损害集中在报纸最不具 distinctive 的领域，完整性不再是报业优点。</span></div><div class="chain-row"><b>替换</b><span>least distinctive areas can be cut + completeness not a virtue = distinctiveness is essential。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>完整性不再是 virtue，不等于失败根源。</span></div><div class="counter-row"><b>C</b><span>foreign bureaus 被 cut off，不能推出其核心作用。</span></div><div class="counter-row"><b>D</b><span>删除评论版是报纸选择，未说读者失去兴趣。</span></div></section>
+</section>
+<section class="qcard" data-key="t2-q30" id="t2-q30" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q30</span><span class="atype">主旨题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">The most appropriate <span class="stem-hit" data-map="t2-q30-m0">title</span> for this text would be ______.</p>
+<ul class="options"><li class="ok"><span>[A]</span> American Newspapers: Struggling for Survival</li><li class=""><span>[B]</span> American Newspapers: Gone with the Wind</li><li class=""><span>[C]</span> American Newspapers: A Thriving Business</li><li class=""><span>[D]</span> American Newspapers: A Hopeless Story</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>title 主旨题，需要全文综合：P1 危机，P2 生还，P3—P5 代价与转型。</span></div><div class="chain-row"><b>定位</b><span>从 P1 的 death/doom 到 P2 returned to profit，再到 P3 desperate measures，构成“艰难求生”。</span></div><div class="chain-row"><b>证据</b><span>美国报纸 survived/returned to profit，但靠裁员、涨价、拒送、缩减内容等 desperate measures。</span></div><div class="chain-row"><b>替换</b><span>survived but through desperate measures = struggling for survival。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>gone with the wind 表示已经消亡，P2 明说 survived。</span></div><div class="counter-row"><b>C</b><span>thriving 过度乐观；利润不如从前且代价惨重。</span></div><div class="counter-row"><b>D</b><span>hopeless 过度悲观；P2 说常常恢复盈利。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-3">
+<header class="unit-head">
+<div>
+<h2>Text 3｜高分阅读路径图解析</h2>
+<p>Q31—Q35。战后美国住宅中的 “less is more”：节制、效率与现代主义建筑。</p>
+</div>
+<nav class="text-nav"><button data-target="t3-q31" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q31</button><button data-target="t3-q32" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q32</button><button data-target="t3-q33" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q33</button><button data-target="t3-q34" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q34</button><button data-target="t3-q35" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q35</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t3-q31" data-target="t3-q31" style="--c:var(--q1)">
+<b>Q31｜细节题</b>
+<p>P1—P2：战后住房风格由节制与未来信心共同塑造。</p>
+</article>
+<article class="route-card" data-key="t3-q32" data-target="t3-q32" style="--c:var(--q2)">
+<b>Q32｜推断题</b>
+<p>P3：Bauhaus 相关设计师移居美国并深刻影响美国建筑。</p>
+</article>
+<article class="route-card" data-key="t3-q33" data-target="t3-q33" style="--c:var(--q3)">
+<b>Q33｜细节题</b>
+<p>P4：Mies 认为优雅不来自 abundance，而来自少装饰的组织。</p>
+</article>
+<article class="route-card" data-key="t3-q34" data-target="t3-q34" style="--c:var(--q4)">
+<b>Q34｜细节题</b>
+<p>P5：Lake Shore Drive 公寓被称为建筑版 abstract art。</p>
+</article>
+<article class="route-card" data-key="t3-q35" data-target="t3-q35" style="--c:var(--q5)">
+<b>Q35｜细节题</b>
+<p>P7：Case Study Houses 的美学效果来自 landscape、新材料和细部。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t3-q31" data-map="t3-q31-m0" style="--c:var(--q1)">Q31 全文起点</span>We tend to think of the decades immediately following World War II as a time of prosperity and growth, with soldiers returning home by the millions, going off to college on the G. I. Bill and lining up at the marriage bureaus.</p>
+<p class="para"><span class="pnum">P2</span>But when it came to their houses, it was <span class="ev" data-key="t3-q31" data-label="Q31" style="--c:var(--q1)">a time of common sense and a belief that less could truly be more</span>. During the Depression and the war, Americans had learned to live with less, and that <span class="ev" data-key="t3-q31" data-label="Q31" style="--c:var(--q1)">restraint, in combination with the postwar confidence in the future, made small, efficient housing positively stylish</span>.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t3-q32" data-map="t3-q32-m0" style="--c:var(--q2)">Q32 Bauhaus 定位</span>Economic condition was only a stimulus for the trend toward efficient living. The phrase “less is more” was actually first popularized by a German, the architect Ludwig Mies van der Rohe, who like other people associated with the <mark class="kw" data-key="t3-q32" data-map="t3-q32-m1" style="--c:var(--q2)">Bauhaus</mark>, a school of design, emigrated to the United States before World War II and took up posts at American architecture schools. <span class="ev" data-key="t3-q32" data-label="Q32" style="--c:var(--q2)">These designers came to exert enormous influence on the course of American architecture, but none more so than Mies.</span></p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t3-q33" data-map="t3-q33-m0" style="--c:var(--q3)">Q33 Mies 理念</span><mark class="kw" data-key="t3-q33" data-map="t3-q33-m1" style="--c:var(--q3)">Mies’s signature phrase</mark> means that <span class="ev" data-key="t3-q33" data-label="Q33" style="--c:var(--q3)">less decoration, properly organized, has more impact than a lot. Elegance, he believed, did not derive from abundance.</span> Like other modern architects, he employed metal, glass and laminated wood — materials that we take for granted today but that in the 1940s symbolized the future. Mies’s sophisticated presentation masked the fact that the spaces he designed were small and efficient, rather than big and often empty.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t3-q34" data-map="t3-q34-m0" style="--c:var(--q4)">Q34 公寓定位</span>The apartments in the elegant towers <mark class="kw" data-key="t3-q34" data-map="t3-q34-m1" style="--c:var(--q4)">Mies built on Chicago’s Lake Shore Drive</mark>, for example, were smaller — two-bedroom units under 1,000 square feet — than those in their older neighbors along the city’s Gold Coast. But they were popular because of their airy glass walls, the views they afforded and the elegance of the buildings’ details and proportions, <span class="ev" data-key="t3-q34" data-label="Q34" style="--c:var(--q4)">the architectural equivalent of the abstract art so popular at the time</span>.</p>
+<p class="para"><span class="pnum">P6</span>The trend toward “less” was not entirely foreign. In the 1930s Frank Lloyd Wright started building more modest and efficient houses — usually around 1,200 square feet — than the spreading two-story ones he had designed in the 1890s and the early 20th century.</p>
+<p class="para"><span class="pnum">P7</span><span class="scope-anchor" data-key="t3-q35" data-map="t3-q35-m0" style="--c:var(--q5)">Q35 Case Study Houses 定位</span>The “<mark class="kw" data-key="t3-q35" data-map="t3-q35-m1" style="--c:var(--q5)">Case Study Houses</mark>” commissioned from talented modern architects by California Arts &amp; Architecture magazine between 1945 and 1962 were yet another homegrown influence on the “less is more” trend. <span class="ev" data-key="t3-q35" data-label="Q35" style="--c:var(--q5)">Aesthetic effect came from the landscape, new materials and forthright detailing.</span> In his Case Study House, Ralph Rapson may have mispredicted just how the mechanical revolution would impact everyday life — few American families acquired helicopters, though most eventually got clothes dryers — but his belief that self-sufficiency was both desirable and inevitable was widely shared.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t3-q31" data-map="t3-q31-m0">housing style</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>题干关键词、原文定位、证据、同义替换、干扰项反证闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t3-q31" id="t3-q31" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q31</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">The postwar American <span class="stem-hit" data-map="t3-q31-m0">housing style</span> largely reflected the Americans’ ______.</p>
+<ul class="options"><li class=""><span>[A]</span> prosperity and growth</li><li class=""><span>[B]</span> efficiency and practicality</li><li class="ok"><span>[C]</span> restraint and confidence</li><li class=""><span>[D]</span> pride and faithfulness</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>postwar American housing style 对应 P1 after WWII + P2 houses。</span></div><div class="chain-row"><b>定位</b><span>题干 housing style 锁定 P2 “when it came to their houses”。</span></div><div class="chain-row"><b>证据</b><span>P2 说 Americans learned to live with less，这种 restraint 与 postwar confidence 使 small, efficient housing stylish。</span></div><div class="chain-row"><b>替换</b><span>restraint + postwar confidence = restraint and confidence。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>P1 提到繁荣增长是一般想法，但 P2 用 But 转向住房的节制。</span></div><div class="counter-row"><b>B</b><span>efficient 是特征之一，但缺少 confidence，不能概括“反映的心态”。</span></div><div class="counter-row"><b>D</b><span>pride/faithfulness 未出现。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q32" id="t3-q32" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q32</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">Which of the following can be inferred from <span class="stem-hit" data-map="t3-q32-m0">Paragraph 3</span> about the <span class="stem-hit" data-map="t3-q32-m1">Bauhaus</span>?</p>
+<ul class="options"><li class=""><span>[A]</span> It was founded by Ludwig Mies van der Rohe.</li><li class=""><span>[B]</span> Its designing concept was affected by World War II.</li><li class=""><span>[C]</span> Most American architects used to be associated with it.</li><li class="ok"><span>[D]</span> It had a great influence upon American architecture.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 3 + Bauhaus 原词复现。</span></div><div class="chain-row"><b>定位</b><span>P3 先介绍 Bauhaus 相关人物移民美国，再看 These designers 后的结论句。</span></div><div class="chain-row"><b>证据</b><span>P3 说 These designers came to exert enormous influence on the course of American architecture。</span></div><div class="chain-row"><b>替换</b><span>enormous influence on American architecture = great influence upon American architecture。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>文中只说 Mies 与 Bauhaus 相关，并未说他创立了 Bauhaus。</span></div><div class="counter-row"><b>B</b><span>WWII 是移民时间背景，不是设计理念受其影响。</span></div><div class="counter-row"><b>C</b><span>是 Bauhaus 相关设计师影响美国建筑，不是多数美国建筑师都属于它。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q33" id="t3-q33" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q33</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem"><span class="stem-hit" data-map="t3-q33-m1">Mies</span> held that elegance of architectural design ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q33-m0">Q33 Mies 理念</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> was related to large space</li><li class=""><span>[B]</span> was identified with emptiness</li><li class="ok"><span>[C]</span> was not reliant on abundant decoration</li><li class=""><span>[D]</span> was not associated with efficiency</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Mies 与 elegance 在 P4 原词复现。</span></div><div class="chain-row"><b>定位</b><span>P4 直接解释 Mies 的 signature phrase “less is more”。</span></div><div class="chain-row"><b>证据</b><span>P4 说 less decoration... has more impact；Elegance did not derive from abundance。</span></div><div class="chain-row"><b>替换</b><span>did not derive from abundance = was not reliant on abundant decoration。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>P4 说 spaces small and efficient，而非 large space。</span></div><div class="counter-row"><b>B</b><span>less 不等于 empty；原文反而说不是 big and often empty。</span></div><div class="counter-row"><b>D</b><span>原文强调 small and efficient，并非与 efficiency 无关。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q34" id="t3-q34" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q34</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">What is true about the apartments <span class="stem-hit" data-map="t3-q34-m1">Mies built on Chicago’s Lake Shore Drive</span>?<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q34-m0">Q34 公寓定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> They ignored details and proportions.</li><li class=""><span>[B]</span> They were built with materials popular at that time.</li><li class=""><span>[C]</span> They were more spacious than neighboring buildings.</li><li class="ok"><span>[D]</span> They shared some characteristics of abstract art.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Mies built on Chicago’s Lake Shore Drive 原词定位 P5。</span></div><div class="chain-row"><b>定位</b><span>P5 先比较面积，再用 because 解释受欢迎原因，最后一句给出类比。</span></div><div class="chain-row"><b>证据</b><span>P5 说这些建筑的细节和比例是 the architectural equivalent of the abstract art。</span></div><div class="chain-row"><b>替换</b><span>architectural equivalent of abstract art = shared characteristics of abstract art。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>原文说 elegance of details and proportions，正相反。</span></div><div class="counter-row"><b>B</b><span>材料象征未来在 P4，不是 P5 公寓的正确信息。</span></div><div class="counter-row"><b>C</b><span>原文说比邻近旧楼更小。</span></div></section>
+</section>
+<section class="qcard" data-key="t3-q35" id="t3-q35" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q35</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">What can we learn about the design of the “<span class="stem-hit" data-map="t3-q35-m1">Case Study Houses</span>”?<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q35-m0">Q35 Case Study Houses 定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> Mechanical devices were widely used.</li><li class="ok"><span>[B]</span> Natural scenes were taken into consideration.</li><li class=""><span>[C]</span> Details were sacrificed for the overall effect.</li><li class=""><span>[D]</span> Eco-friendly materials were employed.</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Case Study Houses 原词复现到 P7。</span></div><div class="chain-row"><b>定位</b><span>P7 解释它们对 less is more trend 的影响；Aesthetic effect came from 是核心证据。</span></div><div class="chain-row"><b>证据</b><span>P7 说 Aesthetic effect came from the landscape, new materials and forthright detailing。</span></div><div class="chain-row"><b>替换</b><span>landscape = natural scenes；came from the landscape = taken into consideration。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>helicopters 是误判，clothes dryers 后来普及，不是房屋设计广泛使用机械装置。</span></div><div class="counter-row"><b>C</b><span>原文说 forthright detailing，不是牺牲细节。</span></div><div class="counter-row"><b>D</b><span>new materials 不等于 eco-friendly materials。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<section class="text-unit" id="text-4">
+<header class="unit-head">
+<div>
+<h2>Text 4｜高分阅读路径图解析</h2>
+<p>Q36—Q40。欧盟危机中的法德分歧与作者对欧洲项目未来的审慎希望。</p>
+</div>
+<nav class="text-nav"><button data-target="t4-q36" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q36</button><button data-target="t4-q37" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q37</button><button data-target="t4-q38" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q38</button><button data-target="t4-q39" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q39</button><button data-target="t4-q40" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q40</button></nav>
+</header>
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t4-q36" data-target="t4-q36" style="--c:var(--q1)">
+<b>Q36｜细节/推断题</b>
+<p>P1：连支持者都谈论三重危机，说明开始担忧。</p>
+</article>
+<article class="route-card" data-key="t4-q37" data-target="t4-q37" style="--c:var(--q2)">
+<b>Q37｜因果细节题</b>
+<p>P3：法德都要 harmonisation，但不同意 harmonise 什么。</p>
+</article>
+<article class="route-card" data-key="t4-q38" data-target="t4-q38" style="--c:var(--q3)">
+<b>Q38｜细节题</b>
+<p>P4：德国主张更严格规则并配套制裁。</p>
+</article>
+<article class="route-card" data-key="t4-q39" data-target="t4-q39" style="--c:var(--q4)">
+<b>Q39｜推断题</b>
+<p>P5：法国方案包含从富国向穷国再分配。</p>
+</article>
+<article class="route-card" data-key="t4-q40" data-target="t4-q40" style="--c:var(--q5)">
+<b>Q40｜态度题</b>
+<p>P6：too soon to write off + ambitious attempt 表明仍有希望。</p>
+</article></div></section>
+<section class="layout">
+<article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t4-q36" data-map="t4-q36-m0" style="--c:var(--q1)">Q36 起点定位</span>Will the <mark class="kw" data-key="t4-q36" data-map="t4-q36-m1" style="--c:var(--q1)">European Union</mark> make it? The question would have sounded strange not long ago. Now even the project’s greatest cheerleaders talk of a continent facing a <span class="ev" data-key="t4-q36" data-label="Q36" style="--c:var(--q1)">“Bermuda triangle” of debt, population decline and lower growth</span>.</p>
+<p class="para"><span class="pnum">P2</span>As well as those chronic problems, the EU faces an acute crisis in its economic core, the 16 countries that use the single currency. Markets have lost faith that the euro zone’s economies, weaker or stronger, will one day converge thanks to the discipline of sharing a single currency, which denies uncompetitive members the quick fix of devaluation.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t4-q37" data-map="t4-q37-m0" style="--c:var(--q2)">Q37 争论定位</span>Yet the debate about how to save Europe’s <mark class="kw" data-key="t4-q37" data-map="t4-q37-m1" style="--c:var(--q2)">single currency</mark> from disintegration is stuck. It is stuck because the euro zone’s dominant powers, France and Germany, <span class="ev" data-key="t4-q37" data-label="Q37" style="--c:var(--q2)">agree on the need for greater harmonisation within the euro zone, but disagree about what to harmonise</span>.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t4-q38" data-map="t4-q38-m0" style="--c:var(--q3)">Q38 德国方案</span><mark class="kw" data-key="t4-q38" data-map="t4-q38-m1" style="--c:var(--q3)">Germany</mark> thinks the euro must be saved by <span class="ev" data-key="t4-q38" data-label="Q38" style="--c:var(--q3)">stricter rules on borrowing, spending and competitiveness, backed by quasi-automatic sanctions for governments that do not obey</span>. These might include threats to freeze EU funds for poorer regions and EU mega-projects, and even the suspension of a country’s voting rights in EU ministerial councils. It insists that economic co-ordination should involve all 27 members of the EU club, among whom there is a small majority for free-market liberalism and economic rigour; in the inner core alone, Germany fears, a small majority favour French interference.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t4-q39" data-map="t4-q39-m0" style="--c:var(--q4)">Q39 法国方案</span>A “southern” camp headed by <mark class="kw" data-key="t4-q39" data-map="t4-q39-m1" style="--c:var(--q4)">France</mark> wants something different: “European economic government” within an inner core of euro-zone members. Translated, that means politicians intervening in monetary policy and a system of <span class="ev" data-key="t4-q39" data-label="Q39" style="--c:var(--q4)">redistribution from richer to poorer members, via cheaper borrowing for governments through common Eurobonds or complete fiscal transfers</span>. Finally, figures close to the French government have murmured, euro-zone members should agree to some fiscal and social harmonisation: e.g., curbing competition in corporate-tax rates or labour costs.</p>
+<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="t4-q40" data-map="t4-q40-m0" style="--c:var(--q5)">Q40 结论定位</span><span class="ev" data-key="t4-q40" data-label="Q40" style="--c:var(--q5)">It is too soon to write off the EU.</span> It remains the world’s largest trading block. At its best, the European project is remarkably liberal: built around a single market of 27 rich and poor countries, its internal borders are far more open to goods, capital and labour than any comparable trading area. <span class="ev" data-key="t4-q40" data-label="Q40" style="--c:var(--q5)">It is an ambitious attempt to blunt the sharpest edges of globalisation, and make capitalism benign.</span></p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t4-q40" data-map="t4-q40-m0">future of the EU</span> </div></div></article>
+<aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>题干关键词、原文定位、证据、同义替换、干扰项反证闭环。</p></div><div class="analysis-body"><section class="qcard" data-key="t4-q36" id="t4-q36" style="--c:var(--q1)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q36</span><span class="atype">细节/推断题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">The <span class="stem-hit" data-map="t4-q36-m1">EU</span> is faced with so many problems that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q36-m0">Q36 起点定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> it has more or less lost faith in markets</li><li class="ok"><span>[B]</span> even its supporters begin to feel concerned</li><li class=""><span>[C]</span> some of its member countries plan to abandon euro</li><li class=""><span>[D]</span> it intends to deny the possibility of devaluation</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>EU 原词复现；so many problems 对应 debt, population decline and lower growth。</span></div><div class="chain-row"><b>定位</b><span>P1 设问 Will the EU make it? 后，用 greatest cheerleaders 的反应表现问题严重。</span></div><div class="chain-row"><b>证据</b><span>P1 说 even the project’s greatest cheerleaders talk of a Bermuda triangle of problems。</span></div><div class="chain-row"><b>替换</b><span>greatest cheerleaders = supporters；talk of crisis = begin to feel concerned。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>lost faith 的主体是 markets 对 euro zone economies，不是 EU 自己。</span></div><div class="counter-row"><b>C</b><span>文中未说成员国计划放弃 euro。</span></div><div class="counter-row"><b>D</b><span>P2 说单一货币使不具竞争力成员无法贬值，不是 EU 的意图。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q37" id="t4-q37" style="--c:var(--q2)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q37</span><span class="atype">因果细节题</span></div>
+<div class="rightans">答案 <strong>C</strong></div>
+</div>
+<p class="stem">The debate over the EU’s <span class="stem-hit" data-map="t4-q37-m1">single currency</span> is stuck because the dominant powers ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q37-m0">Q37 争论定位</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> are competing for the leading position</li><li class=""><span>[B]</span> are busy handling their own crises</li><li class="ok"><span>[C]</span> fail to reach an agreement on harmonisation</li><li class=""><span>[D]</span> disagree on the steps towards disintegration</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>single currency 原词复现；dominant powers 对应 France and Germany。</span></div><div class="chain-row"><b>定位</b><span>P3 “It is stuck because...”后面直接给出原因。</span></div><div class="chain-row"><b>证据</b><span>P3 说 France and Germany agree on need for harmonisation, but disagree about what to harmonise。</span></div><div class="chain-row"><b>替换</b><span>disagree about what to harmonise = fail to reach an agreement on harmonisation。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>并非争领导地位，而是政策内容分歧。</span></div><div class="counter-row"><b>B</b><span>忙于自身危机不是 stuck 的原因。</span></div><div class="counter-row"><b>D</b><span>是如何防止 disintegration 的分歧，不是走向 disintegration 的步骤。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q38" id="t4-q38" style="--c:var(--q3)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q38</span><span class="atype">细节题</span></div>
+<div class="rightans">答案 <strong>B</strong></div>
+</div>
+<p class="stem">To solve the euro problem, <span class="stem-hit" data-map="t4-q38-m1">Germany</span> proposed that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q38-m0">Q38 德国方案</span></span></p>
+<ul class="options"><li class=""><span>[A]</span> EU funds for poor regions be increased</li><li class="ok"><span>[B]</span> stricter regulations be imposed</li><li class=""><span>[C]</span> only core members be involved in economic co-ordination</li><li class=""><span>[D]</span> voting rights of the EU members be guaranteed</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>Germany 原词复现；proposed 对应 thinks the euro must be saved by。</span></div><div class="chain-row"><b>定位</b><span>P4 首句就是德国方案，by 后的 stricter rules 是核心。</span></div><div class="chain-row"><b>证据</b><span>P4 说 stricter rules on borrowing, spending and competitiveness, backed by sanctions。</span></div><div class="chain-row"><b>替换</b><span>stricter rules + sanctions = stricter regulations be imposed。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>原文是威胁 freeze EU funds，不是增加资金。</span></div><div class="counter-row"><b>C</b><span>德国坚持经济协调应包括 all 27 members。</span></div><div class="counter-row"><b>D</b><span>原文说甚至可能 suspend voting rights，不是保障投票权。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q39" id="t4-q39" style="--c:var(--q4)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q39</span><span class="atype">推断题</span></div>
+<div class="rightans">答案 <strong>A</strong></div>
+</div>
+<p class="stem">The <span class="stem-hit" data-map="t4-q39-m1">French proposal</span> of handling the crisis implies that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q39-m0">Q39 法国方案</span></span></p>
+<ul class="options"><li class="ok"><span>[A]</span> poor countries are more likely to get funds</li><li class=""><span>[B]</span> strict monetary policy will be applied to poor countries</li><li class=""><span>[C]</span> loans will be readily available to rich countries</li><li class=""><span>[D]</span> rich countries will basically control Eurobonds</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>French proposal ↔ southern camp headed by France；handling crisis 对应 economic government/redistribution。</span></div><div class="chain-row"><b>定位</b><span>P5 “Translated, that means...”解释法国方案真实含义。</span></div><div class="chain-row"><b>证据</b><span>P5 说 redistribution from richer to poorer members via cheaper borrowing or fiscal transfers。</span></div><div class="chain-row"><b>替换</b><span>from richer to poorer + fiscal transfers = poor countries are more likely to get funds。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>法国方案不是严格货币政策，而是政治干预与再分配。</span></div><div class="counter-row"><b>C</b><span>便宜借款是给 governments 尤其穷国，不是富国。</span></div><div class="counter-row"><b>D</b><span>Eurobonds 是再分配工具，未说富国控制。</span></div></section>
+</section>
+<section class="qcard" data-key="t4-q40" id="t4-q40" style="--c:var(--q5)">
+<div class="qtop">
+<div class="qtitle"><span class="badge">Q40</span><span class="atype">态度题</span></div>
+<div class="rightans">答案 <strong>D</strong></div>
+</div>
+<p class="stem">Regarding the <span class="stem-hit" data-map="t4-q40-m0">future of the EU</span>, the author seems to feel ______.</p>
+<ul class="options"><li class=""><span>[A]</span> pessimistic</li><li class=""><span>[B]</span> desperate</li><li class=""><span>[C]</span> conceited</li><li class="ok"><span>[D]</span> hopeful</li></ul>
+<div class="chain"><div class="chain-row"><b>关键词</b><span>future of the EU 对应结论段 P6；态度题看评价词。</span></div><div class="chain-row"><b>定位</b><span>P6 首句 “too soon to write off”是否定悲观；后文列举 EU 积极意义。</span></div><div class="chain-row"><b>证据</b><span>P6 说 It is too soon to write off the EU，并称欧洲项目是 ambitious attempt。</span></div><div class="chain-row"><b>替换</b><span>too soon to write off + remains largest trading block + ambitious attempt = hopeful。</span></div></div>
+<section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>pessimistic 与 too soon to write off 相反。</span></div><div class="counter-row"><b>B</b><span>desperate 过度悲观，文中强调仍有价值。</span></div><div class="counter-row"><b>C</b><span>conceited 是自负，非作者情绪。</span></div></section>
+</section></div></aside>
+</section>
+</section>
+<!-- text-unit 示例结构：
+  <section class="text-unit" id="text-1">
+    <header class="unit-head">
+      <div>
+        <h2>Text 1｜高分阅读路径图解析</h2>
+        <p>Q21—Q25。题干定位词、原文定位词、作答证据、同义替换全部闭环。</p>
+      </div>
+      <nav class="text-nav">
+        <button data-target="t1-q21">Q21</button>
+        <button data-target="t1-q22">Q22</button>
+      </nav>
+    </header>
+    <section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid">{{ROUTE_CARDS}}</div></section>
+    <section class="layout">
+      <article class="article-panel"><div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div><div class="article-body article-text">{{ARTICLE}}</div></article>
+      <aside class="analysis-panel"><div class="panel-head"><h3>逐题证据链解析</h3><p>每题只保留“关键词—定位—证据—替换—排除”。</p></div><div class="analysis-body">{{QCARDS}}</div></aside>
+    </section>
+  </section>
+  -->
+</div>
+</section>
+</main>
+</div>
+<script src="transition.js"></script>
+<script>
+const keyed=[...document.querySelectorAll('[data-key]')];
+const mapped=[...document.querySelectorAll('[data-map]')];
+function splitMaps(value){return String(value||'').split(/\s+/).filter(Boolean)}
+function activateKey(key,scroll=true){
+  keyed.forEach(el=>el.classList.toggle('active',el.dataset.key===String(key)));
+  if(scroll){
+    const target=document.getElementById(String(key))||document.querySelector('.kw[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.ev[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.scope-anchor[data-key="'+CSS.escape(String(key))+'"]');
+    if(target)target.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+function activateMaps(maps){
+  const set=new Set(Array.isArray(maps)?maps:splitMaps(maps));
+  mapped.forEach(el=>{
+    const hit=splitMaps(el.dataset.map).some(m=>set.has(m));
+    el.classList.toggle('map-active',hit);
+    el.classList.toggle('map-source-active',hit && !el.classList.contains('stem-hit'));
+  });
+}
+function clearMaps(){mapped.forEach(el=>{el.classList.remove('map-active');el.classList.remove('map-source-active')})}
+document.addEventListener('click',e=>{
+  const jump=e.target.closest('[data-target]');
+  if(jump){e.preventDefault();activateKey(jump.dataset.target);return}
+  const k=e.target.closest('[data-key]');
+  if(k){activateKey(k.dataset.key,!k.classList.contains('qcard'))}
+});
+document.addEventListener('mouseover',e=>{
+  const mapEl=e.target.closest('[data-map]');
+  if(mapEl)activateMaps(splitMaps(mapEl.dataset.map));
+  const keyEl=e.target.closest('[data-key]');
+  if(keyEl)keyed.forEach(x=>x.classList.toggle('active',x.dataset.key===keyEl.dataset.key));
+});
+document.addEventListener('mouseout',e=>{
+  if(e.target.closest('[data-map]'))clearMaps();
+});
+</script>
+</body>
+</html>
