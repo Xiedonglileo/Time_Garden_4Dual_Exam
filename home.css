@@ -410,3 +410,7 @@ body.is-switching .garden-card{animation:softBreath 1.45s cubic-bezier(.22,.61,.
   .hero-title-block h1{font-size:clamp(44px,15vw,64px);}
   .exam-option{min-width:auto; font-size:14px!important; padding:10px 16px!important;}
 }
+
+
+.seedbank-home-entry{display:inline-flex;align-items:center;justify-content:center;margin-top:10px;padding:10px 14px;border:1px solid rgba(112,76,31,.26);border-radius:999px;background:rgba(255,248,232,.82);color:#352516;text-decoration:none;font-weight:950;font-size:13px;box-shadow:0 10px 26px rgba(54,37,20,.10);transition:transform .18s ease,box-shadow .18s ease}
+.seedbank-home-entry:hover{transform:translateY(-1px);box-shadow:0 16px 34px rgba(54,37,20,.16)}

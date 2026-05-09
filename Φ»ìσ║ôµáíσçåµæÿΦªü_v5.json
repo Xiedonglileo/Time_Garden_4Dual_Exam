@@ -1,0 +1,15 @@
+{
+  "corpusSentences": 2594,
+  "lemmas": 5968,
+  "dictionaryEntries": 5968,
+  "forms": 3036,
+  "hits": 50672,
+  "missingTranslation": 0,
+  "missingSenses": 0,
+  "missingEtymology": 0,
+  "manualCurated": 42,
+  "functionWords": 31,
+  "dictionaryOnly": [
+    "vessel"
+  ]
+}
