@@ -1,3 +1,36 @@
+
+
+(function(){
+  const THEME_KEY='timeGardenTheme';
+  const THEME_DARK='dark';
+  const THEME_LIGHT='light';
+  const darkQuery=window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function systemTheme(){ return darkQuery && darkQuery.matches ? THEME_DARK : THEME_LIGHT; }
+  function storedTheme(){ const saved=localStorage.getItem(THEME_KEY); return (saved===THEME_DARK || saved===THEME_LIGHT) ? saved : null; }
+  function applyTheme(theme){
+    const isDark=theme===THEME_DARK;
+    document.documentElement.classList.toggle('theme-dark', isDark);
+    document.documentElement.classList.toggle('theme-light', !isDark);
+    document.querySelectorAll('.theme-toggle').forEach(btn=>{
+      btn.textContent=isDark ? '返回晨园' : '进入月园';
+      btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      btn.setAttribute('title', isDark ? '返回晨园' : '进入月园');
+    });
+  }
+  applyTheme(storedTheme() || systemTheme());
+  if(darkQuery){
+    const syncSystemTheme=()=>{ if(!storedTheme()) applyTheme(systemTheme()); };
+    if(darkQuery.addEventListener) darkQuery.addEventListener('change', syncSystemTheme);
+    else if(darkQuery.addListener) darkQuery.addListener(syncSystemTheme);
+  }
+  document.addEventListener('click', function(e){
+    const btn=e.target.closest('.theme-toggle');
+    if(!btn) return;
+    const next=document.documentElement.classList.contains('theme-dark') ? THEME_LIGHT : THEME_DARK;
+    localStorage.setItem(THEME_KEY,next);
+    applyTheme(next);
+  });
+})();
 (function(){
   const corpus = window.TG_SEED_CORPUS || [];
   const index = window.TG_SEED_INDEX || {};

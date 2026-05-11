@@ -90,3 +90,376 @@ a{color:inherit}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;
 .sense-overview-block{display:grid;gap:12px}
 .seed-note{padding:14px 16px;border:1px solid #eadfe5;border-radius:18px;background:rgba(255,255,255,.68);line-height:1.7}
 .seed-footer{padding:26px 18px 34px;text-align:center;color:#75727b;font-size:13px;letter-spacing:.01em}
+
+/* v2.2 种子匣月色主题：跟随系统/按钮切换，与年份页共用 timeGardenTheme */
+.theme-toggle{padding:9px 14px;border-radius:999px;border:1px solid #d7bd86;background:linear-gradient(180deg,#fff2c6,#e2c176);color:#2f251d;text-decoration:none;font:900 13px/1 Georgia,"Times New Roman",serif;box-shadow:var(--shadow-soft);cursor:pointer}
+html.theme-dark{
+  color-scheme:dark;
+  --bg:#17120f;
+  --rose-bg:#2c2028;
+  --mint-bg:#1f3027;
+  --paper:#241d17;
+  --ink:#f3e7d6;
+  --muted:#c7b9a8;
+  --line:#5a473a;
+  --line-strong:#705846;
+  --pink:#c996a8;
+  --pink-strong:#e0a6b8;
+  --green:#78bf93;
+  --green-strong:#8bd0a2;
+  --shadow:0 24px 58px rgba(0,0,0,.42);
+  --shadow-soft:0 12px 28px rgba(0,0,0,.28);
+}
+html.theme-dark body{
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 0 0,rgba(93,68,82,.28) 0,rgba(93,68,82,0) 28%),
+    radial-gradient(circle at 84% 8%,rgba(64,91,75,.20) 0,rgba(64,91,75,0) 26%),
+    linear-gradient(180deg,#211913 0%,#17120f 58%,#120f0d 100%);
+}
+html.theme-dark .brand,
+html.theme-dark .seed-hero h1,
+html.theme-dark .seed-empty h2,
+html.theme-dark .seed-word,
+html.theme-dark .sense-card-head h3,
+html.theme-dark .year-group-head h4,
+html.theme-dark .result-toolbar strong{color:#fff1df!important}
+html.theme-dark .home-link,
+html.theme-dark .reader-return,
+html.theme-dark .seed-search button,
+html.theme-dark .sample-seed,
+html.theme-dark .seed-jump,
+html.theme-dark .filter-pills button,
+html.theme-dark .filter-actions button,
+html.theme-dark .word-family button{
+  color:var(--ink)!important;
+  background:rgba(46,37,31,.96)!important;
+  border-color:var(--line)!important;
+  box-shadow:var(--shadow-soft);
+}
+html.theme-dark .theme-toggle{
+  color:#2f251d!important;
+  background:linear-gradient(180deg,#ffeab1,#d9b56d)!important;
+  border-color:rgba(246,210,126,.78)!important;
+}
+html.theme-dark .seed-hero-card,
+html.theme-dark .definition-card,
+html.theme-dark .seed-empty,
+html.theme-dark .sense-card,
+html.theme-dark .year-group,
+html.theme-dark .filter-panel,
+html.theme-dark .etymology-card,
+html.theme-dark .seed-note{
+  color:var(--ink);
+  background:linear-gradient(145deg,rgba(46,37,31,.97),rgba(34,28,24,.96))!important;
+  border-color:var(--line)!important;
+  box-shadow:var(--shadow-soft);
+}
+html.theme-dark .seed-hero-card:before{background:radial-gradient(circle,rgba(196,132,156,.20),transparent 70%)}
+html.theme-dark .seed-hero-card:after{background:radial-gradient(circle,rgba(111,178,135,.18),transparent 70%)}
+html.theme-dark .lead,
+html.theme-dark .seed-meta,
+html.theme-dark .seed-empty p,
+html.theme-dark .hint,
+html.theme-dark .seed-note,
+html.theme-dark .sense-definition,
+html.theme-dark .translation,
+html.theme-dark .summary-translation,
+html.theme-dark .word-family,
+html.theme-dark .result-toolbar,
+html.theme-dark .sense-empty-state,
+html.theme-dark .seed-footer,
+html.theme-dark .sentence-card p,
+html.theme-dark .etymology-card p,
+html.theme-dark .tg-seed-etymology>span{color:var(--muted)!important}
+html.theme-dark .seed-search input{
+  color:var(--ink);
+  background:rgba(34,28,24,.98);
+  border-color:var(--line);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+html.theme-dark .seed-search input::placeholder{color:#a99888}
+html.theme-dark .seed-lemma,
+html.theme-dark .phonetic,
+html.theme-dark .seed-overall-badge,
+html.theme-dark .sense-chip-index,
+html.theme-dark .sense-chip-count,
+html.theme-dark .hit-meta span,
+html.theme-dark .hit-meta b,
+html.theme-dark .year-group-head span,
+html.theme-dark .etymology-parts span,
+html.theme-dark .filter-panel-title span,
+html.theme-dark .sense-overview-title span{
+  color:var(--muted);
+  background:rgba(56,46,39,.96)!important;
+  border-color:var(--line)!important;
+}
+html.theme-dark .sense-chip,
+html.theme-dark .sense-card-head,
+html.theme-dark .year-group-head,
+html.theme-dark .filter-pills button.is-active,
+html.theme-dark .seed-overall-badge{
+  color:var(--ink)!important;
+  background:linear-gradient(135deg,rgba(42,62,49,.72),rgba(72,47,58,.62))!important;
+  border-color:var(--line)!important;
+}
+html.theme-dark .sense-chip-text,
+html.theme-dark .etymology-title,
+html.theme-dark .filter-panel-title,
+html.theme-dark .sense-overview-title{color:#d8cbb8!important}
+html.theme-dark .sentence-card,
+html.theme-dark .year-group-head,
+html.theme-dark .sense-card-head{border-color:var(--line)!important}
+html.theme-dark .seed-mark{background:linear-gradient(180deg,rgba(226,166,183,.22),rgba(120,191,147,.38));color:#fff2df}
+
+/* v2.3 深空种子匣：matching second-layer keynote dark system */
+html.theme-dark{
+  --bg:#05060a;
+  --paper:rgba(18,21,30,.82);
+  --ink:#f5f7ff;
+  --muted:#aeb6c8;
+  --line:rgba(255,255,255,.135);
+  --line-strong:rgba(255,255,255,.24);
+  --pink:#c69cff;
+  --pink-strong:#dcbcff;
+  --green:#54e0b3;
+  --green-strong:#75f0c8;
+  --shadow:0 30px 86px rgba(0,0,0,.56);
+  --shadow-soft:0 16px 42px rgba(0,0,0,.38);
+}
+html.theme-dark body{
+  color:var(--ink)!important;
+  background:
+    radial-gradient(circle at 18% -8%,rgba(80,110,255,.34) 0,rgba(80,110,255,0) 34%),
+    radial-gradient(circle at 83% 0%,rgba(210,92,255,.18) 0,rgba(210,92,255,0) 30%),
+    radial-gradient(circle at 52% 108%,rgba(0,229,190,.12) 0,rgba(0,229,190,0) 34%),
+    linear-gradient(180deg,#090b12 0%,#05060a 56%,#030407 100%)!important;
+}
+html.theme-dark .brand,
+html.theme-dark .seed-hero h1,
+html.theme-dark .seed-empty h2,
+html.theme-dark .seed-word,
+html.theme-dark .sense-card-head h3,
+html.theme-dark .year-group-head h4,
+html.theme-dark .result-toolbar strong{color:#fff!important;text-shadow:0 8px 28px rgba(0,0,0,.38)}
+html.theme-dark .home-link,
+html.theme-dark .reader-return,
+html.theme-dark .seed-search button,
+html.theme-dark .sample-seed,
+html.theme-dark .seed-jump,
+html.theme-dark .filter-pills button,
+html.theme-dark .filter-actions button,
+html.theme-dark .word-family button{
+  color:#edf2ff!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.105),rgba(255,255,255,.045))!important;
+  border-color:rgba(255,255,255,.16)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 28px rgba(0,0,0,.30)!important;
+  backdrop-filter:blur(18px) saturate(1.2)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(1.2)!important;
+}
+html.theme-dark .theme-toggle{
+  color:#07111f!important;
+  background:linear-gradient(135deg,#f8fbff 0%,#dbe8ff 44%,#9db7ff 100%)!important;
+  border-color:rgba(255,255,255,.52)!important;
+  box-shadow:0 12px 34px rgba(83,126,255,.28),inset 0 1px 0 rgba(255,255,255,.72)!important;
+}
+html.theme-dark .seed-hero-card,
+html.theme-dark .definition-card,
+html.theme-dark .seed-empty,
+html.theme-dark .sense-card,
+html.theme-dark .year-group,
+html.theme-dark .filter-panel,
+html.theme-dark .etymology-card,
+html.theme-dark .seed-note{
+  color:var(--ink)!important;
+  background:linear-gradient(180deg,rgba(28,32,44,.78),rgba(12,14,21,.72))!important;
+  border-color:rgba(255,255,255,.135)!important;
+  box-shadow:var(--shadow-soft)!important;
+  backdrop-filter:blur(26px) saturate(1.18)!important;
+  -webkit-backdrop-filter:blur(26px) saturate(1.18)!important;
+}
+html.theme-dark .seed-hero-card:before{background:radial-gradient(circle,rgba(157,183,255,.22),transparent 70%)!important}
+html.theme-dark .seed-hero-card:after{background:radial-gradient(circle,rgba(84,224,179,.16),transparent 70%)!important}
+html.theme-dark .lead,
+html.theme-dark .seed-meta,
+html.theme-dark .seed-empty p,
+html.theme-dark .hint,
+html.theme-dark .seed-note,
+html.theme-dark .sense-definition,
+html.theme-dark .translation,
+html.theme-dark .summary-translation,
+html.theme-dark .word-family,
+html.theme-dark .result-toolbar,
+html.theme-dark .sense-empty-state,
+html.theme-dark .seed-footer,
+html.theme-dark .sentence-card p,
+html.theme-dark .etymology-card p,
+html.theme-dark .tg-seed-etymology>span{color:#aeb6c8!important}
+html.theme-dark .seed-search input{
+  color:#f5f7ff!important;
+  background:rgba(255,255,255,.055)!important;
+  border-color:rgba(255,255,255,.16)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 12px 36px rgba(0,0,0,.28)!important;
+}
+html.theme-dark .seed-search input::placeholder{color:#9ca6bd!important}
+html.theme-dark .seed-lemma,
+html.theme-dark .phonetic,
+html.theme-dark .seed-overall-badge,
+html.theme-dark .sense-chip-index,
+html.theme-dark .sense-chip-count,
+html.theme-dark .hit-meta span,
+html.theme-dark .hit-meta b,
+html.theme-dark .year-group-head span,
+html.theme-dark .etymology-parts span,
+html.theme-dark .filter-panel-title span,
+html.theme-dark .sense-overview-title span{
+  color:#c7d0e6!important;
+  background:rgba(255,255,255,.07)!important;
+  border-color:rgba(255,255,255,.13)!important;
+}
+html.theme-dark .sense-chip,
+html.theme-dark .sense-card-head,
+html.theme-dark .year-group-head,
+html.theme-dark .filter-pills button.is-active,
+html.theme-dark .seed-overall-badge{
+  color:#f5f7ff!important;
+  background:linear-gradient(135deg,rgba(84,224,179,.18),rgba(157,183,255,.18))!important;
+  border-color:rgba(255,255,255,.15)!important;
+}
+html.theme-dark .sense-chip-text,
+html.theme-dark .etymology-title,
+html.theme-dark .filter-panel-title,
+html.theme-dark .sense-overview-title{color:#e6ebff!important}
+html.theme-dark .sentence-card,
+html.theme-dark .year-group-head,
+html.theme-dark .sense-card-head{border-color:rgba(255,255,255,.12)!important}
+html.theme-dark .seed-mark{background:linear-gradient(180deg,rgba(157,183,255,.22),rgba(84,224,179,.34))!important;color:#fff!important}
+
+/* v2.4 Seed Box polish: Apple glass day + high-contrast dark definitions */
+html:not(.theme-dark){
+  --bg:#f5f7fb;
+  --paper:rgba(255,255,255,.88);
+  --ink:#17181c;
+  --muted:#626a78;
+  --line:rgba(20,30,50,.105);
+  --line-strong:rgba(20,30,50,.16);
+  --shadow:0 26px 76px rgba(16,24,40,.10);
+  --shadow-soft:0 14px 36px rgba(16,24,40,.075);
+}
+html:not(.theme-dark) body{
+  background:
+    radial-gradient(circle at 18% -8%,rgba(96,165,250,.18) 0,rgba(96,165,250,0) 34%),
+    radial-gradient(circle at 86% 2%,rgba(196,181,253,.18) 0,rgba(196,181,253,0) 30%),
+    linear-gradient(180deg,#f8fbff 0%,#f3f6fb 58%,#eef2f8 100%)!important;
+  color:var(--ink)!important;
+}
+html:not(.theme-dark) .seed-hero-card,
+html:not(.theme-dark) .definition-card,
+html:not(.theme-dark) .seed-empty,
+html:not(.theme-dark) .sense-card,
+html:not(.theme-dark) .year-group,
+html:not(.theme-dark) .filter-panel,
+html:not(.theme-dark) .etymology-card,
+html:not(.theme-dark) .seed-note{
+  background:linear-gradient(180deg,rgba(255,255,255,.90),rgba(255,255,255,.68))!important;
+  border-color:rgba(20,30,50,.105)!important;
+  box-shadow:0 24px 68px rgba(16,24,40,.09),inset 0 1px 0 rgba(255,255,255,.72)!important;
+  backdrop-filter:blur(24px) saturate(1.16)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(1.16)!important;
+}
+html:not(.theme-dark) .seed-nav{
+  padding:2px 0;
+}
+html:not(.theme-dark) .brand,
+html:not(.theme-dark) .seed-hero h1,
+html:not(.theme-dark) .seed-word,
+html:not(.theme-dark) .sense-card-head h3,
+html:not(.theme-dark) .year-group-head h4,
+html:not(.theme-dark) .result-toolbar strong{color:#111318!important}
+html:not(.theme-dark) .lead,
+html:not(.theme-dark) .seed-meta,
+html:not(.theme-dark) .hint,
+html:not(.theme-dark) .seed-note,
+html:not(.theme-dark) .sense-definition,
+html:not(.theme-dark) .translation,
+html:not(.theme-dark) .summary-translation,
+html:not(.theme-dark) .word-family,
+html:not(.theme-dark) .result-toolbar,
+html:not(.theme-dark) .sense-empty-state,
+html:not(.theme-dark) .seed-footer,
+html:not(.theme-dark) .sentence-card p,
+html:not(.theme-dark) .etymology-card p{color:#596273!important}
+html:not(.theme-dark) .home-link,
+html:not(.theme-dark) .reader-return,
+html:not(.theme-dark) .seed-search button,
+html:not(.theme-dark) .sample-seed,
+html:not(.theme-dark) .seed-jump,
+html:not(.theme-dark) .filter-pills button,
+html:not(.theme-dark) .filter-actions button,
+html:not(.theme-dark) .word-family button{
+  color:#1d2430!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.66))!important;
+  border-color:rgba(20,30,50,.11)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 26px rgba(16,24,40,.075)!important;
+  backdrop-filter:blur(18px) saturate(1.24)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(1.24)!important;
+}
+html:not(.theme-dark) .theme-toggle{
+  color:#09111f!important;
+  background:linear-gradient(135deg,#ffffff 0%,#eef5ff 44%,#dbeafe 100%)!important;
+  border-color:rgba(120,150,210,.22)!important;
+  box-shadow:0 14px 32px rgba(37,99,235,.14),inset 0 1px 0 rgba(255,255,255,.95)!important;
+}
+html:not(.theme-dark) .seed-search input,
+html:not(.theme-dark) .summary-translation{
+  color:#17181c!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.74))!important;
+  border-color:rgba(20,30,50,.12)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.82),0 10px 24px rgba(16,24,40,.055)!important;
+}
+html:not(.theme-dark) .sense-chip,
+html:not(.theme-dark) .sense-card-head,
+html:not(.theme-dark) .year-group-head,
+html:not(.theme-dark) .filter-pills button.is-active,
+html:not(.theme-dark) .seed-overall-badge{
+  background:linear-gradient(180deg,rgba(255,255,255,.90),rgba(246,249,255,.78))!important;
+  border-color:rgba(20,30,50,.105)!important;
+}
+html.theme-dark .summary-translation,
+html.theme-dark .translation.summary-translation{
+  color:#f9fbff!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.145),rgba(255,255,255,.075))!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 18px 42px rgba(0,0,0,.34)!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.52)!important;
+}
+html.theme-dark .sense-definition,
+html.theme-dark .translation,
+html.theme-dark .sentence-card p,
+html.theme-dark .etymology-card p,
+html.theme-dark .seed-note,
+html.theme-dark .lead{
+  color:#dbe5ff!important;
+}
+html.theme-dark .definition-card{
+  background:linear-gradient(180deg,rgba(30,36,54,.88),rgba(13,16,26,.82))!important;
+}
+html.theme-dark .sense-card-head h3,
+html.theme-dark .seed-word{color:#ffffff!important;text-shadow:0 10px 32px rgba(0,0,0,.44)!important}
+html.theme-dark .sense-chip-text,
+html.theme-dark .filter-panel-title,
+html.theme-dark .sense-overview-title,
+html.theme-dark .etymology-title{color:#f0f4ff!important}
+html.theme-dark .seed-lemma,
+html.theme-dark .phonetic,
+html.theme-dark .seed-overall-badge,
+html.theme-dark .sense-chip-index,
+html.theme-dark .sense-chip-count,
+html.theme-dark .hit-meta span,
+html.theme-dark .hit-meta b,
+html.theme-dark .year-group-head span,
+html.theme-dark .etymology-parts span{
+  color:#e6edff!important;
+  background:rgba(255,255,255,.10)!important;
+  border-color:rgba(255,255,255,.18)!important;
+}
