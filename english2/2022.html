@@ -5,72 +5,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>2022 年考研英语二阅读路径图</title>
-<style>
-  :root{
-    --bg:#f7efe4; --paper:#fffdfa; --ink:#211c17; --muted:#74675c;
-    --line:#ded0c0; --soft:#f0e5d7;
-    --q1:#2563eb; --q2:#07845f; --q3:#7c4dcc; --q4:#d43b32; --q5:#ce7a12;
-    --shadow:0 20px 48px rgba(47,34,19,.10);
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:84px}
-  body{margin:0;background:linear-gradient(180deg,#fcf8f1 0%,var(--bg) 100%);color:var(--ink);font-family:Georgia,"Times New Roman","Noto Serif CJK SC","Source Han Serif SC","Songti SC",serif;line-height:1.58}
-  .topbar{position:sticky;top:0;z-index:80;background:rgba(255,253,250,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
-  .topbar-inner{max-width:1440px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-  .brand{font-size:18px;font-weight:950;letter-spacing:.02em;white-space:nowrap}
-  .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-  button,.jump-btn{font:800 13px/1 Georgia,"Times New Roman","Noto Serif CJK SC",serif;color:var(--ink);background:#fff9f0;border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;text-decoration:none}
-  button:hover,.jump-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(47,34,19,.10)}
-  .page{max-width:1440px;margin:0 auto;padding:24px 22px 64px}
-  .year-header{margin:0 0 18px;padding:22px 24px;border:1px solid var(--line);border-radius:28px;background:rgba(255,253,250,.72);box-shadow:var(--shadow)}
-  .year-header h1{margin:0;font-size:42px;line-height:1.08;letter-spacing:-.035em;font-weight:950}
-  .year-header p{margin:8px 0 0;color:var(--muted);font-size:15px}
-  .text-index{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-  .text-unit{margin:28px 0 42px;scroll-margin-top:90px;break-before:page}.text-unit:first-of-type{break-before:auto}
-  .unit-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end;margin-bottom:16px;padding:20px 22px;border:1px solid var(--line);border-radius:26px;background:var(--paper);box-shadow:var(--shadow)}
-  .unit-head h2{margin:0;font-size:32px;line-height:1.12;letter-spacing:-.02em}
-  .unit-head p{margin:8px 0 0;color:var(--muted);font-size:14px}
-  .text-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-  .route{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:18px 18px 16px;box-shadow:var(--shadow);margin-bottom:22px}
-  .route h3{margin:0 0 12px;font-size:18px;letter-spacing:.02em;color:#51463d}
-  .route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
-  .route-card{--c:#444;position:relative;overflow:hidden;min-height:92px;cursor:pointer;background:#fffaf3;border:1px solid var(--line);border-radius:18px;padding:14px 14px 12px 17px}
-  .route-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
-  .route-card b{display:block;color:var(--c)!important;font-size:17px;margin-bottom:6px}.route-card p{margin:0;font-size:14px;line-height:1.42;color:#5a4f45}
-  .layout{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(440px,.96fr);gap:22px;align-items:start}
-  .article-panel,.analysis-panel{background:var(--paper);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}
-  .panel-head{padding:22px 24px 12px;border-bottom:1px solid var(--line)}
-  .panel-head h3{margin:0;font-size:28px;letter-spacing:-.02em}.panel-head p{margin:6px 0 0;color:var(--muted);font-size:14px}
-  .article-body{padding:22px 26px 24px}.article-text{font-size:19px;line-height:1.86;color:#1f1b16;text-align:left}
-  .para{position:relative;margin:0 0 20px;padding-left:66px}.para:last-child{margin-bottom:0}
-  .pnum{position:absolute;left:0;top:2px;display:inline-flex;align-items:center;justify-content:center;width:38px;height:28px;border-radius:999px;background:var(--soft);color:#5a4f45;font-size:13px;font-weight:950}
-  .snum{font-size:11px;color:#9b8d7f;font-weight:950;margin-right:2px;vertical-align:super}
-  .scope-anchor{--c:#444;display:inline-flex;align-items:center;margin:0 6px 0 0;padding:4px 8px;border-radius:999px;background:var(--c);color:white;font-size:12px;font-weight:950;vertical-align:middle;cursor:pointer;white-space:nowrap}
-  .kw{--c:#444;position:relative;display:inline;color:var(--c)!important;font-weight:950;padding:0 .12em .02em;border-radius:5px;text-decoration-line:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--c)!important;background:linear-gradient(to top,color-mix(in srgb,var(--c) 22%,transparent) 0%,color-mix(in srgb,var(--c) 22%,transparent) 48%,transparent 48%,transparent 100%);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 16%,transparent);cursor:pointer}
-  .ev{--c:#444;color:var(--ink);font-weight:650;border-radius:3px;padding:0 1px 1px;text-decoration-line:underline;text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-color:var(--c)!important;background:color-mix(in srgb,var(--c) 8%,transparent);cursor:pointer;transition:background .18s ease,box-shadow .18s ease}
-  .ev:after{content:attr(data-label);font-size:10px;font-weight:950;line-height:1;border-radius:999px;padding:2px 5px;margin-left:4px;color:white;vertical-align:middle;white-space:nowrap;background:var(--c)!important}
-  .analysis-panel{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow:auto}.analysis-body{padding:16px;display:grid;gap:14px}
-  .qcard{--c:#444;background:linear-gradient(180deg,#fffdfa,#fff8ed);border:1px solid var(--line);border-radius:20px;padding:16px 17px;position:relative;overflow:hidden;scroll-margin-top:90px}
-  .qcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
-  .qtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;border-bottom:1px dashed var(--line);padding-bottom:9px}.qtitle{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:950}.badge{background:var(--c)!important;color:white;border-radius:999px;padding:4px 10px;font-size:14px}.atype{color:var(--muted);font-size:14px;font-weight:900}.rightans{font-size:14px;color:var(--muted);font-weight:900}.rightans strong{font-size:25px;color:var(--ink);line-height:1}
-  .stem{margin:0 0 10px;font-size:16.8px;line-height:1.42;font-weight:950;color:#211c17}.stem-hit{border-radius:5px;padding:0 .08em;transition:background .15s ease,box-shadow .15s ease,color .15s ease}.stem-hit.map-active{background:#fff1a8;box-shadow:0 0 0 2px #f3c94d;color:#1f1b16}.stem-hit:hover{background:#fff4bf;cursor:pointer}
-  .options{list-style:none;margin:0 0 11px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:13.6px;line-height:1.32}.options li{border:1px solid #eadfd2;background:#fffefb;border-radius:12px;padding:7px 8px}.options span{font-weight:950;margin-right:4px}.options .ok{background:#f3fbf2;border-color:#a9cfab;box-shadow:inset 0 0 0 1px rgba(92,148,91,.13)}
-  .chain{display:grid;gap:7px;font-size:14px;line-height:1.47}.chain-row{display:grid;grid-template-columns:74px 1fr;gap:8px;border-top:1px solid #f0e6da;padding-top:7px}.chain-row:first-child{border-top:0;padding-top:0}.chain-row b{color:#584b41}
-  .counter{margin-top:10px;border:1px solid #eadfd2;border-radius:15px;overflow:hidden;background:#fffdfa}.counter h4{margin:0;padding:7px 10px;font-size:13.5px;background:#f0e6da;color:#55483e}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid #efe3d7;font-size:13px;line-height:1.36}.counter-row:first-of-type{border-top:0}.counter-row b{padding:7px 9px;background:#fbf6ef}.counter-row span{padding:7px 9px;color:#342d26}
-  .qcard.active,.route-card.active,.ev.active,.kw.active,.scope-anchor.active{box-shadow:0 0 0 3px var(--c),0 14px 32px rgba(47,34,19,.10);background:#fff4d4}.map-source-active{box-shadow:0 0 0 2px #f3c94d,0 6px 18px rgba(47,34,19,.12)!important;background:#fff1a8!important;color:#1f1b16!important}
-  .note-box{margin-top:14px;background:#fff8ed;border:1px solid var(--line);border-radius:18px;padding:14px 16px;color:#4f453c;font-size:14px;line-height:1.55}
-  @media (max-width:1120px){.unit-head,.layout{grid-template-columns:1fr}.text-nav{justify-content:flex-start}.analysis-panel{position:static;max-height:none}.options{grid-template-columns:1fr}}
-  @media print{@page{size:A4;margin:12mm}body{background:#fff}.topbar{display:none}.page{max-width:none;padding:0}.route,.article-panel,.analysis-panel,.qcard{box-shadow:none}.layout{grid-template-columns:1fr}.analysis-panel{position:static;max-height:none;overflow:visible}.qcard{break-inside:avoid}.ev,.kw,.badge,.route-card,.scope-anchor{print-color-adjust:exact;-webkit-print-color-adjust:exact}.article-text{font-size:14.7px;line-height:1.72}.panel-head h3{font-size:22px}.kw{box-shadow:none;background:transparent;color:var(--c)!important;text-decoration-thickness:2px}.text-unit{break-before:page}.text-unit:first-of-type{break-before:auto}}
 
-  .qjump{background:color-mix(in srgb,var(--c) 10%,#fff9f0)!important}
-  .jump-btn[data-target^="text-"]{font-weight:950}
-  .article-text em{font-style:italic}
-
-</style>
-<style>
-/* repair-v1: final closed-loop compatibility layer */
-.article-panel .source-supplement,.article .source-supplement{margin-top:18px;padding:12px 14px;border:1px dashed rgba(180,154,130,.45);border-radius:16px;background:rgba(255,248,237,.62);font-size:15px;line-height:1.8;color:#4f443e}.source-supplement h4{margin:0 0 8px;font-size:15px;color:#6c5b52}.source-fix{display:inline-block;margin:2px 5px 2px 0}.stem-sync-bank{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}.map-active,.kw.map-active,.ev.map-active,.stem-hit.map-active{outline:2px solid currentColor;outline-offset:2px;border-radius:5px;background:rgba(255,248,184,.42)!important}.qcard{border-color:var(--c)!important}.qcard .badge{background:var(--c)!important}.options .ok{border-color:#9dccaa!important;background:#effaf0!important}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid rgba(120,100,80,.18);padding:7px 10px}.counter-row b{font-weight:800}.chain-row{display:grid;grid-template-columns:82px 1fr;gap:12px;border-top:1px solid rgba(120,100,80,.14);padding:9px 0}.chain-row b{color:#6b5a50}.repair-note{font-size:12px;color:#8a776d;margin-top:8px}.text-unit{scroll-margin-top:90px}.qcard{scroll-margin-top:90px}
-</style><link href="year.css" rel="stylesheet"/>
+<link href="year.css" rel="stylesheet"/>
 <link href="../seed-popover.css" rel="stylesheet"/>
 </head>
 <body class="is-entering exam-two-page">
@@ -104,17 +40,17 @@
 <p>Q21—Q25。题干定位词、原文定位词、作答证据、同义替换全部闭环。</p>
 </div>
 <nav class="text-nav">
-<button class="qjump" data-target="t1-q21" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q21</button>
-<button class="qjump" data-target="t1-q22" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q22</button>
-<button class="qjump" data-target="t1-q23" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q23</button>
-<button class="qjump" data-target="t1-q24" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q24</button>
-<button class="qjump" data-target="t1-q25" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q25</button>
+<button class="qjump" data-target="y2022-t1-q21" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q21</button>
+<button class="qjump" data-target="y2022-t1-q22" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q22</button>
+<button class="qjump" data-target="y2022-t1-q23" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q23</button>
+<button class="qjump" data-target="y2022-t1-q24" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q24</button>
+<button class="qjump" data-target="y2022-t1-q25" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q25</button>
 </nav>
 </header>
 <section class="route">
 <h3>题目顺序与原文证据分布</h3>
 <div class="route-grid">
-<div class="route-card" data-key="t1-q21" data-target="t1-q21" style="--c:var(--q1)"><b>Q21｜生产方式</b><p>climate-friendly eggs → regenerative agriculture special techniques → D</p></div><div class="route-card" data-key="t1-q22" data-target="t1-q22" style="--c:var(--q2)"><b>Q22｜Brown 的 progress</b><p>cover crops / waste fertilizes / forage → sustainable system → C</p></div><div class="route-card" data-key="t1-q23" data-target="t1-q23" style="--c:var(--q3)"><b>Q23｜例证作用</b><p>organic eggs 从小众到 Walmart → regenerative products 有潜力 → C</p></div><div class="route-card" data-key="t1-q24" data-target="t1-q24" style="--c:var(--q4)"><b>Q24｜年轻消费者</b><p>last paragraph：young generations care climate → likely to buy → B</p></div><div class="route-card" data-key="t1-q25" data-target="t1-q25" style="--c:var(--q5)"><b>Q25｜两人分歧</b><p>Stanton hard sell vs Brunnquell altering food chain → market prospects → A</p></div>
+<div class="route-card" data-key="y2022-t1-q21" data-target="y2022-t1-q21" style="--c:var(--q1)"><b>Q21｜生产方式</b><p>climate-friendly eggs → regenerative agriculture special techniques → D</p></div><div class="route-card" data-key="y2022-t1-q22" data-target="y2022-t1-q22" style="--c:var(--q2)"><b>Q22｜Brown 的 progress</b><p>cover crops / waste fertilizes / forage → sustainable system → C</p></div><div class="route-card" data-key="y2022-t1-q23" data-target="y2022-t1-q23" style="--c:var(--q3)"><b>Q23｜例证作用</b><p>organic eggs 从小众到 Walmart → regenerative products 有潜力 → C</p></div><div class="route-card" data-key="y2022-t1-q24" data-target="y2022-t1-q24" style="--c:var(--q4)"><b>Q24｜年轻消费者</b><p>last paragraph：young generations care climate → likely to buy → B</p></div><div class="route-card" data-key="y2022-t1-q25" data-target="y2022-t1-q25" style="--c:var(--q5)"><b>Q25｜两人分歧</b><p>Stanton hard sell vs Brunnquell altering food chain → market prospects → A</p></div>
 </div>
 </section>
 <section class="layout">
@@ -124,12 +60,12 @@
 <p>彩色 marker = 题干定位词 / 同义定位表达；粗下划线 + Q 标签 = 作答证据。</p>
 </div>
 <div class="article-body article-text">
-<p class="para"><span class="pnum">P1</span><span class="snum">1</span>On a recent sunny day, 13,000 chickens roam over Larry Brown’s 40 windswept acres in Shiner, Texas. <span class="snum">2</span>Some rest in the shade of a parked car. <span class="snum">3</span>Others drink water with the cows. <span class="snum">4</span><span class="ev" data-key="t1-q21" data-label="Q21" style="--c:var(--q1)">This all seems random, but it’s <mark class="kw" data-key="t1-q21" data-map="t1-q21-m2" style="--c:var(--q1)">by design</mark>, part of what the $6.1 billion U.S. egg industry bets will be its next big thing: <mark class="kw" data-key="t1-q21" data-map="t1-q21-m1" style="--c:var(--q1)">climate-friendly eggs</mark></span>.</p>
-<p class="para"><span class="pnum">P2</span><span class="snum">1</span>These eggs, which are making their debut now on shelves for as much as $8 a dozen, are still labeled organic and animal-friendly, but <span class="ev" data-key="t1-q21" data-label="Q21" style="--c:var(--q1)">they’re also from birds that live on <mark class="kw" data-key="t1-q21" data-map="t1-q21-m2" style="--c:var(--q1)">farms using regenerative agriculture—special techniques</mark> to cultivate rich soils that trap green-house gases</span>. <span class="snum">2</span>Such eggs could be marketed as helping to fight climate change.</p>
-<p class="para"><span class="pnum">P3</span><span class="snum">1</span>“<mark class="kw" data-key="t1-q22" data-map="t1-q22-m2" style="--c:var(--q2)">I’m excited about our progress</mark>,” says <mark class="kw" data-key="t1-q22" data-map="t1-q22-m1" style="--c:var(--q2)">Brown</mark>, who is adding more cover crops that draw worms and crickets for the chickens to eat. <span class="snum">2</span><span class="ev" data-key="t1-q22" data-label="Q22" style="--c:var(--q2)">The birds’ waste then fertilizes fields. Such improvements “allow our hens to forage for higher-quality natural feed that will be good for the land, the hens, and the eggs that we supply to our customers.”</span></p>
-<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t1-q23" data-map="t1-q23-m2" style="--c:var(--q3)">Q23 段落定位</span><span class="snum">1</span>The egg industry’s push is the first major test of whether animal products from <mark class="kw" data-key="t1-q23" data-map="t1-q23-m3" style="--c:var(--q3)">regenerative farms</mark> can become the next premium offering. <span class="snum">2</span><span class="ev" data-key="t1-q23" data-label="Q23" style="--c:var(--q3)">In barely more than a decade, <mark class="kw" data-key="t1-q23" data-map="t1-q23-m1" style="--c:var(--q3)">organic eggs</mark> went from being dismissed as a niche product in natural foods stores to being sold at Walmart.</span> <span class="snum">3</span>More recently there were similar doubts about probiotics and plant-based meats, but both have exploded into major supermarket categories. <span class="snum">4</span><span class="ev" data-key="t1-q23" data-label="Q23" style="--c:var(--q3)">If the sustainable-egg rollout is successful, it could open the floodgates for regenerative beef, broccoli, and beyond.</span></p>
-<p class="para"><span class="pnum">P5</span><span class="snum">1</span><mark class="kw" data-key="t1-q25" data-map="t1-q25-m2" style="--c:var(--q5)">Regenerative products</mark> could be <span class="ev" data-key="t1-q25" data-label="Q25" style="--c:var(--q5)">a hard sell, because the concept is tough to define quickly</span>, says <mark class="kw" data-key="t1-q25" data-map="t1-q25-m1" style="--c:var(--q5)">Julie Stanton</mark>, associate professor of agricultural economics at Pennsylvania State University Brandywine. <span class="snum">2</span>Such farming also brings minimal, if any, improvement to the food products (though some producers say their eggs have more protein).</p>
-<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="t1-q24" data-map="t1-q24-m1" style="--c:var(--q4)">Q24 last paragraph</span><span class="snum">1</span>The industry is betting that the same consumers paying more for premium attributes such as free-range, non-GMO, and pasture-raised eggs will embrace sustainability. <span class="snum">2</span><span class="ev" data-key="t1-q24" data-label="Q24" style="--c:var(--q4)">Surveys show that <mark class="kw" data-key="t1-q24" data-map="t1-q24-m2" style="--c:var(--q4)">younger generations</mark> are more concerned about climate change, and some of the success of plant-based meat can be chalked up to shoppers wanting to signal their desire to protect the environment.</span> <span class="snum">3</span><span class="ev" data-key="t1-q25" data-label="Q25" style="--c:var(--q5)"><mark class="kw" data-key="t1-q25" data-map="t1-q25-m3" style="--c:var(--q5)">Young adults “really care about the planet,” says John Brunnquell</mark>, president of Egg Innovations. “They are absolutely altering the food chain beyond what I think even they understand what they’re doing.”</span></p>
+<p class="para"><span class="pnum">P1</span><span class="snum">1</span>On a recent sunny day, 13,000 chickens roam over Larry Brown’s 40 windswept acres in Shiner, Texas. <span class="snum">2</span>Some rest in the shade of a parked car. <span class="snum">3</span>Others drink water with the cows. <span class="snum">4</span><span class="ev" data-key="y2022-t1-q21" data-label="Q21" style="--c:var(--q1)">This all seems random, but it’s <mark class="kw" data-key="y2022-t1-q21" data-map="y2022-t1-q21-m2" style="--c:var(--q1)">by design</mark>, part of what the $6.1 billion U.S. egg industry bets will be its next big thing: <mark class="kw" data-key="y2022-t1-q21" data-map="y2022-t1-q21-m1" style="--c:var(--q1)">climate-friendly eggs</mark></span>.</p>
+<p class="para"><span class="pnum">P2</span><span class="snum">1</span>These eggs, which are making their debut now on shelves for as much as $8 a dozen, are still labeled organic and animal-friendly, but <span class="ev" data-key="y2022-t1-q21" data-label="Q21" style="--c:var(--q1)">they’re also from birds that live on <mark class="kw" data-key="y2022-t1-q21" data-map="y2022-t1-q21-m2" style="--c:var(--q1)">farms using regenerative agriculture—special techniques</mark> to cultivate rich soils that trap green-house gases</span>. <span class="snum">2</span>Such eggs could be marketed as helping to fight climate change.</p>
+<p class="para"><span class="pnum">P3</span><span class="snum">1</span>“<mark class="kw" data-key="y2022-t1-q22" data-map="y2022-t1-q22-m2" style="--c:var(--q2)">I’m excited about our progress</mark>,” says <mark class="kw" data-key="y2022-t1-q22" data-map="y2022-t1-q22-m1" style="--c:var(--q2)">Brown</mark>, who is adding more cover crops that draw worms and crickets for the chickens to eat. <span class="snum">2</span><span class="ev" data-key="y2022-t1-q22" data-label="Q22" style="--c:var(--q2)">The birds’ waste then fertilizes fields. Such improvements “allow our hens to forage for higher-quality natural feed that will be good for the land, the hens, and the eggs that we supply to our customers.”</span></p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="y2022-t1-q23" data-map="y2022-t1-q23-m2" style="--c:var(--q3)">Q23 段落定位</span><span class="snum">1</span>The egg industry’s push is the first major test of whether animal products from <mark class="kw" data-key="y2022-t1-q23" data-map="y2022-t1-q23-m3" style="--c:var(--q3)">regenerative farms</mark> can become the next premium offering. <span class="snum">2</span><span class="ev" data-key="y2022-t1-q23" data-label="Q23" style="--c:var(--q3)">In barely more than a decade, <mark class="kw" data-key="y2022-t1-q23" data-map="y2022-t1-q23-m1" style="--c:var(--q3)">organic eggs</mark> went from being dismissed as a niche product in natural foods stores to being sold at Walmart.</span> <span class="snum">3</span>More recently there were similar doubts about probiotics and plant-based meats, but both have exploded into major supermarket categories. <span class="snum">4</span><span class="ev" data-key="y2022-t1-q23" data-label="Q23" style="--c:var(--q3)">If the sustainable-egg rollout is successful, it could open the floodgates for regenerative beef, broccoli, and beyond.</span></p>
+<p class="para"><span class="pnum">P5</span><span class="snum">1</span><mark class="kw" data-key="y2022-t1-q25" data-map="y2022-t1-q25-m2" style="--c:var(--q5)">Regenerative products</mark> could be <span class="ev" data-key="y2022-t1-q25" data-label="Q25" style="--c:var(--q5)">a hard sell, because the concept is tough to define quickly</span>, says <mark class="kw" data-key="y2022-t1-q25" data-map="y2022-t1-q25-m1" style="--c:var(--q5)">Julie Stanton</mark>, associate professor of agricultural economics at Pennsylvania State University Brandywine. <span class="snum">2</span>Such farming also brings minimal, if any, improvement to the food products (though some producers say their eggs have more protein).</p>
+<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="y2022-t1-q24" data-map="y2022-t1-q24-m1" style="--c:var(--q4)">Q24 last paragraph</span><span class="snum">1</span>The industry is betting that the same consumers paying more for premium attributes such as free-range, non-GMO, and pasture-raised eggs will embrace sustainability. <span class="snum">2</span><span class="ev" data-key="y2022-t1-q24" data-label="Q24" style="--c:var(--q4)">Surveys show that <mark class="kw" data-key="y2022-t1-q24" data-map="y2022-t1-q24-m2" style="--c:var(--q4)">younger generations</mark> are more concerned about climate change, and some of the success of plant-based meat can be chalked up to shoppers wanting to signal their desire to protect the environment.</span> <span class="snum">3</span><span class="ev" data-key="y2022-t1-q25" data-label="Q25" style="--c:var(--q5)"><mark class="kw" data-key="y2022-t1-q25" data-map="y2022-t1-q25-m3" style="--c:var(--q5)">Young adults “really care about the planet,” says John Brunnquell</mark>, president of Egg Innovations. “They are absolutely altering the food chain beyond what I think even they understand what they’re doing.”</span></p>
 </div>
 </article>
 <aside class="analysis-panel">
@@ -138,12 +74,12 @@
 <p>每题只保留“关键词—定位—证据—替换—排除”。</p>
 </div>
 <div class="analysis-body">
-<section class="qcard" data-key="t1-q21" id="t1-q21" style="--c:var(--q1)">
+<section class="qcard" data-key="y2022-t1-q21" id="y2022-t1-q21" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q21</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">The <span class="stem-hit" data-map="t1-q21-m1">climate-friendly eggs</span> are <span class="stem-hit" data-map="t1-q21-m2">produced</span> ________.</p>
+<p class="stem">The <span class="stem-hit" data-map="y2022-t1-q21-m1">climate-friendly eggs</span> are <span class="stem-hit" data-map="y2022-t1-q21-m2">produced</span> ________.</p>
 <ul class="options">
 <li><span>[A]</span>at a considerably low cost.</li>
 <li><span>[B]</span>at the demand of regular shoppers.</li>
@@ -163,12 +99,12 @@
 <div class="counter-row"><b>C</b><span>still labeled organic 说明不是替代 organic eggs，而是在 organic 基础上增加气候友好卖点。</span></div>
 <div class="counter-row"><b>D</b><span>由 by design、farms using regenerative agriculture、special techniques 直接支撑。</span></div>
 </div>
-</section><section class="qcard" data-key="t1-q22" id="t1-q22" style="--c:var(--q2)">
+</section><section class="qcard" data-key="y2022-t1-q22" id="y2022-t1-q22" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q22</span><span class="atype">细节归纳题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t1-q22-m1">Larry Brown</span> is excited about his <span class="stem-hit" data-map="t1-q22-m2">progress</span> in ________.</p>
+<p class="stem"><span class="stem-hit" data-map="y2022-t1-q22-m1">Larry Brown</span> is excited about his <span class="stem-hit" data-map="y2022-t1-q22-m2">progress</span> in ________.</p>
 <ul class="options">
 <li><span>[A]</span>reducing the damage of worms.</li>
 <li><span>[B]</span>accelerating the disposal of waste.</li>
@@ -188,12 +124,12 @@
 <div class="counter-row"><b>C</b><span>原文呈现可持续循环，支持最完整。</span></div>
 <div class="counter-row"><b>D</b><span>customers 只是 quote 末尾供应对象，不是 Brown excited 的核心进展。</span></div>
 </div>
-</section><section class="qcard" data-key="t1-q23" id="t1-q23" style="--c:var(--q3)">
+</section><section class="qcard" data-key="y2022-t1-q23" id="y2022-t1-q23" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q23</span><span class="atype">例证作用题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem">The example of <span class="stem-hit" data-map="t1-q23-m1">organic eggs</span> is used in <span class="stem-hit" data-map="t1-q23-m2">Paragraph 4</span> to suggest ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q23-m3">regenerative farms</span></span></p>
+<p class="stem">The example of <span class="stem-hit" data-map="y2022-t1-q23-m1">organic eggs</span> is used in <span class="stem-hit" data-map="y2022-t1-q23-m2">Paragraph 4</span> to suggest ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t1-q23-m3">regenerative farms</span></span></p>
 <ul class="options">
 <li><span>[A]</span>the doubts over natural feeds.</li>
 <li><span>[B]</span>the setbacks in the egg industry.</li>
@@ -213,12 +149,12 @@
 <div class="counter-row"><b>C</b><span>例子证明曾被怀疑的产品可进入主流市场，正好支撑潜力。</span></div>
 <div class="counter-row"><b>D</b><span>Walmart 是主流化结果，不是 supermarket promotional success。</span></div>
 </div>
-</section><section class="qcard" data-key="t1-q24" id="t1-q24" style="--c:var(--q4)">
+</section><section class="qcard" data-key="y2022-t1-q24" id="y2022-t1-q24" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q24</span><span class="atype">推断题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">It can be learned from the <span class="stem-hit" data-map="t1-q24-m1">last paragraph</span> that <span class="stem-hit" data-map="t1-q24-m2">young people</span> ________.</p>
+<p class="stem">It can be learned from the <span class="stem-hit" data-map="y2022-t1-q24-m1">last paragraph</span> that <span class="stem-hit" data-map="y2022-t1-q24-m2">young people</span> ________.</p>
 <ul class="options">
 <li><span>[A]</span>are reluctant to change their diet.</li>
 <li class="ok"><span>[B]</span>are likely to buy climate-friendly eggs.</li>
@@ -238,12 +174,12 @@
 <div class="counter-row"><b>C</b><span>文中不是好奇 new food，而是关心气候和环境。</span></div>
 <div class="counter-row"><b>D</b><span>没有 amazed 或 agriculture advances 的情绪证据。</span></div>
 </div>
-</section><section class="qcard" data-key="t1-q25" id="t1-q25" style="--c:var(--q5)">
+</section><section class="qcard" data-key="y2022-t1-q25" id="y2022-t1-q25" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q25</span><span class="atype">对比推断题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t1-q25-m3">John Brunnquell</span> would disagree with <span class="stem-hit" data-map="t1-q25-m1">Julie Stanton</span> over <span class="stem-hit" data-map="t1-q25-m2">regenerative products’</span> ________.</p>
+<p class="stem"><span class="stem-hit" data-map="y2022-t1-q25-m3">John Brunnquell</span> would disagree with <span class="stem-hit" data-map="y2022-t1-q25-m1">Julie Stanton</span> over <span class="stem-hit" data-map="y2022-t1-q25-m2">regenerative products’</span> ________.</p>
 <ul class="options">
 <li class="ok"><span>[A]</span>market prospects.</li>
 <li><span>[B]</span>standard definition.</li>
@@ -275,17 +211,17 @@
 <p>Q26—Q30。题干定位词、原文定位词、作答证据、同义替换全部闭环。</p>
 </div>
 <nav class="text-nav">
-<button class="qjump" data-target="t2-q26" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q26</button>
-<button class="qjump" data-target="t2-q27" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q27</button>
-<button class="qjump" data-target="t2-q28" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q28</button>
-<button class="qjump" data-target="t2-q29" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q29</button>
-<button class="qjump" data-target="t2-q30" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q30</button>
+<button class="qjump" data-target="y2022-t2-q26" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q26</button>
+<button class="qjump" data-target="y2022-t2-q27" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q27</button>
+<button class="qjump" data-target="y2022-t2-q28" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q28</button>
+<button class="qjump" data-target="y2022-t2-q29" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q29</button>
+<button class="qjump" data-target="y2022-t2-q30" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q30</button>
 </nav>
 </header>
 <section class="route">
 <h3>题目顺序与原文证据分布</h3>
 <div class="route-grid">
-<div class="route-card" data-key="t2-q26" data-target="t2-q26" style="--c:var(--q1)"><b>Q26｜Harris Poll</b><p>one in three + more than half unretirees → willing to work → D</p></div><div class="route-card" data-key="t2-q27" data-target="t2-q27" style="--c:var(--q2)"><b>Q27｜Paragraph 3 推断</b><p>prevent boredom/depression → retirement may cause problems → A</p></div><div class="route-card" data-key="t2-q28" data-target="t2-q28" style="--c:var(--q3)"><b>Q28｜模式变化原因</b><p>retirement patterns + living longer → C</p></div><div class="route-card" data-key="t2-q29" data-target="t2-q29" style="--c:var(--q4)"><b>Q29｜储蓄方式</b><p>increasing savings by reducing expenses → spending less → D</p></div><div class="route-card" data-key="t2-q30" data-target="t2-q30" style="--c:var(--q5)"><b>Q30｜Weiss 观点</b><p>worried / adviser / can’t retire → unprepared → A</p></div>
+<div class="route-card" data-key="y2022-t2-q26" data-target="y2022-t2-q26" style="--c:var(--q1)"><b>Q26｜Harris Poll</b><p>one in three + more than half unretirees → willing to work → D</p></div><div class="route-card" data-key="y2022-t2-q27" data-target="y2022-t2-q27" style="--c:var(--q2)"><b>Q27｜Paragraph 3 推断</b><p>prevent boredom/depression → retirement may cause problems → A</p></div><div class="route-card" data-key="y2022-t2-q28" data-target="y2022-t2-q28" style="--c:var(--q3)"><b>Q28｜模式变化原因</b><p>retirement patterns + living longer → C</p></div><div class="route-card" data-key="y2022-t2-q29" data-target="y2022-t2-q29" style="--c:var(--q4)"><b>Q29｜储蓄方式</b><p>increasing savings by reducing expenses → spending less → D</p></div><div class="route-card" data-key="y2022-t2-q30" data-target="y2022-t2-q30" style="--c:var(--q5)"><b>Q30｜Weiss 观点</b><p>worried / adviser / can’t retire → unprepared → A</p></div>
 </div>
 </section>
 <section class="layout">
@@ -296,13 +232,13 @@
 </div>
 <div class="article-body article-text">
 <p class="para"><span class="pnum">P1</span><span class="snum">1</span>More Americans are opting to work well into retirement, a growing trend that threatens to upend the old workforce model.</p>
-<p class="para"><span class="pnum">P2</span><span class="snum">1</span><span class="ev" data-key="t2-q26" data-label="Q26" style="--c:var(--q1)">One in three Americans who are at least 40 have, or plan to have, a job in retirement to prepare for a longer life, according to a <mark class="kw" data-key="t2-q26" data-map="t2-q26-m1" style="--c:var(--q1)">survey conducted by Harris Poll</mark> for TD Ameritrade.</span> <span class="snum">2</span><span class="ev" data-key="t2-q26" data-label="Q26" style="--c:var(--q1)">Even more surprising is that more than half of “unretirees”—those who plan to work in retirement or went back to work after retiring—said they would be employed in their later years even if they had enough money to settle down, the survey showed.</span></p>
-<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t2-q27" data-map="t2-q27-m1" style="--c:var(--q2)">Q27 Paragraph 3</span><span class="snum">1</span><span class="ev" data-key="t2-q27" data-label="Q27" style="--c:var(--q2)">Financial needs aren’t the only culprit for the “unretirement” trend. Other reasons, according to the study, include personal fulfillment such as <mark class="kw" data-key="t2-q27" data-map="t2-q27-m2" style="--c:var(--q2)">staying mentally fit, preventing boredom or avoiding depression</mark>.</span></p>
+<p class="para"><span class="pnum">P2</span><span class="snum">1</span><span class="ev" data-key="y2022-t2-q26" data-label="Q26" style="--c:var(--q1)">One in three Americans who are at least 40 have, or plan to have, a job in retirement to prepare for a longer life, according to a <mark class="kw" data-key="y2022-t2-q26" data-map="y2022-t2-q26-m1" style="--c:var(--q1)">survey conducted by Harris Poll</mark> for TD Ameritrade.</span> <span class="snum">2</span><span class="ev" data-key="y2022-t2-q26" data-label="Q26" style="--c:var(--q1)">Even more surprising is that more than half of “unretirees”—those who plan to work in retirement or went back to work after retiring—said they would be employed in their later years even if they had enough money to settle down, the survey showed.</span></p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="y2022-t2-q27" data-map="y2022-t2-q27-m1" style="--c:var(--q2)">Q27 Paragraph 3</span><span class="snum">1</span><span class="ev" data-key="y2022-t2-q27" data-label="Q27" style="--c:var(--q2)">Financial needs aren’t the only culprit for the “unretirement” trend. Other reasons, according to the study, include personal fulfillment such as <mark class="kw" data-key="y2022-t2-q27" data-map="y2022-t2-q27-m2" style="--c:var(--q2)">staying mentally fit, preventing boredom or avoiding depression</mark>.</span></p>
 <p class="para"><span class="pnum">P4</span><span class="snum">1</span>“The concept of retirement is evolving,” said Christine Russell, senior manager of retirement at TD Ameritrade. <span class="snum">2</span>“It’s not just about finances. The value of work is also driving folks to continue working past retirement.”</p>
-<p class="para"><span class="pnum">P5</span><span class="snum">1</span><span class="ev" data-key="t2-q28" data-label="Q28" style="--c:var(--q3)">One reason for the change in <mark class="kw" data-key="t2-q28" data-map="t2-q28-m1" style="--c:var(--q3)">retirement patterns</mark>: Americans are <mark class="kw" data-key="t2-q28" data-map="t2-q28-m2" style="--c:var(--q3)">living longer</mark>.</span> <span class="snum">2</span>Older Americans are also the fastest-growing segment of the U.S. workforce. <span class="snum">3</span>The percentage of retirement-age people in the labor force has doubled over the past three decades. <span class="snum">4</span>About 20% of people 65 and older were in the workforce in February 2019, up from an all-time low of 10% in January 1985, according to money manager United Income.</p>
-<p class="para"><span class="pnum">P6</span><span class="snum">1</span>Because of longer life spans, Americans are also boosting their savings to preserve their nest eggs, the TD Ameritrade study showed, which surveyed 2,000 adults between 40 to 79. <span class="snum">2</span><span class="ev" data-key="t2-q29" data-label="Q29" style="--c:var(--q4)">Six in 10 “<mark class="kw" data-key="t2-q29" data-map="t2-q29-m1" style="--c:var(--q4)">unretirees</mark>” are increasing their <mark class="kw" data-key="t2-q29" data-map="t2-q29-m2" style="--c:var(--q4)">savings</mark> in anticipation of a longer life. Among the most popular ways they are doing this, the company said, is by <mark class="kw" data-key="t2-q29" data-map="t2-q29-m3" style="--c:var(--q4)">reducing their overall expenses</mark>, securing life insurance or maximizing their contributions to retirement accounts.</span></p>
-<p class="para"><span class="pnum">P7</span><span class="snum">1</span>Unfortunately, many people who are opting to work in retirement are preparing to do so because they are worried about making ends meet in their later years, said <mark class="kw" data-key="t2-q30" data-map="t2-q30-m1" style="--c:var(--q5)">Brent Weiss</mark>, a co-founder at Baltimore-based financial-planning firm Facet Wealth. <span class="snum">2</span><span class="ev" data-key="t2-q30" data-label="Q30" style="--c:var(--q5)">He suggested that <mark class="kw" data-key="t2-q30" data-map="t2-q30-m2" style="--c:var(--q5)">pretirees should speak with a financial adviser to set long-term financial goals</mark>.</span></p>
-<p class="para"><span class="pnum">P8</span><span class="snum">1</span>“The most challenging moments in life are getting married, starting a family and ultimately retiring,” Weiss said. <span class="snum">2</span><span class="ev" data-key="t2-q30" data-label="Q30" style="--c:var(--q5)">“It’s not just a financial decision, but an emotional one. <mark class="kw" data-key="t2-q30" data-map="t2-q30-m3" style="--c:var(--q5)">Many people believe they can’t retire.</mark>”</span></p>
+<p class="para"><span class="pnum">P5</span><span class="snum">1</span><span class="ev" data-key="y2022-t2-q28" data-label="Q28" style="--c:var(--q3)">One reason for the change in <mark class="kw" data-key="y2022-t2-q28" data-map="y2022-t2-q28-m1" style="--c:var(--q3)">retirement patterns</mark>: Americans are <mark class="kw" data-key="y2022-t2-q28" data-map="y2022-t2-q28-m2" style="--c:var(--q3)">living longer</mark>.</span> <span class="snum">2</span>Older Americans are also the fastest-growing segment of the U.S. workforce. <span class="snum">3</span>The percentage of retirement-age people in the labor force has doubled over the past three decades. <span class="snum">4</span>About 20% of people 65 and older were in the workforce in February 2019, up from an all-time low of 10% in January 1985, according to money manager United Income.</p>
+<p class="para"><span class="pnum">P6</span><span class="snum">1</span>Because of longer life spans, Americans are also boosting their savings to preserve their nest eggs, the TD Ameritrade study showed, which surveyed 2,000 adults between 40 to 79. <span class="snum">2</span><span class="ev" data-key="y2022-t2-q29" data-label="Q29" style="--c:var(--q4)">Six in 10 “<mark class="kw" data-key="y2022-t2-q29" data-map="y2022-t2-q29-m1" style="--c:var(--q4)">unretirees</mark>” are increasing their <mark class="kw" data-key="y2022-t2-q29" data-map="y2022-t2-q29-m2" style="--c:var(--q4)">savings</mark> in anticipation of a longer life. Among the most popular ways they are doing this, the company said, is by <mark class="kw" data-key="y2022-t2-q29" data-map="y2022-t2-q29-m3" style="--c:var(--q4)">reducing their overall expenses</mark>, securing life insurance or maximizing their contributions to retirement accounts.</span></p>
+<p class="para"><span class="pnum">P7</span><span class="snum">1</span>Unfortunately, many people who are opting to work in retirement are preparing to do so because they are worried about making ends meet in their later years, said <mark class="kw" data-key="y2022-t2-q30" data-map="y2022-t2-q30-m1" style="--c:var(--q5)">Brent Weiss</mark>, a co-founder at Baltimore-based financial-planning firm Facet Wealth. <span class="snum">2</span><span class="ev" data-key="y2022-t2-q30" data-label="Q30" style="--c:var(--q5)">He suggested that <mark class="kw" data-key="y2022-t2-q30" data-map="y2022-t2-q30-m2" style="--c:var(--q5)">pretirees should speak with a financial adviser to set long-term financial goals</mark>.</span></p>
+<p class="para"><span class="pnum">P8</span><span class="snum">1</span>“The most challenging moments in life are getting married, starting a family and ultimately retiring,” Weiss said. <span class="snum">2</span><span class="ev" data-key="y2022-t2-q30" data-label="Q30" style="--c:var(--q5)">“It’s not just a financial decision, but an emotional one. <mark class="kw" data-key="y2022-t2-q30" data-map="y2022-t2-q30-m3" style="--c:var(--q5)">Many people believe they can’t retire.</mark>”</span></p>
 </div>
 </article>
 <aside class="analysis-panel">
@@ -311,12 +247,12 @@
 <p>每题只保留“关键词—定位—证据—替换—排除”。</p>
 </div>
 <div class="analysis-body">
-<section class="qcard" data-key="t2-q26" id="t2-q26" style="--c:var(--q1)">
+<section class="qcard" data-key="y2022-t2-q26" id="y2022-t2-q26" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q26</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">The <span class="stem-hit" data-map="t2-q26-m1">survey conducted by Harris Poll</span> indicates that ________.</p>
+<p class="stem">The <span class="stem-hit" data-map="y2022-t2-q26-m1">survey conducted by Harris Poll</span> indicates that ________.</p>
 <ul class="options">
 <li><span>[A]</span>over half of the retirees are physically fit for work.</li>
 <li><span>[B]</span>the old workforce is as active as the younger one.</li>
@@ -336,12 +272,12 @@
 <div class="counter-row"><b>C</b><span>one in three 是退休后有/计划有工作，不是 enjoy earlier retirement。</span></div>
 <div class="counter-row"><b>D</b><span>两处 survey 证据直接支持。</span></div>
 </div>
-</section><section class="qcard" data-key="t2-q27" id="t2-q27" style="--c:var(--q2)">
+</section><section class="qcard" data-key="y2022-t2-q27" id="y2022-t2-q27" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q27</span><span class="atype">推断题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">It can be inferred from <span class="stem-hit" data-map="t2-q27-m1">Paragraph 3</span> that Americans tend to think that ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q27-m2">staying mentally fit, preventing boredom or avoiding depression</span></span></p>
+<p class="stem">It can be inferred from <span class="stem-hit" data-map="y2022-t2-q27-m1">Paragraph 3</span> that Americans tend to think that ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t2-q27-m2">staying mentally fit, preventing boredom or avoiding depression</span></span></p>
 <ul class="options">
 <li class="ok"><span>[A]</span>retirement may cause problems for them.</li>
 <li><span>[B]</span>boredom can be relieved after retirement.</li>
@@ -361,12 +297,12 @@
 <div class="counter-row"><b>C</b><span>没有说心理健康被忽视，只说它是动机之一。</span></div>
 <div class="counter-row"><b>D</b><span>经济贡献不在第 3 段。</span></div>
 </div>
-</section><section class="qcard" data-key="t2-q28" id="t2-q28" style="--c:var(--q3)">
+</section><section class="qcard" data-key="y2022-t2-q28" id="y2022-t2-q28" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q28</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t2-q28-m1">Retirement patterns</span> are changing partly due to ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q28-m2">living longer</span></span></p>
+<p class="stem"><span class="stem-hit" data-map="y2022-t2-q28-m1">Retirement patterns</span> are changing partly due to ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t2-q28-m2">living longer</span></span></p>
 <ul class="options">
 <li><span>[A]</span>labor shortage.</li>
 <li><span>[B]</span>population growth.</li>
@@ -386,12 +322,12 @@
 <div class="counter-row"><b>C</b><span>原文冒号后直接给出。</span></div>
 <div class="counter-row"><b>D</b><span>living costs 未作为本题原因出现。</span></div>
 </div>
-</section><section class="qcard" data-key="t2-q29" id="t2-q29" style="--c:var(--q4)">
+</section><section class="qcard" data-key="y2022-t2-q29" id="y2022-t2-q29" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q29</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">Many “<span class="stem-hit" data-map="t2-q29-m1">unretirees</span>” are increasing their <span class="stem-hit" data-map="t2-q29-m2">savings</span> by ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q29-m3">reducing their overall expenses</span></span></p>
+<p class="stem">Many “<span class="stem-hit" data-map="y2022-t2-q29-m1">unretirees</span>” are increasing their <span class="stem-hit" data-map="y2022-t2-q29-m2">savings</span> by ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t2-q29-m3">reducing their overall expenses</span></span></p>
 <ul class="options">
 <li><span>[A]</span>investing more in stocks.</li>
 <li><span>[B]</span>taking up odd jobs.</li>
@@ -411,12 +347,12 @@
 <div class="counter-row"><b>C</b><span>well-paid work 未出现。</span></div>
 <div class="counter-row"><b>D</b><span>reducing expenses 与 spending less 同义。</span></div>
 </div>
-</section><section class="qcard" data-key="t2-q30" id="t2-q30" style="--c:var(--q5)">
+</section><section class="qcard" data-key="y2022-t2-q30" id="y2022-t2-q30" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q30</span><span class="atype">观点推断题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">With regard to retirement, <span class="stem-hit" data-map="t2-q30-m1">Brent Weiss</span> thinks that many people are ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q30-m2">pretirees should speak with a financial adviser to set long-term financial goals</span><span class="stem-hit" data-map="t2-q30-m3">Many people believe they can’t retire.</span></span></p>
+<p class="stem">With regard to retirement, <span class="stem-hit" data-map="y2022-t2-q30-m1">Brent Weiss</span> thinks that many people are ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t2-q30-m2">pretirees should speak with a financial adviser to set long-term financial goals</span><span class="stem-hit" data-map="y2022-t2-q30-m3">Many people believe they can’t retire.</span></span></p>
 <ul class="options">
 <li class="ok"><span>[A]</span>unprepared.</li>
 <li><span>[B]</span>unafraid.</li>
@@ -448,17 +384,17 @@
 <p>Q31—Q35。题干定位词、原文定位词、作答证据、同义替换全部闭环。</p>
 </div>
 <nav class="text-nav">
-<button class="qjump" data-target="t3-q31" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q31</button>
-<button class="qjump" data-target="t3-q32" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q32</button>
-<button class="qjump" data-target="t3-q33" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q33</button>
-<button class="qjump" data-target="t3-q34" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q34</button>
-<button class="qjump" data-target="t3-q35" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q35</button>
+<button class="qjump" data-target="y2022-t3-q31" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q31</button>
+<button class="qjump" data-target="y2022-t3-q32" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q32</button>
+<button class="qjump" data-target="y2022-t3-q33" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q33</button>
+<button class="qjump" data-target="y2022-t3-q34" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q34</button>
+<button class="qjump" data-target="y2022-t3-q35" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q35</button>
 </nav>
 </header>
 <section class="route">
 <h3>题目顺序与原文证据分布</h3>
 <div class="route-grid">
-<div class="route-card" data-key="t3-q31" data-target="t3-q31" style="--c:var(--q1)"><b>Q31｜定义本质</b><p>dark patterns manipulate UI → influence decision-making → C</p></div><div class="route-card" data-key="t3-q32" data-target="t3-q32" style="--c:var(--q2)"><b>Q32｜研究作用</b><p>one in 10 + widely prevalent → strong presence → D</p></div><div class="route-card" data-key="t3-q33" data-target="t3-q33" style="--c:var(--q3)"><b>Q33｜处理方式</b><p>Businesses should engage in conversations with teams → B</p></div><div class="route-card" data-key="t3-q34" data-target="t3-q34" style="--c:var(--q4)"><b>Q34｜法规目的</b><p>not confused or misled / ban dark patterns → B</p></div><div class="route-card" data-key="t3-q35" data-target="t3-q35" style="--c:var(--q5)"><b>Q35｜最后段重点</b><p>self-regulatory + hold accountable → self-discipline → B</p></div>
+<div class="route-card" data-key="y2022-t3-q31" data-target="y2022-t3-q31" style="--c:var(--q1)"><b>Q31｜定义本质</b><p>dark patterns manipulate UI → influence decision-making → C</p></div><div class="route-card" data-key="y2022-t3-q32" data-target="y2022-t3-q32" style="--c:var(--q2)"><b>Q32｜研究作用</b><p>one in 10 + widely prevalent → strong presence → D</p></div><div class="route-card" data-key="y2022-t3-q33" data-target="y2022-t3-q33" style="--c:var(--q3)"><b>Q33｜处理方式</b><p>Businesses should engage in conversations with teams → B</p></div><div class="route-card" data-key="y2022-t3-q34" data-target="y2022-t3-q34" style="--c:var(--q4)"><b>Q34｜法规目的</b><p>not confused or misled / ban dark patterns → B</p></div><div class="route-card" data-key="y2022-t3-q35" data-target="y2022-t3-q35" style="--c:var(--q5)"><b>Q35｜最后段重点</b><p>self-regulatory + hold accountable → self-discipline → B</p></div>
 </div>
 </section>
 <section class="layout">
@@ -468,12 +404,12 @@
 <p>彩色 marker = 题干定位词 / 同义定位表达；粗下划线 + Q 标签 = 作答证据。</p>
 </div>
 <div class="article-body article-text">
-<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t3-q31" data-map="t3-q31-m2" style="--c:var(--q1)">Q31 first two paragraphs</span><span class="snum">1</span>We have all encountered them, in both our personal and professional lives. <span class="snum">2</span>Think about the times you felt tricked or frustrated by a membership or subscription that had a seamless sign-up process but was later difficult to cancel. <span class="snum">3</span>Something that should be simple and transparent can be complicated, intentionally or unintentionally, in ways that impair consumer choice. <span class="snum">4</span>These are examples of <mark class="kw" data-key="t3-q31" data-map="t3-q31-m1" style="--c:var(--q1)">dark patterns</mark>.</p>
-<p class="para"><span class="pnum">P2</span><span class="snum">1</span>First coined in 2010 by user experience expert Harry Brignull, “dark patterns” is a catch-all term for practices that <span class="ev" data-key="t3-q31" data-label="Q31" style="--c:var(--q1)"><mark class="kw" data-key="t3-q31" data-map="t3-q31-m3" style="--c:var(--q1)">manipulate user interfaces to influence the decision-making ability of users</mark></span>. <span class="snum">2</span>Brignull identifies 12 types of common dark patterns, ranging from misdirection and hidden costs to “roach motel,” where a user experience seems easy and intuitive at the start, but turns difficult when the user tries to get out.</p>
-<p class="para"><span class="pnum">P3</span><span class="snum">1</span>In a <mark class="kw" data-key="t3-q32" data-map="t3-q32-m1" style="--c:var(--q2)">2019 study</mark> of 53,000 product pages and 11,000 websites, researchers found that <span class="ev" data-key="t3-q32" data-label="Q32" style="--c:var(--q2)">about <mark class="kw" data-key="t3-q32" data-map="t3-q32-m2" style="--c:var(--q2)">one in 10 employs these design practices</mark>. Though widely prevalent, the concept of dark patterns is still not well understood.</span> <span class="snum">2</span>Business and nonprofit leaders should be aware of dark patterns and try to avoid the gray areas they engender.</p>
-<p class="para"><span class="pnum">P4</span><span class="snum">1</span>Where is the line between ethical, persuasive design and dark patterns? <span class="snum">2</span><span class="ev" data-key="t3-q33" data-label="Q33" style="--c:var(--q3)"><mark class="kw" data-key="t3-q33" data-map="t3-q33-m1" style="--c:var(--q3)">Businesses</mark> should engage in <mark class="kw" data-key="t3-q33" data-map="t3-q33-m2" style="--c:var(--q3)">conversations with IT, compliance, risk, and legal teams</mark> to review their privacy policy, and include in the discussion the customer/user experience designers and coders responsible for the company’s user interface, as well as the marketers and advertisers responsible for sign-ups, checkout baskets, pricing, and promotions.</span> <span class="snum">3</span>Any or all these teams can play a role in creating or avoiding <mark class="kw" data-key="t3-q33" data-map="t3-q33-m3" style="--c:var(--q3)">“digital deception.”</mark></p>
-<p class="para"><span class="pnum">P5</span><span class="snum">1</span>Lawmakers and regulators are slowly starting to address the ambiguity around dark patterns, most recently at the state level. <span class="snum">2</span>In March, the California Attorney General announced the approval of <mark class="kw" data-key="t3-q34" data-map="t3-q34-m1" style="--c:var(--q4)">additional regulations under the California Consumer Privacy Act (CCPA)</mark> that <span class="ev" data-key="t3-q34" data-label="Q34" style="--c:var(--q4)">“ensure that <mark class="kw" data-key="t3-q34" data-map="t3-q34-m2" style="--c:var(--q4)">consumers will not be confused or misled</mark> when seeking to exercise their data privacy rights.”</span> <span class="snum">3</span><span class="ev" data-key="t3-q34" data-label="Q34" style="--c:var(--q4)">The regulations aim to ban dark patterns—this means prohibiting companies from using confusing language or unnecessary steps</span> such as forcing them to click through multiple screens or listen to reasons why they shouldn’t opt out.</p>
-<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="t3-q35" data-map="t3-q35-m1" style="--c:var(--q5)">Q35 last paragraph</span><span class="snum">1</span>As more states consider promulgating additional regulations, there is a need for greater accountability from within the business community. <span class="snum">2</span><span class="ev" data-key="t3-q35" data-label="Q35" style="--c:var(--q5)">Dark patterns also can be addressed on a <mark class="kw" data-key="t3-q35" data-map="t3-q35-m2" style="--c:var(--q5)">self-regulatory basis</mark>, but only if organizations <mark class="kw" data-key="t3-q35" data-map="t3-q35-m3" style="--c:var(--q5)">hold themselves accountable</mark>, not just to legal requirements but also to industry best practices and standards.</span></p>
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="y2022-t3-q31" data-map="y2022-t3-q31-m2" style="--c:var(--q1)">Q31 first two paragraphs</span><span class="snum">1</span>We have all encountered them, in both our personal and professional lives. <span class="snum">2</span>Think about the times you felt tricked or frustrated by a membership or subscription that had a seamless sign-up process but was later difficult to cancel. <span class="snum">3</span>Something that should be simple and transparent can be complicated, intentionally or unintentionally, in ways that impair consumer choice. <span class="snum">4</span>These are examples of <mark class="kw" data-key="y2022-t3-q31" data-map="y2022-t3-q31-m1" style="--c:var(--q1)">dark patterns</mark>.</p>
+<p class="para"><span class="pnum">P2</span><span class="snum">1</span>First coined in 2010 by user experience expert Harry Brignull, “dark patterns” is a catch-all term for practices that <span class="ev" data-key="y2022-t3-q31" data-label="Q31" style="--c:var(--q1)"><mark class="kw" data-key="y2022-t3-q31" data-map="y2022-t3-q31-m3" style="--c:var(--q1)">manipulate user interfaces to influence the decision-making ability of users</mark></span>. <span class="snum">2</span>Brignull identifies 12 types of common dark patterns, ranging from misdirection and hidden costs to “roach motel,” where a user experience seems easy and intuitive at the start, but turns difficult when the user tries to get out.</p>
+<p class="para"><span class="pnum">P3</span><span class="snum">1</span>In a <mark class="kw" data-key="y2022-t3-q32" data-map="y2022-t3-q32-m1" style="--c:var(--q2)">2019 study</mark> of 53,000 product pages and 11,000 websites, researchers found that <span class="ev" data-key="y2022-t3-q32" data-label="Q32" style="--c:var(--q2)">about <mark class="kw" data-key="y2022-t3-q32" data-map="y2022-t3-q32-m2" style="--c:var(--q2)">one in 10 employs these design practices</mark>. Though widely prevalent, the concept of dark patterns is still not well understood.</span> <span class="snum">2</span>Business and nonprofit leaders should be aware of dark patterns and try to avoid the gray areas they engender.</p>
+<p class="para"><span class="pnum">P4</span><span class="snum">1</span>Where is the line between ethical, persuasive design and dark patterns? <span class="snum">2</span><span class="ev" data-key="y2022-t3-q33" data-label="Q33" style="--c:var(--q3)"><mark class="kw" data-key="y2022-t3-q33" data-map="y2022-t3-q33-m1" style="--c:var(--q3)">Businesses</mark> should engage in <mark class="kw" data-key="y2022-t3-q33" data-map="y2022-t3-q33-m2" style="--c:var(--q3)">conversations with IT, compliance, risk, and legal teams</mark> to review their privacy policy, and include in the discussion the customer/user experience designers and coders responsible for the company’s user interface, as well as the marketers and advertisers responsible for sign-ups, checkout baskets, pricing, and promotions.</span> <span class="snum">3</span>Any or all these teams can play a role in creating or avoiding <mark class="kw" data-key="y2022-t3-q33" data-map="y2022-t3-q33-m3" style="--c:var(--q3)">“digital deception.”</mark></p>
+<p class="para"><span class="pnum">P5</span><span class="snum">1</span>Lawmakers and regulators are slowly starting to address the ambiguity around dark patterns, most recently at the state level. <span class="snum">2</span>In March, the California Attorney General announced the approval of <mark class="kw" data-key="y2022-t3-q34" data-map="y2022-t3-q34-m1" style="--c:var(--q4)">additional regulations under the California Consumer Privacy Act (CCPA)</mark> that <span class="ev" data-key="y2022-t3-q34" data-label="Q34" style="--c:var(--q4)">“ensure that <mark class="kw" data-key="y2022-t3-q34" data-map="y2022-t3-q34-m2" style="--c:var(--q4)">consumers will not be confused or misled</mark> when seeking to exercise their data privacy rights.”</span> <span class="snum">3</span><span class="ev" data-key="y2022-t3-q34" data-label="Q34" style="--c:var(--q4)">The regulations aim to ban dark patterns—this means prohibiting companies from using confusing language or unnecessary steps</span> such as forcing them to click through multiple screens or listen to reasons why they shouldn’t opt out.</p>
+<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="y2022-t3-q35" data-map="y2022-t3-q35-m1" style="--c:var(--q5)">Q35 last paragraph</span><span class="snum">1</span>As more states consider promulgating additional regulations, there is a need for greater accountability from within the business community. <span class="snum">2</span><span class="ev" data-key="y2022-t3-q35" data-label="Q35" style="--c:var(--q5)">Dark patterns also can be addressed on a <mark class="kw" data-key="y2022-t3-q35" data-map="y2022-t3-q35-m2" style="--c:var(--q5)">self-regulatory basis</mark>, but only if organizations <mark class="kw" data-key="y2022-t3-q35" data-map="y2022-t3-q35-m3" style="--c:var(--q5)">hold themselves accountable</mark>, not just to legal requirements but also to industry best practices and standards.</span></p>
 </div>
 </article>
 <aside class="analysis-panel">
@@ -482,12 +418,12 @@
 <p>每题只保留“关键词—定位—证据—替换—排除”。</p>
 </div>
 <div class="analysis-body">
-<section class="qcard" data-key="t3-q31" id="t3-q31" style="--c:var(--q1)">
+<section class="qcard" data-key="y2022-t3-q31" id="y2022-t3-q31" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q31</span><span class="atype">细节归纳题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem">It can be learned from the <span class="stem-hit" data-map="t3-q31-m2">first two paragraphs</span> that <span class="stem-hit" data-map="t3-q31-m1">dark patterns</span> ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q31-m3">manipulate user interfaces to influence the decision-making ability of users</span></span></p>
+<p class="stem">It can be learned from the <span class="stem-hit" data-map="y2022-t3-q31-m2">first two paragraphs</span> that <span class="stem-hit" data-map="y2022-t3-q31-m1">dark patterns</span> ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t3-q31-m3">manipulate user interfaces to influence the decision-making ability of users</span></span></p>
 <ul class="options">
 <li><span>[A]</span>improve user experiences</li>
 <li><span>[B]</span>leak user information for profit</li>
@@ -507,12 +443,12 @@
 <div class="counter-row"><b>C</b><span>定义句直接支撑。</span></div>
 <div class="counter-row"><b>D</b><span>hidden costs 只是 dark patterns 类型之一，不能概括前两段。</span></div>
 </div>
-</section><section class="qcard" data-key="t3-q32" id="t3-q32" style="--c:var(--q2)">
+</section><section class="qcard" data-key="y2022-t3-q32" id="y2022-t3-q32" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q32</span><span class="atype">例证作用题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">The <span class="stem-hit" data-map="t3-q32-m1">2019 study</span> on dark patterns is mentioned to show ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q32-m2">one in 10 employs these design practices</span></span></p>
+<p class="stem">The <span class="stem-hit" data-map="y2022-t3-q32-m1">2019 study</span> on dark patterns is mentioned to show ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t3-q32-m2">one in 10 employs these design practices</span></span></p>
 <ul class="options">
 <li><span>[A]</span>their major flaws</li>
 <li><span>[B]</span>their complex designs</li>
@@ -532,12 +468,12 @@
 <div class="counter-row"><b>C</b><span>severe damage 没有量化或论证。</span></div>
 <div class="counter-row"><b>D</b><span>one in 10 和 widely prevalent 直接说明存在广泛。</span></div>
 </div>
-</section><section class="qcard" data-key="t3-q33" id="t3-q33" style="--c:var(--q3)">
+</section><section class="qcard" data-key="y2022-t3-q33" id="y2022-t3-q33" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q33</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">To handle <span class="stem-hit" data-map="t3-q33-m3">digital deception</span>, <span class="stem-hit" data-map="t3-q33-m1">businesses</span> should ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q33-m2">conversations with IT, compliance, risk, and legal teams</span></span></p>
+<p class="stem">To handle <span class="stem-hit" data-map="y2022-t3-q33-m3">digital deception</span>, <span class="stem-hit" data-map="y2022-t3-q33-m1">businesses</span> should ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t3-q33-m2">conversations with IT, compliance, risk, and legal teams</span></span></p>
 <ul class="options">
 <li><span>[A]</span>listen to customer feedback</li>
 <li class="ok"><span>[B]</span>talk with relevant teams</li>
@@ -557,12 +493,12 @@
 <div class="counter-row"><b>C</b><span>没有 independent agencies。</span></div>
 <div class="counter-row"><b>D</b><span>没有 professional training。</span></div>
 </div>
-</section><section class="qcard" data-key="t3-q34" id="t3-q34" style="--c:var(--q4)">
+</section><section class="qcard" data-key="y2022-t3-q34" id="y2022-t3-q34" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q34</span><span class="atype">目的题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">The <span class="stem-hit" data-map="t3-q34-m1">additional regulations under the CCPA</span> are intended to ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q34-m2">consumers will not be confused or misled</span></span></p>
+<p class="stem">The <span class="stem-hit" data-map="y2022-t3-q34-m1">additional regulations under the CCPA</span> are intended to ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t3-q34-m2">consumers will not be confused or misled</span></span></p>
 <ul class="options">
 <li><span>[A]</span>guide users through opt-out processes</li>
 <li class="ok"><span>[B]</span>protect consumers from being tricked</li>
@@ -582,12 +518,12 @@
 <div class="counter-row"><b>C</b><span>权利属于 consumers 的 data privacy rights，不是 companies。</span></div>
 <div class="counter-row"><b>D</b><span>不是限制内容访问，而是限制 deceptive design。</span></div>
 </div>
-</section><section class="qcard" data-key="t3-q35" id="t3-q35" style="--c:var(--q5)">
+</section><section class="qcard" data-key="y2022-t3-q35" id="y2022-t3-q35" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q35</span><span class="atype">段落主旨题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">According to the <span class="stem-hit" data-map="t3-q35-m1">last paragraph</span>, a key to coping with dark patterns is ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q35-m2">self-regulatory basis</span><span class="stem-hit" data-map="t3-q35-m3">hold themselves accountable</span></span></p>
+<p class="stem">According to the <span class="stem-hit" data-map="y2022-t3-q35-m1">last paragraph</span>, a key to coping with dark patterns is ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t3-q35-m2">self-regulatory basis</span><span class="stem-hit" data-map="y2022-t3-q35-m3">hold themselves accountable</span></span></p>
 <ul class="options">
 <li><span>[A]</span>new legal requirements</li>
 <li class="ok"><span>[B]</span>businesses’ self-discipline</li>
@@ -619,17 +555,17 @@
 <p>Q36—Q40。题干定位词、原文定位词、作答证据、同义替换全部闭环。</p>
 </div>
 <nav class="text-nav">
-<button class="qjump" data-target="t4-q36" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q36</button>
-<button class="qjump" data-target="t4-q37" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q37</button>
-<button class="qjump" data-target="t4-q38" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q38</button>
-<button class="qjump" data-target="t4-q39" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q39</button>
-<button class="qjump" data-target="t4-q40" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q40</button>
+<button class="qjump" data-target="y2022-t4-q36" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q36</button>
+<button class="qjump" data-target="y2022-t4-q37" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q37</button>
+<button class="qjump" data-target="y2022-t4-q38" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q38</button>
+<button class="qjump" data-target="y2022-t4-q39" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q39</button>
+<button class="qjump" data-target="y2022-t4-q40" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q40</button>
 </nav>
 </header>
 <section class="route">
 <h3>题目顺序与原文证据分布</h3>
 <div class="route-grid">
-<div class="route-card" data-key="t4-q36" data-target="t4-q36" style="--c:var(--q1)"><b>Q36｜总体看法</b><p>scientists unsure + weak evidence → hard to determine → A</p></div><div class="route-card" data-key="t4-q37" data-target="t4-q37" style="--c:var(--q2)"><b>Q37｜选择肉食原因</b><p>behavior is easily measurable → B</p></div><div class="route-card" data-key="t4-q38" data-target="t4-q38" style="--c:var(--q3)"><b>Q38｜previous findings</b><p>ethics professors do not differ → not ethically better → D</p></div><div class="route-card" data-key="t4-q39" data-target="t4-q39" style="--c:var(--q4)"><b>Q39｜Nina 态度</b><p>cannot rule out / might be reversible → uncertain → C</p></div><div class="route-card" data-key="t4-q40" data-target="t4-q40" style="--c:var(--q5)"><b>Q40｜行为改变原因</b><p>social influence + video + reason → multiple factors → C</p></div>
+<div class="route-card" data-key="y2022-t4-q36" data-target="y2022-t4-q36" style="--c:var(--q1)"><b>Q36｜总体看法</b><p>scientists unsure + weak evidence → hard to determine → A</p></div><div class="route-card" data-key="y2022-t4-q37" data-target="y2022-t4-q37" style="--c:var(--q2)"><b>Q37｜选择肉食原因</b><p>behavior is easily measurable → B</p></div><div class="route-card" data-key="y2022-t4-q38" data-target="y2022-t4-q38" style="--c:var(--q3)"><b>Q38｜previous findings</b><p>ethics professors do not differ → not ethically better → D</p></div><div class="route-card" data-key="y2022-t4-q39" data-target="y2022-t4-q39" style="--c:var(--q4)"><b>Q39｜Nina 态度</b><p>cannot rule out / might be reversible → uncertain → C</p></div><div class="route-card" data-key="y2022-t4-q40" data-target="y2022-t4-q40" style="--c:var(--q5)"><b>Q40｜行为改变原因</b><p>social influence + video + reason → multiple factors → C</p></div>
 </div>
 </section>
 <section class="layout">
@@ -639,11 +575,11 @@
 <p>彩色 marker = 题干定位词 / 同义定位表达；粗下划线 + Q 标签 = 作答证据。</p>
 </div>
 <div class="article-body article-text">
-<p class="para"><span class="pnum">P1</span><span class="snum">1</span><span class="ev" data-key="t4-q36" data-label="Q36" style="--c:var(--q1)">Although ethics classes are common around the world, scientists are <mark class="kw" data-key="t4-q36" data-map="t4-q36-m1" style="--c:var(--q1)">unsure if their lessons can actually change behavior</mark>; evidence either way is weak, relying on contrived laboratory tests or sometimes unreliable self-reports.</span> <span class="snum">2</span>But a new study published in Cognition found that, in at least one real-world situation, a single ethics lesson may have had lasting effects.</p>
-<p class="para"><span class="pnum">P2</span><span class="snum">1</span>The researchers investigated one class session’s impact on eating meat. <span class="snum">2</span>They chose this particular behavior for three reasons, according to study co-author <mark class="kw" data-key="t4-q38" data-map="t4-q38-m1" style="--c:var(--q3)">Eric Schwitzgebel</mark>, a philosopher at the University of California, Riverside: students’ attitudes on the topic are variable and unstable, <span class="ev" data-key="t4-q37" data-label="Q37" style="--c:var(--q2)"><mark class="kw" data-key="t4-q37" data-map="t4-q37-m1" style="--c:var(--q2)">behavior is easily measurable</mark></span>, and ethics literature largely agrees that eating less meat is good because it reduces environmental harm and animal suffering. <span class="snum">3</span>Half of the students in four large philosophy classes read an article on the ethics of factory-farmed meat, optionally watched an 11-minute video on the topic and joined a 50-minute discussion. <span class="snum">4</span>The other half focused on charitable giving instead. <span class="snum">5</span>Then, unknown to the students, the researchers studied their anonymized meal-card purchases for that semester—nearly 14,000 receipts for almost 500 students.</p>
-<p class="para"><span class="pnum">P3</span><span class="snum">1</span><mark class="kw" data-key="t4-q38" data-map="t4-q38-m1" style="--c:var(--q3)">Schwitzgebel</mark> predicted the intervention would have no effect; he had previously found that <span class="ev" data-key="t4-q38" data-label="Q38" style="--c:var(--q3)">ethics professors do <mark class="kw" data-key="t4-q38" data-map="t4-q38-m2" style="--c:var(--q3)">not differ from other professors on a range of behaviors</mark>, including voting rates, blood donation and returning library books.</span> <span class="snum">2</span>But among student subjects who discussed meat ethics, meal purchases containing meat decreased from 52 to 45 percent—and this effect held steady for the study’s duration of several weeks. <span class="snum">3</span>Purchases from the other group remained at 52 percent.</p>
-<p class="para"><span class="pnum">P4</span><span class="snum">1</span>“That’s actually a pretty large effect for a pretty small intervention,” Schwitzgebel says. <span class="snum">2</span>Psychologist <mark class="kw" data-key="t4-q39" data-map="t4-q39-m1" style="--c:var(--q4)">Nina Strohminger</mark> at the University of Pennsylvania, who was not involved in the study, says <span class="ev" data-key="t4-q39" data-label="Q39" style="--c:var(--q4)">she wants the effect to be real but cannot rule out some unknown confounding variable. And if real, she notes, it might be reversible by another nudge: “Easy come, easy go.”</span></p>
-<p class="para"><span class="pnum">P5</span><span class="snum">1</span><mark class="kw" data-key="t4-q40" data-map="t4-q40-m1" style="--c:var(--q5)">Schwitzgebel suspects</mark> the greatest impact came from <span class="ev" data-key="t4-q40" data-label="Q40" style="--c:var(--q5)">social influence—classmates or teaching assistants leading the discussions may have shared their own vegetarianism, showing it as achievable or more common. Second, the video may have had an emotional impact. Least rousing, he thinks, was rational argument, although his co-authors say reason might play a bigger role.</span> <span class="snum">2</span>Now the researchers are probing the specific effects of teaching style, teaching assistants’ eating habits and students’ video exposure. <span class="snum">3</span>Meanwhile, Schwitzgebel—who had predicted no effect—will be eating his words.</p>
+<p class="para"><span class="pnum">P1</span><span class="snum">1</span><span class="ev" data-key="y2022-t4-q36" data-label="Q36" style="--c:var(--q1)">Although ethics classes are common around the world, scientists are <mark class="kw" data-key="y2022-t4-q36" data-map="y2022-t4-q36-m1" style="--c:var(--q1)">unsure if their lessons can actually change behavior</mark>; evidence either way is weak, relying on contrived laboratory tests or sometimes unreliable self-reports.</span> <span class="snum">2</span>But a new study published in Cognition found that, in at least one real-world situation, a single ethics lesson may have had lasting effects.</p>
+<p class="para"><span class="pnum">P2</span><span class="snum">1</span>The researchers investigated one class session’s impact on eating meat. <span class="snum">2</span>They chose this particular behavior for three reasons, according to study co-author <mark class="kw" data-key="y2022-t4-q38" data-map="y2022-t4-q38-m1" style="--c:var(--q3)">Eric Schwitzgebel</mark>, a philosopher at the University of California, Riverside: students’ attitudes on the topic are variable and unstable, <span class="ev" data-key="y2022-t4-q37" data-label="Q37" style="--c:var(--q2)"><mark class="kw" data-key="y2022-t4-q37" data-map="y2022-t4-q37-m1" style="--c:var(--q2)">behavior is easily measurable</mark></span>, and ethics literature largely agrees that eating less meat is good because it reduces environmental harm and animal suffering. <span class="snum">3</span>Half of the students in four large philosophy classes read an article on the ethics of factory-farmed meat, optionally watched an 11-minute video on the topic and joined a 50-minute discussion. <span class="snum">4</span>The other half focused on charitable giving instead. <span class="snum">5</span>Then, unknown to the students, the researchers studied their anonymized meal-card purchases for that semester—nearly 14,000 receipts for almost 500 students.</p>
+<p class="para"><span class="pnum">P3</span><span class="snum">1</span><mark class="kw" data-key="y2022-t4-q38" data-map="y2022-t4-q38-m1" style="--c:var(--q3)">Schwitzgebel</mark> predicted the intervention would have no effect; he had previously found that <span class="ev" data-key="y2022-t4-q38" data-label="Q38" style="--c:var(--q3)">ethics professors do <mark class="kw" data-key="y2022-t4-q38" data-map="y2022-t4-q38-m2" style="--c:var(--q3)">not differ from other professors on a range of behaviors</mark>, including voting rates, blood donation and returning library books.</span> <span class="snum">2</span>But among student subjects who discussed meat ethics, meal purchases containing meat decreased from 52 to 45 percent—and this effect held steady for the study’s duration of several weeks. <span class="snum">3</span>Purchases from the other group remained at 52 percent.</p>
+<p class="para"><span class="pnum">P4</span><span class="snum">1</span>“That’s actually a pretty large effect for a pretty small intervention,” Schwitzgebel says. <span class="snum">2</span>Psychologist <mark class="kw" data-key="y2022-t4-q39" data-map="y2022-t4-q39-m1" style="--c:var(--q4)">Nina Strohminger</mark> at the University of Pennsylvania, who was not involved in the study, says <span class="ev" data-key="y2022-t4-q39" data-label="Q39" style="--c:var(--q4)">she wants the effect to be real but cannot rule out some unknown confounding variable. And if real, she notes, it might be reversible by another nudge: “Easy come, easy go.”</span></p>
+<p class="para"><span class="pnum">P5</span><span class="snum">1</span><mark class="kw" data-key="y2022-t4-q40" data-map="y2022-t4-q40-m1" style="--c:var(--q5)">Schwitzgebel suspects</mark> the greatest impact came from <span class="ev" data-key="y2022-t4-q40" data-label="Q40" style="--c:var(--q5)">social influence—classmates or teaching assistants leading the discussions may have shared their own vegetarianism, showing it as achievable or more common. Second, the video may have had an emotional impact. Least rousing, he thinks, was rational argument, although his co-authors say reason might play a bigger role.</span> <span class="snum">2</span>Now the researchers are probing the specific effects of teaching style, teaching assistants’ eating habits and students’ video exposure. <span class="snum">3</span>Meanwhile, Schwitzgebel—who had predicted no effect—will be eating his words.</p>
 </div>
 </article>
 <aside class="analysis-panel">
@@ -652,12 +588,12 @@
 <p>每题只保留“关键词—定位—证据—替换—排除”。</p>
 </div>
 <div class="analysis-body">
-<section class="qcard" data-key="t4-q36" id="t4-q36" style="--c:var(--q1)">
+<section class="qcard" data-key="y2022-t4-q36" id="y2022-t4-q36" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q36</span><span class="atype">观点归纳题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">Scientists generally believe that the <span class="stem-hit" data-map="t4-q36-m1">effects of ethics classes</span> are ________.</p>
+<p class="stem">Scientists generally believe that the <span class="stem-hit" data-map="y2022-t4-q36-m1">effects of ethics classes</span> are ________.</p>
 <ul class="options">
 <li class="ok"><span>[A]</span>hard to determine.</li>
 <li><span>[B]</span>narrowly interpreted.</li>
@@ -677,12 +613,12 @@
 <div class="counter-row"><b>C</b><span>新研究可能有 lasting effects，但 scientists generally 的看法不是难以忽视。</span></div>
 <div class="counter-row"><b>D</b><span>没有 summarized 的问题。</span></div>
 </div>
-</section><section class="qcard" data-key="t4-q37" id="t4-q37" style="--c:var(--q2)">
+</section><section class="qcard" data-key="y2022-t4-q37" id="y2022-t4-q37" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q37</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">Which of the following is a reason for the researchers to study <span class="stem-hit" data-map="t4-q37-m1">meat eating</span>?</p>
+<p class="stem">Which of the following is a reason for the researchers to study <span class="stem-hit" data-map="y2022-t4-q37-m1">meat eating</span>?</p>
 <ul class="options">
 <li><span>[A]</span>It is common among students.</li>
 <li class="ok"><span>[B]</span>It is a behavior easy to measure.</li>
@@ -702,12 +638,12 @@
 <div class="counter-row"><b>C</b><span>健康不是文中原因；文中是环境和动物痛苦。</span></div>
 <div class="counter-row"><b>D</b><span>伦理文献有共识，不等于 hot topic in ethics classes。</span></div>
 </div>
-</section><section class="qcard" data-key="t4-q38" id="t4-q38" style="--c:var(--q3)">
+</section><section class="qcard" data-key="y2022-t4-q38" id="y2022-t4-q38" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q38</span><span class="atype">推断题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t4-q38-m1">Eric Schwitzgebel’s previous findings</span> suggest that ethics professors ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q38-m2">not differ from other professors on a range of behaviors</span></span></p>
+<p class="stem"><span class="stem-hit" data-map="y2022-t4-q38-m1">Eric Schwitzgebel’s previous findings</span> suggest that ethics professors ________.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2022-t4-q38-m2">not differ from other professors on a range of behaviors</span></span></p>
 <ul class="options">
 <li><span>[A]</span>are seldom critical of their students.</li>
 <li><span>[B]</span>are less sociable than other professors.</li>
@@ -727,12 +663,12 @@
 <div class="counter-row"><b>C</b><span>voting rates 只是例子，不能推出对政治不敏感。</span></div>
 <div class="counter-row"><b>D</b><span>伦理课/伦理教授身份不保证实际行为更好，支持最充分。</span></div>
 </div>
-</section><section class="qcard" data-key="t4-q39" id="t4-q39" style="--c:var(--q4)">
+</section><section class="qcard" data-key="y2022-t4-q39" id="y2022-t4-q39" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q39</span><span class="atype">观点态度题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t4-q39-m1">Nina Strohminger</span> thinks that the effect of the intervention is ________.</p>
+<p class="stem"><span class="stem-hit" data-map="y2022-t4-q39-m1">Nina Strohminger</span> thinks that the effect of the intervention is ________.</p>
 <ul class="options">
 <li><span>[A]</span>permanent.</li>
 <li><span>[B]</span>predictable.</li>
@@ -752,12 +688,12 @@
 <div class="counter-row"><b>C</b><span>保留态度、无法排除变量，最贴合。</span></div>
 <div class="counter-row"><b>D</b><span>unrepeatable 未出现；可逆不等于不可重复。</span></div>
 </div>
-</section><section class="qcard" data-key="t4-q40" id="t4-q40" style="--c:var(--q5)">
+</section><section class="qcard" data-key="y2022-t4-q40" id="y2022-t4-q40" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q40</span><span class="atype">细节归纳题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t4-q40-m1">Eric Schwitzgebel suspects</span> that the students’ change in behavior ________.</p>
+<p class="stem"><span class="stem-hit" data-map="y2022-t4-q40-m1">Eric Schwitzgebel suspects</span> that the students’ change in behavior ________.</p>
 <ul class="options">
 <li><span>[A]</span>can bring psychological benefits.</li>
 <li><span>[B]</span>can be analyzed statistically.</li>
@@ -787,42 +723,7 @@
 </main>
 </div>
 <script src="transition.js"></script>
-<script>
-const keyed=[...document.querySelectorAll('[data-key]')];
-const mapped=[...document.querySelectorAll('[data-map]')];
-function splitMaps(value){return String(value||'').split(/\s+/).filter(Boolean)}
-function activateKey(key,scroll=true){
-  keyed.forEach(el=>el.classList.toggle('active',el.dataset.key===String(key)));
-  if(scroll){
-    const target=document.getElementById(String(key))||document.querySelector('.kw[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.ev[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.scope-anchor[data-key="'+CSS.escape(String(key))+'"]');
-    if(target)target.scrollIntoView({behavior:'smooth',block:'center'});
-  }
-}
-function activateMaps(maps){
-  const set=new Set(Array.isArray(maps)?maps:splitMaps(maps));
-  mapped.forEach(el=>{
-    const hit=splitMaps(el.dataset.map).some(m=>set.has(m));
-    el.classList.toggle('map-active',hit);
-    el.classList.toggle('map-source-active',hit && !el.classList.contains('stem-hit'));
-  });
-}
-function clearMaps(){mapped.forEach(el=>{el.classList.remove('map-active');el.classList.remove('map-source-active')})}
-document.addEventListener('click',e=>{
-  const jump=e.target.closest('[data-target]');
-  if(jump){e.preventDefault();activateKey(jump.dataset.target);return}
-  const k=e.target.closest('[data-key]');
-  if(k){activateKey(k.dataset.key,!k.classList.contains('qcard'))}
-});
-document.addEventListener('mouseover',e=>{
-  const mapEl=e.target.closest('[data-map]');
-  if(mapEl)activateMaps(splitMaps(mapEl.dataset.map));
-  const keyEl=e.target.closest('[data-key]');
-  if(keyEl)keyed.forEach(x=>x.classList.toggle('active',x.dataset.key===keyEl.dataset.key));
-});
-document.addEventListener('mouseout',e=>{
-  if(e.target.closest('[data-map]'))clearMaps();
-});
-</script>
+<script src="year.js"></script>
 <script src="../data/seed-corpus.js"></script>
 <script src="../data/seed-index.js"></script>
 <script src="../data/seed-forms.js"></script>

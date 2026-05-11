@@ -5,67 +5,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>2021 年考研英语二阅读路径图</title>
-<style>
-  :root{
-    --bg:#f7efe4; --paper:#fffdfa; --ink:#211c17; --muted:#74675c;
-    --line:#ded0c0; --soft:#f0e5d7;
-    --q1:#2563eb; --q2:#07845f; --q3:#7c4dcc; --q4:#d43b32; --q5:#ce7a12;
-    --shadow:0 20px 48px rgba(47,34,19,.10);
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:84px}
-  body{margin:0;background:linear-gradient(180deg,#fcf8f1 0%,var(--bg) 100%);color:var(--ink);font-family:Georgia,"Times New Roman","Noto Serif CJK SC","Source Han Serif SC","Songti SC",serif;line-height:1.58}
-  .topbar{position:sticky;top:0;z-index:80;background:rgba(255,253,250,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
-  .topbar-inner{max-width:1440px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-  .brand{font-size:18px;font-weight:950;letter-spacing:.02em;white-space:nowrap}
-  .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-  button,.jump-btn{font:800 13px/1 Georgia,"Times New Roman","Noto Serif CJK SC",serif;color:var(--ink);background:#fff9f0;border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;text-decoration:none}
-  button:hover,.jump-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(47,34,19,.10)}
-  .page{max-width:1440px;margin:0 auto;padding:24px 22px 64px}
-  .year-header{margin:0 0 18px;padding:22px 24px;border:1px solid var(--line);border-radius:28px;background:rgba(255,253,250,.72);box-shadow:var(--shadow)}
-  .year-header h1{margin:0;font-size:42px;line-height:1.08;letter-spacing:-.035em;font-weight:950}
-  .year-header p{margin:8px 0 0;color:var(--muted);font-size:15px}
-  .text-index{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-  .text-unit{margin:28px 0 42px;scroll-margin-top:90px;break-before:page}.text-unit:first-of-type{break-before:auto}
-  .unit-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end;margin-bottom:16px;padding:20px 22px;border:1px solid var(--line);border-radius:26px;background:var(--paper);box-shadow:var(--shadow)}
-  .unit-head h2{margin:0;font-size:32px;line-height:1.12;letter-spacing:-.02em}
-  .unit-head p{margin:8px 0 0;color:var(--muted);font-size:14px}
-  .text-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-  .route{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:18px 18px 16px;box-shadow:var(--shadow);margin-bottom:22px}
-  .route h3{margin:0 0 12px;font-size:18px;letter-spacing:.02em;color:#51463d}
-  .route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
-  .route-card{--c:#444;position:relative;overflow:hidden;min-height:92px;cursor:pointer;background:#fffaf3;border:1px solid var(--line);border-radius:18px;padding:14px 14px 12px 17px}
-  .route-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
-  .route-card b{display:block;color:var(--c)!important;font-size:17px;margin-bottom:6px}.route-card p{margin:0;font-size:14px;line-height:1.42;color:#5a4f45}
-  .layout{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(440px,.96fr);gap:22px;align-items:start}
-  .article-panel,.analysis-panel{background:var(--paper);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}
-  .panel-head{padding:22px 24px 12px;border-bottom:1px solid var(--line)}
-  .panel-head h3{margin:0;font-size:28px;letter-spacing:-.02em}.panel-head p{margin:6px 0 0;color:var(--muted);font-size:14px}
-  .article-body{padding:22px 26px 24px}.article-text{font-size:19px;line-height:1.86;color:#1f1b16;text-align:left}
-  .para{position:relative;margin:0 0 20px;padding-left:66px}.para:last-child{margin-bottom:0}
-  .pnum{position:absolute;left:0;top:2px;display:inline-flex;align-items:center;justify-content:center;width:38px;height:28px;border-radius:999px;background:var(--soft);color:#5a4f45;font-size:13px;font-weight:950}
-  .snum{font-size:11px;color:#9b8d7f;font-weight:950;margin-right:2px;vertical-align:super}
-  .scope-anchor{--c:#444;display:inline-flex;align-items:center;margin:0 6px 0 0;padding:4px 8px;border-radius:999px;background:var(--c);color:white;font-size:12px;font-weight:950;vertical-align:middle;cursor:pointer;white-space:nowrap}
-  .kw{--c:#444;position:relative;display:inline;color:var(--c)!important;font-weight:950;padding:0 .12em .02em;border-radius:5px;text-decoration-line:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--c)!important;background:linear-gradient(to top,color-mix(in srgb,var(--c) 22%,transparent) 0%,color-mix(in srgb,var(--c) 22%,transparent) 48%,transparent 48%,transparent 100%);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 16%,transparent);cursor:pointer}
-  .ev{--c:#444;color:var(--ink);font-weight:650;border-radius:3px;padding:0 1px 1px;text-decoration-line:underline;text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-color:var(--c)!important;background:color-mix(in srgb,var(--c) 8%,transparent);cursor:pointer;transition:background .18s ease,box-shadow .18s ease}
-  .ev:after{content:attr(data-label);font-size:10px;font-weight:950;line-height:1;border-radius:999px;padding:2px 5px;margin-left:4px;color:white;vertical-align:middle;white-space:nowrap;background:var(--c)!important}
-  .analysis-panel{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow:auto}.analysis-body{padding:16px;display:grid;gap:14px}
-  .qcard{--c:#444;background:linear-gradient(180deg,#fffdfa,#fff8ed);border:1px solid var(--line);border-radius:20px;padding:16px 17px;position:relative;overflow:hidden;scroll-margin-top:90px}
-  .qcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
-  .qtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;border-bottom:1px dashed var(--line);padding-bottom:9px}.qtitle{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:950}.badge{background:var(--c)!important;color:white;border-radius:999px;padding:4px 10px;font-size:14px}.atype{color:var(--muted);font-size:14px;font-weight:900}.rightans{font-size:14px;color:var(--muted);font-weight:900}.rightans strong{font-size:25px;color:var(--ink);line-height:1}
-  .stem{margin:0 0 10px;font-size:16.8px;line-height:1.42;font-weight:950;color:#211c17}.stem-hit{border-radius:5px;padding:0 .08em;transition:background .15s ease,box-shadow .15s ease,color .15s ease}.stem-hit.map-active{background:#fff1a8;box-shadow:0 0 0 2px #f3c94d;color:#1f1b16}.stem-hit:hover{background:#fff4bf;cursor:pointer}
-  .options{list-style:none;margin:0 0 11px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:13.6px;line-height:1.32}.options li{border:1px solid #eadfd2;background:#fffefb;border-radius:12px;padding:7px 8px}.options span{font-weight:950;margin-right:4px}.options .ok{background:#f3fbf2;border-color:#a9cfab;box-shadow:inset 0 0 0 1px rgba(92,148,91,.13)}
-  .chain{display:grid;gap:7px;font-size:14px;line-height:1.47}.chain-row{display:grid;grid-template-columns:74px 1fr;gap:8px;border-top:1px solid #f0e6da;padding-top:7px}.chain-row:first-child{border-top:0;padding-top:0}.chain-row b{color:#584b41}
-  .counter{margin-top:10px;border:1px solid #eadfd2;border-radius:15px;overflow:hidden;background:#fffdfa}.counter h4{margin:0;padding:7px 10px;font-size:13.5px;background:#f0e6da;color:#55483e}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid #efe3d7;font-size:13px;line-height:1.36}.counter-row:first-of-type{border-top:0}.counter-row b{padding:7px 9px;background:#fbf6ef}.counter-row span{padding:7px 9px;color:#342d26}
-  .qcard.active,.route-card.active,.ev.active,.kw.active,.scope-anchor.active{box-shadow:0 0 0 3px var(--c),0 14px 32px rgba(47,34,19,.10);background:#fff4d4}.map-source-active{box-shadow:0 0 0 2px #f3c94d,0 6px 18px rgba(47,34,19,.12)!important;background:#fff1a8!important;color:#1f1b16!important}
-  .note-box{margin-top:14px;background:#fff8ed;border:1px solid var(--line);border-radius:18px;padding:14px 16px;color:#4f453c;font-size:14px;line-height:1.55}
-  @media (max-width:1120px){.unit-head,.layout{grid-template-columns:1fr}.text-nav{justify-content:flex-start}.analysis-panel{position:static;max-height:none}.options{grid-template-columns:1fr}}
-  @media print{@page{size:A4;margin:12mm}body{background:#fff}.topbar{display:none}.page{max-width:none;padding:0}.route,.article-panel,.analysis-panel,.qcard{box-shadow:none}.layout{grid-template-columns:1fr}.analysis-panel{position:static;max-height:none;overflow:visible}.qcard{break-inside:avoid}.ev,.kw,.badge,.route-card,.scope-anchor{print-color-adjust:exact;-webkit-print-color-adjust:exact}.article-text{font-size:14.7px;line-height:1.72}.panel-head h3{font-size:22px}.kw{box-shadow:none;background:transparent;color:var(--c)!important;text-decoration-thickness:2px}.text-unit{break-before:page}.text-unit:first-of-type{break-before:auto}}
-</style>
-<style>
-/* repair-v1: final closed-loop compatibility layer */
-.article-panel .source-supplement,.article .source-supplement{margin-top:18px;padding:12px 14px;border:1px dashed rgba(180,154,130,.45);border-radius:16px;background:rgba(255,248,237,.62);font-size:15px;line-height:1.8;color:#4f443e}.source-supplement h4{margin:0 0 8px;font-size:15px;color:#6c5b52}.source-fix{display:inline-block;margin:2px 5px 2px 0}.stem-sync-bank{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}.map-active,.kw.map-active,.ev.map-active,.stem-hit.map-active{outline:2px solid currentColor;outline-offset:2px;border-radius:5px;background:rgba(255,248,184,.42)!important}.qcard{border-color:var(--c)!important}.qcard .badge{background:var(--c)!important}.options .ok{border-color:#9dccaa!important;background:#effaf0!important}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid rgba(120,100,80,.18);padding:7px 10px}.counter-row b{font-weight:800}.chain-row{display:grid;grid-template-columns:82px 1fr;gap:12px;border-top:1px solid rgba(120,100,80,.14);padding:9px 0}.chain-row b{color:#6b5a50}.repair-note{font-size:12px;color:#8a776d;margin-top:8px}.text-unit{scroll-margin-top:90px}.qcard{scroll-margin-top:90px}
-</style><link href="year.css" rel="stylesheet"/>
+
+<link href="year.css" rel="stylesheet"/>
 <link href="../seed-popover.css" rel="stylesheet"/>
 </head>
 <body class="is-entering exam-two-page">
@@ -98,25 +39,25 @@
 <h2>Text 1｜高分阅读路径图解析</h2>
 <p>Q21—Q25。技能重塑与劳动力错配。例证题看 AT&amp;T 服务的直接结论；段落题按疫情与医疗短缺切片。</p>
 </div>
-<nav class="text-nav"><button data-target="t1-q21" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q21</button><button data-target="t1-q22" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q22</button><button data-target="t1-q23" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q23</button><button data-target="t1-q24" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q24</button><button data-target="t1-q25" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q25</button></nav>
+<nav class="text-nav"><button data-target="y2021-t1-q21" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q21</button><button data-target="y2021-t1-q22" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q22</button><button data-target="y2021-t1-q23" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q23</button><button data-target="y2021-t1-q24" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q24</button><button data-target="y2021-t1-q25" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q25</button></nav>
 </header>
-<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t1-q21" data-target="t1-q21" style="--c:var(--q1)">
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="y2021-t1-q21" data-target="y2021-t1-q21" style="--c:var(--q1)">
 <b>Q21｜细节题</b>
 <p>P1：WEF 研究说 core skills 很快会变化，时间线很短。</p>
 </article>
-<article class="route-card" data-key="t1-q22" data-target="t1-q22" style="--c:var(--q2)">
+<article class="route-card" data-key="y2021-t1-q22" data-target="y2021-t1-q22" style="--c:var(--q2)">
 <b>Q22｜例证题</b>
 <p>P2：AT&amp;T 被举为不用 fire-and-hire、而做 reskilling 的例子。</p>
 </article>
-<article class="route-card" data-key="t1-q23" data-target="t1-q23" style="--c:var(--q3)">
+<article class="route-card" data-key="y2021-t1-q23" data-target="y2021-t1-q23" style="--c:var(--q3)">
 <b>Q23｜细节判断题</b>
 <p>P2 后半：Canada 等地 efforts 被评价为 languid at best。</p>
 </article>
-<article class="route-card" data-key="t1-q24" data-target="t1-q24" style="--c:var(--q4)">
+<article class="route-card" data-key="y2021-t1-q24" data-target="y2021-t1-q24" style="--c:var(--q4)">
 <b>Q24｜段落细节题</b>
 <p>P3：疫情后多数短缺消失，但医疗领域仍缺人。</p>
 </article>
-<article class="route-card" data-key="t1-q25" data-target="t1-q25" style="--c:var(--q5)">
+<article class="route-card" data-key="y2021-t1-q25" data-target="y2021-t1-q25" style="--c:var(--q5)">
 <b>Q25｜细节题</b>
 <p>P4：Scandinavian Airlines retrained furloughed cabin staff to support hospitals。</p>
 </article></div></section>
@@ -124,60 +65,60 @@
 <article class="article-panel">
 <div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div>
 <div class="article-body article-text">
-<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t1-q21" data-map="t1-q21-m0" style="--c:var(--q1)">Q21 定位</span>“Reskilling” is something that sounds like a buzzword but is actually a requirement if we plan to have a future in which a lot of would-be workers do not get left behind. We know we are moving into a period where the jobs in demand will change rapidly, as will the requirements of the jobs that remain. <mark class="kw" data-key="t1-q21" data-map="t1-q21-m1" style="--c:var(--q1)">Research by the World Economic Forum</mark> finds that <span class="ev" data-key="t1-q21" data-label="Q21" style="--c:var(--q1)">on average 42 per cent of the “<mark class="kw" data-key="t1-q21" data-map="t1-q21-m2" style="--c:var(--q1)">core skills</mark>” within job roles will change by 2022. That is a very short timeline.</span></p>
-<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t1-q22" data-map="t1-q22-m0" style="--c:var(--q2)">Q22 AT&amp;T</span><span class="scope-anchor" data-key="t1-q23" data-map="t1-q23-m0" style="--c:var(--q3)">Q23 Canada</span>The question of who should pay for reskilling is a thorny one. For individual companies, the temptation is always to let go of workers whose skills are no longer in demand and replace them with those whose skills are. That does not always happen. <mark class="kw" data-key="t1-q22" data-map="t1-q22-m1" style="--c:var(--q2)">AT&amp;T</mark> is often given as the gold standard of a company that <span class="ev" data-key="t1-q22" data-label="Q22" style="--c:var(--q2)">decided to do a massive reskilling program rather than go with a <mark class="kw" data-key="t1-q22" data-map="t1-q22-m2" style="--c:var(--q2)">fire-and-hire strategy</mark></span>. Other companies had also pledged to create their own plans. When the <mark class="kw" data-key="t1-q23" data-map="t1-q23-m1" style="--c:var(--q3)">skills mismatch</mark> is in the broader economy, though, the focus usually turns to government to handle. <span class="ev" data-key="t1-q23" data-label="Q23" style="--c:var(--q3)">Efforts in <mark class="kw" data-key="t1-q23" data-map="t1-q23-m2" style="--c:var(--q3)">Canada</mark> and elsewhere have been arguably languid at best</span>, and have given us a situation where we frequently hear of employers begging for workers, even at times and in regions where unemployment is high.</p>
-<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t1-q24" data-map="t1-q24-m0" style="--c:var(--q4)">Q24 段落定位</span>With the pandemic, unemployment is very high indeed. In February, at 3.5 per cent and 5.5 per cent respectively, unemployment rates in Canada and the United States were at generational lows and worker shortages were everywhere. As of May, those rates had spiked up to 13.3 per cent and 13.7 per cent, and although many worker shortages had disappeared, not all had done so. <span class="ev" data-key="t1-q24" data-label="Q24" style="--c:var(--q4)">In the <mark class="kw" data-key="t1-q24" data-map="t1-q24-m1" style="--c:var(--q4)">medical field</mark>, to take an obvious example, the pandemic meant that there were still clear <mark class="kw" data-key="t1-q24" data-map="t1-q24-m2" style="--c:var(--q4)">shortages of doctors, nurses and other medical personnel</mark>.</span></p>
-<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t1-q25" data-map="t1-q25-m0" style="--c:var(--q5)">Q25 Sweden 案例</span>Of course, it is not like you can take an unemployed waiter and train him to be a doctor in a few weeks. But even if you cannot close that gap, maybe you can close others, and doing so would be to the benefit of all concerned. That seems to be the case in Sweden: When forced to furlough 90 per cent of their cabin staff, <mark class="kw" data-key="t1-q25" data-map="t1-q25-m1" style="--c:var(--q5)">Scandinavian Airlines</mark> decided to <span class="ev" data-key="t1-q25" data-label="Q25" style="--c:var(--q5)">start up a short <mark class="kw" data-key="t1-q25" data-map="t1-q25-m2" style="--c:var(--q5)">retraining program</mark> that reskilled the laid-off workers to support hospital staff</span>. The effort was a collective one and involved other companies as well as a Swedish university.</p>
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="y2021-t1-q21" data-map="y2021-t1-q21-m0" style="--c:var(--q1)">Q21 定位</span>“Reskilling” is something that sounds like a buzzword but is actually a requirement if we plan to have a future in which a lot of would-be workers do not get left behind. We know we are moving into a period where the jobs in demand will change rapidly, as will the requirements of the jobs that remain. <mark class="kw" data-key="y2021-t1-q21" data-map="y2021-t1-q21-m1" style="--c:var(--q1)">Research by the World Economic Forum</mark> finds that <span class="ev" data-key="y2021-t1-q21" data-label="Q21" style="--c:var(--q1)">on average 42 per cent of the “<mark class="kw" data-key="y2021-t1-q21" data-map="y2021-t1-q21-m2" style="--c:var(--q1)">core skills</mark>” within job roles will change by 2022. That is a very short timeline.</span></p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="y2021-t1-q22" data-map="y2021-t1-q22-m0" style="--c:var(--q2)">Q22 AT&amp;T</span><span class="scope-anchor" data-key="y2021-t1-q23" data-map="y2021-t1-q23-m0" style="--c:var(--q3)">Q23 Canada</span>The question of who should pay for reskilling is a thorny one. For individual companies, the temptation is always to let go of workers whose skills are no longer in demand and replace them with those whose skills are. That does not always happen. <mark class="kw" data-key="y2021-t1-q22" data-map="y2021-t1-q22-m1" style="--c:var(--q2)">AT&amp;T</mark> is often given as the gold standard of a company that <span class="ev" data-key="y2021-t1-q22" data-label="Q22" style="--c:var(--q2)">decided to do a massive reskilling program rather than go with a <mark class="kw" data-key="y2021-t1-q22" data-map="y2021-t1-q22-m2" style="--c:var(--q2)">fire-and-hire strategy</mark></span>. Other companies had also pledged to create their own plans. When the <mark class="kw" data-key="y2021-t1-q23" data-map="y2021-t1-q23-m1" style="--c:var(--q3)">skills mismatch</mark> is in the broader economy, though, the focus usually turns to government to handle. <span class="ev" data-key="y2021-t1-q23" data-label="Q23" style="--c:var(--q3)">Efforts in <mark class="kw" data-key="y2021-t1-q23" data-map="y2021-t1-q23-m2" style="--c:var(--q3)">Canada</mark> and elsewhere have been arguably languid at best</span>, and have given us a situation where we frequently hear of employers begging for workers, even at times and in regions where unemployment is high.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="y2021-t1-q24" data-map="y2021-t1-q24-m0" style="--c:var(--q4)">Q24 段落定位</span>With the pandemic, unemployment is very high indeed. In February, at 3.5 per cent and 5.5 per cent respectively, unemployment rates in Canada and the United States were at generational lows and worker shortages were everywhere. As of May, those rates had spiked up to 13.3 per cent and 13.7 per cent, and although many worker shortages had disappeared, not all had done so. <span class="ev" data-key="y2021-t1-q24" data-label="Q24" style="--c:var(--q4)">In the <mark class="kw" data-key="y2021-t1-q24" data-map="y2021-t1-q24-m1" style="--c:var(--q4)">medical field</mark>, to take an obvious example, the pandemic meant that there were still clear <mark class="kw" data-key="y2021-t1-q24" data-map="y2021-t1-q24-m2" style="--c:var(--q4)">shortages of doctors, nurses and other medical personnel</mark>.</span></p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="y2021-t1-q25" data-map="y2021-t1-q25-m0" style="--c:var(--q5)">Q25 Sweden 案例</span>Of course, it is not like you can take an unemployed waiter and train him to be a doctor in a few weeks. But even if you cannot close that gap, maybe you can close others, and doing so would be to the benefit of all concerned. That seems to be the case in Sweden: When forced to furlough 90 per cent of their cabin staff, <mark class="kw" data-key="y2021-t1-q25" data-map="y2021-t1-q25-m1" style="--c:var(--q5)">Scandinavian Airlines</mark> decided to <span class="ev" data-key="y2021-t1-q25" data-label="Q25" style="--c:var(--q5)">start up a short <mark class="kw" data-key="y2021-t1-q25" data-map="y2021-t1-q25-m2" style="--c:var(--q5)">retraining program</mark> that reskilled the laid-off workers to support hospital staff</span>. The effort was a collective one and involved other companies as well as a Swedish university.</p>
 </div>
 </article>
 <aside class="analysis-panel">
 <div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div>
-<div class="analysis-body"><section class="qcard" data-key="t1-q21" id="t1-q21" style="--c:var(--q1)">
+<div class="analysis-body"><section class="qcard" data-key="y2021-t1-q21" id="y2021-t1-q21" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q21</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t1-q21-m1">Research by the World Economic Forum</span> suggests ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q21-m0">Q21 定位</span><span class="stem-hit" data-map="t1-q21-m2">core skills</span></span></p>
+<p class="stem"><span class="stem-hit" data-map="y2021-t1-q21-m1">Research by the World Economic Forum</span> suggests ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t1-q21-m0">Q21 定位</span><span class="stem-hit" data-map="y2021-t1-q21-m2">core skills</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> an increase in full-time employment</li><li class="ok"><span>[B]</span> an urgent demand for new job skills</li><li class=""><span>[C]</span> a steady growth of job opportunities</li><li class=""><span>[D]</span> a controversy about the “core skills”</li></ul>
-<div class="chain"><div class="chain-row"><b>关键词</b><span><span class="stem-hit" data-map="t1-q21-m1">Research by the World Economic Forum</span> 原词复现；“new job skills”对应原文 “core skills ... will change”。</span></div><div class="chain-row"><b>定位</b><span>题干直接给出研究机构，回到 P1 最后两句，看研究发现和作者补充评价。</span></div><div class="chain-row"><b>证据</b><span>WEF 发现 42% 的 core skills 将在短期内改变，作者紧接着说 “That is a very short timeline.”</span></div><div class="chain-row"><b>替换</b><span>core skills will change by 2022 + very short timeline = urgent demand for new job skills。</span></div></div>
+<div class="chain"><div class="chain-row"><b>关键词</b><span><span class="stem-hit" data-map="y2021-t1-q21-m1">Research by the World Economic Forum</span> 原词复现；“new job skills”对应原文 “core skills ... will change”。</span></div><div class="chain-row"><b>定位</b><span>题干直接给出研究机构，回到 P1 最后两句，看研究发现和作者补充评价。</span></div><div class="chain-row"><b>证据</b><span>WEF 发现 42% 的 core skills 将在短期内改变，作者紧接着说 “That is a very short timeline.”</span></div><div class="chain-row"><b>替换</b><span>core skills will change by 2022 + very short timeline = urgent demand for new job skills。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>原文讨论技能变化，不是全职就业增加。</span></div><div class="counter-row"><b>C</b><span>“jobs in demand will change”不等于就业机会稳定增长。</span></div><div class="counter-row"><b>D</b><span>core skills 是研究对象，不是争议对象；文中无 controversy。</span></div></section>
 </section>
-<section class="qcard" data-key="t1-q22" id="t1-q22" style="--c:var(--q2)">
+<section class="qcard" data-key="y2021-t1-q22" id="y2021-t1-q22" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q22</span><span class="atype">例证题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t1-q22-m1">AT&amp;T</span> is cited to show ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q22-m0">Q22 AT&amp;T</span><span class="stem-hit" data-map="t1-q22-m2">fire-and-hire strategy</span></span></p>
+<p class="stem"><span class="stem-hit" data-map="y2021-t1-q22-m1">AT&amp;T</span> is cited to show ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t1-q22-m0">Q22 AT&amp;T</span><span class="stem-hit" data-map="y2021-t1-q22-m2">fire-and-hire strategy</span></span></p>
 <ul class="options"><li class="ok"><span>[A]</span> an alternative to the fire-and-hire strategy</li><li class=""><span>[B]</span> an immediate need for government support</li><li class=""><span>[C]</span> the importance of staff appraisal standards</li><li class=""><span>[D]</span> the characteristics of reskilling programs</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>AT&amp;T 原词复现；fire-and-hire strategy 原文复现。</span></div><div class="chain-row"><b>定位</b><span>定位到 P2 AT&amp;T 句，例证题看例子服务的直接结论：massive reskilling rather than fire-and-hire。</span></div><div class="chain-row"><b>证据</b><span>AT&amp;T chose a massive reskilling program rather than a fire-and-hire strategy。</span></div><div class="chain-row"><b>替换</b><span>reskilling program rather than fire-and-hire = an alternative to the fire-and-hire strategy。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>政府支持出现在后文 broader economy 语境，不是 AT&amp;T 例子的作用。</span></div><div class="counter-row"><b>C</b><span>staff appraisal standards 未出现。</span></div><div class="counter-row"><b>D</b><span>AT&amp;T 只说明一种替代策略，不展开 reskilling program 的特征。</span></div></section>
 </section>
-<section class="qcard" data-key="t1-q23" id="t1-q23" style="--c:var(--q3)">
+<section class="qcard" data-key="y2021-t1-q23" id="y2021-t1-q23" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q23</span><span class="atype">细节判断题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">Efforts to resolve the <span class="stem-hit" data-map="t1-q23-m1">skills mismatch</span> in <span class="stem-hit" data-map="t1-q23-m2">Canada</span> ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q23-m0">Q23 Canada</span></span></p>
+<p class="stem">Efforts to resolve the <span class="stem-hit" data-map="y2021-t1-q23-m1">skills mismatch</span> in <span class="stem-hit" data-map="y2021-t1-q23-m2">Canada</span> ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t1-q23-m0">Q23 Canada</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> have driven up labour costs</li><li class=""><span>[B]</span> have proved to be inconsistent</li><li class=""><span>[C]</span> have met with fierce opposition</li><li class="ok"><span>[D]</span> have appeared to be insufficient</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>skills mismatch 原文复现；Canada 原文复现。</span></div><div class="chain-row"><b>定位</b><span>用 Canada + skills mismatch 锁定 P2 后半；重点看作者评价词 “languid at best”。</span></div><div class="chain-row"><b>证据</b><span>Efforts in Canada and elsewhere have been “arguably languid at best”，且仍出现雇主缺工、失业率高并存。</span></div><div class="chain-row"><b>替换</b><span>languid at best = weak/slow/not enough = insufficient。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>原文没有劳动力成本上升。</span></div><div class="counter-row"><b>B</b><span>languid 是力度不足，不是 inconsistent。</span></div><div class="counter-row"><b>C</b><span>没有说这些努力遭到激烈反对。</span></div></section>
 </section>
-<section class="qcard" data-key="t1-q24" id="t1-q24" style="--c:var(--q4)">
+<section class="qcard" data-key="y2021-t1-q24" id="y2021-t1-q24" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q24</span><span class="atype">段落细节题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem">We can learn from <span class="stem-hit" data-map="t1-q24-m0">Paragraph 3</span> that there was ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q24-m1">medical field</span><span class="stem-hit" data-map="t1-q24-m2">shortages of doctors, nurses and other medical personnel</span></span></p>
+<p class="stem">We can learn from <span class="stem-hit" data-map="y2021-t1-q24-m0">Paragraph 3</span> that there was ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t1-q24-m1">medical field</span><span class="stem-hit" data-map="y2021-t1-q24-m2">shortages of doctors, nurses and other medical personnel</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> a call for policy adjustment</li><li class=""><span>[B]</span> a change in hiring practices</li><li class="ok"><span>[C]</span> a lack of medical workers</li><li class=""><span>[D]</span> a sign of economic recovery</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>Paragraph 3 → P3 段首锚点；there was 指向段内存在的现象。</span></div><div class="chain-row"><b>定位</b><span>按段落范围到 P3；转折 although many shortages had disappeared, not all 后给出例子。</span></div><div class="chain-row"><b>证据</b><span>P3 明说 medical field 仍有 clear shortages of doctors, nurses and other medical personnel。</span></div><div class="chain-row"><b>替换</b><span>shortages of doctors, nurses and other medical personnel = a lack of medical workers。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>P3 没有呼吁政策调整。</span></div><div class="counter-row"><b>B</b><span>P3 是失业率和短缺变化，不是招聘实践改变。</span></div><div class="counter-row"><b>D</b><span>失业率飙升不构成经济复苏信号。</span></div></section>
 </section>
-<section class="qcard" data-key="t1-q25" id="t1-q25" style="--c:var(--q5)">
+<section class="qcard" data-key="y2021-t1-q25" id="y2021-t1-q25" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q25</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t1-q25-m1">Scandinavian Airlines</span> decided to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t1-q25-m0">Q25 Sweden 案例</span><span class="stem-hit" data-map="t1-q25-m2">retraining program</span></span></p>
+<p class="stem"><span class="stem-hit" data-map="y2021-t1-q25-m1">Scandinavian Airlines</span> decided to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t1-q25-m0">Q25 Sweden 案例</span><span class="stem-hit" data-map="y2021-t1-q25-m2">retraining program</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> create job vacancies for the unemployed</li><li class="ok"><span>[B]</span> prepare their laid-off workers for other jobs</li><li class=""><span>[C]</span> retrain their cabin staff for better services</li><li class=""><span>[D]</span> finance their staff’s college education</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>Scandinavian Airlines 原词复现；decided to 对应原文 decided to start up。</span></div><div class="chain-row"><b>定位</b><span>定位 P4 Scandinavian Airlines 句；看 retraining program 的对象和目的。</span></div><div class="chain-row"><b>证据</b><span>它启动短期 retraining program，使 laid-off workers 支援医院员工。</span></div><div class="chain-row"><b>替换</b><span>reskilled laid-off workers to support hospital staff = prepare laid-off workers for other jobs。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>没有创造岗位；是转岗培训。</span></div><div class="counter-row"><b>C</b><span>不是为了提升航空服务，而是支援医院。</span></div><div class="counter-row"><b>D</b><span>涉及 Swedish university 参与，不等于资助大学教育。</span></div></section>
@@ -191,25 +132,25 @@
 <h2>Text 2｜高分阅读路径图解析</h2>
 <p>Q26—Q30。英国粮食自给的可行性。抓 argument、report、natural conditions、last paragraph 与作者态度转折。</p>
 </div>
-<nav class="text-nav"><button data-target="t2-q26" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q26</button><button data-target="t2-q27" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q27</button><button data-target="t2-q28" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q28</button><button data-target="t2-q29" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q29</button><button data-target="t2-q30" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q30</button></nav>
+<nav class="text-nav"><button data-target="y2021-t2-q26" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q26</button><button data-target="y2021-t2-q27" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q27</button><button data-target="y2021-t2-q28" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q28</button><button data-target="y2021-t2-q29" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q29</button><button data-target="y2021-t2-q30" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q30</button></nav>
 </header>
-<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t2-q26" data-target="t2-q26" style="--c:var(--q1)">
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="y2021-t2-q26" data-target="y2021-t2-q26" style="--c:var(--q1)">
 <b>Q26｜观点细节题</b>
 <p>P2：some people 的 argument 认为自给能促进农业、主权和健康。</p>
 </article>
-<article class="route-card" data-key="t2-q27" data-target="t2-q27" style="--c:var(--q2)">
+<article class="route-card" data-key="y2021-t2-q27" data-target="y2021-t2-q27" style="--c:var(--q2)">
 <b>Q27｜细节题</b>
 <p>P3：University of Leeds 报告显示 85% land associated with meat and dairy。</p>
 </article>
-<article class="route-card" data-key="t2-q28" data-target="t2-q28" style="--c:var(--q3)">
+<article class="route-card" data-key="y2021-t2-q28" data-target="y2021-t2-q28" style="--c:var(--q3)">
 <b>Q28｜原因细节题</b>
 <p>P5：crop-growing 受 soil/climate 限制。</p>
 </article>
-<article class="route-card" data-key="t2-q29" data-target="t2-q29" style="--c:var(--q4)">
+<article class="route-card" data-key="y2021-t2-q29" data-target="y2021-t2-q29" style="--c:var(--q4)">
 <b>Q29｜段落细节题</b>
 <p>P6：only 23% fruit/vegetables home-grown，最多只能满足 30%。</p>
 </article>
-<article class="route-card" data-key="t2-q30" data-target="t2-q30" style="--c:var(--q5)">
+<article class="route-card" data-key="y2021-t2-q30" data-target="y2021-t2-q30" style="--c:var(--q5)">
 <b>Q30｜态度题</b>
 <p>P2 设问 + P3—P6 连续反证：作者质疑自给可行性。</p>
 </article></div></section>
@@ -218,61 +159,61 @@
 <div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div>
 <div class="article-body article-text">
 <p class="para"><span class="pnum">P1</span>With the global population predicted to hit close to 10 billion by 2050, and forecasts that agricultural production in some regions will need to nearly double to keep pace, food security is increasingly making headlines. In the UK, it has become a big talking point recently too, for a rather particular reason: Brexit.</p>
-<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t2-q26" data-map="t2-q26-m0" style="--c:var(--q1)">Q26 观点定位</span>Brexit is seen by some as an opportunity to reverse a recent trend towards the UK importing food. The country produces only about 60 per cent of the food it eats, down from almost three-quarters in the late 1980s. A move back to <mark class="kw" data-key="t2-q26" data-map="t2-q26-m1" style="--c:var(--q1)">self-sufficiency</mark>, the <mark class="kw" data-key="t2-q26" data-map="t2-q26-m2" style="--c:var(--q1)">argument</mark> goes, would <span class="ev" data-key="t2-q26" data-label="Q26" style="--c:var(--q1)">boost the farming industry, political sovereignty and even the nation’s health</span>. Sounds great—but how feasible is this vision?</p>
-<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t2-q27" data-map="t2-q27-m0" style="--c:var(--q2)">Q27 报告定位</span>According to a <mark class="kw" data-key="t2-q27" data-map="t2-q27-m1" style="--c:var(--q2)">report on UK food production from the University of Leeds</mark>, UK, <span class="ev" data-key="t2-q27" data-label="Q27" style="--c:var(--q2)">85 per cent of the country’s total land area is associated with <mark class="kw" data-key="t2-q27" data-map="t2-q27-m2" style="--c:var(--q2)">meat and dairy production</mark></span>. That supplies 80 per cent of what is consumed, so even covering the whole country in livestock farms wouldn’t allow us to cover all our meat and dairy needs.</p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="y2021-t2-q26" data-map="y2021-t2-q26-m0" style="--c:var(--q1)">Q26 观点定位</span>Brexit is seen by some as an opportunity to reverse a recent trend towards the UK importing food. The country produces only about 60 per cent of the food it eats, down from almost three-quarters in the late 1980s. A move back to <mark class="kw" data-key="y2021-t2-q26" data-map="y2021-t2-q26-m1" style="--c:var(--q1)">self-sufficiency</mark>, the <mark class="kw" data-key="y2021-t2-q26" data-map="y2021-t2-q26-m2" style="--c:var(--q1)">argument</mark> goes, would <span class="ev" data-key="y2021-t2-q26" data-label="Q26" style="--c:var(--q1)">boost the farming industry, political sovereignty and even the nation’s health</span>. Sounds great—but how feasible is this vision?</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="y2021-t2-q27" data-map="y2021-t2-q27-m0" style="--c:var(--q2)">Q27 报告定位</span>According to a <mark class="kw" data-key="y2021-t2-q27" data-map="y2021-t2-q27-m1" style="--c:var(--q2)">report on UK food production from the University of Leeds</mark>, UK, <span class="ev" data-key="y2021-t2-q27" data-label="Q27" style="--c:var(--q2)">85 per cent of the country’s total land area is associated with <mark class="kw" data-key="y2021-t2-q27" data-map="y2021-t2-q27-m2" style="--c:var(--q2)">meat and dairy production</mark></span>. That supplies 80 per cent of what is consumed, so even covering the whole country in livestock farms wouldn’t allow us to cover all our meat and dairy needs.</p>
 <p class="para"><span class="pnum">P4</span>There are many caveats to those figures, but they are still grave. To become much more self-sufficient, the UK would need to drastically reduce its consumption of animal foods, and probably also farm more intensively—meaning fewer green fields and more factory-style production.</p>
-<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t2-q28" data-map="t2-q28-m0" style="--c:var(--q3)">Q28 作物限制</span>But switching to a mainly plant-based diet wouldn’t help. There is a good reason why the UK is dominated by animal husbandry: <span class="ev" data-key="t2-q28" data-label="Q28" style="--c:var(--q3)">most of its terrain doesn’t have the right <mark class="kw" data-key="t2-q28" data-map="t2-q28-m1" style="--c:var(--q3)">soil or climate</mark> to grow crops on a commercial basis</span>. Just 25 per cent of the country’s land is suitable for <mark class="kw" data-key="t2-q28" data-map="t2-q28-m2" style="--c:var(--q3)">crop-growing</mark>, most of which is already occupied by arable fields. Even if we converted all the suitable land to fields of fruit and veg—which would involve taking out all the nature reserves and removing thousands of people from their homes—we would achieve only a 30 per cent boost in crop production.</p>
-<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="t2-q29" data-map="t2-q29-m0" style="--c:var(--q4)">Q29 最后一段</span><span class="scope-anchor" data-key="t2-q30" data-map="t2-q30-m0" style="--c:var(--q5)">Q30 态度汇总</span><span class="ev" data-key="t2-q29" data-label="Q29" style="--c:var(--q4)">Just 23 per cent of the <mark class="kw" data-key="t2-q29" data-map="t2-q29-m1" style="--c:var(--q4)">fruit and vegetables</mark> consumed in the UK are currently home-grown, so even with the most extreme measures we could meet only 30 per cent of our fresh produce needs.</span> <span class="ev" data-key="t2-q30" data-label="Q30" style="--c:var(--q5)">That is before we look for the space to grow the grains, sugars, seeds and oils that provide us with the vast bulk of our current calorie intake.</span></p>
-<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t2-q30" data-map="t2-q30-m1">food self-sufficiency in the UK</span> </div></div>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="y2021-t2-q28" data-map="y2021-t2-q28-m0" style="--c:var(--q3)">Q28 作物限制</span>But switching to a mainly plant-based diet wouldn’t help. There is a good reason why the UK is dominated by animal husbandry: <span class="ev" data-key="y2021-t2-q28" data-label="Q28" style="--c:var(--q3)">most of its terrain doesn’t have the right <mark class="kw" data-key="y2021-t2-q28" data-map="y2021-t2-q28-m1" style="--c:var(--q3)">soil or climate</mark> to grow crops on a commercial basis</span>. Just 25 per cent of the country’s land is suitable for <mark class="kw" data-key="y2021-t2-q28" data-map="y2021-t2-q28-m2" style="--c:var(--q3)">crop-growing</mark>, most of which is already occupied by arable fields. Even if we converted all the suitable land to fields of fruit and veg—which would involve taking out all the nature reserves and removing thousands of people from their homes—we would achieve only a 30 per cent boost in crop production.</p>
+<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="y2021-t2-q29" data-map="y2021-t2-q29-m0" style="--c:var(--q4)">Q29 最后一段</span><span class="scope-anchor" data-key="y2021-t2-q30" data-map="y2021-t2-q30-m0" style="--c:var(--q5)">Q30 态度汇总</span><span class="ev" data-key="y2021-t2-q29" data-label="Q29" style="--c:var(--q4)">Just 23 per cent of the <mark class="kw" data-key="y2021-t2-q29" data-map="y2021-t2-q29-m1" style="--c:var(--q4)">fruit and vegetables</mark> consumed in the UK are currently home-grown, so even with the most extreme measures we could meet only 30 per cent of our fresh produce needs.</span> <span class="ev" data-key="y2021-t2-q30" data-label="Q30" style="--c:var(--q5)">That is before we look for the space to grow the grains, sugars, seeds and oils that provide us with the vast bulk of our current calorie intake.</span></p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="y2021-t2-q30" data-map="y2021-t2-q30-m1">food self-sufficiency in the UK</span> </div></div>
 </article>
 <aside class="analysis-panel">
 <div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div>
-<div class="analysis-body"><section class="qcard" data-key="t2-q26" id="t2-q26" style="--c:var(--q1)">
+<div class="analysis-body"><section class="qcard" data-key="y2021-t2-q26" id="y2021-t2-q26" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q26</span><span class="atype">观点细节题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">Some people argue that <span class="stem-hit" data-map="t2-q26-m1">food self-sufficiency</span> in the UK would ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q26-m0">Q26 观点定位</span><span class="stem-hit" data-map="t2-q26-m2">argument</span></span></p>
+<p class="stem">Some people argue that <span class="stem-hit" data-map="y2021-t2-q26-m1">food self-sufficiency</span> in the UK would ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t2-q26-m0">Q26 观点定位</span><span class="stem-hit" data-map="y2021-t2-q26-m2">argument</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> be hindered by its population growth</li><li class="ok"><span>[B]</span> contribute to the nation’s well-being</li><li class=""><span>[C]</span> become a priority of the government</li><li class=""><span>[D]</span> pose a challenge to its farming industry</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>self-sufficiency 原文复现；Some people argue ↔ the argument goes。</span></div><div class="chain-row"><b>定位</b><span>按题干 some people argue 定位 P2 “the argument goes”，读取 would 后的并列结果。</span></div><div class="chain-row"><b>证据</b><span>P2 说回到自给会 boost farming industry, political sovereignty and nation’s health。</span></div><div class="chain-row"><b>替换</b><span>industry + sovereignty + health = the nation’s well-being。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>人口增长是全球背景，不是 some people 对英国自给的主张。</span></div><div class="counter-row"><b>C</b><span>没有说政府优先事项。</span></div><div class="counter-row"><b>D</b><span>他们认为会 boost farming industry，不是挑战农业。</span></div></section>
 </section>
-<section class="qcard" data-key="t2-q27" id="t2-q27" style="--c:var(--q2)">
+<section class="qcard" data-key="y2021-t2-q27" id="y2021-t2-q27" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q27</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem">The <span class="stem-hit" data-map="t2-q27-m1">report by the University of Leeds</span> shows that in the UK ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q27-m0">Q27 报告定位</span><span class="stem-hit" data-map="t2-q27-m2">meat and dairy production</span></span></p>
+<p class="stem">The <span class="stem-hit" data-map="y2021-t2-q27-m1">report by the University of Leeds</span> shows that in the UK ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t2-q27-m0">Q27 报告定位</span><span class="stem-hit" data-map="y2021-t2-q27-m2">meat and dairy production</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> farmland has been inefficiently utilized</li><li class=""><span>[B]</span> factory-style production needs reforming</li><li class="ok"><span>[C]</span> most land is used for meat and dairy production</li><li class=""><span>[D]</span> more green fields will be converted for farming</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>report by the University of Leeds ↔ report on UK food production from the University of Leeds。</span></div><div class="chain-row"><b>定位</b><span>题干报告名精确定位 P3 首句；数字 85% 是答案核心。</span></div><div class="chain-row"><b>证据</b><span>P3 说 85% of the country’s total land area is associated with meat and dairy production。</span></div><div class="chain-row"><b>替换</b><span>85 per cent of total land area = most land；associated with meat and dairy production ≈ used for meat and dairy production。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>原文没有评价“低效利用”。</span></div><div class="counter-row"><b>B</b><span>factory-style production 出现在 P4 的假设后果，不是报告显示。</span></div><div class="counter-row"><b>D</b><span>P5 提到转换土地是假设，非报告结论。</span></div></section>
 </section>
-<section class="qcard" data-key="t2-q28" id="t2-q28" style="--c:var(--q3)">
+<section class="qcard" data-key="y2021-t2-q28" id="y2021-t2-q28" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q28</span><span class="atype">原因细节题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t2-q28-m2">Crop-growing</span> in the UK is restricted due to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q28-m0">Q28 作物限制</span><span class="stem-hit" data-map="t2-q28-m1">soil or climate</span></span></p>
+<p class="stem"><span class="stem-hit" data-map="y2021-t2-q28-m2">Crop-growing</span> in the UK is restricted due to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t2-q28-m0">Q28 作物限制</span><span class="stem-hit" data-map="y2021-t2-q28-m1">soil or climate</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> its farming technology</li><li class=""><span>[B]</span> its dietary tradition</li><li class="ok"><span>[C]</span> its natural conditions</li><li class=""><span>[D]</span> its commercial interests</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>Crop-growing 原文复现；restricted due to 对应 doesn’t have the right soil or climate。</span></div><div class="chain-row"><b>定位</b><span>定位 P5 plant-based diet wouldn’t help 后的原因句；soil/climate 是限制条件。</span></div><div class="chain-row"><b>证据</b><span>P5 说 most of its terrain doesn’t have the right soil or climate to grow crops on a commercial basis。</span></div><div class="chain-row"><b>替换</b><span>terrain + soil + climate = natural conditions。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>没有说农业技术限制。</span></div><div class="counter-row"><b>B</b><span>动物畜牧占主导不是“饮食传统”造成，而是土壤气候。</span></div><div class="counter-row"><b>D</b><span>commercial basis 是种植条件语境，不是商业利益限制。</span></div></section>
 </section>
-<section class="qcard" data-key="t2-q29" id="t2-q29" style="--c:var(--q4)">
+<section class="qcard" data-key="y2021-t2-q29" id="y2021-t2-q29" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q29</span><span class="atype">段落细节题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">It can be learned from the <span class="stem-hit" data-map="t2-q29-m0">last paragraph</span> that British people ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q29-m1">fruit and vegetables</span></span></p>
+<p class="stem">It can be learned from the <span class="stem-hit" data-map="y2021-t2-q29-m0">last paragraph</span> that British people ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t2-q29-m1">fruit and vegetables</span></span></p>
 <ul class="options"><li class="ok"><span>[A]</span> rely largely on imports for fresh produce</li><li class=""><span>[B]</span> enjoy a steady rise in fruit consumption</li><li class=""><span>[C]</span> are seeking effective ways to cut calorie intake</li><li class=""><span>[D]</span> are trying to grow new varieties of grains</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>last paragraph → P6 段首锚点；fresh produce 对应 fruit and vegetables / fresh produce needs。</span></div><div class="chain-row"><b>定位</b><span>按末段定位，看 home-grown 比例和 fresh produce needs 的上限。</span></div><div class="chain-row"><b>证据</b><span>P6 说只有 23% 果蔬本土生产，极端措施也只能满足 30% fresh produce needs。</span></div><div class="chain-row"><b>替换</b><span>only 23% home-grown / only 30% needs = largely rely on imports。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>fruit consumption 的增长未出现。</span></div><div class="counter-row"><b>C</b><span>calorie intake 只是后续作物空间问题，不是减卡路里。</span></div><div class="counter-row"><b>D</b><span>grains 被提到，但不是尝试培育新品种。</span></div></section>
 </section>
-<section class="qcard" data-key="t2-q30" id="t2-q30" style="--c:var(--q5)">
+<section class="qcard" data-key="y2021-t2-q30" id="y2021-t2-q30" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q30</span><span class="atype">态度题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">The author’s attitude to <span class="stem-hit" data-map="t2-q26-m1">food self-sufficiency in the UK</span> is ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t2-q30-m0">Q30 态度汇总</span><span class="stem-hit" data-map="t2-q30-m1">food self-sufficiency in the UK</span></span></p>
+<p class="stem">The author’s attitude to <span class="stem-hit" data-map="y2021-t2-q26-m1">food self-sufficiency in the UK</span> is ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t2-q30-m0">Q30 态度汇总</span><span class="stem-hit" data-map="y2021-t2-q30-m1">food self-sufficiency in the UK</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> defensive</li><li class="ok"><span>[B]</span> doubtful</li><li class=""><span>[C]</span> tolerant</li><li class=""><span>[D]</span> optimistic</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>food self-sufficiency 与 P2 self-sufficiency 复现；态度词看 “Sounds great—but how feasible” 与后文 grave / wouldn’t help / only 30%。</span></div><div class="chain-row"><b>定位</b><span>态度题不能只看一句；从 P2 的反问进入，结合 P3—P6 对土地、畜牧、作物、果蔬的连续限制。</span></div><div class="chain-row"><b>证据</b><span>作者先说 “how feasible is this vision?”，后文说明数据 grave、plant-based diet wouldn’t help、极端措施也 only 30%。</span></div><div class="chain-row"><b>替换</b><span>how feasible + grave + wouldn’t help + only = doubtful。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>作者不是为自给辩护。</span></div><div class="counter-row"><b>C</b><span>tolerant 表示宽容接受，文中是可行性怀疑。</span></div><div class="counter-row"><b>D</b><span>“Sounds great”后接 but 并被多段数据否定，非乐观。</span></div></section>
@@ -286,25 +227,25 @@
 <h2>Text 3｜高分阅读路径图解析</h2>
 <p>Q31—Q35。科技巨头小额收购。围绕 acqui-hire、critics、FTC 调查和金融压力判断。</p>
 </div>
-<nav class="text-nav"><button data-target="t3-q31" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q31</button><button data-target="t3-q32" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q32</button><button data-target="t3-q33" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q33</button><button data-target="t3-q34" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q34</button><button data-target="t3-q35" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q35</button></nav>
+<nav class="text-nav"><button data-target="y2021-t3-q31" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q31</button><button data-target="y2021-t3-q32" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q32</button><button data-target="y2021-t3-q33" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q33</button><button data-target="y2021-t3-q34" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q34</button><button data-target="y2021-t3-q35" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q35</button></nav>
 </header>
-<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t3-q31" data-target="t3-q31" style="--c:var(--q1)">
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="y2021-t3-q31" data-target="y2021-t3-q31" style="--c:var(--q1)">
 <b>Q31｜细节题</b>
 <p>P1—P2：Wunderlist/Sunrise 被收购后产品废弃，但工程师留任。</p>
 </article>
-<article class="route-card" data-key="t3-q32" data-target="t3-q32" style="--c:var(--q2)">
+<article class="route-card" data-key="y2021-t3-q32" data-target="y2021-t3-q32" style="--c:var(--q2)">
 <b>Q32｜观点细节题</b>
 <p>P3+P7：critics 认为 Big Tech 会吞掉或关闭潜在竞争者。</p>
 </article>
-<article class="route-card" data-key="t3-q33" data-target="t3-q33" style="--c:var(--q3)">
+<article class="route-card" data-key="y2021-t3-q33" data-target="y2021-t3-q33" style="--c:var(--q3)">
 <b>Q33｜观点推断题</b>
 <p>P4：Arnold 说对自己有利，但不确定对美国经济是否有利。</p>
 </article>
-<article class="route-card" data-key="t3-q34" data-target="t3-q34" style="--c:var(--q4)">
+<article class="route-card" data-key="y2021-t3-q34" data-target="y2021-t3-q34" style="--c:var(--q4)">
 <b>Q34｜细节题</b>
 <p>P5：FTC asked companies for information about many small acquisitions。</p>
 </article>
-<article class="route-card" data-key="t3-q35" data-target="t3-q35" style="--c:var(--q5)">
+<article class="route-card" data-key="y2021-t3-q35" data-target="y2021-t3-q35" style="--c:var(--q5)">
 <b>Q35｜细节推断题</b>
 <p>P6：小额收购支出相比巨额储备只是 a drop in the ocean。</p>
 </article></div></section>
@@ -312,63 +253,63 @@
 <article class="article-panel">
 <div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div>
 <div class="article-body article-text">
-<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t3-q31" data-map="t3-q31-m0" style="--c:var(--q1)">Q31 并购后</span>When Microsoft bought task management app <mark class="kw" data-key="t3-q31" data-map="t3-q31-m1" style="--c:var(--q1)">Wunderlist</mark> and mobile calendar <mark class="kw" data-key="t3-q31" data-map="t3-q31-m2" style="--c:var(--q1)">Sunrise</mark> in 2015, it picked two newcomers that were attracting considerable buzz in Silicon Valley. Microsoft’s own Office dominates the market for “productivity” software, but the start-ups represented a new wave of technology designed from the ground up for the smartphone world.</p>
-<p class="para"><span class="pnum">P2</span>Both apps, however, were later scrapped after Microsoft said it had used their best features in its own products. <span class="ev" data-key="t3-q31" data-label="Q31" style="--c:var(--q1)">Their teams of engineers stayed on</span>, making them two of the many “acqui-hires” that the biggest companies have used to feed their great hunger for tech talent.</p>
-<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t3-q32" data-map="t3-q32-m0" style="--c:var(--q2)">Q32 批评者</span>To Microsoft’s <mark class="kw" data-key="t3-q32" data-map="t3-q32-m1" style="--c:var(--q2)">critics</mark>, the fates of Wunderlist and Sunrise are examples of <span class="ev" data-key="t3-q32" data-label="Q32" style="--c:var(--q2)">a remorseless drive by Big Tech to chew up any innovative companies that lie in their path</span>. “<span class="ev" data-key="t3-q32" data-label="Q32" style="--c:var(--q2)">They bought the seedlings and closed them down</span>,” complained <mark class="kw" data-key="t3-q33" data-map="t3-q33-m1" style="--c:var(--q3)">Paul Arnold</mark>, a partner at San Francisco-based Switch Ventures, putting an end to businesses that might one day turn into <mark class="kw" data-key="t3-q32" data-map="t3-q32-m2" style="--c:var(--q2)">competitors</mark>. Microsoft declined to comment.</p>
-<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t3-q33" data-map="t3-q33-m0" style="--c:var(--q3)">Q33 Arnold 担忧</span>Like other start-up investors, Mr Arnold’s own business often depends on selling start-ups to larger tech companies, though he admits to mixed feelings about the result: “I think these things are good for me, if I put my selfish hat on. <span class="ev" data-key="t3-q33" data-label="Q33" style="--c:var(--q3)">But are they good for the <mark class="kw" data-key="t3-q33" data-map="t3-q33-m2" style="--c:var(--q3)">American economy</mark>? I don’t know.</span>”</p>
-<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t3-q34" data-map="t3-q34-m0" style="--c:var(--q4)">Q34 FTC</span>The <mark class="kw" data-key="t3-q34" data-map="t3-q34-m1" style="--c:var(--q4)">U.S. Federal Trade Commission</mark> says it wants to find the answer to that question. This week, it <span class="ev" data-key="t3-q34" data-label="Q34" style="--c:var(--q4)">asked the five most valuable U.S. tech companies for information about their many <mark class="kw" data-key="t3-q34" data-map="t3-q34-m2" style="--c:var(--q4)">small acquisitions</mark> over the past decade</span>. Although only a research project at this stage, the request has raised the prospect of regulators wading into early-stage tech markets that until now have been beyond their reach.</p>
-<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="t3-q35" data-map="t3-q35-m0" style="--c:var(--q5)">Q35 金融压力</span>Given their combined market value of more than $5.5 trillion, rifling through such small deals—many of them much less prominent than Wunderlist and Sunrise—might seem beside the point. <span class="ev" data-key="t3-q35" data-label="Q35" style="--c:var(--q5)">Between them, the <mark class="kw" data-key="t3-q35" data-map="t3-q35-m1" style="--c:var(--q5)">five biggest tech companies</mark> have spent an average of only $3.4 billion a year on sub-$1 billion acquisitions over the past five years—a drop in the ocean compared with their massive financial reserves</span>, and the more than $130 billion of venture capital that was invested in the U.S. last year.</p>
-<p class="para"><span class="pnum">P7</span>However, critics say the big companies use such deals to <span class="ev" data-key="t3-q32" data-label="Q32" style="--c:var(--q2)">buy their most threatening potential competitors before their businesses have a chance to gain momentum, in some cases as part of a “buy and kill” tactic to simply close them down</span>.</p>
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="y2021-t3-q31" data-map="y2021-t3-q31-m0" style="--c:var(--q1)">Q31 并购后</span>When Microsoft bought task management app <mark class="kw" data-key="y2021-t3-q31" data-map="y2021-t3-q31-m1" style="--c:var(--q1)">Wunderlist</mark> and mobile calendar <mark class="kw" data-key="y2021-t3-q31" data-map="y2021-t3-q31-m2" style="--c:var(--q1)">Sunrise</mark> in 2015, it picked two newcomers that were attracting considerable buzz in Silicon Valley. Microsoft’s own Office dominates the market for “productivity” software, but the start-ups represented a new wave of technology designed from the ground up for the smartphone world.</p>
+<p class="para"><span class="pnum">P2</span>Both apps, however, were later scrapped after Microsoft said it had used their best features in its own products. <span class="ev" data-key="y2021-t3-q31" data-label="Q31" style="--c:var(--q1)">Their teams of engineers stayed on</span>, making them two of the many “acqui-hires” that the biggest companies have used to feed their great hunger for tech talent.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="y2021-t3-q32" data-map="y2021-t3-q32-m0" style="--c:var(--q2)">Q32 批评者</span>To Microsoft’s <mark class="kw" data-key="y2021-t3-q32" data-map="y2021-t3-q32-m1" style="--c:var(--q2)">critics</mark>, the fates of Wunderlist and Sunrise are examples of <span class="ev" data-key="y2021-t3-q32" data-label="Q32" style="--c:var(--q2)">a remorseless drive by Big Tech to chew up any innovative companies that lie in their path</span>. “<span class="ev" data-key="y2021-t3-q32" data-label="Q32" style="--c:var(--q2)">They bought the seedlings and closed them down</span>,” complained <mark class="kw" data-key="y2021-t3-q33" data-map="y2021-t3-q33-m1" style="--c:var(--q3)">Paul Arnold</mark>, a partner at San Francisco-based Switch Ventures, putting an end to businesses that might one day turn into <mark class="kw" data-key="y2021-t3-q32" data-map="y2021-t3-q32-m2" style="--c:var(--q2)">competitors</mark>. Microsoft declined to comment.</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="y2021-t3-q33" data-map="y2021-t3-q33-m0" style="--c:var(--q3)">Q33 Arnold 担忧</span>Like other start-up investors, Mr Arnold’s own business often depends on selling start-ups to larger tech companies, though he admits to mixed feelings about the result: “I think these things are good for me, if I put my selfish hat on. <span class="ev" data-key="y2021-t3-q33" data-label="Q33" style="--c:var(--q3)">But are they good for the <mark class="kw" data-key="y2021-t3-q33" data-map="y2021-t3-q33-m2" style="--c:var(--q3)">American economy</mark>? I don’t know.</span>”</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="y2021-t3-q34" data-map="y2021-t3-q34-m0" style="--c:var(--q4)">Q34 FTC</span>The <mark class="kw" data-key="y2021-t3-q34" data-map="y2021-t3-q34-m1" style="--c:var(--q4)">U.S. Federal Trade Commission</mark> says it wants to find the answer to that question. This week, it <span class="ev" data-key="y2021-t3-q34" data-label="Q34" style="--c:var(--q4)">asked the five most valuable U.S. tech companies for information about their many <mark class="kw" data-key="y2021-t3-q34" data-map="y2021-t3-q34-m2" style="--c:var(--q4)">small acquisitions</mark> over the past decade</span>. Although only a research project at this stage, the request has raised the prospect of regulators wading into early-stage tech markets that until now have been beyond their reach.</p>
+<p class="para"><span class="pnum">P6</span><span class="scope-anchor" data-key="y2021-t3-q35" data-map="y2021-t3-q35-m0" style="--c:var(--q5)">Q35 金融压力</span>Given their combined market value of more than $5.5 trillion, rifling through such small deals—many of them much less prominent than Wunderlist and Sunrise—might seem beside the point. <span class="ev" data-key="y2021-t3-q35" data-label="Q35" style="--c:var(--q5)">Between them, the <mark class="kw" data-key="y2021-t3-q35" data-map="y2021-t3-q35-m1" style="--c:var(--q5)">five biggest tech companies</mark> have spent an average of only $3.4 billion a year on sub-$1 billion acquisitions over the past five years—a drop in the ocean compared with their massive financial reserves</span>, and the more than $130 billion of venture capital that was invested in the U.S. last year.</p>
+<p class="para"><span class="pnum">P7</span>However, critics say the big companies use such deals to <span class="ev" data-key="y2021-t3-q32" data-label="Q32" style="--c:var(--q2)">buy their most threatening potential competitors before their businesses have a chance to gain momentum, in some cases as part of a “buy and kill” tactic to simply close them down</span>.</p>
 </div>
 </article>
 <aside class="analysis-panel">
 <div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div>
-<div class="analysis-body"><section class="qcard" data-key="t3-q31" id="t3-q31" style="--c:var(--q1)">
+<div class="analysis-body"><section class="qcard" data-key="y2021-t3-q31" id="y2021-t3-q31" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q31</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">What is true about <span class="stem-hit" data-map="t3-q31-m1">Wunderlist</span> and <span class="stem-hit" data-map="t3-q31-m2">Sunrise</span> after their acquisitions?<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q31-m0">Q31 并购后</span></span></p>
+<p class="stem">What is true about <span class="stem-hit" data-map="y2021-t3-q31-m1">Wunderlist</span> and <span class="stem-hit" data-map="y2021-t3-q31-m2">Sunrise</span> after their acquisitions?<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t3-q31-m0">Q31 并购后</span></span></p>
 <ul class="options"><li class="ok"><span>[A]</span> Their engineers were retained</li><li class=""><span>[B]</span> Their market values declined</li><li class=""><span>[C]</span> Their tech features improved</li><li class=""><span>[D]</span> Their products were re-priced</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>Wunderlist / Sunrise 原词复现；after acquisitions 对应 Microsoft bought 后的 P2 later。</span></div><div class="chain-row"><b>定位</b><span>先用两款 app 名称定位 P1，再顺读 P2 “however, were later...”后的并购后结果。</span></div><div class="chain-row"><b>证据</b><span>P2 明说 “Their teams of engineers stayed on”。</span></div><div class="chain-row"><b>替换</b><span>stayed on = were retained。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>没有给出市场价值下降。</span></div><div class="counter-row"><b>C</b><span>best features 被用于微软产品，不是它们自己的技术功能 improved。</span></div><div class="counter-row"><b>D</b><span>re-priced 未出现。</span></div></section>
 </section>
-<section class="qcard" data-key="t3-q32" id="t3-q32" style="--c:var(--q2)">
+<section class="qcard" data-key="y2021-t3-q32" id="y2021-t3-q32" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q32</span><span class="atype">观点细节题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">Microsoft’s <span class="stem-hit" data-map="t3-q32-m1">critics</span> believe that the big tech companies tend to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q32-m0">Q32 批评者</span><span class="stem-hit" data-map="t3-q32-m2">competitors</span></span></p>
+<p class="stem">Microsoft’s <span class="stem-hit" data-map="y2021-t3-q32-m1">critics</span> believe that the big tech companies tend to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t3-q32-m0">Q32 批评者</span><span class="stem-hit" data-map="y2021-t3-q32-m2">competitors</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> exaggerate their product quality</li><li class="ok"><span>[B]</span> eliminate their potential competitors</li><li class=""><span>[C]</span> treat new tech talent unfairly</li><li class=""><span>[D]</span> ignore public opinions</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>critics 原词复现；potential competitors 对应 competitors / threatening potential competitors。</span></div><div class="chain-row"><b>定位</b><span>题干 critics 锁定 P3；末段 critics say 再次总结，形成闭环证据。</span></div><div class="chain-row"><b>证据</b><span>P3 说 Big Tech chew up innovative companies，P7 说 buy threatening potential competitors and close them down。</span></div><div class="chain-row"><b>替换</b><span>chew up / buy and kill / close down = eliminate；competitors = potential competitors。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>没有说夸大产品质量。</span></div><div class="counter-row"><b>C</b><span>工程师留任反而用于 tech talent，批评点不是不公平对待人才。</span></div><div class="counter-row"><b>D</b><span>Microsoft declined to comment 不是“忽视公众意见”。</span></div></section>
 </section>
-<section class="qcard" data-key="t3-q33" id="t3-q33" style="--c:var(--q3)">
+<section class="qcard" data-key="y2021-t3-q33" id="y2021-t3-q33" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q33</span><span class="atype">观点推断题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t3-q33-m1">Paul Arnold</span> is concerned that small acquisitions might ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q33-m0">Q33 Arnold 担忧</span><span class="stem-hit" data-map="t3-q33-m2">American economy</span></span></p>
+<p class="stem"><span class="stem-hit" data-map="y2021-t3-q33-m1">Paul Arnold</span> is concerned that small acquisitions might ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t3-q33-m0">Q33 Arnold 担忧</span><span class="stem-hit" data-map="y2021-t3-q33-m2">American economy</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> weaken big tech companies</li><li class=""><span>[B]</span> worsen market competition</li><li class="ok"><span>[C]</span> harm the national economy</li><li class=""><span>[D]</span> discourage start-up investors</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>Paul Arnold 原词复现；small acquisitions 对应 “these things”/selling start-ups to larger tech companies。</span></div><div class="chain-row"><b>定位</b><span>定位 P4 Arnold 引语；转折 But 后是担忧核心。</span></div><div class="chain-row"><b>证据</b><span>Arnold 说这些交易对自己好，但 “Are they good for the American economy? I don’t know.”</span></div><div class="chain-row"><b>替换</b><span>not sure whether good for American economy = concerned they might harm the national economy。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>大公司用收购满足人才和竞争需求，不是削弱大公司。</span></div><div class="counter-row"><b>B</b><span>“competition”确实受影响，但 Arnold 这句直接落点是 American economy；B 范围偏窄且不是他的原话重心。</span></div><div class="counter-row"><b>D</b><span>他自己业务依赖出售 start-ups，没有说会打击投资者。</span></div></section>
 </section>
-<section class="qcard" data-key="t3-q34" id="t3-q34" style="--c:var(--q4)">
+<section class="qcard" data-key="y2021-t3-q34" id="y2021-t3-q34" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q34</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem">The <span class="stem-hit" data-map="t3-q34-m1">US Federal Trade Commission</span> intends to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q34-m0">Q34 FTC</span><span class="stem-hit" data-map="t3-q34-m2">small acquisitions</span></span></p>
+<p class="stem">The <span class="stem-hit" data-map="y2021-t3-q34-m1">US Federal Trade Commission</span> intends to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t3-q34-m0">Q34 FTC</span><span class="stem-hit" data-map="y2021-t3-q34-m2">small acquisitions</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> limit Big Tech’s expansion</li><li class=""><span>[B]</span> encourage research collaboration</li><li class="ok"><span>[C]</span> examine small acquisitions</li><li class=""><span>[D]</span> supervise start-ups’ operation</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>US Federal Trade Commission 原词复现；small acquisitions 原词复现。</span></div><div class="chain-row"><b>定位</b><span>定位 P5 FTC 句；“asked ... for information about ... small acquisitions”说明其意图。</span></div><div class="chain-row"><b>证据</b><span>FTC asked the five most valuable U.S. tech companies for information about their many small acquisitions over the past decade。</span></div><div class="chain-row"><b>替换</b><span>ask for information about = examine；small acquisitions 原词复现。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>可能引出监管，但当前阶段是 research project，不是直接限制扩张。</span></div><div class="counter-row"><b>B</b><span>research project 是调查性质，不是鼓励合作研究。</span></div><div class="counter-row"><b>D</b><span>关注对象是大型科技公司的小额收购，不是监管 start-ups 运营。</span></div></section>
 </section>
-<section class="qcard" data-key="t3-q35" id="t3-q35" style="--c:var(--q5)">
+<section class="qcard" data-key="y2021-t3-q35" id="y2021-t3-q35" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q35</span><span class="atype">细节推断题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">For the <span class="stem-hit" data-map="t3-q35-m1">five biggest tech companies</span>, their small acquisitions have ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t3-q35-m0">Q35 金融压力</span></span></p>
+<p class="stem">For the <span class="stem-hit" data-map="y2021-t3-q35-m1">five biggest tech companies</span>, their small acquisitions have ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t3-q35-m0">Q35 金融压力</span></span></p>
 <ul class="options"><li class="ok"><span>[A]</span> brought little financial pressure</li><li class=""><span>[B]</span> raised few management challenges</li><li class=""><span>[C]</span> set an example for future deals</li><li class=""><span>[D]</span> generated considerable profits</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>five biggest tech companies 原文复现；small acquisitions 对应 sub-$1 billion acquisitions / small deals。</span></div><div class="chain-row"><b>定位</b><span>定位 P6 five biggest tech companies；看支出金额与 financial reserves 的比较。</span></div><div class="chain-row"><b>证据</b><span>五大公司每年平均只花 $3.4 billion 做小额收购，相比其 massive financial reserves 是 a drop in the ocean。</span></div><div class="chain-row"><b>替换</b><span>a drop in the ocean compared with reserves = little financial pressure。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>管理挑战没有讨论。</span></div><div class="counter-row"><b>C</b><span>没有说给未来交易树立榜样。</span></div><div class="counter-row"><b>D</b><span>没有说这些小收购产生大量利润。</span></div></section>
@@ -382,25 +323,25 @@
 <h2>Text 4｜高分阅读路径图解析</h2>
 <p>Q36—Q40。直觉与深思的边界。研究主旨、例证作用、复杂决策建议与末段任务分类闭环。</p>
 </div>
-<nav class="text-nav"><button data-target="t4-q36" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q36</button><button data-target="t4-q37" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q37</button><button data-target="t4-q38" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q38</button><button data-target="t4-q39" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q39</button><button data-target="t4-q40" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q40</button></nav>
+<nav class="text-nav"><button data-target="y2021-t4-q36" style="--c:var(--q1);border-color:var(--c);color:var(--c)">Q36</button><button data-target="y2021-t4-q37" style="--c:var(--q2);border-color:var(--c);color:var(--c)">Q37</button><button data-target="y2021-t4-q38" style="--c:var(--q3);border-color:var(--c);color:var(--c)">Q38</button><button data-target="y2021-t4-q39" style="--c:var(--q4);border-color:var(--c);color:var(--c)">Q39</button><button data-target="y2021-t4-q40" style="--c:var(--q5);border-color:var(--c);color:var(--c)">Q40</button></nav>
 </header>
-<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="t4-q36" data-target="t4-q36" style="--c:var(--q1)">
+<section class="route"><h3>题目顺序与原文证据分布</h3><div class="route-grid"><article class="route-card" data-key="y2021-t4-q36" data-target="y2021-t4-q36" style="--c:var(--q1)">
 <b>Q36｜研究主旨题</b>
 <p>P1：Ambady thin slicing 研究显示短时间判断与学期末评价强相关。</p>
 </article>
-<article class="route-card" data-key="t4-q37" data-target="t4-q37" style="--c:var(--q2)">
+<article class="route-card" data-key="y2021-t4-q37" data-target="y2021-t4-q37" style="--c:var(--q2)">
 <b>Q37｜细节题</b>
 <p>P2：要求写判断理由后，准确率下降，因为注意力落到误导性细节。</p>
 </article>
-<article class="route-card" data-key="t4-q38" data-target="t4-q38" style="--c:var(--q3)">
+<article class="route-card" data-key="y2021-t4-q38" data-target="y2021-t4-q38" style="--c:var(--q3)">
 <b>Q38｜例证题</b>
 <p>P3：Hall 用驾驶手动挡说明想太多反而干扰。</p>
 </article>
-<article class="route-card" data-key="t4-q39" data-target="t4-q39" style="--c:var(--q4)">
+<article class="route-card" data-key="y2021-t4-q39" data-target="y2021-t4-q39" style="--c:var(--q4)">
 <b>Q39｜应用细节题</b>
 <p>P4：复杂购车决策中，关注 feelings 胜过 details。</p>
 </article>
-<article class="route-card" data-key="t4-q40" data-target="t4-q40" style="--c:var(--q5)">
+<article class="route-card" data-key="y2021-t4-q40" data-target="y2021-t4-q40" style="--c:var(--q5)">
 <b>Q40｜段落推断题</b>
 <p>P5：gut 会伤害 reflective thinking tasks，帮助直觉创造类任务。</p>
 </article></div></section>
@@ -408,61 +349,61 @@
 <article class="article-panel">
 <div class="panel-head"><h3>完整原文｜定位词与证据原位标注</h3><p>彩色 marker = 题干定位词；粗下划线 + Q 标签 = 作答证据。</p></div>
 <div class="article-body article-text">
-<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="t4-q36" data-map="t4-q36-m0" style="--c:var(--q1)">Q36 Ambady 研究</span>We’re fairly good at judging people based on <mark class="kw" data-key="t4-q36" data-map="t4-q36-m1" style="--c:var(--q1)">first impressions</mark>, thin slices of experience ranging from a glimpse of a photo to a five-minute interaction, and deliberation can be not only extraneous but intrusive. In one study of the ability she called “<mark class="kw" data-key="t4-q36" data-map="t4-q36-m2" style="--c:var(--q1)">thin slicing</mark>,” the late psychologist <mark class="kw" data-key="t4-q36" data-map="t4-q36-m3" style="--c:var(--q1)">Nalini Ambady</mark> asked participants to watch silent 10-second video clips of professors and to rate the instructor’s overall effectiveness. <span class="ev" data-key="t4-q36" data-label="Q36" style="--c:var(--q1)">Their ratings correlated strongly with students’ end-of-semester ratings</span>. Another set of participants had to count backward from 1,000 by nines as they watched the clips, occupying their conscious working memory. <span class="ev" data-key="t4-q36" data-label="Q36" style="--c:var(--q1)">Their ratings were just as accurate</span>, demonstrating the intuitive nature of the social processing.</p>
-<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="t4-q37" data-map="t4-q37-m0" style="--c:var(--q2)">Q37 准确率下降</span>Critically, another group was asked to spend a minute writing down reasons for their judgment, before giving the rating. <span class="ev" data-key="t4-q37" data-label="Q37" style="--c:var(--q2)">Accuracy dropped dramatically.</span> Ambady suspected that deliberation <span class="ev" data-key="t4-q37" data-label="Q37" style="--c:var(--q2)">focused them on vivid but misleading cues, such as certain <mark class="kw" data-key="t4-q37" data-map="t4-q37-m1" style="--c:var(--q2)">gestures or utterances</mark>, rather than letting the complex interplay of subtle signals form a holistic impression</span>. She found similar interference when participants watched 15-second clips of pairs of people and judged whether they were strangers, friends, or dating partners.</p>
-<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="t4-q38" data-map="t4-q38-m0" style="--c:var(--q3)">Q38 Hall 类比</span>Other research shows we’re better at detecting deception from thin slices when we rely on intuition instead of reflection. “It’s as if you’re <mark class="kw" data-key="t4-q38" data-map="t4-q38-m1" style="--c:var(--q3)">driving a stick shift</mark>,” says <mark class="kw" data-key="t4-q38" data-map="t4-q38-m2" style="--c:var(--q3)">Judith Hall</mark>, a psychologist at Northeastern University, “and if you start thinking about it too much, you can’t remember what you’re doing. <span class="ev" data-key="t4-q38" data-label="Q38" style="--c:var(--q3)">But if you go on automatic pilot, you’re fine.</span> Much of our social life is like that.”</p>
-<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="t4-q39" data-map="t4-q39-m0" style="--c:var(--q4)">Q39 复杂决策</span>Thinking too much can also harm our ability to form preferences. College students’ ratings of strawberry jams and college courses aligned better with experts’ opinions when the students weren’t asked to analyze their rationale. And people made <mark class="kw" data-key="t4-q39" data-map="t4-q39-m1" style="--c:var(--q4)">car-buying decisions</mark> that were both objectively better and more personally satisfying when asked to <span class="ev" data-key="t4-q39" data-label="Q39" style="--c:var(--q4)">focus on their <mark class="kw" data-key="t4-q39" data-map="t4-q39-m2" style="--c:var(--q4)">feelings</mark> rather than on details, but only if the decision was <mark class="kw" data-key="t4-q39" data-map="t4-q39-m3" style="--c:var(--q4)">complex</mark>—when they had a lot of information to process</span>.</p>
-<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="t4-q40" data-map="t4-q40-m0" style="--c:var(--q5)">Q40 最后一段</span>Intuition’s special powers are unleashed only in certain circumstances. In one study, participants completed a battery of eight tasks, including four that tapped <mark class="kw" data-key="t4-q40" data-map="t4-q40-m1" style="--c:var(--q5)">reflective thinking</mark> (discerning rules, comprehending vocabulary) and four that tapped intuition and creativity (generating new products or figures of speech). Then they rated the degree to which they had used intuition (“gut feelings,” “hunches,” “my heart”). <span class="ev" data-key="t4-q40" data-label="Q40" style="--c:var(--q5)">Use of their <mark class="kw" data-key="t4-q40" data-map="t4-q40-m2" style="--c:var(--q5)">gut</mark> hurt their performance on the first four tasks, as expected, and helped them on the rest.</span> Sometimes the heart is smarter than the head.</p>
-<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="t4-q37" data-map="t4-q37-m3">Ambady’s study</span> </div></div>
+<p class="para"><span class="pnum">P1</span><span class="scope-anchor" data-key="y2021-t4-q36" data-map="y2021-t4-q36-m0" style="--c:var(--q1)">Q36 Ambady 研究</span>We’re fairly good at judging people based on <mark class="kw" data-key="y2021-t4-q36" data-map="y2021-t4-q36-m1" style="--c:var(--q1)">first impressions</mark>, thin slices of experience ranging from a glimpse of a photo to a five-minute interaction, and deliberation can be not only extraneous but intrusive. In one study of the ability she called “<mark class="kw" data-key="y2021-t4-q36" data-map="y2021-t4-q36-m2" style="--c:var(--q1)">thin slicing</mark>,” the late psychologist <mark class="kw" data-key="y2021-t4-q36" data-map="y2021-t4-q36-m3" style="--c:var(--q1)">Nalini Ambady</mark> asked participants to watch silent 10-second video clips of professors and to rate the instructor’s overall effectiveness. <span class="ev" data-key="y2021-t4-q36" data-label="Q36" style="--c:var(--q1)">Their ratings correlated strongly with students’ end-of-semester ratings</span>. Another set of participants had to count backward from 1,000 by nines as they watched the clips, occupying their conscious working memory. <span class="ev" data-key="y2021-t4-q36" data-label="Q36" style="--c:var(--q1)">Their ratings were just as accurate</span>, demonstrating the intuitive nature of the social processing.</p>
+<p class="para"><span class="pnum">P2</span><span class="scope-anchor" data-key="y2021-t4-q37" data-map="y2021-t4-q37-m0" style="--c:var(--q2)">Q37 准确率下降</span>Critically, another group was asked to spend a minute writing down reasons for their judgment, before giving the rating. <span class="ev" data-key="y2021-t4-q37" data-label="Q37" style="--c:var(--q2)">Accuracy dropped dramatically.</span> Ambady suspected that deliberation <span class="ev" data-key="y2021-t4-q37" data-label="Q37" style="--c:var(--q2)">focused them on vivid but misleading cues, such as certain <mark class="kw" data-key="y2021-t4-q37" data-map="y2021-t4-q37-m1" style="--c:var(--q2)">gestures or utterances</mark>, rather than letting the complex interplay of subtle signals form a holistic impression</span>. She found similar interference when participants watched 15-second clips of pairs of people and judged whether they were strangers, friends, or dating partners.</p>
+<p class="para"><span class="pnum">P3</span><span class="scope-anchor" data-key="y2021-t4-q38" data-map="y2021-t4-q38-m0" style="--c:var(--q3)">Q38 Hall 类比</span>Other research shows we’re better at detecting deception from thin slices when we rely on intuition instead of reflection. “It’s as if you’re <mark class="kw" data-key="y2021-t4-q38" data-map="y2021-t4-q38-m1" style="--c:var(--q3)">driving a stick shift</mark>,” says <mark class="kw" data-key="y2021-t4-q38" data-map="y2021-t4-q38-m2" style="--c:var(--q3)">Judith Hall</mark>, a psychologist at Northeastern University, “and if you start thinking about it too much, you can’t remember what you’re doing. <span class="ev" data-key="y2021-t4-q38" data-label="Q38" style="--c:var(--q3)">But if you go on automatic pilot, you’re fine.</span> Much of our social life is like that.”</p>
+<p class="para"><span class="pnum">P4</span><span class="scope-anchor" data-key="y2021-t4-q39" data-map="y2021-t4-q39-m0" style="--c:var(--q4)">Q39 复杂决策</span>Thinking too much can also harm our ability to form preferences. College students’ ratings of strawberry jams and college courses aligned better with experts’ opinions when the students weren’t asked to analyze their rationale. And people made <mark class="kw" data-key="y2021-t4-q39" data-map="y2021-t4-q39-m1" style="--c:var(--q4)">car-buying decisions</mark> that were both objectively better and more personally satisfying when asked to <span class="ev" data-key="y2021-t4-q39" data-label="Q39" style="--c:var(--q4)">focus on their <mark class="kw" data-key="y2021-t4-q39" data-map="y2021-t4-q39-m2" style="--c:var(--q4)">feelings</mark> rather than on details, but only if the decision was <mark class="kw" data-key="y2021-t4-q39" data-map="y2021-t4-q39-m3" style="--c:var(--q4)">complex</mark>—when they had a lot of information to process</span>.</p>
+<p class="para"><span class="pnum">P5</span><span class="scope-anchor" data-key="y2021-t4-q40" data-map="y2021-t4-q40-m0" style="--c:var(--q5)">Q40 最后一段</span>Intuition’s special powers are unleashed only in certain circumstances. In one study, participants completed a battery of eight tasks, including four that tapped <mark class="kw" data-key="y2021-t4-q40" data-map="y2021-t4-q40-m1" style="--c:var(--q5)">reflective thinking</mark> (discerning rules, comprehending vocabulary) and four that tapped intuition and creativity (generating new products or figures of speech). Then they rated the degree to which they had used intuition (“gut feelings,” “hunches,” “my heart”). <span class="ev" data-key="y2021-t4-q40" data-label="Q40" style="--c:var(--q5)">Use of their <mark class="kw" data-key="y2021-t4-q40" data-map="y2021-t4-q40-m2" style="--c:var(--q5)">gut</mark> hurt their performance on the first four tasks, as expected, and helped them on the rest.</span> Sometimes the heart is smarter than the head.</p>
+<div class="source-supplement"><h4>定位闭环补全层</h4><span class="kw source-fix" data-key="y2021-t4-q37" data-map="y2021-t4-q37-m3">Ambady’s study</span> </div></div>
 </article>
 <aside class="analysis-panel">
 <div class="panel-head"><h3>逐题证据链解析</h3><p>每题按“题干关键词—原文定位—证据—替换—排除”闭环。</p></div>
-<div class="analysis-body"><section class="qcard" data-key="t4-q36" id="t4-q36" style="--c:var(--q1)">
+<div class="analysis-body"><section class="qcard" data-key="y2021-t4-q36" id="y2021-t4-q36" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q36</span><span class="atype">研究主旨题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t4-q36-m3">Nalini Ambady’s study</span> deals with ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q36-m0">Q36 Ambady 研究</span><span class="stem-hit" data-map="t4-q36-m1">first impressions</span><span class="stem-hit" data-map="t4-q36-m2">thin slicing</span></span></p>
+<p class="stem"><span class="stem-hit" data-map="y2021-t4-q36-m3">Nalini Ambady’s study</span> deals with ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t4-q36-m0">Q36 Ambady 研究</span><span class="stem-hit" data-map="y2021-t4-q36-m1">first impressions</span><span class="stem-hit" data-map="y2021-t4-q36-m2">thin slicing</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> the power of people’s memory</li><li class="ok"><span>[B]</span> the reliability of first impressions</li><li class=""><span>[C]</span> instructor-student interaction</li><li class=""><span>[D]</span> people’s ability to influence others</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>Nalini Ambady 原词复现；study 对应 In one study；first impressions / thin slicing 是研究对象。</span></div><div class="chain-row"><b>定位</b><span>先按人名 Ambady 定位 P1；看研究目的和结果：10 秒短片评分准确。</span></div><div class="chain-row"><b>证据</b><span>P1 说 ratings correlated strongly with students’ end-of-semester ratings，另一组评分也 just as accurate。</span></div><div class="chain-row"><b>替换</b><span>correlated strongly / accurate = reliability；thin slices / first impressions = first impressions。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>倒数计数占用工作记忆只是实验条件，不是研究主题。</span></div><div class="counter-row"><b>C</b><span>教授视频只是判断对象，不是研究师生互动。</span></div><div class="counter-row"><b>D</b><span>没有研究影响他人的能力。</span></div></section>
 </section>
-<section class="qcard" data-key="t4-q37" id="t4-q37" style="--c:var(--q2)">
+<section class="qcard" data-key="y2021-t4-q37" id="y2021-t4-q37" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q37</span><span class="atype">细节题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">In <span class="stem-hit" data-map="t4-q36-m3">Ambady’s study</span>, rating <span class="stem-hit" data-map="t4-q37-m0">accuracy dropped</span> when participants ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q37-m1">gestures or utterances</span><span class="stem-hit" data-map="t4-q37-m3">Ambady’s study</span></span></p>
+<p class="stem">In <span class="stem-hit" data-map="y2021-t4-q36-m3">Ambady’s study</span>, rating <span class="stem-hit" data-map="y2021-t4-q37-m0">accuracy dropped</span> when participants ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t4-q37-m1">gestures or utterances</span><span class="stem-hit" data-map="y2021-t4-q37-m3">Ambady’s study</span></span></p>
 <ul class="options"><li class="ok"><span>[A]</span> focused on specific details</li><li class=""><span>[B]</span> gave the rating in limited time</li><li class=""><span>[C]</span> watched shorter video clips</li><li class=""><span>[D]</span> discussed with one another</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>Ambady’s study 续接 P1—P2；accuracy dropped 原文复现。</span></div><div class="chain-row"><b>定位</b><span>定位 P2 “Accuracy dropped dramatically” 前后，原因在下一句 deliberation focused them on...。</span></div><div class="chain-row"><b>证据</b><span>P2 说写理由导致 deliberation focused them on vivid but misleading cues, such as gestures or utterances。</span></div><div class="chain-row"><b>替换</b><span>gestures or utterances / cues = specific details；focused them on = focused on。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>限时观看 10 秒并未降低准确率，另一组同样准确。</span></div><div class="counter-row"><b>C</b><span>15 秒短片是另一项 similar interference，不是题干的 dropped 直接条件。</span></div><div class="counter-row"><b>D</b><span>没有互相讨论。</span></div></section>
 </section>
-<section class="qcard" data-key="t4-q38" id="t4-q38" style="--c:var(--q3)">
+<section class="qcard" data-key="y2021-t4-q38" id="y2021-t4-q38" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q38</span><span class="atype">例证题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t4-q38-m2">Judith Hall</span> mentions <span class="stem-hit" data-map="t4-q38-m1">driving</span> to show that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q38-m0">Q38 Hall 类比</span></span></p>
+<p class="stem"><span class="stem-hit" data-map="y2021-t4-q38-m2">Judith Hall</span> mentions <span class="stem-hit" data-map="y2021-t4-q38-m1">driving</span> to show that ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t4-q38-m0">Q38 Hall 类比</span></span></p>
 <ul class="options"><li class="ok"><span>[A]</span> reflection can be distracting</li><li class=""><span>[B]</span> memory may be selective</li><li class=""><span>[C]</span> social skills must be cultivated</li><li class=""><span>[D]</span> deception is difficult to detect</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>Judith Hall / driving 原词复现；reflection 对应 thinking too much。</span></div><div class="chain-row"><b>定位</b><span>定位 P3 引语；类比题看类比服务的前一句和引语结论。</span></div><div class="chain-row"><b>证据</b><span>Hall 说开手动挡如果想太多会忘记怎么做，自动驾驶式反而没问题。</span></div><div class="chain-row"><b>替换</b><span>thinking too much = reflection；can’t remember what you’re doing = distracting/interfering。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>B</b><span>不是说明记忆选择性，而是过度思考干扰表现。</span></div><div class="counter-row"><b>C</b><span>没有说社交技能必须培养。</span></div><div class="counter-row"><b>D</b><span>段首说直觉下更擅长识别欺骗，不是欺骗难以识别。</span></div></section>
 </section>
-<section class="qcard" data-key="t4-q39" id="t4-q39" style="--c:var(--q4)">
+<section class="qcard" data-key="y2021-t4-q39" id="y2021-t4-q39" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q39</span><span class="atype">应用细节题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">When you are making <span class="stem-hit" data-map="t4-q39-m3">complex decisions</span>, it is advisable to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q39-m0">Q39 复杂决策</span><span class="stem-hit" data-map="t4-q39-m1">car-buying decisions</span><span class="stem-hit" data-map="t4-q39-m2">feelings</span></span></p>
+<p class="stem">When you are making <span class="stem-hit" data-map="y2021-t4-q39-m3">complex decisions</span>, it is advisable to ______.<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t4-q39-m0">Q39 复杂决策</span><span class="stem-hit" data-map="y2021-t4-q39-m1">car-buying decisions</span><span class="stem-hit" data-map="y2021-t4-q39-m2">feelings</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> collect enough data</li><li class=""><span>[B]</span> list your preferences</li><li class=""><span>[C]</span> seek expert advice</li><li class="ok"><span>[D]</span> follow your feelings</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>complex decisions 对应 P4 decision was complex；feelings 原词复现。</span></div><div class="chain-row"><b>定位</b><span>定位 P4 complex decision 句；看条件 “but only if the decision was complex”。</span></div><div class="chain-row"><b>证据</b><span>P4 说复杂购车决策中，focus on their feelings rather than on details 的结果更好且更满意。</span></div><div class="chain-row"><b>替换</b><span>focus on their feelings = follow your feelings。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>信息很多是复杂性的来源，不是建议继续收集数据。</span></div><div class="counter-row"><b>B</b><span>列偏好未出现。</span></div><div class="counter-row"><b>C</b><span>experts’ opinions 是草莓酱/课程评分参照，不是复杂决策建议。</span></div></section>
 </section>
-<section class="qcard" data-key="t4-q40" id="t4-q40" style="--c:var(--q5)">
+<section class="qcard" data-key="y2021-t4-q40" id="y2021-t4-q40" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q40</span><span class="atype">段落推断题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">What can we learn from the <span class="stem-hit" data-map="t4-q40-m0">last paragraph</span>?<span class="stem-sync-bank"><span class="stem-hit" data-map="t4-q40-m1">reflective thinking</span><span class="stem-hit" data-map="t4-q40-m2">gut</span></span></p>
+<p class="stem">What can we learn from the <span class="stem-hit" data-map="y2021-t4-q40-m0">last paragraph</span>?<span class="stem-sync-bank"><span class="stem-hit" data-map="y2021-t4-q40-m1">reflective thinking</span><span class="stem-hit" data-map="y2021-t4-q40-m2">gut</span></span></p>
 <ul class="options"><li class=""><span>[A]</span> Generating new products takes time</li><li class="ok"><span>[B]</span> Intuition may affect reflective tasks</li><li class=""><span>[C]</span> Vocabulary comprehension needs creativity</li><li class=""><span>[D]</span> Objective thinking may boost intuitiveness</li></ul>
 <div class="chain"><div class="chain-row"><b>关键词</b><span>last paragraph → P5 段首锚点；reflective tasks 对应 reflective thinking tasks。</span></div><div class="chain-row"><b>定位</b><span>按末段定位；读八项任务分类与 gut 对两类任务的不同影响。</span></div><div class="chain-row"><b>证据</b><span>P5 说 use of gut hurt performance on the first four tasks，而这四项是 reflective thinking，包括规则识别和词汇理解。</span></div><div class="chain-row"><b>替换</b><span>gut / intuition hurt performance on reflective thinking tasks = intuition may affect reflective tasks。</span></div></div>
 <section class="counter"><h4>干扰项反证</h4><div class="counter-row"><b>A</b><span>generating new products 是创造性任务例子，不说耗时。</span></div><div class="counter-row"><b>C</b><span>vocabulary 属于 reflective thinking，不是需要 creativity。</span></div><div class="counter-row"><b>D</b><span>文中没有说 objective thinking 提升 intuitiveness。</span></div></section>
@@ -475,42 +416,7 @@
 </main>
 </div>
 <script src="transition.js"></script>
-<script>
-const keyed=[...document.querySelectorAll('[data-key]')];
-const mapped=[...document.querySelectorAll('[data-map]')];
-function splitMaps(value){return String(value||'').split(/\s+/).filter(Boolean)}
-function activateKey(key,scroll=true){
-  keyed.forEach(el=>el.classList.toggle('active',el.dataset.key===String(key)));
-  if(scroll){
-    const target=document.getElementById(String(key))||document.querySelector('.kw[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.ev[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.scope-anchor[data-key="'+CSS.escape(String(key))+'"]');
-    if(target)target.scrollIntoView({behavior:'smooth',block:'center'});
-  }
-}
-function activateMaps(maps){
-  const set=new Set(Array.isArray(maps)?maps:splitMaps(maps));
-  mapped.forEach(el=>{
-    const hit=splitMaps(el.dataset.map).some(m=>set.has(m));
-    el.classList.toggle('map-active',hit);
-    el.classList.toggle('map-source-active',hit && !el.classList.contains('stem-hit'));
-  });
-}
-function clearMaps(){mapped.forEach(el=>{el.classList.remove('map-active');el.classList.remove('map-source-active')})}
-document.addEventListener('click',e=>{
-  const jump=e.target.closest('[data-target]');
-  if(jump){e.preventDefault();activateKey(jump.dataset.target);return}
-  const k=e.target.closest('[data-key]');
-  if(k){activateKey(k.dataset.key,!k.classList.contains('qcard'))}
-});
-document.addEventListener('mouseover',e=>{
-  const mapEl=e.target.closest('[data-map]');
-  if(mapEl)activateMaps(splitMaps(mapEl.dataset.map));
-  const keyEl=e.target.closest('[data-key]');
-  if(keyEl)keyed.forEach(x=>x.classList.toggle('active',x.dataset.key===keyEl.dataset.key));
-});
-document.addEventListener('mouseout',e=>{
-  if(e.target.closest('[data-map]'))clearMaps();
-});
-</script>
+<script src="year.js"></script>
 <script src="../data/seed-corpus.js"></script>
 <script src="../data/seed-index.js"></script>
 <script src="../data/seed-forms.js"></script>
