@@ -1,75 +1,94 @@
-
 (function(){
   const $ = (sel, root=document) => root.querySelector(sel);
   const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
-  const linked = $$('[data-key]');
+  const keyed = $$('[data-key]');
+  const mapped = $$('[data-map], [data-maps]');
   const chips = $$('.text-chip');
 
+  function esc(value){ return CSS.escape(String(value)); }
+  function splitMaps(value){ return String(value || '').split(/\s+/).filter(Boolean); }
   function mapsFor(el){
     if(!el) return [];
-    const raw = [el.dataset.map || '', el.dataset.maps || ''].join(' ').trim();
-    return raw ? raw.split(/\s+/).filter(Boolean) : [];
+    return splitMaps([el.dataset.map || '', el.dataset.maps || ''].join(' '));
   }
-  function esc(v){ return CSS.escape(String(v)); }
-  function stemKeysFor(key){ return $$('.stem-key[data-key="' + esc(key) + '"]'); }
-  function stemKeysForMap(map){ return $$('.stem-key[data-map="' + esc(map) + '"]'); }
-  function sourceForMap(map){ return $$('[data-map="' + esc(map) + '"], [data-maps~="' + esc(map) + '"]'); }
-  function clearStemHover(){
-    $$('.stem-key.stem-active').forEach(el => el.classList.remove('stem-active'));
-    $$('.kw.source-active,.ev.source-active,.para-target.source-active,.para-anchor.source-active').forEach(el => el.classList.remove('source-active'));
+  function hasMap(el, wanted){
+    const own = new Set(mapsFor(el));
+    return wanted.some(map => own.has(map));
   }
-  function highlightStemMaps(maps, key){
-    clearStemHover();
-    if(maps && maps.length){
-      maps.forEach(map => stemKeysForMap(map).forEach(el => el.classList.add('stem-active')));
-      maps.forEach(map => sourceForMap(map).forEach(el => {
-        if(el.classList && (el.classList.contains('kw') || el.classList.contains('ev') || el.classList.contains('para-target') || el.classList.contains('para-anchor'))){
-          el.classList.add('source-active');
-        }
-      }));
-      return;
-    }
-    if(key) stemKeysFor(key).forEach(el => el.classList.add('stem-active'));
+  function sameKey(key){ return $$('[data-key="' + esc(key) + '"]'); }
+  function targetForKey(key){
+    const escaped = esc(key);
+    return document.getElementById(String(key))
+      || $('.qcard[data-key="' + escaped + '"]')
+      || $('.kw[data-key="' + escaped + '"]')
+      || $('.ev[data-key="' + escaped + '"]')
+      || $('.scope-anchor[data-key="' + escaped + '"]')
+      || $('.para-target[data-key="' + escaped + '"]');
+  }
+  function clearMapHighlights(){
+    mapped.forEach(el => el.classList.remove('map-active', 'map-source-active', 'source-active', 'stem-active'));
+    $$('.stem-key.stem-active,.stem-hit.map-active,.kw.source-active,.ev.source-active,.para-target.source-active,.para-anchor.source-active').forEach(el => {
+      el.classList.remove('stem-active', 'map-active', 'source-active', 'map-source-active');
+    });
+  }
+  function activateMaps(maps){
+    const wanted = Array.isArray(maps) ? maps.filter(Boolean) : splitMaps(maps);
+    if(!wanted.length) return;
+    mapped.forEach(el => {
+      const hit = hasMap(el, wanted);
+      el.classList.toggle('map-active', hit);
+      el.classList.toggle('map-source-active', hit && !el.classList.contains('stem-hit') && !el.classList.contains('stem-key'));
+      el.classList.toggle('source-active', hit && (el.classList.contains('kw') || el.classList.contains('ev') || el.classList.contains('para-target') || el.classList.contains('para-anchor')));
+      el.classList.toggle('stem-active', hit && el.classList.contains('stem-key'));
+    });
   }
   function activateQuestion(key, scroll=true){
     if(!key) return;
-    linked.forEach(el => el.classList.toggle('active', el.dataset.key === String(key)));
-    highlightStemMaps([], key);
+    keyed.forEach(el => el.classList.toggle('active', el.dataset.key === String(key)));
+    clearMapHighlights();
     if(scroll){
-      const escaped = esc(key);
-      const target = document.getElementById(String(key)) || $('.kw[data-key="'+escaped+'"]') || $('.ev[data-key="'+escaped+'"]') || $('.qcard[data-key="'+escaped+'"]');
-      if(target){ target.scrollIntoView({behavior:'smooth', block:'center'}); }
+      const target = targetForKey(key);
+      if(target) target.scrollIntoView({behavior:'smooth', block:'center'});
     }
   }
+
   document.addEventListener('click', function(e){
-    const qTarget = e.target.closest('[data-target]');
-    if(qTarget){ e.preventDefault(); activateQuestion(qTarget.dataset.target); return; }
-    const k = e.target.closest('[data-key]');
-    if(k && !e.target.closest('[data-target]')){ activateQuestion(k.dataset.key, !k.classList.contains('qcard')); }
+    const jump = e.target.closest('[data-target]');
+    if(jump){
+      e.preventDefault();
+      activateQuestion(jump.dataset.target);
+      return;
+    }
+    const keyEl = e.target.closest('[data-key]');
+    if(keyEl && !e.target.closest('[data-target]')){
+      activateQuestion(keyEl.dataset.key, !keyEl.classList.contains('qcard'));
+    }
   });
+
   document.addEventListener('mouseover', function(e){
-    const el = e.target.closest('.kw[data-key], .ev[data-key], .para-target[data-key], .para-anchor[data-key], .stem-key[data-key], .route-card[data-target], .qcard[data-key]');
-    if(!el) return;
-    const key = el.dataset.key || el.dataset.target;
-    if(!key) return;
-    linked.forEach(x => x.classList.toggle('active', x.dataset.key === key));
-    highlightStemMaps(mapsFor(el), key);
+    const mapEl = e.target.closest('[data-map], [data-maps]');
+    if(mapEl){
+      activateMaps(mapsFor(mapEl));
+      const key = mapEl.dataset.key;
+      if(key) keyed.forEach(el => el.classList.toggle('active', el.dataset.key === key));
+      return;
+    }
+    const keyEl = e.target.closest('[data-key], [data-target]');
+    const key = keyEl && (keyEl.dataset.key || keyEl.dataset.target);
+    if(key) keyed.forEach(el => el.classList.toggle('active', el.dataset.key === key));
   });
+
   document.addEventListener('mouseout', function(e){
-    const source = e.target.closest('.kw[data-key], .ev[data-key], .para-target[data-key], .para-anchor[data-key], .stem-key[data-key]');
-    if(!source) return;
-    const related = e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest('.kw[data-key], .ev[data-key], .para-target[data-key], .para-anchor[data-key], .stem-key[data-key]');
-    const srcMaps = mapsFor(source).join(' ');
-    const relMaps = mapsFor(related).join(' ');
-    if(!related || srcMaps !== relMaps){ clearStemHover(); }
+    if(e.target.closest('[data-map], [data-maps]')) clearMapHighlights();
   });
+
   if('IntersectionObserver' in window){
     const observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
       if(!visible) return;
       const id = visible.target.id;
-      chips.forEach(ch => ch.classList.toggle('active', ch.getAttribute('href') === '#' + id));
-    }, {rootMargin:'-28% 0px -55% 0px', threshold:[0.18,0.32,.5]});
+      chips.forEach(chip => chip.classList.toggle('active', chip.getAttribute('href') === '#' + id));
+    }, {rootMargin:'-28% 0px -55% 0px', threshold:[0.18,0.32,0.5]});
     $$('.text-unit').forEach(unit => observer.observe(unit));
   }
 })();

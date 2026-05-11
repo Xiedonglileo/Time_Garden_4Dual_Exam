@@ -235,3 +235,22 @@ body.exam-two-page .unit-head{
 .q{border-left:6px solid var(--c);background:#fffaf3;border-radius:14px;padding:12px;margin:0 0 12px}
 @media (max-width:1120px){.analysis-panel,.side,.cards{position:static;max-height:none}.options{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
 @media print{body.exam-two-page .topbar,body.exam-two-page .page-pass,body.exam-two-page .year-masthead,body.exam-two-page .chapter-quicknav{display:none!important}.analysis-panel{position:static;max-height:none;overflow:visible}.layout{grid-template-columns:1fr}.qcard{break-inside:avoid}.text-unit{break-before:page}.text-unit:first-of-type{break-before:auto}}
+
+/* English II shared compatibility layer
+   - Extracted from the former per-page inline styles.
+   - Scoped and consolidated here so annual pages only keep content markup. */
+body.exam-two-page .text-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+body.exam-two-page .text-nav button,
+body.exam-two-page .text-nav .jump-btn{font:800 13px/1 Georgia,"Times New Roman","Noto Serif CJK SC",serif;color:var(--ink);background:#fff9f0;border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;text-decoration:none}
+body.exam-two-page .text-nav button:hover,
+body.exam-two-page .text-nav .jump-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(47,34,19,.10)}
+body.exam-two-page .english2-masthead{margin-bottom:18px}
+body.exam-two-page .answer-strip{background:#fffdfa;border:1px dashed var(--line);border-radius:18px;padding:12px 16px;margin:0 0 16px;font-size:15px;line-height:1.55;color:#4f453c}
+body.exam-two-page .qjump{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+body.exam-two-page .source-fix{display:inline-block;margin:2px 5px 2px 0}
+body.exam-two-page .stem-hit{border-radius:5px;padding:0 .08em;transition:background .15s ease,box-shadow .15s ease,color .15s ease}
+body.exam-two-page .stem-hit:hover{background:#fff4bf;cursor:pointer}
+body.exam-two-page .stem-hit.map-active{background:#fff1a8;box-shadow:0 0 0 2px #f3c94d;color:#1f1b16}
+body.exam-two-page .map-source-active{box-shadow:0 0 0 2px #f3c94d,0 6px 18px rgba(47,34,19,.12)!important;background:#fff1a8!important;color:#1f1b16!important}
+@media (max-width:1120px){body.exam-two-page .text-nav,body.exam-two-page .qjump{justify-content:flex-start}}
+

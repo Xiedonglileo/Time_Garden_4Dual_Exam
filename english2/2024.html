@@ -5,74 +5,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>2024 年考研英语二阅读路径图</title>
-<style>
-  :root{
-    --bg:#f7efe4; --paper:#fffdfa; --ink:#211c17; --muted:#74675c;
-    --line:#ded0c0; --soft:#f0e5d7;
-    --q1:#2563eb; --q2:#07845f; --q3:#7c4dcc; --q4:#d43b32; --q5:#ce7a12;
-    --shadow:0 20px 48px rgba(47,34,19,.10);
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:84px}
-  body{margin:0;background:linear-gradient(180deg,#fcf8f1 0%,var(--bg) 100%);color:var(--ink);font-family:Georgia,"Times New Roman","Noto Serif CJK SC","Source Han Serif SC","Songti SC",serif;line-height:1.58}
-  .topbar{position:sticky;top:0;z-index:80;background:rgba(255,253,250,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
-  .topbar-inner{max-width:1440px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-  .brand{font-size:18px;font-weight:950;letter-spacing:.02em;white-space:nowrap}
-  .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-  button,.jump-btn{font:800 13px/1 Georgia,"Times New Roman","Noto Serif CJK SC",serif;color:var(--ink);background:#fff9f0;border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;text-decoration:none}
-  button:hover,.jump-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(47,34,19,.10)}
-  .page{max-width:1440px;margin:0 auto;padding:24px 22px 64px}
-  .year-header{margin:0 0 18px;padding:22px 24px;border:1px solid var(--line);border-radius:28px;background:rgba(255,253,250,.72);box-shadow:var(--shadow)}
-  .year-header h1{margin:0;font-size:42px;line-height:1.08;letter-spacing:-.035em;font-weight:950}
-  .year-header p{margin:8px 0 0;color:var(--muted);font-size:15px}
-  .text-index{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-  .text-unit{margin:28px 0 42px;scroll-margin-top:90px;break-before:page}.text-unit:first-of-type{break-before:auto}
-  .unit-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end;margin-bottom:16px;padding:20px 22px;border:1px solid var(--line);border-radius:26px;background:var(--paper);box-shadow:var(--shadow)}
-  .unit-head h2{margin:0;font-size:32px;line-height:1.12;letter-spacing:-.02em}
-  .unit-head p{margin:8px 0 0;color:var(--muted);font-size:14px}
-  .text-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-  .route{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:18px 18px 16px;box-shadow:var(--shadow);margin-bottom:22px}
-  .route h3{margin:0 0 12px;font-size:18px;letter-spacing:.02em;color:#51463d}
-  .route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
-  .route-card{--c:#444;position:relative;overflow:hidden;min-height:92px;cursor:pointer;background:#fffaf3;border:1px solid var(--line);border-radius:18px;padding:14px 14px 12px 17px}
-  .route-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
-  .route-card b{display:block;color:var(--c)!important;font-size:17px;margin-bottom:6px}.route-card p{margin:0;font-size:14px;line-height:1.42;color:#5a4f45}
-  .layout{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(440px,.96fr);gap:22px;align-items:start}
-  .article-panel,.analysis-panel{background:var(--paper);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}
-  .panel-head{padding:22px 24px 12px;border-bottom:1px solid var(--line)}
-  .panel-head h3{margin:0;font-size:28px;letter-spacing:-.02em}.panel-head p{margin:6px 0 0;color:var(--muted);font-size:14px}
-  .article-body{padding:22px 26px 24px}.article-text{font-size:19px;line-height:1.86;color:#1f1b16;text-align:left}
-  .para{position:relative;margin:0 0 20px;padding-left:66px}.para:last-child{margin-bottom:0}
-  .pnum{position:absolute;left:0;top:2px;display:inline-flex;align-items:center;justify-content:center;width:38px;height:28px;border-radius:999px;background:var(--soft);color:#5a4f45;font-size:13px;font-weight:950}
-  .snum{font-size:11px;color:#9b8d7f;font-weight:950;margin-right:2px;vertical-align:super}
-  .scope-anchor{--c:#444;display:inline-flex;align-items:center;margin:0 6px 0 0;padding:4px 8px;border-radius:999px;background:var(--c);color:white;font-size:12px;font-weight:950;vertical-align:middle;cursor:pointer;white-space:nowrap}
-  .kw{--c:#444;position:relative;display:inline;color:var(--c)!important;font-weight:950;padding:0 .12em .02em;border-radius:5px;text-decoration-line:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--c)!important;background:linear-gradient(to top,color-mix(in srgb,var(--c) 22%,transparent) 0%,color-mix(in srgb,var(--c) 22%,transparent) 48%,transparent 48%,transparent 100%);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 16%,transparent);cursor:pointer}
-  .ev{--c:#444;color:var(--ink);font-weight:650;border-radius:3px;padding:0 1px 1px;text-decoration-line:underline;text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-color:var(--c)!important;background:color-mix(in srgb,var(--c) 8%,transparent);cursor:pointer;transition:background .18s ease,box-shadow .18s ease}
-  .ev:after{content:attr(data-label);font-size:10px;font-weight:950;line-height:1;border-radius:999px;padding:2px 5px;margin-left:4px;color:white;vertical-align:middle;white-space:nowrap;background:var(--c)!important}
-  .analysis-panel{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow:auto}.analysis-body{padding:16px;display:grid;gap:14px}
-  .qcard{--c:#444;background:linear-gradient(180deg,#fffdfa,#fff8ed);border:1px solid var(--line);border-radius:20px;padding:16px 17px;position:relative;overflow:hidden;scroll-margin-top:90px}
-  .qcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)!important}
-  .qtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;border-bottom:1px dashed var(--line);padding-bottom:9px}.qtitle{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:950}.badge{background:var(--c)!important;color:white;border-radius:999px;padding:4px 10px;font-size:14px}.atype{color:var(--muted);font-size:14px;font-weight:900}.rightans{font-size:14px;color:var(--muted);font-weight:900}.rightans strong{font-size:25px;color:var(--ink);line-height:1}
-  .stem{margin:0 0 10px;font-size:16.8px;line-height:1.42;font-weight:950;color:#211c17}.stem-hit{border-radius:5px;padding:0 .08em;transition:background .15s ease,box-shadow .15s ease,color .15s ease}.stem-hit.map-active{background:#fff1a8;box-shadow:0 0 0 2px #f3c94d;color:#1f1b16}.stem-hit:hover{background:#fff4bf;cursor:pointer}
-  .options{list-style:none;margin:0 0 11px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:13.6px;line-height:1.32}.options li{border:1px solid #eadfd2;background:#fffefb;border-radius:12px;padding:7px 8px}.options span{font-weight:950;margin-right:4px}.options .ok{background:#f3fbf2;border-color:#a9cfab;box-shadow:inset 0 0 0 1px rgba(92,148,91,.13)}
-  .chain{display:grid;gap:7px;font-size:14px;line-height:1.47}.chain-row{display:grid;grid-template-columns:74px 1fr;gap:8px;border-top:1px solid #f0e6da;padding-top:7px}.chain-row:first-child{border-top:0;padding-top:0}.chain-row b{color:#584b41}
-  .counter{margin-top:10px;border:1px solid #eadfd2;border-radius:15px;overflow:hidden;background:#fffdfa}.counter h4{margin:0;padding:7px 10px;font-size:13.5px;background:#f0e6da;color:#55483e}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid #efe3d7;font-size:13px;line-height:1.36}.counter-row:first-of-type{border-top:0}.counter-row b{padding:7px 9px;background:#fbf6ef}.counter-row span{padding:7px 9px;color:#342d26}
-  .qcard.active,.route-card.active,.ev.active,.kw.active,.scope-anchor.active{box-shadow:0 0 0 3px var(--c),0 14px 32px rgba(47,34,19,.10);background:#fff4d4}.map-source-active{box-shadow:0 0 0 2px #f3c94d,0 6px 18px rgba(47,34,19,.12)!important;background:#fff1a8!important;color:#1f1b16!important}
-  .note-box{margin-top:14px;background:#fff8ed;border:1px solid var(--line);border-radius:18px;padding:14px 16px;color:#4f453c;font-size:14px;line-height:1.55}
-  @media (max-width:1120px){.unit-head,.layout{grid-template-columns:1fr}.text-nav{justify-content:flex-start}.analysis-panel{position:static;max-height:none}.options{grid-template-columns:1fr}}
-  @media print{@page{size:A4;margin:12mm}body{background:#fff}.topbar{display:none}.page{max-width:none;padding:0}.route,.article-panel,.analysis-panel,.qcard{box-shadow:none}.layout{grid-template-columns:1fr}.analysis-panel{position:static;max-height:none;overflow:visible}.qcard{break-inside:avoid}.ev,.kw,.badge,.route-card,.scope-anchor{print-color-adjust:exact;-webkit-print-color-adjust:exact}.article-text{font-size:14.7px;line-height:1.72}.panel-head h3{font-size:22px}.kw{box-shadow:none;background:transparent;color:var(--c)!important;text-decoration-thickness:2px}.text-unit{break-before:page}.text-unit:first-of-type{break-before:auto}}
 
-  .text-nav button{border-color:var(--c)!important;color:var(--c)!important;background:color-mix(in srgb,var(--c) 8%,#fffaf3)}
-  .text-nav button:hover{box-shadow:0 0 0 2px var(--c),0 8px 18px rgba(47,34,19,.10)}
-  .ans-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-  .ans-chip{display:inline-flex;gap:5px;align-items:center;border:1px solid var(--line);background:#fffaf3;border-radius:999px;padding:5px 9px;font-size:13px;font-weight:900;color:#55483e}
-  .ans-chip b{color:#211c17}
-
-</style>
-<style>
-/* repair-v1: final closed-loop compatibility layer */
-.article-panel .source-supplement,.article .source-supplement{margin-top:18px;padding:12px 14px;border:1px dashed rgba(180,154,130,.45);border-radius:16px;background:rgba(255,248,237,.62);font-size:15px;line-height:1.8;color:#4f443e}.source-supplement h4{margin:0 0 8px;font-size:15px;color:#6c5b52}.source-fix{display:inline-block;margin:2px 5px 2px 0}.stem-sync-bank{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}.map-active,.kw.map-active,.ev.map-active,.stem-hit.map-active{outline:2px solid currentColor;outline-offset:2px;border-radius:5px;background:rgba(255,248,184,.42)!important}.qcard{border-color:var(--c)!important}.qcard .badge{background:var(--c)!important}.options .ok{border-color:#9dccaa!important;background:#effaf0!important}.counter-row{display:grid;grid-template-columns:50px 1fr;border-top:1px solid rgba(120,100,80,.18);padding:7px 10px}.counter-row b{font-weight:800}.chain-row{display:grid;grid-template-columns:82px 1fr;gap:12px;border-top:1px solid rgba(120,100,80,.14);padding:9px 0}.chain-row b{color:#6b5a50}.repair-note{font-size:12px;color:#8a776d;margin-top:8px}.text-unit{scroll-margin-top:90px}.qcard{scroll-margin-top:90px}
-</style><link href="year.css" rel="stylesheet"/>
+<link href="year.css" rel="stylesheet"/>
 <link href="../seed-popover.css" rel="stylesheet"/>
 </head>
 <body class="is-entering exam-two-page">
@@ -106,13 +40,13 @@
 <p>Q21—Q25。题干定位词、原文定位词、作答证据、同义替换全部闭环。</p>
 </div>
 <nav class="text-nav">
-<button data-target="t1-q21" style="--c:var(--q1)">Q21</button><button data-target="t1-q22" style="--c:var(--q2)">Q22</button><button data-target="t1-q23" style="--c:var(--q3)">Q23</button><button data-target="t1-q24" style="--c:var(--q4)">Q24</button><button data-target="t1-q25" style="--c:var(--q5)">Q25</button>
+<button data-target="y2024-t1-q21" style="--c:var(--q1)">Q21</button><button data-target="y2024-t1-q22" style="--c:var(--q2)">Q22</button><button data-target="y2024-t1-q23" style="--c:var(--q3)">Q23</button><button data-target="y2024-t1-q24" style="--c:var(--q4)">Q24</button><button data-target="y2024-t1-q25" style="--c:var(--q5)">Q25</button>
 </nav>
 </header>
 <section class="route">
 <h3>题目顺序与原文证据分布</h3>
 <div class="route-grid">
-<div class="route-card" data-key="t1-q21" data-target="t1-q21" style="--c:var(--q1)"><b>Q21｜P1 Coyle 新书观点</b><p>new book + economy growing → gains more evenly shared → C。</p></div><div class="route-card" data-key="t1-q22" data-target="t1-q22" style="--c:var(--q2)"><b>Q22｜P2 digital technologies</b><p>Paragraph 2 + greater use → boost productivity → C。</p></div><div class="route-card" data-key="t1-q23" data-target="t1-q23" style="--c:var(--q3)"><b>Q23｜P3 fear + social buy-in</b><p>transformative technologies → roadblock / need social buy-in → D。</p></div><div class="route-card" data-key="t1-q24" data-target="t1-q24" style="--c:var(--q4)"><b>Q24｜P5—P6 城市例证</b><p>eight cities / 15 cities → particularly concentrated → A。</p></div><div class="route-card" data-key="t1-q25" data-target="t1-q25" style="--c:var(--q5)"><b>Q25｜P6—P8 concern → response</b><p>as Coyle suggests → broaden digital imaginations → D。</p></div>
+<div class="route-card" data-key="y2024-t1-q21" data-target="y2024-t1-q21" style="--c:var(--q1)"><b>Q21｜P1 Coyle 新书观点</b><p>new book + economy growing → gains more evenly shared → C。</p></div><div class="route-card" data-key="y2024-t1-q22" data-target="y2024-t1-q22" style="--c:var(--q2)"><b>Q22｜P2 digital technologies</b><p>Paragraph 2 + greater use → boost productivity → C。</p></div><div class="route-card" data-key="y2024-t1-q23" data-target="y2024-t1-q23" style="--c:var(--q3)"><b>Q23｜P3 fear + social buy-in</b><p>transformative technologies → roadblock / need social buy-in → D。</p></div><div class="route-card" data-key="y2024-t1-q24" data-target="y2024-t1-q24" style="--c:var(--q4)"><b>Q24｜P5—P6 城市例证</b><p>eight cities / 15 cities → particularly concentrated → A。</p></div><div class="route-card" data-key="y2024-t1-q25" data-target="y2024-t1-q25" style="--c:var(--q5)"><b>Q25｜P6—P8 concern → response</b><p>as Coyle suggests → broaden digital imaginations → D。</p></div>
 </div>
 </section>
 <section class="layout">
@@ -123,37 +57,37 @@
 </div>
 <div class="article-body article-text">
 <p class="para"><span class="pnum">P1</span>
-<span class="snum">1</span>In her <mark class="kw" data-key="t1-q21" data-map="t1-q21-m2" style="--c:var(--q1)">new book</mark> <i>Cogs and Monsters: What Economics Is, and What It Should Be</i>, Diane <mark class="kw" data-key="t1-q21" data-map="t1-q21-m1" style="--c:var(--q1)">Coyle</mark>, an economist at Cambridge University, argues that the digital economy requires new ways of thinking about progress. 
-<span class="snum">2</span>“Whatever we mean by <mark class="kw" data-key="t1-q21" data-map="t1-q21-m3" style="--c:var(--q1)">the economy growing</mark>, by things getting better, <span class="ev" data-key="t1-q21" data-label="Q21" style="--c:var(--q1)">the gains will have to be more evenly shared than in the recent past</span>,” she writes. 
+<span class="snum">1</span>In her <mark class="kw" data-key="y2024-t1-q21" data-map="y2024-t1-q21-m2" style="--c:var(--q1)">new book</mark> <i>Cogs and Monsters: What Economics Is, and What It Should Be</i>, Diane <mark class="kw" data-key="y2024-t1-q21" data-map="y2024-t1-q21-m1" style="--c:var(--q1)">Coyle</mark>, an economist at Cambridge University, argues that the digital economy requires new ways of thinking about progress. 
+<span class="snum">2</span>“Whatever we mean by <mark class="kw" data-key="y2024-t1-q21" data-map="y2024-t1-q21-m3" style="--c:var(--q1)">the economy growing</mark>, by things getting better, <span class="ev" data-key="y2024-t1-q21" data-label="Q21" style="--c:var(--q1)">the gains will have to be more evenly shared than in the recent past</span>,” she writes. 
 <span class="snum">3</span>“An economy of tech millionaires or billionaires and gig workers, with middle-income jobs undercut by automation, will not be politically sustainable.”
 </p>
 <p class="para"><span class="pnum">P2</span>
-<span class="scope-anchor" data-key="t1-q22" data-map="t1-q22-m1" style="--c:var(--q2)">Q22 段落定位</span>
-<span class="snum">1</span>Improving living standards and increasing prosperity for more people will require <mark class="kw" data-key="t1-q22" data-map="t1-q22-m3" style="--c:var(--q2)">greater use</mark> of <mark class="kw" data-key="t1-q22" data-map="t1-q22-m2" style="--c:var(--q2)">digital technologies</mark> to <span class="ev" data-key="t1-q22" data-label="Q22" style="--c:var(--q2)">boost productivity in various sectors</span>, including health care and construction, says Coyle. 
+<span class="scope-anchor" data-key="y2024-t1-q22" data-map="y2024-t1-q22-m1" style="--c:var(--q2)">Q22 段落定位</span>
+<span class="snum">1</span>Improving living standards and increasing prosperity for more people will require <mark class="kw" data-key="y2024-t1-q22" data-map="y2024-t1-q22-m3" style="--c:var(--q2)">greater use</mark> of <mark class="kw" data-key="y2024-t1-q22" data-map="y2024-t1-q22-m2" style="--c:var(--q2)">digital technologies</mark> to <span class="ev" data-key="y2024-t1-q22" data-label="Q22" style="--c:var(--q2)">boost productivity in various sectors</span>, including health care and construction, says Coyle. 
 <span class="snum">2</span>But people can’t be expected to embrace the changes if they’re not seeing the benefits—if they’re just seeing good jobs being destroyed.
 </p>
 <p class="para"><span class="pnum">P3</span>
-<span class="snum">1</span>In a recent interview, <mark class="kw" data-key="t1-q23" data-map="t1-q23-m1" style="--c:var(--q3)">Coyle</mark> said she <mark class="kw" data-key="t1-q23" data-map="t1-q23-m2" style="--c:var(--q3)">fears</mark> that tech’s inequality problem could be a roadblock to deploying AI. 
-<span class="snum">2</span>“We’re talking about disruption,” she says. “These are <mark class="kw" data-key="t1-q23" data-map="t1-q23-m3" style="--c:var(--q3)">transformative technologies</mark> that change the ways we spend our time every day, that change business models that succeed.” 
-<span class="snum">3</span><span class="ev" data-key="t1-q23" data-label="Q23" style="--c:var(--q3)">To make such “tremendous changes,” she adds, you need social buy-in.</span>
+<span class="snum">1</span>In a recent interview, <mark class="kw" data-key="y2024-t1-q23" data-map="y2024-t1-q23-m1" style="--c:var(--q3)">Coyle</mark> said she <mark class="kw" data-key="y2024-t1-q23" data-map="y2024-t1-q23-m2" style="--c:var(--q3)">fears</mark> that tech’s inequality problem could be a roadblock to deploying AI. 
+<span class="snum">2</span>“We’re talking about disruption,” she says. “These are <mark class="kw" data-key="y2024-t1-q23" data-map="y2024-t1-q23-m3" style="--c:var(--q3)">transformative technologies</mark> that change the ways we spend our time every day, that change business models that succeed.” 
+<span class="snum">3</span><span class="ev" data-key="y2024-t1-q23" data-label="Q23" style="--c:var(--q3)">To make such “tremendous changes,” she adds, you need social buy-in.</span>
 </p>
 <p class="para"><span class="pnum">P4</span>
 <span class="snum">1</span>Instead, says Coyle, resentment is simmering among many as the benefits are perceived to go to elites in a handful of prosperous cities.
 </p>
 <p class="para"><span class="pnum">P5</span>
-<span class="snum">1</span>According to the Brookings Institution, a short list of <mark class="kw" data-key="t1-q24" data-map="t1-q24-m1" style="--c:var(--q4)">eight American cities</mark> that included San Francisco, San Jose, Boston, and Seattle had roughly 38% of all tech jobs by 2019. 
-<span class="snum">2</span><span class="ev" data-key="t1-q24" data-label="Q24" style="--c:var(--q4)">New AI technologies are particularly concentrated: Brookings’ Mark Muro and Sifan Liu estimate that just 15 cities account for two-thirds of the AI assets and capabilities in the United States.</span>
+<span class="snum">1</span>According to the Brookings Institution, a short list of <mark class="kw" data-key="y2024-t1-q24" data-map="y2024-t1-q24-m1" style="--c:var(--q4)">eight American cities</mark> that included San Francisco, San Jose, Boston, and Seattle had roughly 38% of all tech jobs by 2019. 
+<span class="snum">2</span><span class="ev" data-key="y2024-t1-q24" data-label="Q24" style="--c:var(--q4)">New AI technologies are particularly concentrated: Brookings’ Mark Muro and Sifan Liu estimate that just 15 cities account for two-thirds of the AI assets and capabilities in the United States.</span>
 </p>
 <p class="para"><span class="pnum">P6</span>
-<span class="snum">1</span>The <mark class="kw" data-key="t1-q24" data-map="t1-q24-m2 t1-q24-m3" style="--c:var(--q4)">dominance of a few cities</mark> in the invention and commercialization of AI means that geographical disparities in wealth will continue to soar. 
-<span class="snum">2</span>Not only will this foster political and social unrest, but it could, <mark class="kw" data-key="t1-q25" data-map="t1-q25-m1" style="--c:var(--q5)">as Coyle suggests</mark>, hold back the sorts of AI technologies needed for regional economies to grow.
+<span class="snum">1</span>The <mark class="kw" data-key="y2024-t1-q24" data-map="y2024-t1-q24-m2 y2024-t1-q24-m3" style="--c:var(--q4)">dominance of a few cities</mark> in the invention and commercialization of AI means that geographical disparities in wealth will continue to soar. 
+<span class="snum">2</span>Not only will this foster political and social unrest, but it could, <mark class="kw" data-key="y2024-t1-q25" data-map="y2024-t1-q25-m1" style="--c:var(--q5)">as Coyle suggests</mark>, hold back the sorts of AI technologies needed for regional economies to grow.
 </p>
 <p class="para"><span class="pnum">P7</span>
 <span class="snum">1</span>Part of the solution could lie in somehow loosening the stranglehold that Big Tech has on defining the AI agenda. 
 <span class="snum">2</span>That will likely take increased federal funding for research independent of the tech giants.
 </p>
 <p class="para"><span class="pnum">P8</span>
-<span class="snum">1</span><mark class="kw" data-key="t1-q25" data-map="t1-q25-m2" style="--c:var(--q5)">A more immediate response is</mark> to <span class="ev" data-key="t1-q25" data-label="Q25" style="--c:var(--q5)">broaden our digital imaginations to conceive of AI technologies that don’t simply replace jobs but expand opportunities in the sectors that different parts of the country care most about, like health care, education, and manufacturing.</span>
+<span class="snum">1</span><mark class="kw" data-key="y2024-t1-q25" data-map="y2024-t1-q25-m2" style="--c:var(--q5)">A more immediate response is</mark> to <span class="ev" data-key="y2024-t1-q25" data-label="Q25" style="--c:var(--q5)">broaden our digital imaginations to conceive of AI technologies that don’t simply replace jobs but expand opportunities in the sectors that different parts of the country care most about, like health care, education, and manufacturing.</span>
 </p>
 </div>
 </article>
@@ -163,12 +97,12 @@
 <p>每题只保留“关键词—定位—证据—替换—排除”。</p>
 </div>
 <div class="analysis-body">
-<section class="qcard" data-key="t1-q21" id="t1-q21" style="--c:var(--q1)">
+<section class="qcard" data-key="y2024-t1-q21" id="y2024-t1-q21" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q21</span><span>细节理解题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem"> <span class="stem-hit" data-map="t1-q21-m1">Coyle</span> argues in her <span class="stem-hit" data-map="t1-q21-m2">new book</span> that <span class="stem-hit" data-map="t1-q21-m3">economic growth</span> should ________.</p>
+<p class="stem"> <span class="stem-hit" data-map="y2024-t1-q21-m1">Coyle</span> argues in her <span class="stem-hit" data-map="y2024-t1-q21-m2">new book</span> that <span class="stem-hit" data-map="y2024-t1-q21-m3">economic growth</span> should ________.</p>
 <ul class="options"><li><span>[A]</span>give rise to innovations</li><li><span>[B]</span>diversify career choices</li><li class="ok"><span>[C]</span>benefit people equally</li><li><span>[D]</span>be promoted forcefully</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>题干 Coyle / new book / economic growth → 原文 “Coyle”“new book”“the economy growing”。</span></div>
@@ -180,12 +114,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>“new ways of thinking”不是“产生创新”；原文谈增长收益分配，不谈创新来源。</span></div><div class="counter-row"><b>B</b><span>gig workers 和 middle-income jobs 是反面背景，不是“职业选择多样化”。</span></div><div class="counter-row"><b>C</b><span>原文明确说 gains 要 more evenly shared，范围与选项最贴合。</span></div><div class="counter-row"><b>D</b><span>“requires new ways of thinking”不等于强力推动经济增长，forcefully 无依据。</span></div>
 </div>
-</section><section class="qcard" data-key="t1-q22" id="t1-q22" style="--c:var(--q2)">
+</section><section class="qcard" data-key="y2024-t1-q22" id="y2024-t1-q22" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q22</span><span>细节理解题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem">According to <span class="stem-hit" data-map="t1-q22-m1">Paragraph 2</span>, <span class="stem-hit" data-map="t1-q22-m2">digital technologies</span> should be <span class="stem-hit" data-map="t1-q22-m3">used</span> to ________.</p>
+<p class="stem">According to <span class="stem-hit" data-map="y2024-t1-q22-m1">Paragraph 2</span>, <span class="stem-hit" data-map="y2024-t1-q22-m2">digital technologies</span> should be <span class="stem-hit" data-map="y2024-t1-q22-m3">used</span> to ________.</p>
 <ul class="options"><li><span>[A]</span>bring about instant prosperity</li><li><span>[B]</span>reduce people’s workload</li><li class="ok"><span>[C]</span>raise overall work efficiency</li><li><span>[D]</span>enhance cross-sector cooperation</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Paragraph 2 → P2 段首锚点；digital technologies / used → 原文 “digital technologies”“greater use”。</span></div>
@@ -197,12 +131,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>prosperity 是目标背景，但不是 digital technologies 的直接用途；“instant”更无原文支持。</span></div><div class="counter-row"><b>B</b><span>原文说 boost productivity，不说减少工作量；自动化毁工作是风险，不是用途。</span></div><div class="counter-row"><b>C</b><span>boost productivity 与 raise work efficiency 是直接同义替换。</span></div><div class="counter-row"><b>D</b><span>health care and construction 是举例领域，不是强调跨部门合作。</span></div>
 </div>
-</section><section class="qcard" data-key="t1-q23" id="t1-q23" style="--c:var(--q3)">
+</section><section class="qcard" data-key="y2024-t1-q23" id="y2024-t1-q23" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q23</span><span>推断细节题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">What does <span class="stem-hit" data-map="t1-q23-m1">Coyle</span> <span class="stem-hit" data-map="t1-q23-m2">fear</span> about <span class="stem-hit" data-map="t1-q23-m3">transformative technologies</span>?</p>
+<p class="stem">What does <span class="stem-hit" data-map="y2024-t1-q23-m1">Coyle</span> <span class="stem-hit" data-map="y2024-t1-q23-m2">fear</span> about <span class="stem-hit" data-map="y2024-t1-q23-m3">transformative technologies</span>?</p>
 <ul class="options"><li><span>[A]</span>They may affect work-life balance.</li><li><span>[B]</span>They may be impractical to deploy.</li><li><span>[C]</span>They may incur huge expenditure.</li><li class="ok"><span>[D]</span>They may be unwelcome to the public.</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Coyle / fear / transformative technologies → P3 原词复现 “Coyle”“fears”“transformative technologies”。</span></div>
@@ -214,12 +148,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>“change the ways we spend our time”看似涉及生活，但不是 fear 的核心，也不是 work-life balance。</span></div><div class="counter-row"><b>B</b><span>roadblock 不是技术不可行，而是 inequality / social buy-in 的社会阻力。</span></div><div class="counter-row"><b>C</b><span>本段没有 expenditure / cost 线索。</span></div><div class="counter-row"><b>D</b><span>social buy-in 是公众接受；需要它说明可能不被公众接受，推断幅度合适。</span></div>
 </div>
-</section><section class="qcard" data-key="t1-q24" id="t1-q24" style="--c:var(--q4)">
+</section><section class="qcard" data-key="y2024-t1-q24" id="y2024-t1-q24" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q24</span><span>例证目的题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t1-q24-m1">Several American cities</span> are <span class="stem-hit" data-map="t1-q24-m2">mentioned</span> to <span class="stem-hit" data-map="t1-q24-m3">show</span> ________.</p>
+<p class="stem"><span class="stem-hit" data-map="y2024-t1-q24-m1">Several American cities</span> are <span class="stem-hit" data-map="y2024-t1-q24-m2">mentioned</span> to <span class="stem-hit" data-map="y2024-t1-q24-m3">show</span> ________.</p>
 <ul class="options"><li class="ok"><span>[A]</span>the uneven distribution of AI technologies in the US</li><li><span>[B]</span>the disappointing prospect of tech jobs in the US</li><li><span>[C]</span>the fast progress of US regional economies</li><li><span>[D]</span>the increasing significance of US AI assets</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Several American cities → 原文 “eight American cities”；mentioned/show → 后文总结 “particularly concentrated / dominance of a few cities”。</span></div>
@@ -231,12 +165,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>例子和概括句共同指向 AI 技术/资产集中在少数城市，最稳。</span></div><div class="counter-row"><b>B</b><span>tech jobs 数字是背景，不是“前景令人失望”；AI assets 才是论点。</span></div><div class="counter-row"><b>C</b><span>原文说地区财富差距会继续扩大，不是区域经济快速进步。</span></div><div class="counter-row"><b>D</b><span>AI assets 被提到是为说明集中度，不是说明其重要性增加。</span></div>
 </div>
-</section><section class="qcard" data-key="t1-q25" id="t1-q25" style="--c:var(--q5)">
+</section><section class="qcard" data-key="y2024-t1-q25" id="y2024-t1-q25" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q25</span><span>作者建议题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">With regard to <span class="stem-hit" data-map="t1-q25-m1">Coyle’s concern</span>, the <span class="stem-hit" data-map="t1-q25-m2">author suggests</span> ________.</p>
+<p class="stem">With regard to <span class="stem-hit" data-map="y2024-t1-q25-m1">Coyle’s concern</span>, the <span class="stem-hit" data-map="y2024-t1-q25-m2">author suggests</span> ________.</p>
 <ul class="options"><li><span>[A]</span>raising funds to start new AI projects</li><li><span>[B]</span>encouraging collaboration in AI research</li><li><span>[C]</span>guarding against the side effects of AI</li><li class="ok"><span>[D]</span>redefining the role of AI technologies</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Coyle’s concern → P6 “as Coyle suggests”；author suggests → P8 “A more immediate response is”。</span></div>
@@ -260,13 +194,13 @@
 <p>Q26—Q30。题干定位词、原文定位词、作答证据、同义替换全部闭环。</p>
 </div>
 <nav class="text-nav">
-<button data-target="t2-q26" style="--c:var(--q1)">Q26</button><button data-target="t2-q27" style="--c:var(--q2)">Q27</button><button data-target="t2-q28" style="--c:var(--q3)">Q28</button><button data-target="t2-q29" style="--c:var(--q4)">Q29</button><button data-target="t2-q30" style="--c:var(--q5)">Q30</button>
+<button data-target="y2024-t2-q26" style="--c:var(--q1)">Q26</button><button data-target="y2024-t2-q27" style="--c:var(--q2)">Q27</button><button data-target="y2024-t2-q28" style="--c:var(--q3)">Q28</button><button data-target="y2024-t2-q29" style="--c:var(--q4)">Q29</button><button data-target="y2024-t2-q30" style="--c:var(--q5)">Q30</button>
 </nav>
 </header>
 <section class="route">
 <h3>题目顺序与原文证据分布</h3>
 <div class="route-grid">
-<div class="route-card" data-key="t2-q26" data-target="t2-q26" style="--c:var(--q1)"><b>Q26｜P1 UK needs</b><p>called for urgent action → stable supply / less imports → A。</p></div><div class="route-card" data-key="t2-q27" data-target="t2-q27" style="--c:var(--q2)"><b>Q27｜P2 fresh incentives</b><p>don’t go far enough / fail to promote → A。</p></div><div class="route-card" data-key="t2-q28" data-target="t2-q28" style="--c:var(--q3)"><b>Q28｜P2 因果句</b><p>not investing in domestic supply → exposed to prices → B。</p></div><div class="route-card" data-key="t2-q29" data-target="t2-q29" style="--c:var(--q4)"><b>Q29｜P3 causes</b><p>farmers / landowners hesitation → D。</p></div><div class="route-card" data-key="t2-q30" data-target="t2-q30" style="--c:var(--q5)"><b>Q30｜P4—P5 Goodall 建议</b><p>government support + productive tree planting + greater impetus → C。</p></div>
+<div class="route-card" data-key="y2024-t2-q26" data-target="y2024-t2-q26" style="--c:var(--q1)"><b>Q26｜P1 UK needs</b><p>called for urgent action → stable supply / less imports → A。</p></div><div class="route-card" data-key="y2024-t2-q27" data-target="y2024-t2-q27" style="--c:var(--q2)"><b>Q27｜P2 fresh incentives</b><p>don’t go far enough / fail to promote → A。</p></div><div class="route-card" data-key="y2024-t2-q28" data-target="y2024-t2-q28" style="--c:var(--q3)"><b>Q28｜P2 因果句</b><p>not investing in domestic supply → exposed to prices → B。</p></div><div class="route-card" data-key="y2024-t2-q29" data-target="y2024-t2-q29" style="--c:var(--q4)"><b>Q29｜P3 causes</b><p>farmers / landowners hesitation → D。</p></div><div class="route-card" data-key="y2024-t2-q30" data-target="y2024-t2-q30" style="--c:var(--q5)"><b>Q30｜P4—P5 Goodall 建议</b><p>government support + productive tree planting + greater impetus → C。</p></div>
 </div>
 </section>
 <section class="layout">
@@ -277,29 +211,29 @@
 </div>
 <div class="article-body article-text">
 <p class="para"><span class="pnum">P1</span>
-<span class="scope-anchor" data-key="t2-q26" data-map="t2-q26-m1" style="--c:var(--q1)">Q26 段落定位</span>
-<span class="snum">1</span><mark class="kw" data-key="t2-q26" data-map="t2-q26-m2" style="--c:var(--q1)">The UK</mark> is facing a future construction crisis because of a failure to plant trees to produce wood, Confor has warned. 
-<span class="snum">2</span>The forestry and wood trade body has <mark class="kw" data-key="t2-q26" data-map="t2-q26-m3" style="--c:var(--q1)">called for urgent action</mark> to <span class="ev" data-key="t2-q26" data-label="Q26" style="--c:var(--q1)">reduce the country’s reliance on timber imports and provide a stable supply of wood for future generations</span>. 
+<span class="scope-anchor" data-key="y2024-t2-q26" data-map="y2024-t2-q26-m1" style="--c:var(--q1)">Q26 段落定位</span>
+<span class="snum">1</span><mark class="kw" data-key="y2024-t2-q26" data-map="y2024-t2-q26-m2" style="--c:var(--q1)">The UK</mark> is facing a future construction crisis because of a failure to plant trees to produce wood, Confor has warned. 
+<span class="snum">2</span>The forestry and wood trade body has <mark class="kw" data-key="y2024-t2-q26" data-map="y2024-t2-q26-m3" style="--c:var(--q1)">called for urgent action</mark> to <span class="ev" data-key="y2024-t2-q26" data-label="Q26" style="--c:var(--q1)">reduce the country’s reliance on timber imports and provide a stable supply of wood for future generations</span>. 
 <span class="snum">3</span>Currently only 20 per cent of the UK’s wood requirement is home-grown while it remains the second-largest net importer of timber in the world.
 </p>
 <p class="para"><span class="pnum">P2</span>
-<span class="snum">1</span>Coming at a time of <mark class="kw" data-key="t2-q27" data-map="t2-q27-m2" style="--c:var(--q2)">fresh incentives from the UK government</mark> for landowners to grow more trees, <mark class="kw" data-key="t2-q27" data-map="t2-q27-m1" style="--c:var(--q2)">the trade body</mark> says <span class="ev" data-key="t2-q27" data-label="Q27" style="--c:var(--q2)">these don’t go far enough and fail to promote the benefits of planting them to boost timber supplies</span>. 
+<span class="snum">1</span>Coming at a time of <mark class="kw" data-key="y2024-t2-q27" data-map="y2024-t2-q27-m2" style="--c:var(--q2)">fresh incentives from the UK government</mark> for landowners to grow more trees, <mark class="kw" data-key="y2024-t2-q27" data-map="y2024-t2-q27-m1" style="--c:var(--q2)">the trade body</mark> says <span class="ev" data-key="y2024-t2-q27" data-label="Q27" style="--c:var(--q2)">these don’t go far enough and fail to promote the benefits of planting them to boost timber supplies</span>. 
 <span class="snum">2</span>“Not only are we facing a carbon crisis now, but we will also be facing a future construction crisis because of a failure to plant trees to produce wood,” said Stuart Goodall, chief executive of Confor. 
-<span class="snum">3</span>“For decades we have <mark class="kw" data-key="t2-q28" data-map="t2-q28-m2" style="--c:var(--q3)">not taken responsibility for investing in our domestic wood supply</mark>, <span class="ev" data-key="t2-q28" data-label="Q28" style="--c:var(--q3)">leaving us <mark class="kw" data-key="t2-q28" data-map="t2-q28-m1" style="--c:var(--q3)">exposed to fluctuating prices</mark> and fighting for future supplies of wood as global demand rises and our own supplies fall</span>.”
+<span class="snum">3</span>“For decades we have <mark class="kw" data-key="y2024-t2-q28" data-map="y2024-t2-q28-m2" style="--c:var(--q3)">not taken responsibility for investing in our domestic wood supply</mark>, <span class="ev" data-key="y2024-t2-q28" data-label="Q28" style="--c:var(--q3)">leaving us <mark class="kw" data-key="y2024-t2-q28" data-map="y2024-t2-q28-m1" style="--c:var(--q3)">exposed to fluctuating prices</mark> and fighting for future supplies of wood as global demand rises and our own supplies fall</span>.”
 </p>
 <p class="para"><span class="pnum">P3</span>
 <span class="snum">1</span>The UK has ideal conditions for growing wood to build low-carbon homes and is a global leader in certifying that its forests are sustainably managed, Confor says. 
 <span class="snum">2</span>While around three quarters of Scottish homes are built from Scottish timber, the use of home-grown wood in England is only around 25 per cent. 
-<span class="snum">3</span>The <mark class="kw" data-key="t2-q29" data-map="t2-q29-m2" style="--c:var(--q4)">causes</mark> of the <mark class="kw" data-key="t2-q29" data-map="t2-q29-m1" style="--c:var(--q4)">UK’s current position</mark> are complex and range from outdated perceptions of productive forestry to the decimation of trees by grey squirrels. 
-<span class="snum">4</span><span class="ev" data-key="t2-q29" data-label="Q29" style="--c:var(--q4)">It also encompasses significant hesitation on behalf of farmers and other landowners to invest in longer-term planting projects.</span>
+<span class="snum">3</span>The <mark class="kw" data-key="y2024-t2-q29" data-map="y2024-t2-q29-m2" style="--c:var(--q4)">causes</mark> of the <mark class="kw" data-key="y2024-t2-q29" data-map="y2024-t2-q29-m1" style="--c:var(--q4)">UK’s current position</mark> are complex and range from outdated perceptions of productive forestry to the decimation of trees by grey squirrels. 
+<span class="snum">4</span><span class="ev" data-key="y2024-t2-q29" data-label="Q29" style="--c:var(--q4)">It also encompasses significant hesitation on behalf of farmers and other landowners to invest in longer-term planting projects.</span>
 </p>
 <p class="para"><span class="pnum">P4</span>
-<span class="snum">1</span>While <mark class="kw" data-key="t2-q30" data-map="t2-q30-m3" style="--c:var(--q5)">productive tree planting</mark> can deliver real financial benefits to rural economies and contribute to the UK’s net-zero strategy, the focus of <mark class="kw" data-key="t2-q30" data-map="t2-q30-m2" style="--c:var(--q5)">government support</mark> continues to be on food production and the rewilding and planting of native woodland solely for biodiversity. 
-<span class="snum">2</span><mark class="kw" data-key="t2-q30" data-map="t2-q30-m1" style="--c:var(--q5)">Goodall</mark> added: “<span class="ev" data-key="t2-q30" data-label="Q30" style="--c:var(--q5)">While food production and biodiversity health are clearly of critical importance, we need our land to also provide secure supplies of wood for construction, manufacturing and contributing to net zero.</span>”
+<span class="snum">1</span>While <mark class="kw" data-key="y2024-t2-q30" data-map="y2024-t2-q30-m3" style="--c:var(--q5)">productive tree planting</mark> can deliver real financial benefits to rural economies and contribute to the UK’s net-zero strategy, the focus of <mark class="kw" data-key="y2024-t2-q30" data-map="y2024-t2-q30-m2" style="--c:var(--q5)">government support</mark> continues to be on food production and the rewilding and planting of native woodland solely for biodiversity. 
+<span class="snum">2</span><mark class="kw" data-key="y2024-t2-q30" data-map="y2024-t2-q30-m1" style="--c:var(--q5)">Goodall</mark> added: “<span class="ev" data-key="y2024-t2-q30" data-label="Q30" style="--c:var(--q5)">While food production and biodiversity health are clearly of critical importance, we need our land to also provide secure supplies of wood for construction, manufacturing and contributing to net zero.</span>”
 </p>
 <p class="para"><span class="pnum">P5</span>
 <span class="snum">1</span>“While the UK government has stated its ambition for more tree planting, there has been little action on the ground. 
-<span class="snum">2</span>Confor is now calling for <span class="ev" data-key="t2-q30" data-label="Q30" style="--c:var(--q5)">much greater impetus behind those aspirations to ensure we have enough wood to meet increasing demand.</span>”
+<span class="snum">2</span>Confor is now calling for <span class="ev" data-key="y2024-t2-q30" data-label="Q30" style="--c:var(--q5)">much greater impetus behind those aspirations to ensure we have enough wood to meet increasing demand.</span>”
 </p>
 </div>
 </article>
@@ -309,12 +243,12 @@
 <p>每题只保留“关键词—定位—证据—替换—排除”。</p>
 </div>
 <div class="analysis-body">
-<section class="qcard" data-key="t2-q26" id="t2-q26" style="--c:var(--q1)">
+<section class="qcard" data-key="y2024-t2-q26" id="y2024-t2-q26" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q26</span><span>段落细节题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">It can be learned from <span class="stem-hit" data-map="t2-q26-m1">Paragraph 1</span> that <span class="stem-hit" data-map="t2-q26-m2">the UK</span> needs to <span class="stem-hit" data-map="t2-q26-m3">________</span>.</p>
+<p class="stem">It can be learned from <span class="stem-hit" data-map="y2024-t2-q26-m1">Paragraph 1</span> that <span class="stem-hit" data-map="y2024-t2-q26-m2">the UK</span> needs to <span class="stem-hit" data-map="y2024-t2-q26-m3">________</span>.</p>
 <ul class="options"><li class="ok"><span>[A]</span>increase its domestic wood supply</li><li><span>[B]</span>reduce its demand for timber</li><li><span>[C]</span>lower its wood production costs</li><li><span>[D]</span>lift its control on timber imports</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Paragraph 1 → P1 锚点；the UK → 原文 “The UK”；needs to → 原文 “called for urgent action”。</span></div>
@@ -326,12 +260,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>“stable supply of wood”与“domestic / home-grown”背景合起来，正是增加本土木材供给。</span></div><div class="counter-row"><b>B</b><span>原文要减少对进口的依赖，不是减少木材需求。</span></div><div class="counter-row"><b>C</b><span>成本没有出现。</span></div><div class="counter-row"><b>D</b><span>原文不是放松进口管制，而是降低进口依赖。</span></div>
 </div>
-</section><section class="qcard" data-key="t2-q27" id="t2-q27" style="--c:var(--q2)">
+</section><section class="qcard" data-key="y2024-t2-q27" id="y2024-t2-q27" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q27</span><span>细节判断题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">According to <span class="stem-hit" data-map="t2-q27-m1">Confor</span>, the UK government’s <span class="stem-hit" data-map="t2-q27-m2">fresh incentives</span> ________.</p>
+<p class="stem">According to <span class="stem-hit" data-map="y2024-t2-q27-m1">Confor</span>, the UK government’s <span class="stem-hit" data-map="y2024-t2-q27-m2">fresh incentives</span> ________.</p>
 <ul class="options"><li class="ok"><span>[A]</span>can hardly address a construction crisis</li><li><span>[B]</span>are believed to come at a wrong time</li><li><span>[C]</span>seem to be misleading for landowners</li><li><span>[D]</span>will be too costly to put into practice</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Confor → 原文 “the trade body / chief executive of Confor”；fresh incentives → 原文同词复现。</span></div>
@@ -343,12 +277,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>“不够、未能促进”说明这些激励难以应对未来建筑危机，表述最稳。</span></div><div class="counter-row"><b>B</b><span>coming at a time of fresh incentives 只是时间背景，不是“时机错误”。</span></div><div class="counter-row"><b>C</b><span>没有说误导 landowners，只说激励力度不足。</span></div><div class="counter-row"><b>D</b><span>没有成本过高的内容。</span></div>
 </div>
-</section><section class="qcard" data-key="t2-q28" id="t2-q28" style="--c:var(--q3)">
+</section><section class="qcard" data-key="y2024-t2-q28" id="y2024-t2-q28" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q28</span><span>因果细节题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">The UK’s <span class="stem-hit" data-map="t2-q28-m1">exposure to fluctuating wood prices</span> is a <span class="stem-hit" data-map="t2-q28-m2">result of</span> ________.</p>
+<p class="stem">The UK’s <span class="stem-hit" data-map="y2024-t2-q28-m1">exposure to fluctuating wood prices</span> is a <span class="stem-hit" data-map="y2024-t2-q28-m2">result of</span> ________.</p>
 <ul class="options"><li><span>[A]</span>the government’s inaction on timber imports</li><li class="ok"><span>[B]</span>inadequate investment in growing wood</li><li><span>[C]</span>the competition among timber traders at home</li><li><span>[D]</span>wood producers’ motive to maximise profits</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>题干 exposure to fluctuating wood prices → 原文 “exposed to fluctuating prices”；result of → 前半句 “not taken responsibility for investing...”。</span></div>
@@ -360,12 +294,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>问题不是“timber imports 上的不作为”，而是本土木材供应投资不足。</span></div><div class="counter-row"><b>B</b><span>因果链最直接：未投资国内木材供应 → 暴露于价格波动。</span></div><div class="counter-row"><b>C</b><span>没有国内木材商竞争的线索。</span></div><div class="counter-row"><b>D</b><span>没有生产者逐利动机的线索。</span></div>
 </div>
-</section><section class="qcard" data-key="t2-q29" id="t2-q29" style="--c:var(--q4)">
+</section><section class="qcard" data-key="y2024-t2-q29" id="y2024-t2-q29" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q29</span><span>原因细节题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">Which of the following <span class="stem-hit" data-map="t2-q29-m2">causes</span> the <span class="stem-hit" data-map="t2-q29-m1">shortage of wood supply</span> in the UK?</p>
+<p class="stem">Which of the following <span class="stem-hit" data-map="y2024-t2-q29-m2">causes</span> the <span class="stem-hit" data-map="y2024-t2-q29-m1">shortage of wood supply</span> in the UK?</p>
 <ul class="options"><li><span>[A]</span>Excessive timber consumption in construction.</li><li><span>[B]</span>Unfavourable conditions for growing wood.</li><li><span>[C]</span>Outdated technologies of the wood industry.</li><li class="ok"><span>[D]</span>Farmers’ unwillingness to plant trees.</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>shortage of wood supply → 原文 “current position / supplies fall”；causes → P3 原词 “causes”。</span></div>
@@ -377,12 +311,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>construction 需要木材，但原文没有说“过度消费”导致短缺。</span></div><div class="counter-row"><b>B</b><span>原文明确说 UK has ideal conditions，正好反驳 unfavourable conditions。</span></div><div class="counter-row"><b>C</b><span>outdated perceptions 不是 outdated technologies。</span></div><div class="counter-row"><b>D</b><span>farmers / landowners hesitation 对应 unwillingness to plant trees。</span></div>
 </div>
-</section><section class="qcard" data-key="t2-q30" id="t2-q30" style="--c:var(--q5)">
+</section><section class="qcard" data-key="y2024-t2-q30" id="y2024-t2-q30" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q30</span><span>观点建议题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem">What does <span class="stem-hit" data-map="t2-q30-m1">Goodall</span> think the UK <span class="stem-hit" data-map="t2-q30-m2">government</span> <span class="stem-hit" data-map="t2-q30-m3">should do</span>?</p>
+<p class="stem">What does <span class="stem-hit" data-map="y2024-t2-q30-m1">Goodall</span> think the UK <span class="stem-hit" data-map="y2024-t2-q30-m2">government</span> <span class="stem-hit" data-map="y2024-t2-q30-m3">should do</span>?</p>
 <ul class="options"><li><span>[A]</span>Subsidise the building of low-carbon homes.</li><li><span>[B]</span>Pay greater attention to boosting rural economies.</li><li class="ok"><span>[C]</span>Provide more support for productive tree planting.</li><li><span>[D]</span>Give priority to pursuing its net-zero strategy.</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Goodall → P4 引语；government → 原文 “government support”；应做什么 → productive tree planting 与 greater impetus。</span></div>
@@ -406,13 +340,13 @@
 <p>Q31—Q35。题干定位词、原文定位词、作答证据、同义替换全部闭环。</p>
 </div>
 <nav class="text-nav">
-<button data-target="t3-q31" style="--c:var(--q1)">Q31</button><button data-target="t3-q32" style="--c:var(--q2)">Q32</button><button data-target="t3-q33" style="--c:var(--q3)">Q33</button><button data-target="t3-q34" style="--c:var(--q4)">Q34</button><button data-target="t3-q35" style="--c:var(--q5)">Q35</button>
+<button data-target="y2024-t3-q31" style="--c:var(--q1)">Q31</button><button data-target="y2024-t3-q32" style="--c:var(--q2)">Q32</button><button data-target="y2024-t3-q33" style="--c:var(--q3)">Q33</button><button data-target="y2024-t3-q34" style="--c:var(--q4)">Q34</button><button data-target="y2024-t3-q35" style="--c:var(--q5)">Q35</button>
 </nav>
 </header>
 <section class="route">
 <h3>题目顺序与原文证据分布</h3>
 <div class="route-grid">
-<div class="route-card" data-key="t3-q31" data-target="t3-q31" style="--c:var(--q1)"><b>Q31｜P1 biggest challenges</b><p>Paragraph 1 + biggest challenges → tough task → C。</p></div><div class="route-card" data-key="t3-q32" data-target="t3-q32" style="--c:var(--q2)"><b>Q32｜P2 AMA advice</b><p>some states require / others allow / a few consider → D。</p></div><div class="route-card" data-key="t3-q33" data-target="t3-q33" style="--c:var(--q3)"><b>Q33｜P3 Dugan + piecemeal</b><p>piecemeal by different professions → need coordination → B。</p></div><div class="route-card" data-key="t3-q34" data-target="t3-q34" style="--c:var(--q4)"><b>Q34｜P5 trouble driving because</b><p>can’t remember where they are going → B。</p></div><div class="route-card" data-key="t3-q35" data-target="t3-q35" style="--c:var(--q5)"><b>Q35｜P6 won’t solve → need cars</b><p>cars a 90-year-old can drive comfortably → B。</p></div>
+<div class="route-card" data-key="y2024-t3-q31" data-target="y2024-t3-q31" style="--c:var(--q1)"><b>Q31｜P1 biggest challenges</b><p>Paragraph 1 + biggest challenges → tough task → C。</p></div><div class="route-card" data-key="y2024-t3-q32" data-target="y2024-t3-q32" style="--c:var(--q2)"><b>Q32｜P2 AMA advice</b><p>some states require / others allow / a few consider → D。</p></div><div class="route-card" data-key="y2024-t3-q33" data-target="y2024-t3-q33" style="--c:var(--q3)"><b>Q33｜P3 Dugan + piecemeal</b><p>piecemeal by different professions → need coordination → B。</p></div><div class="route-card" data-key="y2024-t3-q34" data-target="y2024-t3-q34" style="--c:var(--q4)"><b>Q34｜P5 trouble driving because</b><p>can’t remember where they are going → B。</p></div><div class="route-card" data-key="y2024-t3-q35" data-target="y2024-t3-q35" style="--c:var(--q5)"><b>Q35｜P6 won’t solve → need cars</b><p>cars a 90-year-old can drive comfortably → B。</p></div>
 </div>
 </section>
 <section class="layout">
@@ -423,17 +357,17 @@
 </div>
 <div class="article-body article-text">
 <p class="para"><span class="pnum">P1</span>
-<span class="scope-anchor" data-key="t3-q31" data-map="t3-q31-m1" style="--c:var(--q1)">Q31 段落定位</span>
-<span class="snum">1</span><span class="ev" data-key="t3-q31" data-label="Q31" style="--c:var(--q1)">One of the biggest challenges in <mark class="kw" data-key="t3-q31" data-map="t3-q31-m2" style="--c:var(--q1)">keeping unsafe aging drivers off the road</mark> is convincing them that it’s time to turn over the keys.</span>
+<span class="scope-anchor" data-key="y2024-t3-q31" data-map="y2024-t3-q31-m1" style="--c:var(--q1)">Q31 段落定位</span>
+<span class="snum">1</span><span class="ev" data-key="y2024-t3-q31" data-label="Q31" style="--c:var(--q1)">One of the biggest challenges in <mark class="kw" data-key="y2024-t3-q31" data-map="y2024-t3-q31-m2" style="--c:var(--q1)">keeping unsafe aging drivers off the road</mark> is convincing them that it’s time to turn over the keys.</span>
 <span class="snum">2</span>“It’s a complete life-changer” when someone stops—or is forced to stop—driving, said former risk manager Anne M. Menke.
 </p>
 <p class="para"><span class="pnum">P2</span>
-<span class="snum">1</span>“The <mark class="kw" data-key="t3-q32" data-map="t3-q32-m1" style="--c:var(--q2)">American Medical Association advises</mark> physicians that ‘in situations where clear evidence of substantial driving impairment implies a strong threat to patient and public safety, and where the physician’s advice to discontinue driving privilege is ignored, it is desirable and ethical to notify the Department of Motor Vehicles,’” Menke wrote. 
-<span class="snum">2</span><span class="ev" data-key="t3-q32" data-label="Q32" style="--c:var(--q2)">Some states require physicians to report, others allow but do not mandate reports, while a few consider a report a breach of confidentiality.</span>
+<span class="snum">1</span>“The <mark class="kw" data-key="y2024-t3-q32" data-map="y2024-t3-q32-m1" style="--c:var(--q2)">American Medical Association advises</mark> physicians that ‘in situations where clear evidence of substantial driving impairment implies a strong threat to patient and public safety, and where the physician’s advice to discontinue driving privilege is ignored, it is desirable and ethical to notify the Department of Motor Vehicles,’” Menke wrote. 
+<span class="snum">2</span><span class="ev" data-key="y2024-t3-q32" data-label="Q32" style="--c:var(--q2)">Some states require physicians to report, others allow but do not mandate reports, while a few consider a report a breach of confidentiality.</span>
 <span class="snum">3</span>There could be liability and penalties if a physician does not act in accordance with state laws on reporting and confidentiality,” she counseled.
 </p>
 <p class="para"><span class="pnum">P3</span>
-<span class="snum">1</span><span class="ev" data-key="t3-q33" data-label="Q33" style="--c:var(--q3)">Part of the problem in <mark class="kw" data-key="t3-q33" data-map="t3-q33-m2" style="--c:var(--q3)">keeping older drivers safe</mark> is that the difficulties are addressed piecemeal by different professions with different focuses</span>, including gerontologists, highway administration officials, automotive engineers and others, said gerontologist <mark class="kw" data-key="t3-q33" data-map="t3-q33-m1" style="--c:var(--q3)">Elizabeth Dugan</mark>. 
+<span class="snum">1</span><span class="ev" data-key="y2024-t3-q33" data-label="Q33" style="--c:var(--q3)">Part of the problem in <mark class="kw" data-key="y2024-t3-q33" data-map="y2024-t3-q33-m2" style="--c:var(--q3)">keeping older drivers safe</mark> is that the difficulties are addressed piecemeal by different professions with different focuses</span>, including gerontologists, highway administration officials, automotive engineers and others, said gerontologist <mark class="kw" data-key="y2024-t3-q33" data-map="y2024-t3-q33-m1" style="--c:var(--q3)">Elizabeth Dugan</mark>. 
 <span class="snum">2</span>“There’s not a National Institute of Older Driver Studies,” she said. 
 <span class="snum">3</span>“We need better evidence on what makes drivers unsafe” and what can help, said Dugan.
 </p>
@@ -443,14 +377,14 @@
 <span class="snum">3</span>Passing vision tests also produced a similar decline in fatal crashes for those drivers, although there appeared to be no benefit from combining the two.
 </p>
 <p class="para"><span class="pnum">P5</span>
-<span class="snum">1</span><mark class="kw" data-key="t3-q34" data-map="t3-q34-m1" style="--c:var(--q4)">Many older drivers</mark> don’t see eye doctors or can’t afford to. 
-<span class="snum">2</span>Primary care providers have their hands full and may not be able to follow through with patients who <span class="ev" data-key="t3-q34" data-label="Q34" style="--c:var(--q4)">have trouble driving because they can’t turn their heads or <mark class="kw" data-key="t3-q34" data-map="t3-q34-m2" style="--c:var(--q4)">remember where they are going</mark>—or have gotten shorter and haven’t changed their seat settings sufficiently to reach car pedals easily.</span>
+<span class="snum">1</span><mark class="kw" data-key="y2024-t3-q34" data-map="y2024-t3-q34-m1" style="--c:var(--q4)">Many older drivers</mark> don’t see eye doctors or can’t afford to. 
+<span class="snum">2</span>Primary care providers have their hands full and may not be able to follow through with patients who <span class="ev" data-key="y2024-t3-q34" data-label="Q34" style="--c:var(--q4)">have trouble driving because they can’t turn their heads or <mark class="kw" data-key="y2024-t3-q34" data-map="y2024-t3-q34-m2" style="--c:var(--q4)">remember where they are going</mark>—or have gotten shorter and haven’t changed their seat settings sufficiently to reach car pedals easily.</span>
 </p>
 <p class="para"><span class="pnum">P6</span>
-<span class="snum">1</span>As long as there are other cars on the roads, <mark class="kw" data-key="t3-q35" data-map="t3-q35-m2" style="--c:var(--q5)">self-driving cars won’t solve</mark> the problems of crashes, said <mark class="kw" data-key="t3-q35" data-map="t3-q35-m1" style="--c:var(--q5)">Dugan</mark>. 
+<span class="snum">1</span>As long as there are other cars on the roads, <mark class="kw" data-key="y2024-t3-q35" data-map="y2024-t3-q35-m2" style="--c:var(--q5)">self-driving cars won’t solve</mark> the problems of crashes, said <mark class="kw" data-key="y2024-t3-q35" data-map="y2024-t3-q35-m1" style="--c:var(--q5)">Dugan</mark>. 
 <span class="snum">2</span>Avoiding dangers posed by all those human drivers would require too many algorithms, she said. 
 <span class="snum">3</span>But we need to do more to improve safety, said Dugan. 
-<span class="snum">4</span><span class="ev" data-key="t3-q35" data-label="Q35" style="--c:var(--q5)">“If we’re going to have 100-year lives, we need cars that a 90-year-old can drive comfortably.”</span>
+<span class="snum">4</span><span class="ev" data-key="y2024-t3-q35" data-label="Q35" style="--c:var(--q5)">“If we’re going to have 100-year lives, we need cars that a 90-year-old can drive comfortably.”</span>
 </p>
 </div>
 </article>
@@ -460,12 +394,12 @@
 <p>每题只保留“关键词—定位—证据—替换—排除”。</p>
 </div>
 <div class="analysis-body">
-<section class="qcard" data-key="t3-q31" id="t3-q31" style="--c:var(--q1)">
+<section class="qcard" data-key="y2024-t3-q31" id="y2024-t3-q31" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q31</span><span>段落细节题</span></div>
 <div class="rightans">答案 <strong>C</strong></div>
 </div>
-<p class="stem">According to <span class="stem-hit" data-map="t3-q31-m1">Paragraph 1</span>, <span class="stem-hit" data-map="t3-q31-m2">keeping unsafe aging drivers off the road</span> ________.</p>
+<p class="stem">According to <span class="stem-hit" data-map="y2024-t3-q31-m1">Paragraph 1</span>, <span class="stem-hit" data-map="y2024-t3-q31-m2">keeping unsafe aging drivers off the road</span> ________.</p>
 <ul class="options"><li><span>[A]</span>is a new safety measure</li><li><span>[B]</span>has become a disputed issue</li><li class="ok"><span>[C]</span>can be a tough task to complete</li><li><span>[D]</span>will be beneficial to their health</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Paragraph 1 → P1 锚点；keeping unsafe aging drivers off the road → 原文同词复现。</span></div>
@@ -477,12 +411,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>文中没有说这是新的安全措施。</span></div><div class="counter-row"><b>B</b><span>有州法律差异在 P2，但 P1 不是争议 issue。</span></div><div class="counter-row"><b>C</b><span>biggest challenges 与 tough task 是最直接替换。</span></div><div class="counter-row"><b>D</b><span>原文谈公共安全和停驾困难，不说对老年司机健康有益。</span></div>
 </div>
-</section><section class="qcard" data-key="t3-q32" id="t3-q32" style="--c:var(--q2)">
+</section><section class="qcard" data-key="y2024-t3-q32" id="y2024-t3-q32" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q32</span><span>细节理解题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">The <span class="stem-hit" data-map="t3-q32-m1">American Medical Association’s advice</span> ________.</p>
+<p class="stem">The <span class="stem-hit" data-map="y2024-t3-q32-m1">American Medical Association’s advice</span> ________.</p>
 <ul class="options"><li><span>[A]</span>has won support from drivers</li><li><span>[B]</span>is generally considered unrealistic</li><li><span>[C]</span>is widely dismissed as unnecessary</li><li class="ok"><span>[D]</span>has met with different responses</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>American Medical Association’s advice → 原文 “American Medical Association advises”。</span></div>
@@ -494,12 +428,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>没有司机支持的内容。</span></div><div class="counter-row"><b>B</b><span>各州规定不同，不等于普遍认为不现实。</span></div><div class="counter-row"><b>C</b><span>有些州要求上报，反而说明没有被广泛认为不必要。</span></div><div class="counter-row"><b>D</b><span>三类州反应并列，直接对应 different responses。</span></div>
 </div>
-</section><section class="qcard" data-key="t3-q33" id="t3-q33" style="--c:var(--q3)">
+</section><section class="qcard" data-key="y2024-t3-q33" id="y2024-t3-q33" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q33</span><span>观点推断题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">According to <span class="stem-hit" data-map="t3-q33-m1">Dugan</span>, efforts to <span class="stem-hit" data-map="t3-q33-m2">keep older drivers safe</span> ________.</p>
+<p class="stem">According to <span class="stem-hit" data-map="y2024-t3-q33-m1">Dugan</span>, efforts to <span class="stem-hit" data-map="y2024-t3-q33-m2">keep older drivers safe</span> ________.</p>
 <ul class="options"><li><span>[A]</span>have brought about big changes</li><li class="ok"><span>[B]</span>need to be well coordinated</li><li><span>[C]</span>have gained public recognition</li><li><span>[D]</span>call for relevant legal support</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Dugan → 原文 Elizabeth Dugan；keep older drivers safe → 原文同义 “keeping older drivers safe”。</span></div>
@@ -511,12 +445,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>P4 说某些措施有效，但 Dugan 此处没有说已带来大变化。</span></div><div class="counter-row"><b>B</b><span>piecemeal / different focuses 反推需要 coordinated，属于合理推断。</span></div><div class="counter-row"><b>C</b><span>没有公众认可。</span></div><div class="counter-row"><b>D</b><span>法律支持主要在 P2 医生报告，不是 Dugan 关于多职业努力的观点。</span></div>
 </div>
-</section><section class="qcard" data-key="t3-q34" id="t3-q34" style="--c:var(--q4)">
+</section><section class="qcard" data-key="y2024-t3-q34" id="y2024-t3-q34" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q34</span><span>原因细节题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">Some <span class="stem-hit" data-map="t3-q34-m1">older drivers</span> have trouble driving because they tend to <span class="stem-hit" data-map="t3-q34-m2">________</span>.</p>
+<p class="stem">Some <span class="stem-hit" data-map="y2024-t3-q34-m1">older drivers</span> have trouble driving because they tend to <span class="stem-hit" data-map="y2024-t3-q34-m2">________</span>.</p>
 <ul class="options"><li><span>[A]</span>stick with bad driving habits</li><li class="ok"><span>[B]</span>have a weakened memory</li><li><span>[C]</span>suffer from chronic pains</li><li><span>[D]</span>neglect car maintenance</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>older drivers → P5 “Many older drivers”；trouble driving because → 原文 “have trouble driving because”。</span></div>
@@ -528,12 +462,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>seat settings 没调整不是 bad driving habits；选项偷换。</span></div><div class="counter-row"><b>B</b><span>remember where they are going 直接对应记忆减弱。</span></div><div class="counter-row"><b>C</b><span>can’t turn their heads 可能是身体限制，但不是 chronic pains。</span></div><div class="counter-row"><b>D</b><span>seat settings 不是 car maintenance。</span></div>
 </div>
-</section><section class="qcard" data-key="t3-q35" id="t3-q35" style="--c:var(--q5)">
+</section><section class="qcard" data-key="y2024-t3-q35" id="y2024-t3-q35" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q35</span><span>观点建议题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem"><span class="stem-hit" data-map="t3-q35-m1">Dugan</span> thinks that the <span class="stem-hit" data-map="t3-q35-m2">solution to the problems of crashes</span> may lie in ________.</p>
+<p class="stem"><span class="stem-hit" data-map="y2024-t3-q35-m1">Dugan</span> thinks that the <span class="stem-hit" data-map="y2024-t3-q35-m2">solution to the problems of crashes</span> may lie in ________.</p>
 <ul class="options"><li><span>[A]</span>upgrading self-driving vehicles</li><li class="ok"><span>[B]</span>developing senior-friendly cars</li><li><span>[C]</span>renovating transport facilities</li><li><span>[D]</span>adjusting the age limit for drivers</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Dugan → P6 原词；solution to crashes → 原文 “self-driving cars won’t solve” + “we need cars...”。</span></div>
@@ -557,13 +491,13 @@
 <p>Q36—Q40。题干定位词、原文定位词、作答证据、同义替换全部闭环。</p>
 </div>
 <nav class="text-nav">
-<button data-target="t4-q36" style="--c:var(--q1)">Q36</button><button data-target="t4-q37" style="--c:var(--q2)">Q37</button><button data-target="t4-q38" style="--c:var(--q3)">Q38</button><button data-target="t4-q39" style="--c:var(--q4)">Q39</button><button data-target="t4-q40" style="--c:var(--q5)">Q40</button>
+<button data-target="y2024-t4-q36" style="--c:var(--q1)">Q36</button><button data-target="y2024-t4-q37" style="--c:var(--q2)">Q37</button><button data-target="y2024-t4-q38" style="--c:var(--q3)">Q38</button><button data-target="y2024-t4-q39" style="--c:var(--q4)">Q39</button><button data-target="y2024-t4-q40" style="--c:var(--q5)">Q40</button>
 </nav>
 </header>
 <section class="route">
 <h3>题目顺序与原文证据分布</h3>
 <div class="route-grid">
-<div class="route-card" data-key="t4-q36" data-target="t4-q36" style="--c:var(--q1)"><b>Q36｜P1 research findings</b><p>350,000 apps / 90,000 launched → prevalence → A。</p></div><div class="route-card" data-key="t4-q37" data-target="t4-q37" style="--c:var(--q2)"><b>Q37｜P2 existing law</b><p>focused on hospitals etc. / apps not same protections → A。</p></div><div class="route-card" data-key="t4-q38" data-target="t4-q38" style="--c:var(--q3)"><b>Q38｜P3 Flo Health</b><p>express affirmative consent before sharing → D。</p></div><div class="route-card" data-key="t4-q39" data-target="t4-q39" style="--c:var(--q4)"><b>Q39｜P4 FTC challenge</b><p>rate apps are hitting the market → B。</p></div><div class="route-card" data-key="t4-q40" data-target="t4-q40" style="--c:var(--q5)"><b>Q40｜P5 last paragraph</b><p>States have begun / states passed legislation → D。</p></div>
+<div class="route-card" data-key="y2024-t4-q36" data-target="y2024-t4-q36" style="--c:var(--q1)"><b>Q36｜P1 research findings</b><p>350,000 apps / 90,000 launched → prevalence → A。</p></div><div class="route-card" data-key="y2024-t4-q37" data-target="y2024-t4-q37" style="--c:var(--q2)"><b>Q37｜P2 existing law</b><p>focused on hospitals etc. / apps not same protections → A。</p></div><div class="route-card" data-key="y2024-t4-q38" data-target="y2024-t4-q38" style="--c:var(--q3)"><b>Q38｜P3 Flo Health</b><p>express affirmative consent before sharing → D。</p></div><div class="route-card" data-key="y2024-t4-q39" data-target="y2024-t4-q39" style="--c:var(--q4)"><b>Q39｜P4 FTC challenge</b><p>rate apps are hitting the market → B。</p></div><div class="route-card" data-key="y2024-t4-q40" data-target="y2024-t4-q40" style="--c:var(--q5)"><b>Q40｜P5 last paragraph</b><p>States have begun / states passed legislation → D。</p></div>
 </div>
 </section>
 <section class="layout">
@@ -574,32 +508,32 @@
 </div>
 <div class="article-body article-text">
 <p class="para"><span class="pnum">P1</span>
-<span class="scope-anchor" data-key="t4-q36" data-map="t4-q36-m2" style="--c:var(--q1)">Q36 段落定位</span>
+<span class="scope-anchor" data-key="y2024-t4-q36" data-map="y2024-t4-q36-m2" style="--c:var(--q1)">Q36 段落定位</span>
 <span class="snum">1</span>If you look at the apps on your phone, chances are you have at least one related to your health—and probably several. 
 <span class="snum">2</span>Whether it is a mental health app, a fitness tracker, a connected health device or something else, many of us are taking advantage of this technology to keep better track of our health in some shape or form. 
-<span class="snum">3</span><mark class="kw" data-key="t4-q36" data-map="t4-q36-m1" style="--c:var(--q1)">Recent research findings</mark> from the Organization for the Review of Care and Health Applications found that <span class="ev" data-key="t4-q36" data-label="Q36" style="--c:var(--q1)">350,000 health apps were available on the market, 90,000 of which launched in 2020 alone.</span>
+<span class="snum">3</span><mark class="kw" data-key="y2024-t4-q36" data-map="y2024-t4-q36-m1" style="--c:var(--q1)">Recent research findings</mark> from the Organization for the Review of Care and Health Applications found that <span class="ev" data-key="y2024-t4-q36" data-label="Q36" style="--c:var(--q1)">350,000 health apps were available on the market, 90,000 of which launched in 2020 alone.</span>
 </p>
 <p class="para"><span class="pnum">P2</span>
 <span class="snum">1</span>While these apps have a great deal to offer, it is not always clear how the personal information we input is collected, safeguarded and shared online. 
-<span class="snum">2</span><mark class="kw" data-key="t4-q37" data-map="t4-q37-m1" style="--c:var(--q2)">Existing health privacy law</mark>, such as the Health Insurance Portability and Accountability Act, is primarily focused on the way hospitals, doctors’ offices, clinics and insurance companies store health records online. 
-<span class="snum">3</span><span class="ev" data-key="t4-q37" data-label="Q37" style="--c:var(--q2)">The health information these apps and health data tracking wearables are collecting typically does not receive the same legal protections.</span>
+<span class="snum">2</span><mark class="kw" data-key="y2024-t4-q37" data-map="y2024-t4-q37-m1" style="--c:var(--q2)">Existing health privacy law</mark>, such as the Health Insurance Portability and Accountability Act, is primarily focused on the way hospitals, doctors’ offices, clinics and insurance companies store health records online. 
+<span class="snum">3</span><span class="ev" data-key="y2024-t4-q37" data-label="Q37" style="--c:var(--q2)">The health information these apps and health data tracking wearables are collecting typically does not receive the same legal protections.</span>
 </p>
 <p class="para"><span class="pnum">P3</span>
 <span class="snum">1</span>Without additional protections in place, companies may share (and potentially monetize) personal health information in a way consumers may not have authorized or anticipated. 
-<span class="snum">2</span>In 2021, <mark class="kw" data-key="t4-q38" data-map="t4-q38-m1" style="--c:var(--q3)">Flo Health</mark> faced a Federal Trade Commission (FTC) investigation. 
+<span class="snum">2</span>In 2021, <mark class="kw" data-key="y2024-t4-q38" data-map="y2024-t4-q38-m1" style="--c:var(--q3)">Flo Health</mark> faced a Federal Trade Commission (FTC) investigation. 
 <span class="snum">3</span>The FTC alleged in a complaint that “despite express privacy claims, the company took control of users’ sensitive fertility data and shared it with third parties.” 
-<span class="snum">4</span>Flo Health and the FTC settled the matter with a Consent Order requiring the company to <span class="ev" data-key="t4-q38" data-label="Q38" style="--c:var(--q3)">get app users’ express affirmative consent before sharing their health information</span> as well as to instruct the third parties to delete the data they had obtained.
+<span class="snum">4</span>Flo Health and the FTC settled the matter with a Consent Order requiring the company to <span class="ev" data-key="y2024-t4-q38" data-label="Q38" style="--c:var(--q3)">get app users’ express affirmative consent before sharing their health information</span> as well as to instruct the third parties to delete the data they had obtained.
 </p>
 <p class="para"><span class="pnum">P4</span>
-<span class="snum">1</span><mark class="kw" data-key="t4-q39" data-map="t4-q39-m1" style="--c:var(--q4)">Section 5 of the FTC Act</mark> empowers the FTC to initiate enforcement action against unfair or deceptive acts, meaning the FTC can only act after the fact if a company’s privacy practices are misleading or cause unjustified consumer harm. 
-<span class="snum">2</span>While the FTC is doing what it can to ensure apps are keeping their promises to consumers around the handling of their sensitive health information, <span class="ev" data-key="t4-q39" data-label="Q39" style="--c:var(--q4)">the rate at which these health apps are hitting the market demonstrates just how immense of a <mark class="kw" data-key="t4-q39" data-map="t4-q39-m2" style="--c:var(--q4)">challenge</mark> this is.</span>
+<span class="snum">1</span><mark class="kw" data-key="y2024-t4-q39" data-map="y2024-t4-q39-m1" style="--c:var(--q4)">Section 5 of the FTC Act</mark> empowers the FTC to initiate enforcement action against unfair or deceptive acts, meaning the FTC can only act after the fact if a company’s privacy practices are misleading or cause unjustified consumer harm. 
+<span class="snum">2</span>While the FTC is doing what it can to ensure apps are keeping their promises to consumers around the handling of their sensitive health information, <span class="ev" data-key="y2024-t4-q39" data-label="Q39" style="--c:var(--q4)">the rate at which these health apps are hitting the market demonstrates just how immense of a <mark class="kw" data-key="y2024-t4-q39" data-map="y2024-t4-q39-m2" style="--c:var(--q4)">challenge</mark> this is.</span>
 </p>
 <p class="para"><span class="pnum">P5</span>
-<span class="scope-anchor" data-key="t4-q40" data-map="t4-q40-m1" style="--c:var(--q5)">Q40 末段定位</span>
+<span class="scope-anchor" data-key="y2024-t4-q40" data-map="y2024-t4-q40-m1" style="--c:var(--q5)">Q40 末段定位</span>
 <span class="snum">1</span>As to the prospects for federal legislation, commentators suggest that comprehensive federal privacy legislation seems unlikely in the short term. 
-<span class="snum">2</span><span class="ev" data-key="t4-q40" data-label="Q40" style="--c:var(--q5)">States have begun implementing their own solutions to shore up <mark class="kw" data-key="t4-q40" data-map="t4-q40-m2" style="--c:var(--q5)">protections for consumer-generated health data</mark>.</span>
+<span class="snum">2</span><span class="ev" data-key="y2024-t4-q40" data-label="Q40" style="--c:var(--q5)">States have begun implementing their own solutions to shore up <mark class="kw" data-key="y2024-t4-q40" data-map="y2024-t4-q40-m2" style="--c:var(--q5)">protections for consumer-generated health data</mark>.</span>
 <span class="snum">3</span>California has been at the forefront of state privacy efforts with the California Consumer Privacy Act of 2018. 
-<span class="snum">4</span><span class="ev" data-key="t4-q40" data-label="Q40" style="--c:var(--q5)">Virginia, Colorado and Utah have also recently passed state consumer data privacy legislation.</span>
+<span class="snum">4</span><span class="ev" data-key="y2024-t4-q40" data-label="Q40" style="--c:var(--q5)">Virginia, Colorado and Utah have also recently passed state consumer data privacy legislation.</span>
 </p>
 </div>
 </article>
@@ -609,12 +543,12 @@
 <p>每题只保留“关键词—定位—证据—替换—排除”。</p>
 </div>
 <div class="analysis-body">
-<section class="qcard" data-key="t4-q36" id="t4-q36" style="--c:var(--q1)">
+<section class="qcard" data-key="y2024-t4-q36" id="y2024-t4-q36" style="--c:var(--q1)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q36</span><span>例证目的题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">The <span class="stem-hit" data-map="t4-q36-m1">research findings</span> are cited in <span class="stem-hit" data-map="t4-q36-m2">Paragraph 1</span> to show ________.</p>
+<p class="stem">The <span class="stem-hit" data-map="y2024-t4-q36-m1">research findings</span> are cited in <span class="stem-hit" data-map="y2024-t4-q36-m2">Paragraph 1</span> to show ________.</p>
 <ul class="options"><li class="ok"><span>[A]</span>the prevalence of health apps</li><li><span>[B]</span>the public concern over health</li><li><span>[C]</span>the popularity of smartphones</li><li><span>[D]</span>the advancement of technology</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>research findings → P1 “Recent research findings”；Paragraph 1 → P1 锚点。</span></div>
@@ -626,12 +560,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>数量巨大直接说明健康应用普遍存在。</span></div><div class="counter-row"><b>B</b><span>没有 public concern 的数据。</span></div><div class="counter-row"><b>C</b><span>开头提 phone 只是引入，不是证明智能手机流行。</span></div><div class="counter-row"><b>D</b><span>technology 是泛称，数据聚焦 health apps 的数量和普及。</span></div>
 </div>
-</section><section class="qcard" data-key="t4-q37" id="t4-q37" style="--c:var(--q2)">
+</section><section class="qcard" data-key="y2024-t4-q37" id="y2024-t4-q37" style="--c:var(--q2)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q37</span><span>推断细节题</span></div>
 <div class="rightans">答案 <strong>A</strong></div>
 </div>
-<p class="stem">What does the author imply about <span class="stem-hit" data-map="t4-q37-m1">existing health privacy law</span>?</p>
+<p class="stem">What does the author imply about <span class="stem-hit" data-map="y2024-t4-q37-m1">existing health privacy law</span>?</p>
 <ul class="options"><li class="ok"><span>[A]</span>Its coverage needs to be extended.</li><li><span>[B]</span>Its enforcement needs strengthening.</li><li><span>[C]</span>It has discouraged medical misconduct.</li><li><span>[D]</span>It has disappointed insurance companies.</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>existing health privacy law → P2 原词复现。</span></div>
@@ -643,12 +577,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>覆盖对象不足是本段核心，且 P3 “additional protections”继续支持。</span></div><div class="counter-row"><b>B</b><span>enforcement 出现在 P4 FTC，但 Q37 问 existing law 的覆盖范围。</span></div><div class="counter-row"><b>C</b><span>没有 medical misconduct。</span></div><div class="counter-row"><b>D</b><span>insurance companies 是被现行法覆盖的机构，不是失望主体。</span></div>
 </div>
-</section><section class="qcard" data-key="t4-q38" id="t4-q38" style="--c:var(--q3)">
+</section><section class="qcard" data-key="y2024-t4-q38" id="y2024-t4-q38" style="--c:var(--q3)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q38</span><span>细节理解题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">Before sharing its users’ health information, <span class="stem-hit" data-map="t4-q38-m1">Flo Health</span> is required to ________.</p>
+<p class="stem">Before sharing its users’ health information, <span class="stem-hit" data-map="y2024-t4-q38-m1">Flo Health</span> is required to ________.</p>
 <ul class="options"><li><span>[A]</span>seek the approval of the FTC</li><li><span>[B]</span>find qualified third parties</li><li><span>[C]</span>remove irrelevant personal data</li><li class="ok"><span>[D]</span>obtain their explicit permission</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>Flo Health → P3 原词复现；before sharing → 原文 “before sharing their health information”。</span></div>
@@ -660,12 +594,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>FTC 参与调查和和解，但命令要求的是征得用户同意，不是每次找 FTC 批准。</span></div><div class="counter-row"><b>B</b><span>third parties 是被要求删除数据的对象，不是 Flo 需要寻找的对象。</span></div><div class="counter-row"><b>C</b><span>delete data 是第三方要做的，不是删除无关个人数据。</span></div><div class="counter-row"><b>D</b><span>express affirmative consent 与 explicit permission 精准对应。</span></div>
 </div>
-</section><section class="qcard" data-key="t4-q39" id="t4-q39" style="--c:var(--q4)">
+</section><section class="qcard" data-key="y2024-t4-q39" id="y2024-t4-q39" style="--c:var(--q4)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q39</span><span>细节理解题</span></div>
 <div class="rightans">答案 <strong>B</strong></div>
 </div>
-<p class="stem">What <span class="stem-hit" data-map="t4-q39-m2">challenge</span> is the <span class="stem-hit" data-map="t4-q39-m1">FTC</span> currently faced with?</p>
+<p class="stem">What <span class="stem-hit" data-map="y2024-t4-q39-m2">challenge</span> is the <span class="stem-hit" data-map="y2024-t4-q39-m1">FTC</span> currently faced with?</p>
 <ul class="options"><li><span>[A]</span>The complexity of health information.</li><li class="ok"><span>[B]</span>The rapid increase in new health apps.</li><li><span>[C]</span>The subtle deceptiveness of health apps.</li><li><span>[D]</span>The difficulty in assessing consumer harm.</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>FTC → P4 “Section 5 of the FTC Act / the FTC”；challenge → 原文 “immense of a challenge”。</span></div>
@@ -677,12 +611,12 @@
 <h4>干扰项反证｜先给最强理由，再看原文是否支持</h4>
 <div class="counter-row"><b>A</b><span>health information sensitive，但 challenge 的直接来源是 apps 上市速度。</span></div><div class="counter-row"><b>B</b><span>rate at which... hitting the market 与 rapid increase 完全对应。</span></div><div class="counter-row"><b>C</b><span>deceptive acts 是 FTC 权限对象，但本句 challenge 不是“欺骗隐蔽”。</span></div><div class="counter-row"><b>D</b><span>consumer harm 是执法条件之一，不是末句强调的挑战。</span></div>
 </div>
-</section><section class="qcard" data-key="t4-q40" id="t4-q40" style="--c:var(--q5)">
+</section><section class="qcard" data-key="y2024-t4-q40" id="y2024-t4-q40" style="--c:var(--q5)">
 <div class="qtop">
 <div class="qtitle"><span class="badge">Q40</span><span>末段推断题</span></div>
 <div class="rightans">答案 <strong>D</strong></div>
 </div>
-<p class="stem">It can be learned from the <span class="stem-hit" data-map="t4-q40-m1">last paragraph</span> that <span class="stem-hit" data-map="t4-q40-m2">health data protection</span> ________.</p>
+<p class="stem">It can be learned from the <span class="stem-hit" data-map="y2024-t4-q40-m1">last paragraph</span> that <span class="stem-hit" data-map="y2024-t4-q40-m2">health data protection</span> ________.</p>
 <ul class="options"><li><span>[A]</span>has been embraced by health app developers</li><li><span>[B]</span>has been a focus of federal policy-making</li><li><span>[C]</span>has encountered opposition in California</li><li class="ok"><span>[D]</span>has gained legislative support in some states</li></ul>
 <div class="chain">
 <div class="chain-row"><b>关键词</b><span>last paragraph → P5 锚点；health data protection → 原文 “protections for consumer-generated health data”。</span></div>
@@ -704,42 +638,7 @@
 </main>
 </div>
 <script src="transition.js"></script>
-<script>
-const keyed=[...document.querySelectorAll('[data-key]')];
-const mapped=[...document.querySelectorAll('[data-map]')];
-function splitMaps(value){return String(value||'').split(/\s+/).filter(Boolean)}
-function activateKey(key,scroll=true){
-  keyed.forEach(el=>el.classList.toggle('active',el.dataset.key===String(key)));
-  if(scroll){
-    const target=document.getElementById(String(key))||document.querySelector('.kw[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.ev[data-key="'+CSS.escape(String(key))+'"]')||document.querySelector('.scope-anchor[data-key="'+CSS.escape(String(key))+'"]');
-    if(target)target.scrollIntoView({behavior:'smooth',block:'center'});
-  }
-}
-function activateMaps(maps){
-  const set=new Set(Array.isArray(maps)?maps:splitMaps(maps));
-  mapped.forEach(el=>{
-    const hit=splitMaps(el.dataset.map).some(m=>set.has(m));
-    el.classList.toggle('map-active',hit);
-    el.classList.toggle('map-source-active',hit && !el.classList.contains('stem-hit'));
-  });
-}
-function clearMaps(){mapped.forEach(el=>{el.classList.remove('map-active');el.classList.remove('map-source-active')})}
-document.addEventListener('click',e=>{
-  const jump=e.target.closest('[data-target]');
-  if(jump){e.preventDefault();activateKey(jump.dataset.target);return}
-  const k=e.target.closest('[data-key]');
-  if(k){activateKey(k.dataset.key,!k.classList.contains('qcard'))}
-});
-document.addEventListener('mouseover',e=>{
-  const mapEl=e.target.closest('[data-map]');
-  if(mapEl)activateMaps(splitMaps(mapEl.dataset.map));
-  const keyEl=e.target.closest('[data-key]');
-  if(keyEl)keyed.forEach(x=>x.classList.toggle('active',x.dataset.key===keyEl.dataset.key));
-});
-document.addEventListener('mouseout',e=>{
-  if(e.target.closest('[data-map]'))clearMaps();
-});
-</script>
+<script src="year.js"></script>
 <script src="../data/seed-corpus.js"></script>
 <script src="../data/seed-index.js"></script>
 <script src="../data/seed-forms.js"></script>
